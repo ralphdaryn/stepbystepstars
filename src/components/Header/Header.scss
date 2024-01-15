@@ -1,0 +1,13 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.header {
+  &__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  &__logo {
+    width: 25%;
+  }
+}

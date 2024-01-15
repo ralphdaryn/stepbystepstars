@@ -1,0 +1,10 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.footer {
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
