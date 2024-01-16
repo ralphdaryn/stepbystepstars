@@ -4,12 +4,12 @@
 .main {
   height: 34rem;
   padding: 1rem;
-
-  &__text h1 {
-    font-size: 1.5rem;
+  &__text {
     font-weight: 700;
+    font-size: 1.75rem;
   }
   &__subtext {
     font-size: 1.15rem;
+    padding-top: .5rem;
   }
 }
