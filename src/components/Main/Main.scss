@@ -3,4 +3,13 @@
 
 .main {
   height: 34rem;
+  padding: 1rem;
+
+  &__text h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  &__subtext {
+    font-size: 1.15rem;
+  }
 }

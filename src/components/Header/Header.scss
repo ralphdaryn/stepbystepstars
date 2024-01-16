@@ -5,9 +5,13 @@
   &__container {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f9f6fb;
   }
   &__logo {
     width: 25%;
+    border-radius: 3rem;
   }
 }

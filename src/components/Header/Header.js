@@ -7,7 +7,7 @@ const Header = () => {
     <div className="header">
       <div className="header__container">
         <img className="header__logo" src={logo} alt="step by step logo" />
-        <FaBars />
+        <FaBars size={30} />
       </div>
     </div>
   );
