@@ -2,14 +2,14 @@
 @use "../../styles/partials/mixins" as *;
 
 .main {
-  height: 34rem;
-  padding: 1rem;
+  height: 38rem;
+  padding: 10rem 1rem;
   &__text {
     font-weight: 700;
     font-size: 1.5rem;
   }
   &__subtext {
     font-size: 1.15rem;
-    padding-top: .5rem;
+    padding-top: 0.5rem;
   }
 }

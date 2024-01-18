@@ -10,6 +10,8 @@
     align-items: center;
     padding: 1rem;
     background-color: #f9f6fb;
+    position: fixed;
+    top: 0;
     @include tablet {
       padding: 2rem;
     }
@@ -21,7 +23,6 @@
   }
 
   &__navbar {
-    z-index: 999;
     @include tablet {
       display: none;
     }
@@ -40,20 +41,20 @@
     }
     &-link {
       padding: 0 1rem;
-      cursor: pointer;
+      font-size: 1.15rem;
     }
   }
 
   &__sidebar {
+    background-color: #f9f6fb;
+    position: relative;
+    top: 120px;
     @include tablet {
       display: none;
     }
     &-list {
       display: flex;
-      justify-content: space-evenly;
-    }
-    &-link {
-      cursor: pointer;
+      justify-content: space-around;
     }
   }
 }
