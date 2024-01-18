@@ -46,15 +46,16 @@
   }
 
   &__sidebar {
+    width: 100%;
     background-color: #f9f6fb;
-    position: relative;
+    position: fixed;
     top: 120px;
     @include tablet {
       display: none;
     }
     &-list {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-evenly;
     }
   }
 }
