@@ -1,23 +1,33 @@
 import "./Header.scss";
 import { useState } from "react";
 import logo from "../../assets/images/logo.png";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Header = () => {
   const [showNavigation, setShowNavigation] = useState(false);
+
   const toggleNavigation = () => {
     setShowNavigation(!showNavigation);
   };
+
   return (
-    <div className="header">
+    <div className={`header ${showNavigation ? "open" : ""}`}>
       <div className="header__container">
         <img className="header__logo" src={logo} alt="step by step logo" />
-        <FaBars
-          className="header__navbar"
-          size={30}
-          onClick={toggleNavigation}
-        />
-        <nav className={`header__navigation ${showNavigation ? "show" : ""}`}>
+        {showNavigation ? (
+          <FaTimes
+            className="header__navbar"
+            size={30}
+            onClick={toggleNavigation}
+          />
+        ) : (
+          <FaBars
+            className="header__navbar"
+            size={30}
+            onClick={toggleNavigation}
+          />
+        )}
+        <nav className="header__navigation">
           <ul className="header__navigation-list">
             <li className="header__navigation-link">Home</li>
             <li className="header__navigation-link">About</li>
@@ -27,6 +37,17 @@ const Header = () => {
           </ul>
         </nav>
       </div>
+      {showNavigation && (
+        <div className="header__sidebar">
+          <ul className="header__sidebar-list">
+            <li className="header__sidebar-link">Home</li>
+            <li className="header__sidebar-link">About</li>
+            <li className="header__sidebar-link">Services</li>
+            <li className="header__sidebar-link">Gallery</li>
+            <li className="header__sidebar-link">Contact</li>
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
