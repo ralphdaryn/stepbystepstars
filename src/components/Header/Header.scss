@@ -50,6 +50,7 @@
     background-color: #f9f6fb;
     position: fixed;
     top: 120px;
+    margin-top: .5rem;
     @include tablet {
       display: none;
     }

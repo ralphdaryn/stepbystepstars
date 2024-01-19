@@ -5,8 +5,10 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer__container">
-        <FaFacebook />
-        <FaInstagramSquare />
+        <div>
+          <FaFacebook />
+          <FaInstagramSquare />
+        </div>
       </div>
     </div>
   );
