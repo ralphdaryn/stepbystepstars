@@ -1,7 +1,7 @@
 import "./Header.scss";
 import { useState } from "react";
 import logo from "../../assets/images/logo.png";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaArrowRight } from "react-icons/fa";
 
 const Header = () => {
   const [showNavigation, setShowNavigation] = useState(false);
@@ -40,11 +40,23 @@ const Header = () => {
       {showNavigation && (
         <div className="header__sidebar">
           <ul className="header__sidebar-list">
-            <li className="header__sidebar-link">Home</li>
-            <li className="header__sidebar-link">About</li>
-            <li className="header__sidebar-link">Services</li>
-            <li className="header__sidebar-link">Gallery</li>
-            <li className="header__sidebar-link">Contact</li>
+            <li className="header__sidebar-link">
+              Home <FaArrowRight />
+            </li>
+            <li className="header__sidebar-link">
+              About <FaArrowRight />
+            </li>
+            <li className="header__sidebar-link">
+              Services <FaArrowRight />
+            </li>
+            <li className="header__sidebar-link">
+              Gallery
+              <FaArrowRight />
+            </li>
+            <li className="header__sidebar-link">
+              Contact
+              <FaArrowRight />
+            </li>
           </ul>
         </div>
       )}
