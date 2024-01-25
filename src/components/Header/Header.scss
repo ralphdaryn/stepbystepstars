@@ -73,5 +73,14 @@
       font-size: 1.4rem;
       font-weight: 700;
     }
+    &-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+    &-image {
+      padding: 0 1rem;
+    }
   }
 }

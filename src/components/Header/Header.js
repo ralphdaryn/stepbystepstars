@@ -1,7 +1,13 @@
 import "./Header.scss";
 import { useState } from "react";
 import logo from "../../assets/images/logo.png";
-import { FaBars, FaTimes, FaArrowRight } from "react-icons/fa";
+import {
+  FaBars,
+  FaTimes,
+  FaArrowRight,
+  FaFacebook,
+  FaInstagramSquare,
+} from "react-icons/fa";
 
 const Header = () => {
   const [showNavigation, setShowNavigation] = useState(false);
@@ -56,6 +62,14 @@ const Header = () => {
             <li className="header__sidebar-link">
               Contact
               <FaArrowRight />
+            </li>
+          </ul>
+          <ul className="header__sidebar-icons">
+            <li className="header__sidebar-image">
+              <FaFacebook size={35} />
+            </li>
+            <li className="header__sidebar-image">
+              <FaInstagramSquare size={35} />
             </li>
           </ul>
         </div>

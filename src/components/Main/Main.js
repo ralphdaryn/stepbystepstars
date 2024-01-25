@@ -24,7 +24,6 @@ const Main = () => {
             Join us for unforgettable experiences!
           </p>
         </div>
-        <button>Learn More</button>
         <button>Book Now!</button>
       </div>
     </div>
