@@ -64,7 +64,7 @@
       justify-content: space-evenly;
       gap: 3rem;
       padding-left: 2rem;
-      padding-top: 2rem;
+      padding-top: 1rem;
     }
     &-link {
       display: flex;
@@ -80,7 +80,7 @@
       padding: 2rem 1rem;
     }
     &-image {
-      padding: 0 1rem;
+      padding: 0 .5rem;
     }
   }
 }
