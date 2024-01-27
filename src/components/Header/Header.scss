@@ -8,10 +8,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 1.5rem;
     background-color: #f9f6fb;
     position: fixed;
     top: 0;
+    z-index: 100;
     @include tablet {
       padding: 2rem;
     }
@@ -80,7 +81,7 @@
       padding: 2rem 1rem;
     }
     &-image {
-      padding: 0 .5rem;
+      padding: 0 0.5rem;
     }
   }
 }

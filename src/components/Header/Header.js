@@ -9,6 +9,7 @@ import {
   FaInstagramSquare,
 } from "react-icons/fa";
 
+
 const Header = () => {
   const [showNavigation, setShowNavigation] = useState(false);
 

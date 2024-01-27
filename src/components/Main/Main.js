@@ -6,6 +6,8 @@ import {
   FaDumbbell,
   FaRegCheckCircle,
 } from "react-icons/fa";
+import Carousel from "../Carousel/Carousel";
+import { FaFacebook, FaInstagramSquare } from "react-icons/fa";
 
 const Main = () => {
   return (
@@ -13,15 +15,14 @@ const Main = () => {
       <div className="main__container">
         <div>
           <h2 className="main__subtitle">
-            Elevate Your Celebration and Wellness with
+            Elevate Your Celebration & Wellness with Step By Step!
           </h2>
-          <h1 className="main__title">Step By Step Stars!</h1>
         </div>
         <div>
-          
+          <Carousel />
         </div>
         <div className="main__wrapper">
-          <p className="main__text">We offer the following services:</p>
+          <h4 className="main__text">We offer the following services:</h4>
           <ul className="main__list">
             <li className="main__link">
               <FaBirthdayCake /> DANCE PARTIES <FaRegCheckCircle />
@@ -33,15 +34,23 @@ const Main = () => {
               <FaBaby /> MUSICAL BABIES <FaRegCheckCircle />
             </li>
             <li className="main__link">
-              <FaDumbbell /> FITNESS CLASSES for MOMS <FaRegCheckCircle />
+              <FaDumbbell /> FITNESS CLASSES <FaRegCheckCircle />
             </li>
           </ul>
         </div>
-        <div>
-          <p className="main__subtext">
+        <div className="main__section">
+          <h4 className="main__subtext">
             Join us for unforgettable experiences!
-          </p>
-          <button className="main__button">Book Now!</button>
+          </h4>
+          <button className="main__button">Contact Us!</button>
+          <div className="main__section-list">
+            <ul className="main__section-list">
+              <li>
+                <FaFacebook />
+                <FaInstagramSquare />
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

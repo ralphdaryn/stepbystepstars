@@ -3,23 +3,37 @@
 
 .main {
   height: 68rem;
-  padding: 10rem 1rem;
+  padding: 9.25rem 1.5rem;
   &__title {
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
   &__subtitle {
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    padding-bottom: 0.5rem;
   }
   &__text {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     padding-top: 0.5rem;
   }
   &__wrapper {
+    padding: 1rem 0 0.75rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+  &__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .25rem;
+    text-align: center;
+    &-list {
+      display: flex;
+      justify-content: center;
+    }
   }
 }

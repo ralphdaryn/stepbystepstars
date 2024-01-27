@@ -1,0 +1,15 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.carousel {
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__image {
+    width: 100%;
+    height: 12.5rem;
+    border-radius: 14px;
+  }
+}
