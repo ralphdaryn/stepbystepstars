@@ -4,12 +4,22 @@
 .main {
   height: 68rem;
   padding: 10rem 1rem;
-  &__text {
+  &__title {
     font-weight: 700;
     font-size: 1.5rem;
   }
-  &__subtext {
+  &__subtitle {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  &__text {
     font-size: 1.15rem;
     padding-top: 0.5rem;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
