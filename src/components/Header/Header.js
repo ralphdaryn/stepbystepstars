@@ -57,10 +57,6 @@ const Header = () => {
               Services <FaArrowRight />
             </li>
             <li className="header__sidebar-link">
-              Gallery
-              <FaArrowRight />
-            </li>
-            <li className="header__sidebar-link">
               Contact
               <FaArrowRight />
             </li>

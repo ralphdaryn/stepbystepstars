@@ -14,9 +14,9 @@ const Main = () => {
     <div className="main">
       <div className="main__container">
         <div>
-          <h2 className="main__subtitle">
+          <h1 className="main__subtitle">
             Elevate Your Celebration & Wellness with Step By Step!
-          </h2>
+          </h1>
         </div>
         <div>
           <Carousel />
@@ -50,6 +50,18 @@ const Main = () => {
                 <FaInstagramSquare />
               </li>
             </ul>
+          </div>
+          <div className="main__area">
+            <h2>
+              Start the Celebration! <br></br> Your Step by Step Journey Begins
+              Here!"
+            </h2>
+            <p>
+              Step by Step Movement is focused on mental well-being! We offer
+              fitness training and birthday party entertainment. We specialize
+              in empowering individuals to hit their goals and be their best
+              self!
+            </p>
           </div>
         </div>
       </div>
