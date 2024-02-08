@@ -2,7 +2,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .main {
-  height: 68rem;
+  height: 200rem;
   padding: 9.25rem 1.5rem;
   &__container {
     text-align: center;
@@ -41,5 +41,13 @@
   }
   &__area {
     padding-top: 2rem;
+  }
+  &__caption {
+    padding-bottom: 2rem;
+  }
+  &__image {
+    width: 12rem;
+    height: 16rem;
+    border-radius: 16px;
   }
 }

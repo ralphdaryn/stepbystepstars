@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import Carousel from "../Carousel/Carousel";
 import { FaFacebook, FaInstagramSquare } from "react-icons/fa";
+import laurenBio from "../../assets/images/about.png";
 
 const Main = () => {
   return (
@@ -36,6 +37,7 @@ const Main = () => {
             <li className="main__link">
               <FaDumbbell /> FITNESS CLASSES <FaRegCheckCircle />
             </li>
+            <li>... and so much more!</li>
           </ul>
         </div>
         <div className="main__section">
@@ -52,16 +54,35 @@ const Main = () => {
             </ul>
           </div>
           <div className="main__area">
-            <h2>
+            <h2 className="main__caption">
               Start the Celebration! <br></br> Your Step by Step Journey Begins
               Here!"
             </h2>
-            <p>
-              Step by Step Movement is focused on mental well-being! We offer
-              fitness training and birthday party entertainment. We specialize
-              in empowering individuals to hit their goals and be their best
-              self!
-            </p>
+            <div>
+              <h2>Meet Lauren Paul</h2>
+              <img className="main__image" src={laurenBio} alt="bio pic" />
+              <p>
+                a personal trainer and group fitness instructor with over 20
+                years of experience as a competitive dancer. As a mom of two
+                young kids, I understand the challenges of finding time for
+                fitness in a busy lifestyle.
+              </p>
+              <p>
+                My personal journey led me to discover effective strategies to
+                stay active and healthy despite a hectic schedule. Now, I'm
+                dedicated to sharing these secrets with other women, empowering
+                them to prioritize their well-being. Join me in group fitness
+                classes and personal training sessions designed not only to
+                build strength but also to fit seamlessly into your busy life.
+              </p>
+              <p>
+                Together, we'll create a balanced and sustainable approach to
+                health, making fitness an integral part of your vibrant
+                lifestyle. Let's make your fitness journey not just a routine
+                but a fulfilling lifestyle where each workout becomes a step
+                towards a healthier and happier you.
+              </p>
+            </div>
           </div>
         </div>
       </div>
