@@ -1,0 +1,11 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.about {
+  padding-top: 2rem;
+  &__image {
+    width: 12rem;
+    height: 16rem;
+    border-radius: 16px;
+  }
+}

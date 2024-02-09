@@ -2,23 +2,15 @@
 @use "../../styles/partials/mixins" as *;
 
 .main {
-  height: 200rem;
+  height: 170rem;
   padding: 9.25rem 1.5rem;
   &__container {
     text-align: center;
   }
   &__title {
     font-weight: 700;
-    font-size: 1.25rem;
-  }
-  &__subtitle {
-    font-weight: 700;
     font-size: 1.5rem;
     padding-bottom: 0.5rem;
-  }
-  &__text {
-    font-size: 1.05rem;
-    padding-top: 0.5rem;
   }
   &__wrapper {
     padding: 1rem 0 0.75rem 0;
@@ -26,6 +18,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+  &__text {
+    font-size: 1.05rem;
+    padding-top: 0.5rem;
   }
   &__section {
     display: flex;
@@ -40,17 +36,6 @@
     }
   }
   &__caption {
-    padding: 2rem;
-  }
-  &__image {
-    width: 12rem;
-    height: 16rem;
-    border-radius: 16px;
-  }
-  &__about {
-    padding-top: 2rem;
-  }
-  &__contact {
     padding: 2rem;
   }
 }
