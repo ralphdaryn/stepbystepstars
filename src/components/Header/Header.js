@@ -9,7 +9,6 @@ import {
   FaInstagramSquare,
 } from "react-icons/fa";
 
-
 const Header = () => {
   const [showNavigation, setShowNavigation] = useState(false);
 
@@ -37,9 +36,8 @@ const Header = () => {
         <nav className="header__navigation">
           <ul className="header__navigation-list">
             <li className="header__navigation-link">Home</li>
-            <li className="header__navigation-link">About</li>
             <li className="header__navigation-link">Services</li>
-            <li className="header__navigation-link">Gallery</li>
+            <li className="header__navigation-link">About</li>
             <li className="header__navigation-link">Contact</li>
           </ul>
         </nav>
@@ -51,10 +49,10 @@ const Header = () => {
               Home <FaArrowRight />
             </li>
             <li className="header__sidebar-link">
-              About <FaArrowRight />
+              Services <FaArrowRight />
             </li>
             <li className="header__sidebar-link">
-              Services <FaArrowRight />
+              About <FaArrowRight />
             </li>
             <li className="header__sidebar-link">
               Contact

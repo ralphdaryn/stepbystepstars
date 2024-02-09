@@ -39,15 +39,18 @@
       justify-content: center;
     }
   }
-  &__area {
-    padding-top: 2rem;
-  }
   &__caption {
-    padding-bottom: 2rem;
+    padding: 2rem;
   }
   &__image {
     width: 12rem;
     height: 16rem;
     border-radius: 16px;
+  }
+  &__about {
+    padding-top: 2rem;
+  }
+  &__contact {
+    padding: 2rem;
   }
 }
