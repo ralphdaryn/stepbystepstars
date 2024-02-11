@@ -1,9 +1,14 @@
 import "./Services.scss";
+import facepaintImg from "../../assets/images/facepaintkids.png";
+import dancepartyImg from "../../assets/images/dancepartykids.jpg";
+import musicalImg from '../../assets/images/danceparty.png';
+import fitnessImg from '../../assets/images/fitnessmom.png';
 
 const Services = () => {
   return (
     <div className="services">
       <h2>Facepaint</h2>
+      <img className="services__img" src={facepaintImg} alt="facepaint pic" />
       <p>
         Transform your celebration with our Face Painting Extravaganza! 🌈🎨 One
         hour of artistic magic that brings 8-12 kids to life with creative
@@ -12,6 +17,11 @@ const Services = () => {
         face-painting fun begin!
       </p>
       <h2>Dance Party</h2>
+      <img
+        className="services__img"
+        src={dancepartyImg}
+        alt="dance party pic"
+      />
       <p>
         Immerse in an hour of non-stop fun: dance parties that transform into
         personalized music videos, engaging games with the kids, choreographed
@@ -21,6 +31,11 @@ const Services = () => {
         showstopper! 🕺💃🎥🎈
       </p>
       <h2>Musical Babies</h2>
+      <img
+        className="services__img"
+        src={musicalImg}
+        alt="musical pic"
+      />
       <p>
         Introducing our Musical Babies Program - a harmonious blend of joy and
         learning for little ones aged 3 and under. Join us for an engaging
@@ -29,6 +44,11 @@ const Services = () => {
         in a melody of laughter and discovery.
       </p>
       <h2>Mommy and Me</h2>
+      <img
+        className="services__img"
+        src={fitnessImg}
+        alt="fitness pic"
+      />
       <p>
         Join our Mommy and Me Fitness Class, where all fitness levels are
         welcome! This engaging class is designed for moms with babies, providing

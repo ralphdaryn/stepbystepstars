@@ -10,6 +10,7 @@ import { FaFacebook, FaInstagramSquare } from "react-icons/fa";
 import Carousel from "../Carousel/Carousel";
 import Services from "../Services/Services";
 import About from "../About/About";
+import Reviews from "../Reviews/Reviews";
 import Contact from "../Contact/Contact";
 
 const Main = () => {
@@ -65,6 +66,9 @@ const Main = () => {
           </div>
           <div>
             <About />
+          </div>
+          <div>
+            <Reviews />
           </div>
           <div>
             <Contact />
