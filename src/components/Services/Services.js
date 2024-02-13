@@ -7,11 +7,10 @@ import fitnessImg from "../../assets/images/fitnessmom.png";
 const Services = () => {
   return (
     <div className="services">
+      <h2 className="services__text">
+        Start the Celebration! <br></br> Your Step by Step Journey Begins Here!"
+      </h2>
       <div className="services__container">
-        <h2 className="services__text">
-          Start the Celebration! <br></br> Your Step by Step Journey Begins
-          Here!"
-        </h2>
         <div className="services__wrapper">
           <img
             className="services__img"
@@ -19,7 +18,7 @@ const Services = () => {
             alt="facepaint pic"
           />
           <h2 className="services__title">Facepaint</h2>
-          <p className="services__text">
+          <p className="services__subtitle">
             Transform your celebration with our Face Painting Extravaganza! 🌈🎨
             One hour of artistic magic that brings 8-12 kids to life with
             creative designs. From whimsical butterflies to fierce superheroes,
@@ -35,7 +34,7 @@ const Services = () => {
             alt="dance party pic"
           />
           <h2 className="services__title">Dance Party</h2>
-          <p className="services__text">
+          <p className="services__subtitle">
             Immerse in an hour of non-stop fun: dance parties that transform
             into personalized music videos, engaging games with the kids,
             choreographed dance moves for all to enjoy, and the glam of a red
@@ -49,7 +48,7 @@ const Services = () => {
         <div className="services__wrapper">
           <img className="services__img" src={musicalImg} alt="musical pic" />
           <h2 className="services__title">Musical Babies</h2>
-          <p className="services__text">
+          <p className="services__subtitle">
             Introducing our Musical Babies Program - a harmonious blend of joy
             and learning for little ones aged 3 and under. Join us for an
             engaging half-hour session of interactive fun featuring circle time,
@@ -62,7 +61,7 @@ const Services = () => {
         <div className="services__wrapper">
           <img className="services__img" src={fitnessImg} alt="fitness pic" />
           <h2 className="services__title">Mommy and Me</h2>
-          <p className="services__text">
+          <p className="services__subtitle">
             Join our Mommy and Me Fitness Class, where all fitness levels are
             welcome! This engaging class is designed for moms with babies,
             providing a fantastic opportunity to meet and socialize with fellow
