@@ -7,7 +7,7 @@
   background-color: rgba(135, 63, 161, 0.075);
   border-radius: 8px;
   @include tablet {
-    padding: 2rem 10rem;
+    padding: 2rem 8rem;
   }
   &__container {
     width: 100%;
@@ -32,7 +32,6 @@
   input {
     width: 90%; 
     padding: 4px; 
-    margin-bottom: 1rem;
     box-sizing: border-box;
     @include tablet {
       width: 18rem;

@@ -2,10 +2,28 @@
 @use "../../styles/partials/mixins" as *;
 
 .about {
-  padding-top: 2rem;
+  &__title {
+    padding: 1rem;
+    @include tablet {
+      padding: 4rem 0 1rem;
+    }
+  }
+  &__container {
+    @include tablet {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
+  &__subtitle {
+    padding: 0.5rem;
+    text-align: justify;
+    @include tablet {
+      padding: 0 1rem 0.5rem;
+    }
+  }
   &__image {
     width: 12rem;
-    height: 16rem;
     border-radius: 16px;
   }
 }
