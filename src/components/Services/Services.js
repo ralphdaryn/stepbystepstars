@@ -8,6 +8,10 @@ const Services = () => {
   return (
     <div className="services">
       <div className="services__container">
+        <h2 className="services__text">
+          Start the Celebration! <br></br> Your Step by Step Journey Begins
+          Here!"
+        </h2>
         <div className="services__wrapper">
           <img
             className="services__img"

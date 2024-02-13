@@ -2,6 +2,9 @@
 @use "../../styles/partials/mixins" as *;
 
 .services {
+  &__text {
+    padding: 2rem;
+  }
   &__wrapper {
     background-color: rgba(218, 203, 223, 0.458);
     padding: 1rem;
@@ -15,7 +18,7 @@
     border-radius: 15px;
   }
   &__button {
-    padding: .25rem;
+    padding: 0.25rem;
     margin: 1rem;
   }
 }
