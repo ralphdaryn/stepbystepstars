@@ -2,33 +2,43 @@
 @use "../../styles/partials/mixins" as *;
 
 .contact {
-  padding: 2rem;
+  padding: 2rem 4rem;
   width: 100%;
+  background-color: rgba(135, 63, 161, 0.075);
+  border-radius: 8px;
   &__container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 600px; /* Adjust the max-width as needed */
+  }
+  &__title {
+    margin-bottom: .5rem;
+    font-size: 2rem;
   }
   form {
     width: 100%; /* Make the form fill the container's width */
   }
 
   label {
-    margin: 8px;
+    margin: .5rem;
     display: block;
   }
 
-  input,
-  textarea {
-    width: 100%; /* Make both input and textarea fill the width of the container */
-    padding: 8px; /* Adjust the padding as needed */
-    margin-bottom: 16px; /* Adjust the margin as needed */
+  input {
+    width: 90%; 
+    padding: 4px; 
+    margin-bottom: 1rem;
     box-sizing: border-box;
+  }
+  textarea {
+    width: 100%;
     resize: none;
+    height: 6rem;
   }
   &__button {
-    padding: .25rem;
+    padding: 0.25rem;
+    margin: .5rem;
   }
 }
