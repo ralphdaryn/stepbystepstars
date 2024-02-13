@@ -27,18 +27,22 @@ const Main = () => {
           <h4 className="main__text">We offer the following services:</h4>
           <ul className="main__list">
             <li className="main__list-item">
-              <FaBirthdayCake /> DANCE PARTIES <FaRegCheckCircle />
+              <FaBirthdayCake className="main__list-icon" /> DANCE PARTIES{"  "}
+              <FaRegCheckCircle className="main__list-check" />
             </li>
             <li className="main__list-item">
-              <FaPaintBrush /> FACE PAINTING <FaRegCheckCircle />
+              <FaPaintBrush className="main__list-icon" /> FACE PAINTING{" "}
+              <FaRegCheckCircle className="main__list-check" />
             </li>
             <li className="main__list-item">
-              <FaMusic /> MUSICAL BABIES <FaRegCheckCircle />
+              <FaMusic className="main__list-icon" /> MUSICAL BABIES{" "}
+              <FaRegCheckCircle className="main__list-check" />
             </li>
             <li className="main__list-item">
-              <FaDumbbell /> FITNESS CLASSES <FaRegCheckCircle />
+              <FaDumbbell className="main__list-icon" /> FITNESS CLASSES{" "}
+              <FaRegCheckCircle className="main__list-check" />
             </li>
-            <li>... and so much more!</li>
+            <li className="main__list-more">... and so much more!</li>
           </ul>
         </div>
         <div className="main__section">
@@ -47,16 +51,16 @@ const Main = () => {
           </h3>
           <div className="main__icons">
             <ul className="main__icons-list">
-              <li className="main__icons-item">
+              <li className="main__icons-facebook">
                 <FaFacebook />
               </li>
               <button className="main__button">Contact Us!</button>
-              <li className="main__icons-item">
+              <li className="main__icons-instagram">
                 <FaInstagramSquare />
               </li>
             </ul>
           </div>
-       
+
           <div>
             <Services />
           </div>

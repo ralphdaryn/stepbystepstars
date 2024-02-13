@@ -43,7 +43,7 @@
     &-link {
       padding: 0 1rem;
       font-size: 1.15rem;
-      font-weight: 700;
+      font-family: "QuicksandBold";
     }
   }
 
@@ -52,8 +52,7 @@
     height: 100%;
     background-color: #f9f6fb;
     position: fixed;
-    top: 120px;
-    margin-top: 1rem;
+    top: 110px;
     z-index: 100;
 
     @include tablet {
@@ -79,10 +78,21 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem .5rem 1rem;
     }
-    &-image {
-      padding: 0 0.5rem;
+    &-facebook {
+      padding: 0 0.25rem;
+      color: #0866ff;
+    }
+    &-instagram {
+      padding: 0 0.25rem;
+      color: #ae40af;
+    }
+    &-footer {
+      text-align: center;
+    }
+    &-text {
+      font-weight: 700;
     }
   }
 }

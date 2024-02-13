@@ -5,12 +5,12 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer__container">
-        <div>
-          <FaFacebook />
-          <FaInstagramSquare />
+        <div className="footer__icons">
+          <FaFacebook className="footer__facebook" />
+          <FaInstagramSquare className="footer__instagram"  />
         </div>
         <div>
-          <p>Step By Step Stars © 2024</p>
+          <p className="footer__text">Step By Step © 2024</p>
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .contact {
-  padding: 2rem 4rem;
+  padding: 1.5rem 4.5rem;
   background-color: rgba(135, 63, 161, 0.075);
   border-radius: 8px;
   @include tablet {
@@ -42,7 +42,32 @@
     height: 6rem;
   }
   &__button {
-    padding: 0.25rem;
-    margin: .5rem;
+    background-color: #ea4c89;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 1rem;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    &:hover,
+    .button-1:focus {
+      background-color: #f082ac;
+    }
   }
 }

@@ -60,13 +60,16 @@ const Header = () => {
             </li>
           </ul>
           <ul className="header__sidebar-icons">
-            <li className="header__sidebar-image">
+            <li className="header__sidebar-facebook">
               <FaFacebook size={35} />
             </li>
-            <li className="header__sidebar-image">
+            <li className="header__sidebar-instagram">
               <FaInstagramSquare size={35} />
             </li>
           </ul>
+          <div className="header__sidebar-footer">
+            <p className="header__sidebar-text">Step By Step © 2024</p>
+          </div>
         </div>
       )}
     </div>
