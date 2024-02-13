@@ -24,7 +24,7 @@ const Main = () => {
           <Carousel />
         </div>
         <div className="main__wrapper">
-          <h2 className="main__text">We offer the following services:</h2>
+          <h4 className="main__text">We offer the following services:</h4>
           <ul className="main__list">
             <li className="main__list-item">
               <FaBirthdayCake /> DANCE PARTIES <FaRegCheckCircle />
@@ -42,20 +42,21 @@ const Main = () => {
           </ul>
         </div>
         <div className="main__section">
-          <h2 className="main__subtext">
+          <h3 className="main__subtext">
             Join Us For Unforgettable Experiences!
-          </h2>
+          </h3>
           <div className="main__icons">
             <ul className="main__icons-list">
               <li className="main__icons-item">
                 <FaFacebook />
               </li>
+              <button className="main__button">Contact Us!</button>
               <li className="main__icons-item">
                 <FaInstagramSquare />
               </li>
             </ul>
           </div>
-          <button className="main__button">Contact Us!</button>
+       
           <div>
             <Services />
           </div>

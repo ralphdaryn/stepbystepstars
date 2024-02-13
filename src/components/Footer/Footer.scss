@@ -2,6 +2,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .footer {
+  padding: .75rem;
   &__container {
     display: flex;
     flex-direction: column;

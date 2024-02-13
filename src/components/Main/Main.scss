@@ -2,9 +2,9 @@
 @use "../../styles/partials/mixins" as *;
 
 .main {
-  padding: 9.25rem 1.5rem 1rem;
+  padding: 8rem 1.5rem 1rem;
   @include tablet {
-    padding: 10rem 2rem 1rem;
+    padding: 8.5rem 2rem 1rem;
   }
   &__container {
     text-align: center;
@@ -31,12 +31,11 @@
     @include tablet {
       padding: 0;
       position: absolute;
-      top: 220px;
+      top: 200px;
       right: 30px;
     }
   }
   &__text {
-    font-size: 1.05rem;
     padding-top: 0.5rem;
     font-family: "QuicksandBold";
     @include tablet {
@@ -63,17 +62,18 @@
     }
   }
   &__subtext {
+    font-family: "QuicksandBold";
+    font-size: 1rem;
     @include tablet {
-      font-size: 1.25rem;
-      font-family: "QuicksandBold";
+      font-size: 1.35rem;
     }
   }
-  &__icons{
+  &__icons {
     font-size: 2rem;
     &-list {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       gap: 1rem;
     }
     &-item {
@@ -81,6 +81,6 @@
     }
   }
   &__button {
-    padding: .5rem;
+    padding: 0.5rem;
   }
 }

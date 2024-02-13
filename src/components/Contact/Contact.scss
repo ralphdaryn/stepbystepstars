@@ -3,11 +3,10 @@
 
 .contact {
   padding: 2rem 4rem;
-  width: 100%;
   background-color: rgba(135, 63, 161, 0.075);
   border-radius: 8px;
   @include tablet {
-    padding: 2rem 8rem;
+    padding: 2rem 6rem;
   }
   &__container {
     width: 100%;
@@ -30,11 +29,11 @@
   }
 
   input {
-    width: 90%; 
+    width: 12rem; 
     padding: 4px; 
     box-sizing: border-box;
     @include tablet {
-      width: 18rem;
+      width: 24rem;
     }
   }
   textarea {
