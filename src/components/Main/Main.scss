@@ -16,7 +16,7 @@
     font-size: 1.5rem;
     padding-bottom: 0.5rem;
     font-family: "QuicksandBold";
-    color: #9a34c1;
+    color: #8638a4;
     @include tablet {
       font-size: 1.65rem;
       padding-bottom: 1.5rem;
@@ -38,7 +38,7 @@
   &__text {
     padding-top: 0.5rem;
     font-family: "QuicksandBold";
-    color: #ea4c89;
+    color: #8638a4;
     @include tablet {
       font-size: 1.25rem;
       padding-top: 0;
@@ -57,13 +57,14 @@
     &-item {
       font-weight: 700;
       display: flex;
+      align-items: center;
       gap: 0.5rem;
       @include tablet {
         font-size: 1.15rem;
       }
     }
     &-more {
-      color: #ea508b;
+      color: #8638a4;
       font-family: "QuicksandBold";
       @include tablet {
         font-size: 1.15rem;
@@ -89,6 +90,8 @@
   &__subtext {
     font-family: "QuicksandBold";
     font-size: 1rem;
+    color: #ec1e6e;
+
     @include tablet {
       font-size: 1.35rem;
     }

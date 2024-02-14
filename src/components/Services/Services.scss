@@ -3,14 +3,18 @@
 
 .services {
   &__text {
-    padding: 2rem;
-    @include tablet {
-      padding: 2rem 1rem;
-    }
+    padding: 2rem 2rem 1rem;
+    font-family: "QuicksandBold";
   }
   &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
     @include tablet {
       display: flex;
+      flex-direction: row;
       justify-content: center;
       gap: 1rem;
       flex-wrap: wrap;
@@ -20,9 +24,10 @@
     background-color: rgba(218, 203, 223, 0.458);
     padding: 1rem;
     margin-bottom: 1.5rem;
+    border-radius: 1rem;
     @include tablet {
       padding: 1rem;
-      width: 21rem;
+      width: 20rem;
       margin-bottom: 0;
     }
   }
@@ -33,7 +38,7 @@
     text-align: justify;
   }
   &__img {
-    width: 100%;
+    width: 75%;
     border-radius: 15px;
     @include tablet {
       width: 85%;
