@@ -50,7 +50,10 @@ const Main = () => {
         </div>
         <div className="main__section">
           <h3 className="main__subtext">
-            Join Us For Unforgettable Experiences!
+            <span className="main__subtext-color">Join Us</span> For{" "}
+            <span className="main__subtext-color">
+              Unforgettable Experiences!
+            </span>
           </h3>
           <div className="main__icons">
             <ul className="main__icons-list">

@@ -5,6 +5,9 @@
   &__text {
     padding: 2rem 0 0.5rem;
     font-family: "QuicksandBold";
+    @include tablet {
+      padding: 1rem 0 .5rem;
+    }
     &-name {
       color: #8638a4;
     }
