@@ -18,7 +18,10 @@ const Main = () => {
     <div className="main">
       <div className="main__container">
         <h1 className="main__title">
-          Elevate Your Celebration & Wellness with Step By Step!
+          Elevate Your <span className="main__title-text">Celebration</span> &
+          <span className="main__title-text"> Wellness </span>
+          with
+          <span className="main__title-text"> Step By Step!</span>
         </h1>
         <div>
           <Carousel />

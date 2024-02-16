@@ -9,22 +9,21 @@
   }
   &__container {
     text-align: center;
-    @include tablet {
-      text-align: center;
-    }
   }
   &__title {
     font-size: 1.5rem;
     padding-bottom: 0.5rem;
     font-family: "QuicksandBold";
-    color: #8638a4;
+    &-text {
+      color: #8638a4;
+    }
     @include tablet {
       font-size: 1.65rem;
       padding-bottom: 1.5rem;
     }
   }
   &__wrapper {
-    padding: 1rem 0 0.75rem 0;
+    padding: 1rem 0 0.5rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,7 +92,8 @@
     font-family: "QuicksandBold";
     font-size: 1rem;
     color: #ec1e6e;
-
+    text-transform: uppercase;
+    font-size: 0.96rem;
     @include tablet {
       font-size: 1.35rem;
     }

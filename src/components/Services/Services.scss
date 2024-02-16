@@ -3,8 +3,11 @@
 
 .services {
   &__text {
-    padding: 2rem 2rem 1rem;
+    padding: 2rem 0 0.5rem;
     font-family: "QuicksandBold";
+    &-name {
+      color: #8638a4;
+    }
   }
   &__container {
     display: flex;
@@ -37,13 +40,27 @@
   }
   &__subtitle {
     text-align: justify;
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
   &__img {
-    width: 75%;
-    border-radius: 15px;
+    width: 100%;
+    border-radius: 8px;
+
+    &-face {
+      width: 60%;
+      border-radius: 8px;
+    }
+    &-dance {
+      width: 70%;
+      border-radius: 8px;
+    }
+    &-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     @include tablet {
-      width: 85%;
+      width: 80%;
     }
   }
   &__button {

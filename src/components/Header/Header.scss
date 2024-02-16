@@ -59,13 +59,11 @@
       display: none;
     }
     &-list {
-      width: 90%;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
       gap: 3rem;
-      padding-left: 2rem;
-      padding-top: 1rem;
+      padding: 2rem;
     }
     &-link {
       display: flex;
@@ -78,7 +76,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 2rem 1rem .5rem 1rem;
+      padding: 2rem 1rem 0.5rem 1rem;
     }
     &-facebook {
       padding: 0 0.25rem;

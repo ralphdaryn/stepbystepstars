@@ -8,15 +8,19 @@ const Services = () => {
   return (
     <div className="services">
       <h2 className="services__text">
-        Start the Celebration! <br></br> Your Step by Step Journey Begins Here!"
+        Start the Celebration! <br></br> Your{" "}
+        <span className="services__text-name">Step by Step</span> Journey Begins
+        Here!"
       </h2>
       <div className="services__container">
         <div className="services__wrapper">
-          <img
-            className="services__img"
-            src={facepaintImg}
-            alt="facepaint pic"
-          />
+          <div className="services__img-container">
+            <img
+              className="services__img-face"
+              src={facepaintImg}
+              alt="facepaint pic"
+            />
+          </div>
           <h2 className="services__title">Facepaint</h2>
           <p className="services__subtitle">
             Transform your celebration with our Face Painting Extravaganza! 🌈🎨
@@ -28,11 +32,13 @@ const Services = () => {
           <button className="services__button">View Details</button>
         </div>
         <div className="services__wrapper">
-          <img
-            className="services__img"
-            src={dancepartyImg}
-            alt="dance party pic"
-          />
+          <div className="services__img-container">
+            <img
+              className="services__img-dance"
+              src={dancepartyImg}
+              alt="dance party pic"
+            />
+          </div>
           <h2 className="services__title">Dance Party</h2>
           <p className="services__subtitle">
             Immerse in an hour of non-stop fun: dance parties that transform
@@ -46,7 +52,9 @@ const Services = () => {
         </div>
 
         <div className="services__wrapper">
-          <img className="services__img" src={musicalImg} alt="musical pic" />
+          <div className="services__img-container">
+            <img className="services__img" src={musicalImg} alt="musical pic" />
+          </div>
           <h2 className="services__title">Musical Babies</h2>
           <p className="services__subtitle">
             Introducing our Musical Babies Program - a harmonious blend of joy
@@ -59,8 +67,10 @@ const Services = () => {
         </div>
 
         <div className="services__wrapper">
-          <img className="services__img" src={fitnessImg} alt="fitness pic" />
-          <h2 className="services__title">Mommy and Me</h2>
+          <div className="services__img-container">
+            <img className="services__img" src={fitnessImg} alt="fitness pic" />
+          </div>
+          <h2 className="services__title">Mommy & Me</h2>
           <p className="services__subtitle">
             Join our Mommy and Me Fitness Class, where all fitness levels are
             welcome! This engaging class is designed for moms with babies,
