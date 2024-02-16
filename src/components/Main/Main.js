@@ -50,7 +50,7 @@ const Main = () => {
         </div>
         <div className="main__section">
           <h3 className="main__subtext">
-            <span className="main__subtext-color">Join Us</span> For{" "}
+            Join Us For{" "}
             <span className="main__subtext-color">
               Unforgettable Experiences!
             </span>

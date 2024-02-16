@@ -59,7 +59,9 @@ const Contact = () => {
               onChange={handleInputChange}
             ></textarea>
           </div>
-          <button className="contact__button" type="submit">Submit</button>
+          <button className="contact__button" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     </div>
