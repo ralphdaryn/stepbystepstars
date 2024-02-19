@@ -21,6 +21,9 @@
     padding: 0.25rem;
     text-align: justify;
     font-size: 0.9rem;
+    &-wrapper {
+      padding: 0.5rem;
+    }
     @include tablet {
       padding: 0 1rem 0.5rem;
     }
@@ -36,6 +39,9 @@
         margin-right: 1rem;
       }
     }
+    &-number {
+      font-size: 0.8rem;
+    }
   }
   &__image {
     width: 10rem;
@@ -47,9 +53,8 @@
     gap: 1rem;
     align-items: center;
     font-size: 1.5rem;
-    &-wrapper {
-      background-color: #f4e7f8;
-    }
+    background-color: #f4e7f8;
+    margin: 0 1rem;
     &-facebook {
       color: #0866ff;
     }

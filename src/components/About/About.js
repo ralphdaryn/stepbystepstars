@@ -46,9 +46,9 @@ const About = () => {
             happier you.
           </p>
           <div className="about__text-wrapper">
-            <h3 className="about__text">Lauren Paul,</h3>
-            <h4 className="about__text">Step By Step</h4>
-            <p>647-998-8074</p>
+            <h4 className="about__text">Lauren Paul,</h4>
+            <h5 className="about__text">Step By Step</h5>
+            <p className="about__text-number">647-998-8074</p>
           </div>
         </div>
       </div>

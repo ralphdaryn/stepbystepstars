@@ -2,8 +2,9 @@
 @use "../../styles/partials/mixins" as *;
 
 .reviews {
+  padding: 1rem;
   &__title {
-    padding: 2rem 0 1rem;
+    padding: 1rem;
   }
   &__facebook {
     font-size: 5rem;
