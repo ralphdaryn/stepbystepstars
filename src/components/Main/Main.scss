@@ -2,12 +2,11 @@
 @use "../../styles/partials/mixins" as *;
 
 .main {
-  padding: 8rem 1.5rem;
+  padding: 8rem 1.5rem 1rem;
   background-color: #f9f6fb;
   @include tablet {
     padding: 8rem 2rem 1rem;
   }
-
   &__container {
     display: flex;
     flex-direction: column;
@@ -22,7 +21,6 @@
     }
     @include tablet {
       font-size: 1.65rem;
-      padding-bottom: 1rem;
     }
   }
   &__wrapper {
@@ -43,7 +41,7 @@
     color: #8638a4;
     @include tablet {
       font-size: 1.15rem;
-      padding: 0;
+      padding-top: 0.15rem;
     }
   }
   &__list {
@@ -70,7 +68,7 @@
       @include tablet {
         position: absolute;
         left: 300px;
-        bottom: 72px;
+        bottom: 82px;
       }
     }
     &-icon {
