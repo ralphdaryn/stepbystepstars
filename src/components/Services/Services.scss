@@ -3,10 +3,10 @@
 
 .services {
   &__text {
-    padding: 2rem 0 0.5rem;
+    padding-top: 2rem;
     font-family: "QuicksandBold";
     @include tablet {
-      padding: 1rem 0 .5rem;
+      padding-top: 1rem;
     }
     &-name {
       color: #8638a4;
@@ -38,7 +38,7 @@
     }
   }
   &__title {
-    padding: 1rem;
+    padding: .75rem;
     font-size: 1.35rem;
   }
   &__subtitle {

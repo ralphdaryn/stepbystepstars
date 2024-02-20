@@ -45,11 +45,11 @@ const About = () => {
             lifestyle where each workout becomes a step towards a healthier and
             happier you.
           </p>
-          <div className="about__text-wrapper">
+          {/* <div className="about__text-wrapper">
             <h4 className="about__text">Lauren Paul</h4>
             <h5 className="about__text">Step By Step</h5>
             <p className="about__text-number">647-998-8074</p>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

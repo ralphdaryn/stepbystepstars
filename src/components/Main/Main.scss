@@ -24,7 +24,7 @@
     }
   }
   &__wrapper {
-    padding: 1rem 0 0.5rem 0;
+    padding: 1.25rem 0 0.5rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,16 +32,15 @@
     @include tablet {
       display: flex;
       flex-direction: column;
-      padding: 1rem 0 0.25rem ;
+      padding: 1rem 0 0.25rem;
     }
   }
   &__text {
-    padding-top: 0.5rem;
     font-family: "QuicksandBold";
     color: #8638a4;
     @include tablet {
       font-size: 1.15rem;
-      padding: 0.15rem;
+      padding: 0.25rem;
     }
   }
   &__list {
@@ -51,7 +50,7 @@
     @include tablet {
       display: flex;
       flex-direction: row;
-      gap: .5rem;
+      gap: 0.5rem;
     }
     &-item {
       font-weight: 700;
@@ -83,7 +82,7 @@
   }
   &__subtext {
     font-family: "QuicksandBold";
-    font-size: 1rem;
+    font-size: 1.05rem;
     text-transform: uppercase;
     font-size: 0.96rem;
     @include tablet {

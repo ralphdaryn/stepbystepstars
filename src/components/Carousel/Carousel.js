@@ -7,7 +7,6 @@ import danceparty from "../../assets/images/danceparty.png";
 import danceparty2 from "../../assets/images/danceparty2.png";
 import fitnessmom from "../../assets/images/fitnessmom.png";
 
-
 const ImageCarousel = () => {
   const settings = {
     dots: true,

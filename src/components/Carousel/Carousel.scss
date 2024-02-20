@@ -1,10 +1,26 @@
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/mixins" as *;
 
+.slick-slider {
+  margin: 0;
+  .slick-prev,
+  .slick-next {
+    margin: 0 0.5rem;
+  }
+  .slick-dots {
+    bottom: -20px;
+  }
+  .slick-button {
+    font-size: 2rem;
+  }
+}
+
 .carousel {
   padding: 0 1rem;
+  @include tablet {
+    padding: 0 2rem;
+  }
   &__container {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,6 +36,9 @@
     @include tablet {
       height: 18rem;
       object-fit: cover;
+    }
+    @include desktop {
+      object-fit: contain;
     }
   }
 }

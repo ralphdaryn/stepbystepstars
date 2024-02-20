@@ -16,6 +16,9 @@
     @include tablet {
       padding: 1.5rem;
     }
+    @include desktop {
+      padding: 2rem 4rem;
+    }
   }
 
   &__logo {
