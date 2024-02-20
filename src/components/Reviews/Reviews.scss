@@ -2,9 +2,12 @@
 @use "../../styles/partials/mixins" as *;
 
 .reviews {
-  padding: 1rem;
+  padding: 1.25rem;
+  @include tablet {
+    padding: 2rem;
+  }
   &__title {
-    padding: 1rem;
+    padding: 0.5rem;
   }
   &__facebook {
     font-size: 5rem;

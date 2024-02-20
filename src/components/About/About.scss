@@ -4,9 +4,9 @@
 .about {
   &__title {
     font-family: "QuicksandBold";
-    padding: 1rem;
+    padding: 0.5rem;
     @include tablet {
-      padding: 2rem 1rem 0;
+      padding-top: 2rem;
     }
   }
   &__container {
@@ -14,7 +14,7 @@
       display: flex;
       align-items: flex-start;
       gap: 1rem;
-      padding: 1rem;
+      padding: 1.5rem;
     }
   }
   &__subtitle {
@@ -23,20 +23,21 @@
     font-size: 0.9rem;
     &-wrapper {
       padding: 0.5rem;
-    }
-    @include tablet {
-      padding: 0 1rem 0.5rem;
+      @include tablet {
+        padding: 0;
+      }
     }
   }
   &__text {
     font-family: "QuicksandBold";
     &-wrapper {
-      margin: 0.25rem;
+      margin-top: 0.75rem;
       @include tablet {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        margin-right: 1rem;
+        margin: 0;
+        padding-top: 1.5rem;
       }
     }
     &-number {
@@ -54,7 +55,7 @@
     align-items: center;
     font-size: 1.5rem;
     background-color: #f4e7f8;
-    margin: 0 1rem;
+    margin: 0 0.75rem;
     &-facebook {
       color: #0866ff;
     }
