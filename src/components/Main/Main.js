@@ -28,7 +28,7 @@ const Main = () => {
         </div>
         <div className="main__wrapper">
           <h4 className="main__text">We offer the following services:</h4>
-          <ul className="main__list">
+          <div className="main__list">
             <li className="main__list-item">
               <FaBirthdayCake className="main__list-icon" /> DANCE PARTIES{"  "}
               <FaRegCheckCircle className="main__list-check" />
@@ -45,10 +45,10 @@ const Main = () => {
               <FaDumbbell className="main__list-icon" /> FITNESS CLASSES{" "}
               <FaRegCheckCircle className="main__list-check" />
             </li>
-            <li className="main__list-item main__list-more">
-              ... and so much more!
-            </li>
-          </ul>
+          </div>
+          <li className="main__list-item main__list-more">
+            ... and so much more!
+          </li>
         </div>
         <div className="main__section">
           <h3 className="main__subtext">
