@@ -32,6 +32,7 @@ const Reviews = () => {
           <div className="reviews__avatar">
             <div className="reviews__avatar-circle">Sa Kaur</div>
           </div>
+          <div className="reviews__date">01/22/24</div>
         </div>
       </div>
     </div>
