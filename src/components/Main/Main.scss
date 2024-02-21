@@ -37,6 +37,9 @@
       flex-direction: column;
       padding: 1rem 0 0.25rem;
     }
+    @include desktop {
+      padding: 1rem 0 0.5rem;
+    }
   }
   &__text {
     font-family: "QuicksandBold";
@@ -82,6 +85,9 @@
     justify-content: center;
     align-items: center;
     gap: 0.25rem;
+    @include desktop {
+      gap: 3rem;
+    }
   }
   &__subtext {
     font-family: "QuicksandBold";

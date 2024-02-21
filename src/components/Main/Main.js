@@ -50,25 +50,24 @@ const Main = () => {
             ... and so much more!
           </li>
         </div>
+        <h3 className="main__subtext">
+          Join Us For{" "}
+          <span className="main__subtext-color">
+            Unforgettable Experiences!
+          </span>
+        </h3>
+        <div className="main__icons">
+          <ul className="main__icons-list">
+            <li className="main__icons-facebook">
+              <FaFacebook />
+            </li>
+            <button className="main__button">Contact Us!</button>
+            <li className="main__icons-instagram">
+              <FaInstagramSquare />
+            </li>
+          </ul>
+        </div>
         <div className="main__section">
-          <h3 className="main__subtext">
-            Join Us For{" "}
-            <span className="main__subtext-color">
-              Unforgettable Experiences!
-            </span>
-          </h3>
-          <div className="main__icons">
-            <ul className="main__icons-list">
-              <li className="main__icons-facebook">
-                <FaFacebook />
-              </li>
-              <button className="main__button">Contact Us!</button>
-              <li className="main__icons-instagram">
-                <FaInstagramSquare />
-              </li>
-            </ul>
-          </div>
-
           <div>
             <Services />
           </div>
