@@ -8,6 +8,9 @@
   @include tablet {
     padding: 1rem 4rem;
   }
+  @include desktop {
+    padding: 3rem 6rem;
+  }
   &__container {
     width: 100%;
     display: flex;

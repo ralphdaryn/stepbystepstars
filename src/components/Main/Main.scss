@@ -8,7 +8,7 @@
     padding: 8rem 2rem 1rem;
   }
   @include desktop {
-    padding: 8.5rem 4rem 4rem;
+    padding: 8rem 4rem 4rem;
   }
   &__container {
     display: flex;
@@ -36,9 +36,6 @@
       display: flex;
       flex-direction: column;
       padding: 1rem 0 0.25rem;
-    }
-    @include desktop {
-      padding: 1rem;
     }
   }
   &__text {
