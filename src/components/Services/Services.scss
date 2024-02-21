@@ -2,6 +2,9 @@
 @use "../../styles/partials/mixins" as *;
 
 .services {
+  @include tablet {
+    padding: 1rem 0;
+  }
   &__text {
     padding-top: 2rem;
     font-family: "QuicksandBold";
@@ -25,6 +28,9 @@
       gap: 2rem;
       flex-wrap: wrap;
     }
+    @include desktop {
+      flex-wrap: nowrap;
+    }
   }
   &__wrapper {
     background-color: rgba(218, 203, 223, 0.458);
@@ -38,7 +44,7 @@
     }
   }
   &__title {
-    padding: .75rem;
+    padding: 0.75rem;
     font-size: 1.35rem;
   }
   &__subtitle {
