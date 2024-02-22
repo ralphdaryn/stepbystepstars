@@ -38,7 +38,9 @@
       object-fit: cover;
     }
     @include desktop {
-      object-fit: contain;
+      // object-fit: contain;
+      width: 40rem;
+      height: 20rem;
     }
   }
 }
