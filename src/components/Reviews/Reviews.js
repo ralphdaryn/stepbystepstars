@@ -4,7 +4,7 @@ import { FaFacebook, FaStar } from "react-icons/fa";
 const Reviews = () => {
   return (
     <div className="reviews">
-      <h2 className="reviews__title">What They Say About Us</h2>
+      <h2 className="reviews__title">What Our Clients Say About Us</h2>
       <FaFacebook className="reviews__facebook" />
       <h3 className="reviews__subtitle">Step By Step Stars</h3>
       <p className="reviews__text">
