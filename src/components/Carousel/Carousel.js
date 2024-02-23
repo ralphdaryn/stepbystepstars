@@ -15,7 +15,31 @@ const ImageCarousel = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000, 
+    autoplaySpeed: 5000,
+    centerMode: false,
+    variableWidth: false,
+    responsive: [
+      {
+        breakpoint: 320, // Adjust the breakpoint as needed
+        settings: {
+          variableWidth: false,
+        },
+      },
+      {
+        breakpoint: 768, // Adjust the breakpoint as needed
+        settings: {
+          variableWidth: false,
+        },
+      },
+      {
+        breakpoint: 1280, // Adjust the breakpoint as needed
+        settings: {
+          variableWidth: true,
+          centerMode: true,
+          slidesToShow: 2,
+        },
+      },
+    ],
   };
 
   return (
