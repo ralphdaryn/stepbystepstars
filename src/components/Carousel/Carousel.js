@@ -35,8 +35,8 @@ const ImageCarousel = () => {
         breakpoint: 1280, // Adjust the breakpoint as needed
         settings: {
           variableWidth: true,
-          centerMode: true,
-          slidesToShow: 2,
+          centerMode: false,
+
         },
       },
     ],
