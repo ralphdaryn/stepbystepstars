@@ -16,6 +16,10 @@ const Header = () => {
     setShowNavigation(!showNavigation);
   };
 
+  const closeSidebar = () => {
+    setShowNavigation(false);
+  };
+
   return (
     <div className={`header ${showNavigation ? "open" : ""}`}>
       <div className="header__container">
@@ -35,28 +39,43 @@ const Header = () => {
         )}
         <nav className="header__navigation">
           <ul className="header__navigation-list">
-            <li className="header__navigation-link">Home</li>
-            <li className="header__navigation-link">Services</li>
-            <li className="header__navigation-link">About</li>
-            <li className="header__navigation-link">Contact</li>
+            <li className="header__navigation-link">
+              <a href="/" onClick={closeSidebar}>
+                Home
+              </a>
+            </li>
+            <li className="header__navigation-link">
+              <a href="#services" onClick={closeSidebar}>
+                Services
+              </a>
+            </li>
+            <li className="header__navigation-link">
+              <a href="#about" onClick={closeSidebar}>
+                About
+              </a>
+            </li>
+            <li className="header__navigation-link">
+              <a href="#contact" onClick={closeSidebar}>
+                Contact
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
       {showNavigation && (
         <div className="header__sidebar">
           <ul className="header__sidebar-list">
-            <li className="header__sidebar-link">
-              Home <FaArrowRight />
+            <li className="header__sidebar-link" onClick={closeSidebar}>
+              <a href="/">Home</a> <FaArrowRight />
             </li>
-            <li className="header__sidebar-link">
-              Services <FaArrowRight />
+            <li className="header__sidebar-link" onClick={closeSidebar}>
+              <a href="#services">Services</a> <FaArrowRight />
             </li>
-            <li className="header__sidebar-link">
-              About <FaArrowRight />
+            <li className="header__sidebar-link" onClick={closeSidebar}>
+              <a href="#about">About</a> <FaArrowRight />
             </li>
-            <li className="header__sidebar-link">
-              Contact
-              <FaArrowRight />
+            <li className="header__sidebar-link" onClick={closeSidebar}>
+              <a href="#contact">Contact</a> <FaArrowRight />
             </li>
           </ul>
           <ul className="header__sidebar-icons">
