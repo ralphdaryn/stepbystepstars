@@ -59,11 +59,17 @@ const Main = () => {
         <div className="main__icons">
           <ul className="main__icons-list">
             <li className="main__icons-facebook">
-              <FaFacebook />
+              <a href="https://www.facebook.com/stepbystepstars/">
+                <FaFacebook />
+              </a>
             </li>
-            <a href="#contact" className="main__button">Contact Us!</a>
+            <a href="#contact" className="main__button">
+              Contact Us!
+            </a>
             <li className="main__icons-instagram">
-              <FaInstagramSquare />
+              <a href="https://www.instagram.com/stepbystepstars/">
+                <FaInstagramSquare />
+              </a>
             </li>
           </ul>
         </div>

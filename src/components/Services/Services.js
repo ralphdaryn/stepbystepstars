@@ -6,8 +6,8 @@ import fitnessImg from "../../assets/images/fitnessmom.png";
 
 const Services = () => {
   return (
-    <div className="services">
-      <h2 id="#services" className="services__text">
+    <div className="services" id="#services">
+      <h2 className="services__text">
         Start the Celebration! <br></br> Your{" "}
         <span className="services__text-name">Step by Step</span> Journey Begins
         Here!"
