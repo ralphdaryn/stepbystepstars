@@ -61,7 +61,7 @@ const Main = () => {
             <li className="main__icons-facebook">
               <FaFacebook />
             </li>
-            <button className="main__button">Contact Us!</button>
+            <a href="#contact" className="main__button">Contact Us!</a>
             <li className="main__icons-instagram">
               <FaInstagramSquare />
             </li>

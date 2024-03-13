@@ -99,7 +99,7 @@
     font-family: "QuicksandBold";
     text-transform: uppercase;
     font-size: 0.96rem;
-    padding-bottom: .25rem;
+    padding-bottom: 0.25rem;
     @include tablet {
       font-size: 1.15rem;
     }
@@ -146,6 +146,7 @@
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+
     &:hover,
     .button-1:focus {
       background-color: rgb(194, 147, 212);
