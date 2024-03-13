@@ -23,7 +23,9 @@ const Header = () => {
   return (
     <div className={`header ${showNavigation ? "open" : ""}`}>
       <div className="header__container">
-        <img className="header__logo" src={logo} alt="step by step logo" />
+        <a href="/" onClick={closeSidebar}>
+          <img className="header__logo" src={logo} alt="step by step logo" />
+        </a>
         {showNavigation ? (
           <FaTimes
             className="header__navbar"
