@@ -10,24 +10,30 @@
     }
   }
   &__container {
+    border: 5px solid transparent;
+    box-shadow: 0px 0px 2px 2px #ebe2ee;
+    border-radius: 8px;
+    padding: 0.5rem;
+    margin: 1rem;
     @include tablet {
       display: flex;
       align-items: flex-start;
-      gap: 1rem;
-      padding: 1.5rem 1.5rem 5rem;
+      gap: 1.5rem;
+      padding: 1.5rem;
     }
     @include desktop {
-      padding: 1rem 8rem 1rem;
+      padding: 1rem 3rem;
       gap: 4rem;
+      margin: 1rem 6rem;
     }
   }
   &__subtitle {
-    padding: 0.15rem;
+    padding: 0.25rem;
     text-align: justify;
     font-size: 0.95rem;
     @include desktop {
       font-size: 1.05rem;
-      padding: .5rem;
+      padding: 0.5rem;
     }
 
     &-wrapper {
