@@ -6,8 +6,12 @@ const Footer = () => {
     <div className="footer">
       <div className="footer__container">
         <div className="footer__icons">
-          <FaFacebook className="footer__facebook" />
-          <FaInstagramSquare className="footer__instagram"  />
+          <a href="https://facebook.com/stepbystepstars">
+            <FaFacebook className="footer__facebook" />
+          </a>
+          <a href="https://instagram.com/stepbystepstars">
+            <FaInstagramSquare className="footer__instagram" />
+          </a>
         </div>
         <div>
           <p className="footer__text">Step By Step © 2024</p>
