@@ -19,9 +19,18 @@
   }
   &__facebook {
     color: #0866ff;
+    transition: color 0.3s ease;
+    &:hover {
+      color: #3b5998;
+    }
   }
+
   &__instagram {
     color: #ae40af;
+    transition: color 0.3s ease;
+    &:hover {
+      color: #c13584;
+    }
   }
   &__text {
     font-weight: 700;

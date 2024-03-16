@@ -117,9 +117,17 @@
     }
     &-facebook {
       color: #0866ff;
+      transition: color 0.3s ease;
+      &:hover {
+        color: #3b5998;
+      }
     }
     &-instagram {
       color: #ae40af;
+      transition: color 0.3s ease;
+      &:hover {
+        color: #c13584;
+      }
     }
   }
   &__button {
