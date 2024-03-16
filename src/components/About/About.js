@@ -16,10 +16,18 @@ const About = () => {
           <img className="about__image" src={laurenImg} alt="bio pic" />
           <div className="about__icons-wrapper">
             <div className="about__icons">
-              <FaFacebook className="about__icons-facebook" />
-              <FaInstagramSquare className="about__icons-instagram" />
-              <FaEnvelope className="about__icons-envelope" />
-              <FaPhone className="about__icons-phone" />
+              <a href="https://facebook.com/stepbystepstars">
+                <FaFacebook className="about__icons-facebook" />
+              </a>
+              <a href="https://instagram.com/stepbystepstars">
+                <FaInstagramSquare className="about__icons-instagram" />
+              </a>
+              <a href="mailto:stepbystepstars@gmail.com">
+                <FaEnvelope className="about__icons-envelope" />
+              </a>
+              <a href="tel:6479988074">
+                <FaPhone className="about__icons-phone" />
+              </a>
             </div>
           </div>
         </div>
