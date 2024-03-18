@@ -73,7 +73,7 @@ const Main = () => {
             </li>
           </ul>
         </div>
-        <div id="services" className="main__section">
+        <div className="main__section">
           <div>
             <Services />
           </div>

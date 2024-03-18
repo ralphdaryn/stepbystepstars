@@ -21,7 +21,7 @@ const Services = () => {
   };
 
   return (
-    <div className="services" id="#services">
+    <div id="services" className="services">
       <h2 className="services__text">
         Start the Celebration! <br></br> Your{" "}
         <span className="services__text-name">Step by Step</span> Journey Begins
