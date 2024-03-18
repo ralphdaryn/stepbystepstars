@@ -49,16 +49,19 @@
   }
   &__title {
     padding: 0.75rem;
-    font-size: 1.35rem;
+    font-size: 1.75rem;
   }
   &__subtitle {
     text-align: justify;
     font-size: 0.9rem;
+    display: none;
+    &.show {
+      display: block;
+    }
   }
   &__img {
     width: 100%;
     border-radius: 8px;
-
     &-face {
       width: 60%;
       border-radius: 8px;
@@ -89,7 +92,7 @@
     height: 40px;
     line-height: 20px;
     list-style: none;
-    margin: 1rem;
+    margin: .5rem;
     outline: none;
     padding: 10px 16px;
     position: relative;

@@ -83,20 +83,19 @@
     background-color: #f4e7f8;
     border-radius: 8px;
 
-    // Specific hover effect for each icon
-    .about__icons-facebook:hover {
+    &-facebook:hover {
       color: #3b5998;
     }
 
-    .about__icons-instagram:hover {
+    &-instagram:hover {
       color: #bc2a8d;
     }
 
-    .about__icons-envelope:hover {
+    &-envelope:hover {
       color: #4caf50;
     }
 
-    .about__icons-phone:hover {
+    &-phone:hover {
       color: #e91e63;
     }
 
