@@ -20,23 +20,22 @@ const ImageCarousel = () => {
     variableWidth: false,
     responsive: [
       {
-        breakpoint: 320, // Adjust the breakpoint as needed
+        breakpoint: 320,
         settings: {
           variableWidth: false,
         },
       },
       {
-        breakpoint: 768, // Adjust the breakpoint as needed
+        breakpoint: 768,
         settings: {
           variableWidth: false,
         },
       },
       {
-        breakpoint: 1280, // Adjust the breakpoint as needed
+        breakpoint: 1280,
         settings: {
           variableWidth: true,
           centerMode: false,
-
         },
       },
     ],

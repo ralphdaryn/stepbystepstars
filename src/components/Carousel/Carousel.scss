@@ -56,6 +56,7 @@
     height: 12.5rem;
     border-radius: 14px;
     object-fit: cover;
+    transition: opacity 0.5s ease;
     @include tablet {
       height: 18rem;
       object-fit: cover;
