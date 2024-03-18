@@ -8,6 +8,9 @@
     @include tablet {
       padding-top: 4rem;
     }
+    @include desktop {
+      padding: 0;
+    }
   }
   &__container {
     border: 5px solid transparent;
