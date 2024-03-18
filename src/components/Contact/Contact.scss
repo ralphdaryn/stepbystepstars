@@ -5,11 +5,12 @@
   padding: 1rem 3.5rem;
   background-color: #ebe2ee;
   border-radius: 8px;
+
   @include tablet {
     padding: 1rem 4rem;
   }
   @include desktop {
-    padding: 4rem 6rem;
+    padding: 2rem;
   }
   &__container {
     width: 100%;
