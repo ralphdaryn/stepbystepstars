@@ -26,8 +26,7 @@ const Header = () => {
     closeSidebar();
   };
 
-  const handleLogoClick = (e) => {
-    e.preventDefault();
+  const handleLogoClick = () => {
     closeSidebar();
   };
 
