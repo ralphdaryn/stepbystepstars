@@ -11,6 +11,7 @@ import {
 
 const Header = () => {
   const [showNavigation, setShowNavigation] = useState(false);
+  const [activeLink, setActiveLink] = useState("");
 
   const toggleNavigation = () => {
     setShowNavigation(!showNavigation);
@@ -20,10 +21,20 @@ const Header = () => {
     setShowNavigation(false);
   };
 
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+    closeSidebar();
+  };
+
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    closeSidebar();
+  };
+
   return (
     <div className={`header ${showNavigation ? "open" : ""}`}>
       <div className="header__container">
-        <a href="/" onClick={closeSidebar}>
+        <a href="/" onClick={handleLogoClick}>
           <img className="header__logo" src={logo} alt="step by step logo" />
         </a>
         {showNavigation ? (
@@ -41,23 +52,39 @@ const Header = () => {
         )}
         <nav className="header__navigation">
           <ul className="header__navigation-list">
-            <li className="header__navigation-link">
-              <a href="/" onClick={closeSidebar}>
+            <li
+              className={`header__navigation-link ${
+                activeLink === "Home" ? "active" : ""
+              }`}
+            >
+              <a href="/" onClick={() => handleLinkClick("Home")}>
                 Home
               </a>
             </li>
-            <li className="header__navigation-link">
-              <a href="#services" onClick={closeSidebar}>
+            <li
+              className={`header__navigation-link ${
+                activeLink === "Services" ? "active" : ""
+              }`}
+            >
+              <a href="#services" onClick={() => handleLinkClick("Services")}>
                 Services
               </a>
             </li>
-            <li className="header__navigation-link">
-              <a href="#about" onClick={closeSidebar}>
+            <li
+              className={`header__navigation-link ${
+                activeLink === "About" ? "active" : ""
+              }`}
+            >
+              <a href="#about" onClick={() => handleLinkClick("About")}>
                 About
               </a>
             </li>
-            <li className="header__navigation-link">
-              <a href="#contact" onClick={closeSidebar}>
+            <li
+              className={`header__navigation-link ${
+                activeLink === "Contact" ? "active" : ""
+              }`}
+            >
+              <a href="#contact" onClick={() => handleLinkClick("Contact")}>
                 Contact
               </a>
             </li>

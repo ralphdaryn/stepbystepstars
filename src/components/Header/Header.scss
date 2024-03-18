@@ -47,6 +47,29 @@
       padding: 0 1rem;
       font-size: 1.15rem;
       font-family: "QuicksandBold";
+      position: relative;
+
+      a {
+        color: black; // Default color of the text
+
+        &:hover {
+          color: #8638a4; // Change color when hovered
+        }
+      }
+
+      &:hover,
+      &.active {
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -5px;
+          width: calc(100% - 2rem);
+          height: 3px;
+          background-color: #8638a4;
+          margin-left: 1rem;
+        }
+      }
     }
   }
 
