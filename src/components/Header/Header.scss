@@ -107,10 +107,16 @@
     &-facebook {
       padding: 0 0.25rem;
       color: #0866ff;
+      &:hover {
+        color: #3b5998;
+      }
     }
     &-instagram {
       padding: 0 0.25rem;
       color: #ae40af;
+      &:hover {
+        color: #8b338c;
+      }
     }
     &-footer {
       text-align: center;

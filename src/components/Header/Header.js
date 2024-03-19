@@ -108,10 +108,15 @@ const Header = () => {
           </ul>
           <ul className="header__sidebar-icons">
             <li className="header__sidebar-facebook">
-              <FaFacebook size={35} />
+              <a href="https://facebook.com/stepbystepstars">
+                <FaFacebook size={35} />
+              </a>
             </li>
+
             <li className="header__sidebar-instagram">
-              <FaInstagramSquare size={35} />
+              <a href="https://instagram.com/stepbystepstars">
+                <FaInstagramSquare size={35} />
+              </a>
             </li>
           </ul>
           <div className="header__sidebar-footer">

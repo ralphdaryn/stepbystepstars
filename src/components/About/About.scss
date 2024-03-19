@@ -81,40 +81,35 @@
     background-color: #f4e7f8;
     border-radius: 8px;
 
-    &-facebook:hover {
-      color: #3b5998;
-    }
-
-    &-instagram:hover {
-      color: #bc2a8d;
-    }
-
-    &-envelope:hover {
-      color: #4caf50;
-    }
-
-    &-phone:hover {
-      color: #e91e63;
-    }
-
     &-wrapper {
       margin: 0 0.75rem;
-
       @include tablet {
         margin: 0;
       }
     }
     &-facebook {
       color: #0866ff;
+      &:hover {
+        color: #3b5998;
+      }
     }
     &-instagram {
       color: #ae40af;
+      &:hover {
+        color: #8b338c;
+      }
     }
     &-envelope {
       color: #a5a1a1;
+      :hover {
+        color: #4caf50;
+      }
     }
     &-phone {
-      color: rgb(173, 116, 237);
+      color: #ad74ed;
+      &:hover {
+        color: #8a5dbe;
+      }
     }
   }
 }
