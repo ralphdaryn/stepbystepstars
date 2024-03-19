@@ -8,7 +8,7 @@
     padding: 8rem 2rem 1rem;
   }
   @include desktop {
-    padding: 8rem 4rem 4rem;
+    padding: 8rem 4rem 1rem;
   }
   &__container {
     display: flex;
@@ -85,6 +85,7 @@
       color: green;
     }
   }
+  
   &__section {
     display: flex;
     flex-direction: column;
