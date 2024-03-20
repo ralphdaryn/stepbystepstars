@@ -2,14 +2,12 @@ import "./Contact.scss";
 import { useState } from "react";
 
 const Contact = () => {
-  // State to store form data
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  // Handle form input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -18,7 +16,6 @@ const Contact = () => {
     });
   };
 
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form data submitted:", formData);

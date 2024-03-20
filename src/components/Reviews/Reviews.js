@@ -61,6 +61,13 @@ const Reviews = () => {
       <h2 className="reviews__title">What Our Clients Say About Us</h2>
       <FaFacebook className="reviews__facebook" />
       <h3 className="reviews__subtitle">Step By Step Stars</h3>
+      <p className="reviews__text">
+        Rating 5.0{" "}
+        {[...Array(5)].map((_, index) => (
+          <FaStar key={index} className="reviews__icon" />
+        ))}{" "}
+        (over 50+ reviews)
+      </p>
       {reviews.map((review) => (
         <div className="reviews__testimonial" key={review.id}></div>
       ))}

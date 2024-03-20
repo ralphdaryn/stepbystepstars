@@ -2,45 +2,52 @@
 @use "../../styles/partials/mixins" as *;
 
 .reviews {
-  padding: 1rem;
-  @include tablet {
-    padding: 2rem;
-  }
-  @include desktop {
-    padding: 2rem;
-  }
+  margin: 1rem 0;
+
   &__title {
     padding: 0.5rem;
   }
+
   &__facebook {
     font-size: 5rem;
     color: #0866ff;
     margin: 0.5rem;
   }
+
   &__icon {
     color: #ffd700;
   }
+
+  &__text {
+    margin: 0.25rem;
+  }
+
   &__container {
-    border: 1px solid #000;
+    width: 100%;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+
     @include tablet {
-      width: 35rem;
-    }
-    @include desktop {
-      width: 100%;
-      max-width: 50rem;
+      max-width: 35rem;
+      height: 15rem;
     }
   }
+
   &__wrapper {
-    width: 100%;
-    max-width: 20rem;
+    max-width: 17rem;
     margin: 0 auto;
+
+    @include tablet {
+      max-width: 35rem;
+    }
   }
+
   &__avatar {
     width: 65px;
     height: 65px;
@@ -54,9 +61,15 @@
     display: flex;
     justify-content: center;
   }
+
   &__message {
     padding-bottom: 1rem;
   }
+
+  &__testimonial {
+    margin-bottom: .25rem; 
+  }
+
   &__date {
     padding: 0.25rem;
   }
