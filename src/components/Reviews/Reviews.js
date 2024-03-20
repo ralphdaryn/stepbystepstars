@@ -1,4 +1,5 @@
 import "./Reviews.scss";
+import Slider from "react-slick";
 import { FaFacebook, FaStar } from "react-icons/fa";
 
 const Reviews = () => {
@@ -45,35 +46,45 @@ const Reviews = () => {
     },
   ];
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+  };
+
   return (
     <div className="reviews">
       <h2 className="reviews__title">What Our Clients Say About Us</h2>
       <FaFacebook className="reviews__facebook" />
       <h3 className="reviews__subtitle">Step By Step Stars</h3>
-      <p className="reviews__text">
-        Rating 5.0 <FaStar className="reviews__icon" />
-        <FaStar className="reviews__icon" />
-        <FaStar className="reviews__icon" />
-        <FaStar className="reviews__icon" />
-        <FaStar className="reviews__icon" /> (over 50+ reviews)
-      </p>
-
       {reviews.map((review) => (
-        <div className="reviews__testimonial" key={review.id}>
-          <div className="reviews__container">
-            <p className="reviews__message">{review.message}</p>
-            <div>
-              {Array.from({ length: review.stars }).map((_, index) => (
-                <FaStar key={index} className="reviews__icon" />
-              ))}
-            </div>
-            <div className="reviews__avatar">
-              <div className="reviews__avatar-circle">{review.author}</div>
-            </div>
-            <div className="reviews__date">{review.date}</div>
-          </div>
-        </div>
+        <div className="reviews__testimonial" key={review.id}></div>
       ))}
+
+      <div className="reviews__wrapper">
+        <Slider {...settings} className="reviews">
+          {reviews.map((review) => (
+            <div className="reviews__testimonial" key={review.id}>
+              <div className="reviews__container">
+                <p className="reviews__message">{review.message}</p>
+                <div>
+                  {[...Array(review.stars)].map((_, index) => (
+                    <FaStar key={index} className="reviews__icon" />
+                  ))}
+                </div>
+                <div className="reviews__avatar">
+                  <div className="reviews__avatar-circle">{review.author}</div>
+                </div>
+                <div className="reviews__date">{review.date}</div>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };
