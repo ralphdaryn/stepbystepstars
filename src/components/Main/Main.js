@@ -7,7 +7,7 @@ import {
   FaRegCheckCircle,
 } from "react-icons/fa";
 import { FaFacebook, FaInstagramSquare } from "react-icons/fa";
-import Carousel from "../Carousel/Carousel";
+import Carousel from "../ImageCarousel/ImageCarousel";
 import Services from "../Services/Services";
 import About from "../About/About";
 import Reviews from "../Reviews/Reviews";

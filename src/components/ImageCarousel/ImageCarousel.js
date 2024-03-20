@@ -1,4 +1,4 @@
-import "./Carousel.scss";
+import "./ImageCarousel.scss"; 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -43,24 +43,24 @@ const ImageCarousel = () => {
 
   return (
     <Slider {...settings}>
-      <div className="carousel">
-        <div className="carousel__container">
-          <img className="carousel__image" src={facepaintImage} alt="Slide 1" />
+      <div className="image-carousel">
+        <div className="image-carousel__container">
+          <img className="image-carousel__image" src={facepaintImage} alt="Slide 1" />
         </div>
       </div>
-      <div className="carousel">
-        <div className="carousel__container">
-          <img className="carousel__image" src={danceparty2} alt="Slide 2" />
+      <div className="image-carousel">
+        <div className="image-carousel__container">
+          <img className="image-carousel__image" src={danceparty2} alt="Slide 2" />
         </div>
       </div>
-      <div className="carousel">
-        <div className="carousel__container">
-          <img className="carousel__image" src={danceparty} alt="Slide 3" />
+      <div className="image-carousel">
+        <div className="image-carousel__container">
+          <img className="image-carousel__image" src={danceparty} alt="Slide 3" />
         </div>
       </div>
-      <div className="carousel">
-        <div className="carousel__container">
-          <img className="carousel__image" src={fitnessmom} alt="Slide 4" />
+      <div className="image-carousel">
+        <div className="image-carousel__container">
+          <img className="image-carousel__image" src={fitnessmom} alt="Slide 4" />
         </div>
       </div>
     </Slider>
