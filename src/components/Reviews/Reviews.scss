@@ -24,14 +24,10 @@
 
   &__container {
     width: 100%;
-    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 8px;
-    border: 1px solid #000;
-    box-sizing: border-box;
 
     @include tablet {
       max-width: 35rem;
@@ -40,17 +36,21 @@
   }
 
   &__wrapper {
-    max-width: 17rem;
+    padding: 0.25rem;
+    width: 17rem;
+    height: 24rem;
     margin: 0 auto;
-
+    border: 1px solid #000;
+    border-radius: 8px;
     @include tablet {
-      max-width: 35rem;
+      width: 35rem;
+      height: 16rem;
     }
   }
 
   &__avatar {
-    width: 65px;
-    height: 65px;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
     background-color: #ccc;
     display: flex;
@@ -60,14 +60,15 @@
     font-weight: bold;
     display: flex;
     justify-content: center;
+    font-size: 0.85rem;
   }
 
   &__message {
-    padding-bottom: 1rem;
+    padding-bottom: .5rem;
   }
 
   &__testimonial {
-    margin-bottom: .25rem; 
+    margin-bottom: .5rem;
   }
 
   &__date {
