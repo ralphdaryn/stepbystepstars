@@ -12,15 +12,9 @@
 
   &__slider {
     position: relative;
-
     .slick-prev,
     .slick-next {
       cursor: pointer;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(255, 255, 255, 0.26);
-      border-radius: 50%;
       width: 1.5rem;
       height: 1.5rem;
       display: flex;
@@ -32,11 +26,17 @@
         @include tablet {
           left: 3rem;
         }
+        @include desktop {
+          left: 14rem;
+        }
       }
       &.slick-next {
         right: -1rem;
         @include tablet {
           right: 3rem;
+        }
+        @include desktop {
+          right: 14rem;
         }
       }
     }
@@ -65,6 +65,7 @@
     }
     @include desktop {
       object-fit: contain;
+      height: 22.5rem;
     }
   }
 }
