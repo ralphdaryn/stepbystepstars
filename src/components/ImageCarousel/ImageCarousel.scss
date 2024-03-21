@@ -10,6 +10,38 @@
     padding: 0;
   }
 
+  &__slider {
+    position: relative;
+
+    .slick-prev,
+    .slick-next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.26);
+      border-radius: 50%;
+      width: 1.5rem;
+      height: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      &.slick-prev {
+        left: -1rem;
+        @include tablet {
+          left: 3rem;
+        }
+      }
+      &.slick-next {
+        right: -1rem;
+        @include tablet {
+          right: 3rem;
+        }
+      }
+    }
+  }
+
   &__container {
     display: flex;
     justify-content: center;
@@ -30,12 +62,9 @@
     transition: opacity 0.5s ease;
     @include tablet {
       height: 18rem;
-      object-fit: cover;
     }
     @include desktop {
       object-fit: contain;
-      width: 40rem;
-      height: 20rem;
     }
   }
 }

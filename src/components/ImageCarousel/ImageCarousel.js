@@ -42,7 +42,7 @@ const ImageCarousel = () => {
   };
 
   return (
-    <Slider {...settings}>
+    <Slider {...settings} className="image-carousel__slider">
       <div className="image-carousel">
         <div className="image-carousel__container">
           <img className="image-carousel__image" src={facepaintImage} alt="Slide 1" />
