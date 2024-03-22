@@ -15,10 +15,11 @@ const ImageCarousel = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     centerMode: false,
     variableWidth: false,
     fade: true,
+    pauseOnHover: false,
   };
 
   return (
