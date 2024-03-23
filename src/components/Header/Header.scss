@@ -50,10 +50,10 @@
       position: relative;
 
       a {
-        color: black; // Default color of the text
+        color: black;
 
         &:hover {
-          color: #8638a4; // Change color when hovered
+          color: #8638a4;
         }
       }
 
@@ -97,6 +97,13 @@
       justify-content: space-between;
       font-size: 1.4rem;
       font-weight: 700;
+      a {
+        color: inherit; // Inherit color from parent element
+
+        &:hover {
+          color: #8638a4; // Change color on hover to match navigation link hover color
+        }
+      }
     }
     &-icons {
       display: flex;

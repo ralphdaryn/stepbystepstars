@@ -92,7 +92,7 @@ const Header = () => {
       </div>
       {showNavigation && (
         <div className="header__sidebar">
-          <ul className="header__sidebar-list">
+          {/* <ul className="header__sidebar-list">
             <li className="header__sidebar-link" onClick={closeSidebar}>
               <a href="/">Home</a> <FaArrowRight />
             </li>
@@ -104,6 +104,32 @@ const Header = () => {
             </li>
             <li className="header__sidebar-link" onClick={closeSidebar}>
               <a href="#contact">Contact</a> <FaArrowRight />
+            </li>
+          </ul> */}
+          <ul className="header__sidebar-list">
+            <li className="header__sidebar-link" onClick={closeSidebar}>
+              <a href="/">Home</a>{" "}
+              <a href="/">
+                <FaArrowRight />
+              </a>
+            </li>
+            <li className="header__sidebar-link" onClick={closeSidebar}>
+              <a href="#services">Services</a>{" "}
+              <a href="#services">
+                <FaArrowRight />
+              </a>
+            </li>
+            <li className="header__sidebar-link" onClick={closeSidebar}>
+              <a href="#about">About</a>{" "}
+              <a href="#about">
+                <FaArrowRight />
+              </a>
+            </li>
+            <li className="header__sidebar-link" onClick={closeSidebar}>
+              <a href="#contact">Contact</a>{" "}
+              <a href="#contact">
+                <FaArrowRight />
+              </a>
             </li>
           </ul>
           <ul className="header__sidebar-icons">
