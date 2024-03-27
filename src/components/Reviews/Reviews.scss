@@ -21,6 +21,9 @@
     font-size: 5rem;
     color: #0866ff;
     margin: 0.5rem;
+    &:hover {
+      color: #3b5998;
+    }
   }
 
   &__icon {
