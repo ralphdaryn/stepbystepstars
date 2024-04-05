@@ -1,3 +1,5 @@
+import { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import "./Main.scss";
 import {
   FaBirthdayCake,
@@ -12,6 +14,57 @@ import Services from "../Services/Services";
 import About from "../About/About";
 import Reviews from "../Reviews/Reviews";
 import Contact from "../Contact/Contact";
+
+const useInView = () => {
+  const ref = useRef(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const checkInView = () => {
+      const rect = ref.current.getBoundingClientRect();
+      const elemTop = rect.top;
+      const elemBottom = rect.bottom;
+      const isVisible = elemTop < window.innerHeight && elemBottom >= 0;
+
+      setInView(isVisible);
+    };
+
+    window.addEventListener("scroll", checkInView);
+
+    // Initial check
+    checkInView();
+
+    return () => {
+      window.removeEventListener("scroll", checkInView);
+    };
+  }, []);
+
+  return [ref, inView];
+};
+
+const springIn = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 150, damping: 100 },
+  },
+};
+
+const ScrollFade = ({ children }) => {
+  const [ref, inView] = useInView();
+
+  return (
+    <motion.div
+      ref={ref}
+      variants={springIn}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 const Main = () => {
   return (
@@ -30,7 +83,7 @@ const Main = () => {
           <h4 className="main__text">We offer the following services:</h4>
           <div className="main__list">
             <li className="main__list-item">
-              <FaBirthdayCake className="main__list-icon" /> DANCE PARTIES{"  "}
+              <FaBirthdayCake className="main__list-icon" /> DANCE PARTIES{" "}
               <FaRegCheckCircle className="main__list-check" />
             </li>
             <li className="main__list-item">
@@ -75,18 +128,18 @@ const Main = () => {
         </div>
 
         <div className="main__section">
-          <div>
+          <ScrollFade key="services">
             <Services />
-          </div>
-          <div>
+          </ScrollFade>
+          <ScrollFade key="about">
             <About />
-          </div>
-          <div>
+          </ScrollFade>
+          <ScrollFade key="reviews">
             <Reviews />
-          </div>
-          <div>
+          </ScrollFade>
+          <ScrollFade key="contact">
             <Contact />
-          </div>
+          </ScrollFade>
         </div>
       </div>
     </div>
