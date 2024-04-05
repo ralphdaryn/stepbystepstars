@@ -31,7 +31,6 @@ const useInView = () => {
 
     window.addEventListener("scroll", checkInView);
 
-    // Initial check
     checkInView();
 
     return () => {

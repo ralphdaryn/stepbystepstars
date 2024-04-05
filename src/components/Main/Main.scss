@@ -1,6 +1,17 @@
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/mixins" as *;
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .main {
   padding: 8rem 1.5rem 1rem;
   background-color: #f9f6fb;
@@ -25,6 +36,7 @@
     @include tablet {
       font-size: 1.65rem;
     }
+    animation: fadeIn 1s ease-in-out;
   }
   &__wrapper {
     padding: 1.25rem 0 0.5rem 0;
@@ -40,6 +52,7 @@
     @include desktop {
       padding: 1rem 0 0.5rem;
     }
+    animation: fadeIn 1s ease-in-out;
   }
   &__text {
     font-family: "QuicksandBold";
@@ -107,6 +120,7 @@
     &-color {
       color: #8638a4;
     }
+    animation: fadeIn 1s ease-in-out;
   }
   &__icons {
     font-size: 2.5rem;
@@ -130,6 +144,7 @@
         color: #8b338c;
       }
     }
+    animation: fadeIn 1s ease-in-out;
   }
   &__button {
     background-color: #a864c1;
