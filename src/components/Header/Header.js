@@ -62,11 +62,23 @@ const Header = () => {
             </li>
             <li
               className={`header__navigation-link ${
-                activeLink === "Services" ? "active" : ""
+                activeLink === "BirthdayParties" ? "active" : ""
               }`}
             >
-              <a href="#services" onClick={() => handleLinkClick("Services")}>
-                Services
+              <a
+                href="#birthdayparties"
+                onClick={() => handleLinkClick("BirthdayParties")}
+              >
+                Birthday Parties
+              </a>
+            </li>
+            <li
+              className={`header__navigation-link ${
+                activeLink === "Fitness" ? "active" : ""
+              }`}
+            >
+              <a href="#fitness" onClick={() => handleLinkClick("Fitness")}>
+                Fitness
               </a>
             </li>
             <li
@@ -74,8 +86,17 @@ const Header = () => {
                 activeLink === "About" ? "active" : ""
               }`}
             >
-              <a href="#about" onClick={() => handleLinkClick("About")}>
-                About
+              <a href="#ourstory" onClick={() => handleLinkClick("About")}>
+                Our Story
+              </a>
+            </li>
+            <li
+              className={`header__navigation-link ${
+                activeLink === "Services" ? "active" : ""
+              }`}
+            >
+              <a href="#events" onClick={() => handleLinkClick("Services")}>
+                Events
               </a>
             </li>
             <li
@@ -92,43 +113,35 @@ const Header = () => {
       </div>
       {showNavigation && (
         <div className="header__sidebar">
-          {/* <ul className="header__sidebar-list">
-            <li className="header__sidebar-link" onClick={closeSidebar}>
-              <a href="/">Home</a> <FaArrowRight />
-            </li>
-            <li className="header__sidebar-link" onClick={closeSidebar}>
-              <a href="#services">Services</a> <FaArrowRight />
-            </li>
-            <li className="header__sidebar-link" onClick={closeSidebar}>
-              <a href="#about">About</a> <FaArrowRight />
-            </li>
-            <li className="header__sidebar-link" onClick={closeSidebar}>
-              <a href="#contact">Contact</a> <FaArrowRight />
-            </li>
-          </ul> */}
           <ul className="header__sidebar-list">
             <li className="header__sidebar-link" onClick={closeSidebar}>
-              <a href="/">Home</a>{" "}
               <a href="/">
-                <FaArrowRight />
+                Home <FaArrowRight />
               </a>
             </li>
             <li className="header__sidebar-link" onClick={closeSidebar}>
-              <a href="#services">Services</a>{" "}
-              <a href="#services">
-                <FaArrowRight />
+              <a href="#birthdayparties">
+                Birthday Parties <FaArrowRight />
               </a>
             </li>
             <li className="header__sidebar-link" onClick={closeSidebar}>
-              <a href="#about">About</a>{" "}
-              <a href="#about">
-                <FaArrowRight />
+              <a href="#fitness">
+                Fitness <FaArrowRight />
               </a>
             </li>
             <li className="header__sidebar-link" onClick={closeSidebar}>
-              <a href="#contact">Contact</a>{" "}
+              <a href="#ourstory">
+                Our Story <FaArrowRight />
+              </a>
+            </li>
+            <li className="header__sidebar-link" onClick={closeSidebar}>
+              <a href="#events">
+                Events <FaArrowRight />
+              </a>
+            </li>
+            <li className="header__sidebar-link" onClick={closeSidebar}>
               <a href="#contact">
-                <FaArrowRight />
+                Contact <FaArrowRight />
               </a>
             </li>
           </ul>
