@@ -92,7 +92,6 @@ const Header = () => {
       </div>
       {showNavigation && (
         <div className="header__sidebar">
- 
           <ul className="header__sidebar-list">
             <li className="header__sidebar-link" onClick={closeSidebar}>
               <a href="/">Home</a>{" "}
