@@ -26,18 +26,6 @@
     flex-direction: column;
     text-align: center;
   }
-  &__title {
-    font-size: 1.5rem;
-    padding-bottom: 0.5rem;
-    font-family: "QuicksandBold";
-    &-text {
-      color: #8638a4;
-    }
-    @include tablet {
-      font-size: 1.65rem;
-    }
-    animation: fadeIn 1s ease-in-out;
-  }
   &__wrapper {
     padding: 1.25rem 0 0.5rem 0;
     display: flex;
@@ -53,14 +41,6 @@
       padding: 1rem 0 0.5rem;
     }
     animation: fadeIn 1s ease-in-out;
-  }
-  &__text {
-    font-family: "QuicksandBold";
-    color: #8638a4;
-    @include tablet {
-      font-size: 1.15rem;
-      padding: 0.25rem;
-    }
   }
   &__list {
     display: flex;
@@ -109,19 +89,19 @@
       gap: 6rem;
     }
   }
-  &__subtext {
-    font-family: "QuicksandBold";
-    text-transform: uppercase;
-    font-size: 0.96rem;
-    padding-bottom: 0.25rem;
-    @include tablet {
-      font-size: 1.15rem;
-    }
-    &-color {
-      color: #8638a4;
-    }
-    animation: fadeIn 1s ease-in-out;
-  }
+  // &__subtext {
+  //   font-family: "QuicksandBold";
+  //   text-transform: uppercase;
+  //   font-size: 0.96rem;
+  //   padding-bottom: 0.25rem;
+  //   @include tablet {
+  //     font-size: 1.15rem;
+  //   }
+  //   &-color {
+  //     color: #8638a4;
+  //   }
+  //   animation: fadeIn 1s ease-in-out;
+  // }
   &__icons {
     font-size: 2.5rem;
     &-list {
