@@ -7,7 +7,9 @@
   }
   &__text {
     padding-top: 2rem;
-    font-family: "QuicksandBold";
+    font-family: "HelveticaBold", "sans-serif";
+    text-transform: uppercase;
+    // font-size: 1.25rem;
     &-name {
       color: #8638a4;
     }
@@ -43,7 +45,10 @@
   }
   &__title {
     padding: 0.75rem;
-    font-size: 1.75rem;
+    font-family: "Helvetica", "sans-serif";
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: 500;
   }
   &__subtitle {
     text-align: justify;
@@ -81,8 +86,9 @@
     color: #ffffff;
     cursor: pointer;
     display: inline-block;
-    font-size: 14px;
     font-weight: 500;
+    font-family: "Helvetica", "sans-serif";
+    text-transform: uppercase;
     height: 40px;
     line-height: 20px;
     list-style: none;
