@@ -1,5 +1,5 @@
-import "./Header.scss";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import {
   FaBars,
@@ -8,6 +8,7 @@ import {
   FaFacebook,
   FaInstagramSquare,
 } from "react-icons/fa";
+import "./Header.scss";
 
 const Header = () => {
   const [showNavigation, setShowNavigation] = useState(false);
@@ -27,15 +28,16 @@ const Header = () => {
   };
 
   const handleLogoClick = () => {
+    setActiveLink("");
     closeSidebar();
   };
 
   return (
     <div className={`header ${showNavigation ? "open" : ""}`}>
       <div className="header__container">
-        <a href="/" onClick={handleLogoClick}>
+        <Link to="/" onClick={handleLogoClick}>
           <img className="header__logo" src={logo} alt="step by step logo" />
-        </a>
+        </Link>
         {showNavigation ? (
           <FaTimes
             className="header__navbar"
@@ -56,57 +58,57 @@ const Header = () => {
                 activeLink === "Home" ? "active" : ""
               }`}
             >
-              <a href="/" onClick={() => handleLinkClick("Home")}>
+              <Link to="/" onClick={() => handleLinkClick("Home")}>
                 Home
-              </a>
+              </Link>
             </li>
             <li
               className={`header__navigation-link ${
                 activeLink === "BirthdayParties" ? "active" : ""
               }`}
             >
-              <a
-                href="#birthdayparties"
+              <Link
+                to="/birthdayparties"
                 onClick={() => handleLinkClick("BirthdayParties")}
               >
                 Birthday Parties
-              </a>
+              </Link>
             </li>
             <li
               className={`header__navigation-link ${
                 activeLink === "Fitness" ? "active" : ""
               }`}
             >
-              <a href="#fitness" onClick={() => handleLinkClick("Fitness")}>
+              <Link to="/fitness" onClick={() => handleLinkClick("Fitness")}>
                 Fitness
-              </a>
+              </Link>
             </li>
             <li
               className={`header__navigation-link ${
                 activeLink === "About" ? "active" : ""
               }`}
             >
-              <a href="#ourstory" onClick={() => handleLinkClick("About")}>
+              <Link to="/ourstory" onClick={() => handleLinkClick("About")}>
                 Our Story
-              </a>
+              </Link>
             </li>
             <li
               className={`header__navigation-link ${
-                activeLink === "Services" ? "active" : ""
+                activeLink === "Events" ? "active" : ""
               }`}
             >
-              <a href="#events" onClick={() => handleLinkClick("Services")}>
+              <Link to="/events" onClick={() => handleLinkClick("Events")}>
                 Events
-              </a>
+              </Link>
             </li>
             <li
               className={`header__navigation-link ${
                 activeLink === "Contact" ? "active" : ""
               }`}
             >
-              <a href="#contact" onClick={() => handleLinkClick("Contact")}>
+              <Link to="/contact" onClick={() => handleLinkClick("Contact")}>
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -115,34 +117,37 @@ const Header = () => {
         <div className="header__sidebar">
           <ul className="header__sidebar-list">
             <li className="header__sidebar-link" onClick={closeSidebar}>
-              <a href="/">
+              <Link to="/" onClick={() => handleLinkClick("Home")}>
                 Home <FaArrowRight />
-              </a>
+              </Link>
             </li>
             <li className="header__sidebar-link" onClick={closeSidebar}>
-              <a href="#birthdayparties">
+              <Link
+                to="/birthdayparties"
+                onClick={() => handleLinkClick("BirthdayParties")}
+              >
                 Birthday Parties <FaArrowRight />
-              </a>
+              </Link>
             </li>
             <li className="header__sidebar-link" onClick={closeSidebar}>
-              <a href="#fitness">
+              <Link to="/fitness" onClick={() => handleLinkClick("Fitness")}>
                 Fitness <FaArrowRight />
-              </a>
+              </Link>
             </li>
             <li className="header__sidebar-link" onClick={closeSidebar}>
-              <a href="#ourstory">
+              <Link to="/ourstory" onClick={() => handleLinkClick("About")}>
                 Our Story <FaArrowRight />
-              </a>
+              </Link>
             </li>
             <li className="header__sidebar-link" onClick={closeSidebar}>
-              <a href="#events">
+              <Link to="/events" onClick={() => handleLinkClick("Events")}>
                 Events <FaArrowRight />
-              </a>
+              </Link>
             </li>
             <li className="header__sidebar-link" onClick={closeSidebar}>
-              <a href="#contact">
+              <Link to="/contact" onClick={() => handleLinkClick("Contact")}>
                 Contact <FaArrowRight />
-              </a>
+              </Link>
             </li>
           </ul>
           <ul className="header__sidebar-icons">
