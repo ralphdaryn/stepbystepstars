@@ -10,7 +10,7 @@ import {
 const About = () => {
   return (
     <div id="about" className="about">
-      <h2 className="about__title">Meet Lauren Paul</h2>
+      <h2 className="about__title">Our Story</h2>
       <div className="about__container">
         <div className="about__image-container">
           <img className="about__image" src={laurenImg} alt="bio pic" />
@@ -53,11 +53,9 @@ const About = () => {
             lifestyle where each workout becomes a step towards a healthier and
             happier you.
           </p>
-          {/* <div className="about__text-wrapper">
+          <div className="about__text-wrapper">
             <h4 className="about__text">Lauren Paul</h4>
-            <h5 className="about__text">Step By Step</h5>
-            <p className="about__text-number">647-998-8074</p>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>

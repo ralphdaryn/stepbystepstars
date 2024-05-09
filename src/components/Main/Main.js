@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import "./Main.scss";
 import Carousel from "../ImageCarousel/ImageCarousel";
 import Services from "../Services/Services";
-import About from "../About/About";
+// import About from "../About/About";
 import Reviews from "../Reviews/Reviews";
 import Contact from "../Contact/Contact";
 
@@ -68,9 +68,9 @@ const Main = () => {
           <ScrollFade key="services">
             <Services />
           </ScrollFade>
-          <ScrollFade key="about">
+          {/* <ScrollFade key="about">
             <About />
-          </ScrollFade>
+          </ScrollFade> */}
           <ScrollFade key="reviews">
             <Reviews />
           </ScrollFade>

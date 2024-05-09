@@ -4,8 +4,10 @@
 .about {
   &__title {
     font-family: "QuicksandBold";
-    padding: 0.5rem;
     padding-top: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   &__container {
     border: 5px solid transparent;
@@ -68,6 +70,10 @@
     }
     &-container {
       padding-top: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
   }
   &__icons,
