@@ -59,24 +59,29 @@ const ScrollFade = ({ children }) => {
 
 const Main = () => {
   return (
-    <div className="main">
-      <div className="main__container">
-        <div>
+    <div>
+      <div className="main__carousel">
+        <Carousel />
+      </div>
+      <div className="main">
+        <div className="main__container">
+          {/* <div>
           <Carousel />
-        </div>
-        <div className="main__section">
-          <ScrollFade key="services">
-            <Services />
-          </ScrollFade>
-          {/* <ScrollFade key="about">
+        </div> */}
+          <div className="main__section">
+            <ScrollFade key="services">
+              <Services />
+            </ScrollFade>
+            {/* <ScrollFade key="about">
             <About />
           </ScrollFade> */}
-          <ScrollFade key="reviews">
-            <Reviews />
-          </ScrollFade>
-          <ScrollFade key="contact">
-            <Contact />
-          </ScrollFade>
+            <ScrollFade key="reviews">
+              <Reviews />
+            </ScrollFade>
+            <ScrollFade key="contact">
+              <Contact />
+            </ScrollFade>
+          </div>
         </div>
       </div>
     </div>

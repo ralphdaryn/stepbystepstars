@@ -1,4 +1,3 @@
-import "./ImageCarousel.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -6,6 +5,7 @@ import facepaintImage from "../../assets/images/facepaint.png";
 import danceparty from "../../assets/images/danceparty.png";
 import danceparty2 from "../../assets/images/danceparty2.png";
 import fitnessmom from "../../assets/images/fitnessmom.png";
+import "./ImageCarousel.scss";
 
 const ImageCarousel = () => {
   const settings = {
