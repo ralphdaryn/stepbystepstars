@@ -1,3 +1,184 @@
+// @use "../../styles/partials/colors" as *;
+// @use "../../styles/partials/mixins" as *;
+
+// .header {
+//   &__container {
+//     width: 100%;
+//     height: 7rem;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     padding: 1rem;
+//     background-color: rgb(244, 231, 248);
+//     position: fixed;
+//     top: 0;
+//     z-index: 100;
+//     @include tablet {
+//       padding: 1.5rem;
+//     }
+//     @include desktop {
+//       padding: 3rem;
+//     }
+//   }
+
+//   &__logo {
+//     width: 12vh;
+//     border-radius: 3rem;
+//   }
+
+//   &__navbar {
+//     @include tablet {
+//       display: none;
+//     }
+//     &:hover {
+//       cursor: pointer;
+//     }
+//   }
+
+//   &__navigation {
+//     display: none;
+//     @include tablet {
+//       display: flex;
+//     }
+//     &-list {
+//       display: flex;
+//     }
+//     &-link {
+//       padding: 0 0.75rem;
+//       font-size: 1.15rem;
+//       font-family: "QuicksandBold";
+//       position: relative;
+
+//       a {
+//         color: black;
+//         &:hover {
+//           color: #8638a4;
+//         }
+//       }
+
+//       &:hover,
+//       &.active {
+//         &::after {
+//           content: "";
+//           position: absolute;
+//           left: 0;
+//           bottom: -5px;
+//           width: calc(100% - 2rem);
+//           height: 3px;
+//           background-color: #8638a4;
+//           margin-left: 1rem;
+//         }
+//       }
+
+//       &-dropdown {
+//         display: none;
+//         position: absolute;
+//         top: 100%;
+//         left: 0;
+//         background-color: #fff;
+//         padding: 0.5rem;
+//         border-radius: 0.5rem;
+//         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+//         z-index: 10;
+//         transition: all 0.3s ease;
+//         width: max-content;
+
+//         li {
+//           padding: 0.5rem 1rem;
+//           font-size: 1rem;
+
+//           a {
+//             font-weight: normal;
+//             &:hover {
+//               text-decoration: underline;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+
+//   &__sidebar {
+//     width: 100%;
+//     height: 100%;
+//     background-color: #f9f6fb;
+//     position: fixed;
+//     top: 110px;
+//     z-index: 100;
+
+//     @include tablet {
+//       display: none;
+//     }
+//     &-list {
+//       display: flex;
+//       flex-direction: column;
+//       gap: 2rem;
+//       padding: 2rem;
+//     }
+//     &-link {
+//       display: block;
+//       align-items: center;
+//       justify-content: space-between;
+//       font-size: 1.4rem;
+//       font-weight: 700;
+//       position: relative;
+
+//       a {
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-between;
+//         width: 100%;
+//         font-size: 1.15rem;
+
+//         &:hover {
+//           color: #8638a4;
+//         }
+//       }
+
+//       &-dropdown {
+//         display: none;
+//         position: absolute;
+//         top: 100%;
+//         left: 0;
+//         background-color: #fff;
+//         padding: 0.5rem;
+//         border-radius: 0.5rem;
+//         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+//         z-index: 10;
+//         transition: all 0.3s ease;
+
+//         li {
+//           padding: 0.5rem 0;
+//         }
+//       }
+//     }
+
+//     &-icons {
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//     }
+//     &-facebook {
+//       padding: 0 0.25rem;
+//       &:hover {
+//         color: #3b5998;
+//       }
+//     }
+//     &-instagram {
+//       padding: 0 0.25rem;
+//       &:hover {
+//         color: #8b338c;
+//       }
+//     }
+//     &-footer {
+//       text-align: center;
+//     }
+//     &-text {
+//       font-weight: 700;
+//     }
+//   }
+// }
+
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/mixins" as *;
 
@@ -51,7 +232,6 @@
 
       a {
         color: black;
-
         &:hover {
           color: #8638a4;
         }
@@ -79,11 +259,21 @@
         background-color: #fff;
         padding: 0.5rem;
         border-radius: 0.5rem;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
         z-index: 10;
+        transition: all 0.3s ease;
+        width: max-content;
 
         li {
-          padding: 0.5rem 0;
+          padding: 0.5rem 1rem;
+          font-size: 1rem;
+
+          a {
+            font-weight: normal;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
         }
       }
     }
@@ -104,7 +294,7 @@
       display: flex;
       flex-direction: column;
       gap: 2rem;
-      padding: 2rem;
+      padding: 2rem 2rem 2rem 2.5rem;
     }
     &-link {
       display: block;
@@ -113,16 +303,24 @@
       font-size: 1.4rem;
       font-weight: 700;
       position: relative;
+      transition: background-color 0.3s ease;
 
       a {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        font-size: 1.15rem;
+        text-decoration: none;
 
         &:hover {
           color: #8638a4;
+          text-decoration: none;
         }
+      }
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
       }
 
       &-dropdown {
@@ -135,9 +333,18 @@
         border-radius: 0.5rem;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         z-index: 10;
+        transition: all 0.3s ease;
 
         li {
           padding: 0.5rem 0;
+          font-size: 1rem;
+
+          a {
+            font-weight: normal;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
         }
       }
     }
@@ -146,6 +353,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-top: 1.5rem; // Added margin top for better spacing
     }
     &-facebook {
       padding: 0 0.25rem;
@@ -161,6 +369,7 @@
     }
     &-footer {
       text-align: center;
+      padding: 1rem 0; // Added padding for better look
     }
     &-text {
       font-weight: 700;
