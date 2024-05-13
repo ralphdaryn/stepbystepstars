@@ -4,6 +4,7 @@ import {
   FaBars,
   FaTimes,
   FaArrowRight,
+  FaArrowDown,
   FaFacebook,
   FaInstagramSquare,
 } from "react-icons/fa";
@@ -49,7 +50,7 @@ const Header = () => {
     <div className={`header ${showNavigation ? "open" : ""}`}>
       <div className="header__container">
         <Link to="/" onClick={handleLogoClick}>
-          <img className="header__logo" src={logo} alt="step by step logo" />
+          <img className="header__logo" src={logo} alt="Step by Step Logo" />
         </Link>
         {showNavigation ? (
           <FaTimes
@@ -77,7 +78,12 @@ const Header = () => {
             </li>
             <li className="header__navigation-link">
               <span onClick={() => toggleDropdown("birthdayParties")}>
-                Birthday Parties <FaArrowRight />
+                Birthday Parties{" "}
+                {showBirthdayPartiesDropdown ? (
+                  <FaArrowRight />
+                ) : (
+                  <FaArrowDown />
+                )}
               </span>
               {showBirthdayPartiesDropdown && (
                 <ul className="header__navigation-dropdown">
@@ -110,7 +116,8 @@ const Header = () => {
             </li>
             <li className="header__navigation-link">
               <span onClick={() => toggleDropdown("fitness")}>
-                Fitness <FaArrowRight />
+                Fitness{" "}
+                {showFitnessDropdown ? <FaArrowRight /> : <FaArrowDown />}
               </span>
               {showFitnessDropdown && (
                 <ul className="header__navigation-dropdown">
@@ -184,7 +191,12 @@ const Header = () => {
             </li>
             <li className="header__sidebar-link">
               <span onClick={() => toggleDropdown("birthdayParties")}>
-                Birthday Parties <FaArrowRight />
+                Birthday Parties{" "}
+                {showBirthdayPartiesDropdown ? (
+                  <FaArrowRight />
+                ) : (
+                  <FaArrowDown />
+                )}
               </span>
               {showBirthdayPartiesDropdown && (
                 <ul className="header__sidebar-dropdown">
@@ -217,7 +229,8 @@ const Header = () => {
             </li>
             <li className="header__sidebar-link">
               <span onClick={() => toggleDropdown("fitness")}>
-                Fitness <FaArrowRight />
+                Fitness{" "}
+                {showFitnessDropdown ? <FaArrowRight /> : <FaArrowDown />}
               </span>
               {showFitnessDropdown && (
                 <ul className="header__sidebar-dropdown">
