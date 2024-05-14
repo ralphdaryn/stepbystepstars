@@ -255,7 +255,7 @@ const Services = () => {
   };
 
   const goToBookingForm = () => {
-    navigate("/bookevent");
+    navigate("/events");
   };
 
   return (
