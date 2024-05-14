@@ -8,6 +8,9 @@ import Contact from "./components/Contact/Contact";
 import Danceparty from "./components/Danceparty/Danceparty";
 import Facepaint from "./components/Facepaint/Facepaint";
 import MusicalBabies from "./components/MusicalBabies/Musicalbabies";
+import MommyandMe from "./components/MommyandMe/MommyandMe";
+import GroupFitness from "./components/GroupFitness/GroupFitness";
+import PrivateTraining from "./components/PrivateTraining/PrivateTraining";
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
           <Route path="/danceparty" element={<Danceparty />} />
           <Route path="/facepainting" element={<Facepaint />} />
           <Route path="/musicalbabies" element={<MusicalBabies />} />
+          <Route path="/mommyandme" element={<MommyandMe />} />
+          <Route path="/groupfitness" element={<GroupFitness />} />
+          <Route path="/privatetraining" element={<PrivateTraining />} />
         </Routes>
         <Footer />
       </div>
