@@ -8,8 +8,34 @@
   &__text {
     font-family: "HelveticaBold", "sans-serif";
     text-transform: uppercase;
+    font-size: 1.5rem;
     &-name {
       color: #8638a4;
+    }
+  }
+  &__caption {
+    padding-top: 2rem;
+    font-family: "HelveticaBold", "sans-serif";
+    font-size: 1.5rem;
+    text-align: center;
+    color: #8638a4;
+    margin-bottom: 0.5rem;
+    position: relative;
+    text-transform: uppercase;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -10px;
+      width: 50%;
+      height: 3px;
+      background: linear-gradient(
+        90deg,
+        rgba(134, 56, 164, 1) 0%,
+        rgba(234, 76, 137, 1) 100%
+      );
+      border-radius: 2px;
     }
   }
   &__container {
