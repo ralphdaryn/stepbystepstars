@@ -136,10 +136,10 @@
   /* Book an Event Section */
   &__book-event {
     background-color: #f3f3f3;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 1rem;
     text-align: center;
-    margin-top: 2rem;
+    margin: 1rem;
     @include tablet {
       margin-top: 3rem;
     }

@@ -200,7 +200,7 @@ const Header = () => {
               </span>
               {showBirthdayPartiesDropdown && (
                 <ul className="header__sidebar-dropdown">
-                  <li>
+                  <li className="header__sidebar-dropdown-item">
                     <Link
                       to="/danceparty"
                       onClick={() => handleLinkClick("Dance Party")}
@@ -208,7 +208,7 @@ const Header = () => {
                       Dance Party
                     </Link>
                   </li>
-                  <li>
+                  <li className="header__sidebar-dropdown-item">
                     <Link
                       to="/facepainting"
                       onClick={() => handleLinkClick("Face Painting")}
@@ -216,7 +216,7 @@ const Header = () => {
                       Face Painting
                     </Link>
                   </li>
-                  <li>
+                  <li className="header__sidebar-dropdown-item">
                     <Link
                       to="/musicalbabies"
                       onClick={() => handleLinkClick("Musical Babies")}
@@ -289,12 +289,12 @@ const Header = () => {
           <ul className="header__sidebar-icons">
             <li className="header__sidebar-facebook">
               <a href="https://facebook.com/stepbystepstars">
-                <FaFacebook size={35} />
+                <FaFacebook  />
               </a>
             </li>
             <li className="header__sidebar-instagram">
               <a href="https://instagram.com/stepbystepstars">
-                <FaInstagramSquare size={35} />
+                <FaInstagramSquare  />
               </a>
             </li>
           </ul>

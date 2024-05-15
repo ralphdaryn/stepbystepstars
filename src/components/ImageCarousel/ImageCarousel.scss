@@ -3,13 +3,6 @@
 
 .image-carousel {
   padding-top: 7rem;
-  @include tablet {
-    padding: 0 2rem;
-  }
-  @include desktop {
-    padding: 0;
-  }
-
   &__slider {
     position: relative;
     .slick-prev,
@@ -26,10 +19,7 @@
     align-items: center;
     height: 12rem;
     @include tablet {
-      padding: 0 4rem;
-    }
-    @include desktop {
-      padding: 0;
+      height: 22.5rem;
     }
   }
 
@@ -38,13 +28,5 @@
     height: 100%;
     object-fit: cover;
     transition: opacity 0.5s ease;
-    @include tablet {
-      // height: 18rem;
-      // border-radius: 28px;
-    }
-    @include desktop {
-      // object-fit: contain;
-      // height: 21.5rem;
-    }
   }
 }

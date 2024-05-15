@@ -13,12 +13,6 @@
     position: fixed;
     top: 0;
     z-index: 100;
-    @include tablet {
-      padding: 1.5rem;
-    }
-    @include desktop {
-      padding: 3rem;
-    }
   }
 
   &__logo {
@@ -27,7 +21,7 @@
   }
 
   &__navbar {
-    @include tablet {
+    @include desktop {
       display: none;
     }
     &:hover {
@@ -37,7 +31,7 @@
 
   &__navigation {
     display: none;
-    @include tablet {
+    @include desktop {
       display: flex;
     }
     &-list {
@@ -107,13 +101,13 @@
     z-index: 100;
 
     @include tablet {
-      display: none;
+      display: block;
     }
     &-list {
       display: flex;
       flex-direction: column;
       gap: 2rem;
-      padding: 2rem 2rem 2rem 2.5rem;
+      padding: 2rem;
     }
     &-link {
       display: block;
@@ -172,23 +166,21 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 1.5rem; // Added margin top for better spacing
+      gap: 0.5rem;
+      font-size: 1.5rem;
     }
     &-facebook {
-      padding: 0 0.25rem;
       &:hover {
         color: #3b5998;
       }
     }
     &-instagram {
-      padding: 0 0.25rem;
       &:hover {
         color: #8b338c;
       }
     }
     &-footer {
       text-align: center;
-      padding: 1rem 0; // Added padding for better look
     }
     &-text {
       font-weight: 700;
