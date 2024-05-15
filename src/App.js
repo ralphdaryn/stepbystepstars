@@ -11,6 +11,7 @@ import MusicalBabies from "./components/MusicalBabies/Musicalbabies";
 import MommyandMe from "./components/MommyandMe/MommyandMe";
 import GroupFitness from "./components/GroupFitness/GroupFitness";
 import PrivateTraining from "./components/PrivateTraining/PrivateTraining";
+import Events from "./components/Events/Events";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/mommyandme" element={<MommyandMe />} />
           <Route path="/groupfitness" element={<GroupFitness />} />
           <Route path="/privatetraining" element={<PrivateTraining />} />
+          <Route path="/events" element={<Events />} />
         </Routes>
         <Footer />
       </div>

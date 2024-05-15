@@ -5,13 +5,13 @@ const MommyandMe = () => {
     <div className="mommyandme">
       <h2 className="mommyandme__title">Mommy and Me</h2>
       <p className="mommyandme__subtitle">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita
-        molestiae ut quidem animi error tenetur temporibus iure illum?
-        Voluptates iure earum possimus magnam explicabo, tempora suscipit esse
-        cumque? Consectetur, possimus! Necessitatibus accusantium iusto vel
-        nulla commodi quam possimus provident laudantium nam ipsum saepe
-        expedita est ut nostrum ea modi repudiandae vero eius, similique vitae?
-        Sequi atque exercitationem nesciunt fugit provident.
+        Join our Mommy and Me Fitness Class, where all fitness levels are
+        welcome! This engaging class is designed for moms with babies, providing
+        a fantastic opportunity to meet and socialize with fellow moms. Embrace
+        a full-body conditioning experience with a special focus on core
+        restoration. Strengthen your body while creating lasting connections in
+        a supportive community. Come be a part of a fitness journey that
+        celebrates both motherhood and well-being!
       </p>
     </div>
   );
