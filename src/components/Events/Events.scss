@@ -1,8 +1,16 @@
 .events-form {
   display: flex;
   flex-direction: column;
-  padding: 0.5rem 2rem 1.5rem;
-  margin-top: 7.5rem;
+  padding: 0 2rem 0.5rem;
+  margin-top: 8rem;
+
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: #8638a4;
+    font-family: "Helvetica", "sans-serif";
+  }
 
   &__field {
     margin-bottom: 1rem;
@@ -33,7 +41,7 @@
     transition: background-color 0.3s;
 
     &:hover {
-      background-color: #0056b3;
+      background-color: #86509a;
     }
   }
 }
