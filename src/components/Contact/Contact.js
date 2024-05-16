@@ -70,7 +70,7 @@ const Contact = () => {
               name="message"
               value={formData.message}
               onChange={handleInputChange}
-              className="contact__textarea"
+              className="contact__textarea-message"
             ></textarea>
           </div>
           <button className="contact__button" type="submit">

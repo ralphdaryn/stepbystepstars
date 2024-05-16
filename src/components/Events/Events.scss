@@ -1,7 +1,7 @@
 .events-form {
   display: flex;
   flex-direction: column;
-  padding: .5rem 2rem 1.5rem;
+  padding: 0.5rem 2rem 1.5rem;
   margin-top: 7.5rem;
 
   &__field {
@@ -37,27 +37,3 @@
     }
   }
 }
-
-/* Desktop styles */
-// @media (min-width: 768px) {
-//   .events-form {
-//     max-width: 600px;
-//     margin: 0 auto;
-
-//     &__field {
-//       display: flex;
-//       justify-content: space-between;
-//       align-items: center;
-//     }
-
-//     &__label {
-//       flex: 0 0 30%;
-//       margin-bottom: 0;
-//     }
-
-//     &__input {
-//       flex: 1;
-//       margin-left: 1rem;
-//     }
-//   }
-// }
