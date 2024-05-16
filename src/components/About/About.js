@@ -1,8 +1,8 @@
 import "./About.scss";
 import laurenImg from "../../assets/images/about.png";
 import {
-  FaFacebook,
-  FaInstagramSquare,
+  // FaFacebook,
+  // FaInstagramSquare,
   FaEnvelope,
   FaPhone,
 } from "react-icons/fa";
@@ -16,12 +16,12 @@ const About = () => {
           <img className="about__image" src={laurenImg} alt="bio pic" />
           <div className="about__icons-wrapper">
             <div className="about__icons">
-              <a href="https://facebook.com/stepbystepstars">
+              {/* <a href="https://facebook.com/stepbystepstars">
                 <FaFacebook className="about__icons-facebook" />
               </a>
               <a href="https://instagram.com/stepbystepstars">
                 <FaInstagramSquare className="about__icons-instagram" />
-              </a>
+              </a> */}
               <a href="mailto:stepbystepstars@gmail.com">
                 <FaEnvelope className="about__icons-envelope" />
               </a>
@@ -29,6 +29,9 @@ const About = () => {
                 <FaPhone className="about__icons-phone" />
               </a>
             </div>
+          </div>
+          <div className="about__text-wrapper">
+            <h4 className="about__text">Lauren Paul</h4>
           </div>
         </div>
         <div className="about__subtitle-wrapper">
@@ -53,9 +56,6 @@ const About = () => {
             lifestyle where each workout becomes a step towards a healthier and
             happier you.
           </p>
-          <div className="about__text-wrapper">
-            <h4 className="about__text">Lauren Paul</h4>
-          </div>
         </div>
       </div>
     </div>

@@ -84,8 +84,9 @@
     gap: 1rem;
     align-items: center;
     font-size: 1.5rem;
-    background-color: #f4e7f8;
+    // background-color: #f4e7f8;
     border-radius: 8px;
+    width: 2rem;
 
     &-wrapper {
       margin: 0 0.75rem;
@@ -93,18 +94,18 @@
         margin: 0;
       }
     }
-    &-facebook {
-      color: #0866ff;
-      &:hover {
-        color: #3b5998;
-      }
-    }
-    &-instagram {
-      color: #ae40af;
-      &:hover {
-        color: #8b338c;
-      }
-    }
+    // &-facebook {
+    //   color: #0866ff;
+    //   &:hover {
+    //     color: #3b5998;
+    //   }
+    // }
+    // &-instagram {
+    //   color: #ae40af;
+    //   &:hover {
+    //     color: #8b338c;
+    //   }
+    // }
     &-envelope {
       color: #a5a1a1;
       :hover {

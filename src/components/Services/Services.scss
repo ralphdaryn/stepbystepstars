@@ -150,57 +150,54 @@
     }
   }
 
-  /* Book an Event Section */
   &__book-event {
     background-color: #f3f3f3;
-    padding: 1rem;
-    border-radius: 1rem;
+    padding: 2rem;
+    border-radius: 1.5rem;
     text-align: center;
     margin: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
     @include tablet {
       margin: 3rem 6rem 1rem;
     }
   }
+  &__book-event:hover {
+    transform: scale(1.02);
+  }
   &__book-event-title {
     font-family: "HelveticaBold", "sans-serif";
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: #8638a4;
     margin-bottom: 1rem;
   }
   &__book-event-description {
     font-family: "Helvetica", "sans-serif";
-    font-size: 1rem;
+    font-size: 1.125rem;
     color: #555;
     margin-bottom: 1.5rem;
+    line-height: 1.6;
   }
   &__book-event-button {
     background-color: #ea4c89;
     border-radius: 8px;
-    border-style: none;
-    box-sizing: border-box;
+    border: none;
     color: #ffffff;
     cursor: pointer;
-    display: inline-block;
     font-weight: 500;
     font-family: "Helvetica", "sans-serif";
     text-transform: uppercase;
-    height: 40px;
-    line-height: 20px;
-    list-style: none;
-    margin: 0.5rem;
-    outline: none;
-    padding: 10px 16px;
-    position: relative;
+    height: 45px;
+    line-height: 22px;
+    padding: 12px 20px;
     text-align: center;
     text-decoration: none;
-    transition: color 100ms;
-    vertical-align: baseline;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    &:hover,
-    &:focus {
-      background-color: #bb3d6e;
-    }
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  &__book-event-button:hover,
+  &__book-event-button:focus {
+    background-color: #bb3d6e;
+    transform: translateY(-2px);
   }
 }

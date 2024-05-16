@@ -116,19 +116,17 @@ const Services = () => {
           </button>
         </div>
       </div>
-
-      {/* Book an Event Section */}
       <div className="services__book-event">
-        <h2 className="services__book-event-title">Book an Event</h2>
+        <h2 className="services__book-event-title">Plan Your Event</h2>
         <p className="services__book-event-description">
-          Ready to make your next event unforgettable? Click the button below to
-          get started with our easy booking form!
+          Ready to make your next event unforgettable? Click below to start with
+          our easy booking form!
         </p>
         <button
           className="services__book-event-button"
           onClick={goToBookingForm}
         >
-          Click Here to Book
+          Start Planning
         </button>
       </div>
     </div>
