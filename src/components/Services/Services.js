@@ -29,7 +29,7 @@ const Services = () => {
         <div className="services__wrapper">
           <div className="services__img-container">
             <img
-              className="services__img-dance"
+              className="services__img"
               src={dancepartyImg}
               alt="dance party pic"
             />
@@ -46,7 +46,7 @@ const Services = () => {
         <div className="services__wrapper">
           <div className="services__img-container">
             <img
-              className="services__img-face"
+              className="services__img"
               src={facepaintImg}
               alt="facepaint pic"
             />
@@ -119,8 +119,7 @@ const Services = () => {
       <div className="services__book-event">
         <h2 className="services__book-event-title">Plan Your Event</h2>
         <p className="services__book-event-description">
-          Ready to make your next event unforgettable? Click below to start with
-          our easy booking form!
+          Click below to start with our easy booking form!
         </p>
         <button
           className="services__book-event-button"

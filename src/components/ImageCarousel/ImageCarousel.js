@@ -24,42 +24,19 @@ const ImageCarousel = () => {
 
   return (
     <Slider {...settings} className="image-carousel__slider">
-      <div className="image-carousel">
-        <div className="image-carousel__container">
-          <img
-            className="image-carousel__image"
-            src={facepaintImage}
-            alt="Slide 1"
-          />
-        </div>
-      </div>
-      <div className="image-carousel">
-        <div className="image-carousel__container">
-          <img
-            className="image-carousel__image"
-            src={danceparty2}
-            alt="Slide 2"
-          />
-        </div>
-      </div>
-      <div className="image-carousel">
-        <div className="image-carousel__container">
-          <img
-            className="image-carousel__image"
-            src={danceparty}
-            alt="Slide 3"
-          />
-        </div>
-      </div>
-      <div className="image-carousel">
-        <div className="image-carousel__container">
-          <img
-            className="image-carousel__image"
-            src={fitnessmom}
-            alt="Slide 4"
-          />
-        </div>
-      </div>
+      {[facepaintImage, danceparty2, danceparty, fitnessmom].map(
+        (image, index) => (
+          <div key={index} className="image-carousel">
+            <div className="image-carousel__container">
+              <img
+                className="image-carousel__image"
+                src={image}
+                alt={`Slide ${index + 1}`}
+              />
+            </div>
+          </div>
+        )
+      )}
     </Slider>
   );
 };
