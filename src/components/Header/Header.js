@@ -75,7 +75,7 @@ const Header = () => {
               onMouseEnter={() => setShowBirthdayPartiesDropdown(true)}
               onMouseLeave={() => setShowBirthdayPartiesDropdown(false)}
             >
-              <span>
+              <span className="header__navigation-span">
                 Birthday Parties{" "}
                 {showBirthdayPartiesDropdown ? (
                   <FaArrowDown className="arrow-icon" />
@@ -117,7 +117,7 @@ const Header = () => {
               onMouseEnter={() => setShowFitnessDropdown(true)}
               onMouseLeave={() => setShowFitnessDropdown(false)}
             >
-              <span>
+              <span className="header__navigation-span">
                 Fitness{" "}
                 {showFitnessDropdown ? (
                   <FaArrowDown className="arrow-icon" />
