@@ -45,6 +45,7 @@
       font-size: 1.15rem;
       font-family: "Helvetica", "sans-serif";
       position: relative;
+      cursor: pointer;
 
       a {
         color: black;
@@ -64,6 +65,13 @@
           height: 3px;
           background-color: #8638a4;
           margin-left: 1rem;
+        }
+      }
+
+      .arrow-icon {
+        display: inline-block;
+        @include desktop {
+          display: none !important;
         }
       }
 
@@ -91,6 +99,11 @@
             }
           }
         }
+      }
+
+      &:hover .header__navigation-link-dropdown {
+        display: block;
+        background-color: #f4e7f8;
       }
     }
   }

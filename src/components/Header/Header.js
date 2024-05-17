@@ -29,21 +29,15 @@ const Header = () => {
   const handleLinkClick = (link) => {
     setActiveLink(link);
     closeSidebar();
-  };
-
-  const toggleDropdown = (dropdown) => {
-    if (dropdown === "birthdayParties") {
-      setShowBirthdayPartiesDropdown(!showBirthdayPartiesDropdown);
-      setShowFitnessDropdown(false);
-    } else if (dropdown === "fitness") {
-      setShowFitnessDropdown(!showFitnessDropdown);
-      setShowBirthdayPartiesDropdown(false);
-    }
+    setShowBirthdayPartiesDropdown(false);
+    setShowFitnessDropdown(false);
   };
 
   const handleLogoClick = () => {
     setActiveLink("");
     closeSidebar();
+    setShowBirthdayPartiesDropdown(false);
+    setShowFitnessDropdown(false);
   };
 
   return (
@@ -76,17 +70,21 @@ const Header = () => {
                 Home
               </Link>
             </li>
-            <li className="header__navigation-link">
-              <span onClick={() => toggleDropdown("birthdayParties")}>
+            <li
+              className="header__navigation-link"
+              onMouseEnter={() => setShowBirthdayPartiesDropdown(true)}
+              onMouseLeave={() => setShowBirthdayPartiesDropdown(false)}
+            >
+              <span>
                 Birthday Parties{" "}
                 {showBirthdayPartiesDropdown ? (
-                  <FaArrowDown />
+                  <FaArrowDown className="arrow-icon" />
                 ) : (
-                  <FaArrowRight />
+                  <FaArrowRight className="arrow-icon" />
                 )}
               </span>
               {showBirthdayPartiesDropdown && (
-                <ul className="header__navigation-dropdown">
+                <ul className="header__navigation-link-dropdown">
                   <li>
                     <Link
                       to="/danceparty"
@@ -114,13 +112,21 @@ const Header = () => {
                 </ul>
               )}
             </li>
-            <li className="header__navigation-link">
-              <span onClick={() => toggleDropdown("fitness")}>
+            <li
+              className="header__navigation-link"
+              onMouseEnter={() => setShowFitnessDropdown(true)}
+              onMouseLeave={() => setShowFitnessDropdown(false)}
+            >
+              <span>
                 Fitness{" "}
-                {showFitnessDropdown ? <FaArrowRight /> : <FaArrowDown />}
+                {showFitnessDropdown ? (
+                  <FaArrowDown className="arrow-icon" />
+                ) : (
+                  <FaArrowRight className="arrow-icon" />
+                )}
               </span>
               {showFitnessDropdown && (
-                <ul className="header__navigation-dropdown">
+                <ul className="header__navigation-link-dropdown">
                   <li>
                     <Link
                       to="/mommyandme"
@@ -190,7 +196,11 @@ const Header = () => {
               </Link>
             </li>
             <li className="header__sidebar-link">
-              <span onClick={() => toggleDropdown("birthdayParties")}>
+              <span
+                onClick={() =>
+                  setShowBirthdayPartiesDropdown(!showBirthdayPartiesDropdown)
+                }
+              >
                 Birthday Parties{" "}
                 {showBirthdayPartiesDropdown ? (
                   <FaArrowRight />
@@ -228,7 +238,9 @@ const Header = () => {
               )}
             </li>
             <li className="header__sidebar-link">
-              <span onClick={() => toggleDropdown("fitness")}>
+              <span
+                onClick={() => setShowFitnessDropdown(!showFitnessDropdown)}
+              >
                 Fitness{" "}
                 {showFitnessDropdown ? <FaArrowRight /> : <FaArrowDown />}
               </span>
@@ -289,12 +301,12 @@ const Header = () => {
           <ul className="header__sidebar-icons">
             <li className="header__sidebar-facebook">
               <a href="https://facebook.com/stepbystepstars">
-                <FaFacebook  />
+                <FaFacebook />
               </a>
             </li>
             <li className="header__sidebar-instagram">
               <a href="https://instagram.com/stepbystepstars">
-                <FaInstagramSquare  />
+                <FaInstagramSquare />
               </a>
             </li>
           </ul>
