@@ -1,11 +1,6 @@
 import "./About.scss";
 import laurenImg from "../../assets/images/about.png";
-import {
-  // FaFacebook,
-  // FaInstagramSquare,
-  FaEnvelope,
-  FaPhone,
-} from "react-icons/fa";
+import { FaEnvelope, FaPhone } from "react-icons/fa";
 
 const About = () => {
   return (
@@ -16,12 +11,6 @@ const About = () => {
           <img className="about__image" src={laurenImg} alt="bio pic" />
           <div className="about__icons-wrapper">
             <div className="about__icons">
-              {/* <a href="https://facebook.com/stepbystepstars">
-                <FaFacebook className="about__icons-facebook" />
-              </a>
-              <a href="https://instagram.com/stepbystepstars">
-                <FaInstagramSquare className="about__icons-instagram" />
-              </a> */}
               <a href="mailto:stepbystepstars@gmail.com">
                 <FaEnvelope className="about__icons-envelope" />
               </a>
