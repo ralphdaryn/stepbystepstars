@@ -87,7 +87,7 @@
         left: 0;
         background-color: #fff;
         padding: 0.5rem;
-        margin-top: .5rem;
+        margin-top: 0.5rem;
         border-radius: 0.5rem;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
         z-index: 10;
@@ -128,7 +128,7 @@
     &-list {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 1rem;
       padding: 2rem;
       @include tablet {
         padding: 2rem 4rem;
@@ -172,11 +172,9 @@
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         z-index: 10;
         transition: all 0.3s ease;
-
         li {
           padding: 0.5rem 0;
           font-size: 1rem;
-
           a {
             font-weight: normal;
             &:hover {

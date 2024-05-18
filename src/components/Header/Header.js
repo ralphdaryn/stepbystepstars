@@ -203,9 +203,9 @@ const Header = () => {
               >
                 Birthday Parties{" "}
                 {showBirthdayPartiesDropdown ? (
-                  <FaArrowRight />
-                ) : (
                   <FaArrowDown />
+                ) : (
+                  <FaArrowRight />
                 )}
               </span>
               {showBirthdayPartiesDropdown && (
@@ -242,7 +242,7 @@ const Header = () => {
                 onClick={() => setShowFitnessDropdown(!showFitnessDropdown)}
               >
                 Fitness{" "}
-                {showFitnessDropdown ? <FaArrowRight /> : <FaArrowDown />}
+                {showFitnessDropdown ? <FaArrowDown /> : <FaArrowRight />}
               </span>
               {showFitnessDropdown && (
                 <ul className="header__sidebar-dropdown">
