@@ -21,10 +21,14 @@
     font-size: 5rem;
     color: #0866ff;
     margin: 0.5rem;
+    cursor: pointer;
+    &:hover {
+      color: #3b5998; // Darker blue on hover to indicate interactivity
+    }
   }
 
   &__icon {
-    color: #ffd700;
+    color: #ffd700; // Gold color for the stars
   }
 
   &__text {

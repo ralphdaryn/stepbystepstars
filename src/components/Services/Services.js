@@ -19,8 +19,7 @@ const Services = () => {
   return (
     <div id="services" className="services">
       <h1 className="services__title">
-        Your <span className="services__title--highlight">Step by Step</span>{" "}
-        Journey Begins Here!
+        Your <span className="services__title--highlight">Step by Step</span> Journey Begins Here!
       </h1>
 
       {/* Birthday Parties Section */}
@@ -138,7 +137,10 @@ const Services = () => {
         <p className="services__booking-description">
           Click below to start with our easy booking form!
         </p>
-        <button className="services__booking-button" onClick={goToBookingForm}>
+        <button
+          className="services__booking-button"
+          onClick={goToBookingForm}
+        >
           Start Planning
         </button>
       </div>

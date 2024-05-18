@@ -59,7 +59,13 @@ const Reviews = () => {
   return (
     <div className="reviews">
       <h2 className="reviews__title">What Our Clients Say About Us</h2>
-      <FaFacebook className="reviews__facebook" />
+      <a
+        href="https://www.facebook.com/stepbystepstars/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaFacebook className="reviews__facebook" />
+      </a>
       <h3 className="reviews__subtitle">Step By Step Stars</h3>
       <p className="reviews__text">
         Rating 5.0{" "}
@@ -68,12 +74,8 @@ const Reviews = () => {
         ))}{" "}
         (over 50+ reviews)
       </p>
-      {reviews.map((review) => (
-        <div className="reviews__testimonial" key={review.id}></div>
-      ))}
-
       <div className="reviews__wrapper">
-        <Slider {...settings} className="reviews">
+        <Slider {...settings} className="reviews__slider">
           {reviews.map((review) => (
             <div className="reviews__testimonial" key={review.id}>
               <div className="reviews__container">
@@ -84,7 +86,9 @@ const Reviews = () => {
                   ))}
                 </div>
                 <div className="reviews__avatar">
-                  <div className="reviews__avatar-circle">{review.author}</div>
+                  <div className="reviews__avatar-circle">
+                    {review.author[0]}
+                  </div>
                 </div>
                 <div className="reviews__date">{review.date}</div>
               </div>

@@ -1,5 +1,203 @@
+// @use "../../styles/partials/colors" as *;
+// @use "../../styles/partials/mixins" as *;
+
+// .services {
+//   @include tablet {
+//     padding: 1rem 0;
+//   }
+
+//   // &__title {
+//   //   font-family: "HelveticaBold", "sans-serif";
+//   //   text-transform: uppercase;
+//   //   font-size: 1.75rem;
+//   //   padding-top: 1.5rem;
+//   //   color: #333;
+//   //   &--highlight {
+//   //     color: #6a1b9a;
+//   //   }
+//   // }
+
+//   // &__title {
+//   //   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; // Modern font stack
+//   //   text-transform: uppercase;
+//   //   font-size: 1.75rem; // Good for headers, consider rem for scalability
+//   //   padding-top: 1.5rem;
+//   //   color: #333; // Dark grey for strong readability
+
+//   //   &:hover {
+//   //     color: #2c3e50; // Slightly darker on hover for a subtle interactive effect
+//   //   }
+
+//   //   &--highlight {
+//   //     color: #8e44ad; // Vibrant purple for key highlights
+//   //     font-weight: bold; // Makes the highlight stand out
+//   //     text-shadow: 0 0 5px rgba(142, 68, 173, 0.5); // Soft glow for a dynamic visual effect
+//   //   }
+//   // }
+
+// @keyframes pulseNeon {
+//   0%, 100% {
+//     text-shadow: 0 0 12px #9b59b6, 0 0 17px #9b59b6, 0 0 22px #9b59b6; // Vibrant purple neon glow
+//   }
+//   50% {
+//     text-shadow: 0 0 17px #9b59b6, 0 0 22px #9b59b6, 0 0 27px #9b59b6; // Enhanced brightness at peak
+//   }
+// }
+
+// &__title {
+//   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; // Modern font stack
+//   text-transform: uppercase;
+//   font-size: 1.75rem; // Using rem for scalability and accessibility
+//   padding-top: 1.5rem;
+//   color: #6C3483; // Rich, vibrant purple, not too dark
+
+//   &:hover {
+//     color: #7D3C98; // A slightly lighter, luminous purple on hover
+//   }
+
+//   &--highlight {
+//     color: #FFFFFF; // Bright white to stand out against the purple background
+//     font-weight: bold; // Enhanced weight for emphasis
+//     text-shadow: 0 0 12px #9b59b6, 0 0 17px #9b59b6, 0 0 22px #9b59b6; // Maintaining vibrant purple neon glow
+//     animation: pulseNeon 2s infinite ease-in-out; // Continuous pulsing effect for dynamic appearance
+//   }
+// }
+
+//   &__section-title,
+//   &__section-title--fitness {
+//     padding-top: 2.5rem;
+//     font-size: 1.75rem;
+//     margin-bottom: 1rem;
+//     color: #6a1b9a;
+//     text-align: center;
+//     text-transform: uppercase;
+//     font-weight: bold;
+//     letter-spacing: 1px; // Slight increase in letter spacing for a more open feel
+//     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); // Soft shadow for depth
+//   }
+
+//   &__section {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 2rem;
+//     align-items: center;
+//     padding-bottom: 2rem; // Added padding to avoid elements touching the container's edges
+
+//     @include tablet {
+//       flex-direction: row;
+//       justify-content: space-evenly;
+//       flex-wrap: wrap; // Enables wrapping of child elements
+//     }
+//   }
+
+//   &__card {
+//     background-color: #ede7f6; // Light purple background
+//     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+//     border-radius: 8px;
+//     transition: transform 0.3s;
+//     padding: 1rem;
+//     width: 300px; // Ensuring consistent width
+//     margin-bottom: 1.5rem;
+//     cursor: pointer;
+
+//     &:hover {
+//       transform: translateY(-10px);
+//     }
+//   }
+
+//   &__image-wrapper {
+//     width: 100%;
+//     border-radius: 8px;
+//   }
+
+//   &__image {
+//     width: 100%;
+//     height: 200px;
+//     object-fit: cover;
+//     border-radius: 8px;
+//     transition: transform 0.3s, filter 0.3s;
+
+//     &:hover {
+//       transform: scale(1.05);
+//       filter: brightness(1.1);
+//     }
+//   }
+
+//   &__card-title {
+//     font-size: 1.25rem;
+//     margin-top: 0.5rem;
+//     margin-bottom: 1rem;
+//     font-family: "Helvetica", "sans-serif";
+//     text-transform: uppercase;
+//   }
+
+//   &__button {
+//     background-color: #ea4c89;
+//     color: white;
+//     border: none;
+//     border-radius: 8px;
+//     padding: 12px 24px;
+//     font-size: 1rem;
+//     transition: background-color 0.3s;
+//     cursor: pointer;
+
+//     &:hover {
+//       background-color: #c13584;
+//     }
+//   }
+
+//   &__booking {
+//     background-color: #f3f3f3;
+//     padding: 2rem;
+//     border-radius: 1.5rem;
+//     text-align: center;
+//     margin: 2rem;
+//     transition: transform 0.3s;
+
+//     &:hover {
+//       transform: scale(1.03);
+//     }
+//   }
+
+//   &__booking-title {
+//     font-size: 1.25rem;
+//     margin-bottom: 1rem;
+//   }
+
+//   &__booking-description {
+//     font-size: 1rem;
+//     margin-bottom: 1.5rem;
+//   }
+
+//   &__booking-button {
+//     background-color: #ea4c89;
+//     color: white;
+//     border: none;
+//     border-radius: 8px;
+//     padding: 12px 20px;
+//     font-size: 1rem;
+//     transition: background-color 0.3s, transform 0.3s;
+//     cursor: pointer;
+
+//     &:hover {
+//       background-color: #c13584;
+//       transform: translateY(-2px);
+//     }
+//   }
+// }
+
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/mixins" as *;
+
+@keyframes pulseNeon {
+  0%,
+  100% {
+    text-shadow: 0 0 12px #9b59b6, 0 0 17px #9b59b6, 0 0 22px #9b59b6; // Vibrant purple neon glow
+  }
+  50% {
+    text-shadow: 0 0 17px #9b59b6, 0 0 22px #9b59b6, 0 0 27px #9b59b6; // Enhanced brightness at peak
+  }
+}
 
 .services {
   @include tablet {
@@ -7,13 +205,21 @@
   }
 
   &__title {
-    font-family: "HelveticaBold", "sans-serif";
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; // Modern font stack
     text-transform: uppercase;
-    font-size: 1.75rem;
+    font-size: 1.75rem; // Using rem for scalability and accessibility
     padding-top: 1.5rem;
-    color: #333;
+    color: #3156a3; // Rich, vibrant purple, not too dark
+
+    &:hover {
+      color: #4161a5; // A slightly lighter, luminous purple on hover
+    }
+
     &--highlight {
-      color: #6a1b9a;
+      color: #ffffff; // Bright white to stand out against the purple background
+      font-weight: bold; // Enhanced weight for emphasis
+      text-shadow: 0 0 12px #9b59b6, 0 0 17px #9b59b6, 0 0 22px #9b59b6; // Maintaining vibrant purple neon glow
+      animation: pulseNeon 2s infinite ease-in-out; // Continuous pulsing effect for dynamic appearance
     }
   }
 
@@ -39,7 +245,7 @@
 
     @include tablet {
       flex-direction: row;
-      justify-content: space-around;
+      justify-content: space-evenly;
       flex-wrap: wrap; // Enables wrapping of child elements
     }
   }
@@ -91,8 +297,8 @@
     border-radius: 8px;
     padding: 12px 24px;
     font-size: 1rem;
-    font-weight: bold;
     transition: background-color 0.3s;
+    cursor: pointer;
 
     &:hover {
       background-color: #c13584;
@@ -128,9 +334,9 @@
     border: none;
     border-radius: 8px;
     padding: 12px 20px;
-    font-size: 1.1rem;
-    font-weight: bold;
+    font-size: 1rem;
     transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
 
     &:hover {
       background-color: #c13584;
