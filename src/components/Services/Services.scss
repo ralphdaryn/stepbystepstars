@@ -5,200 +5,136 @@
   @include tablet {
     padding: 1rem 0;
   }
-  &__text {
+
+  &__title {
     font-family: "HelveticaBold", "sans-serif";
     text-transform: uppercase;
-    font-size: 1.5rem;
-    padding-top: 1rem;
-    &-name {
-      color: #8638a4;
+    font-size: 1.75rem;
+    padding-top: 1.5rem;
+    color: #333;
+    &--highlight {
+      color: #6a1b9a;
     }
   }
-  &__caption {
-    padding-top: 2rem;
-    font-family: "HelveticaBold", "sans-serif";
-    font-size: 1.5rem;
+
+  &__section-title,
+  &__section-title--fitness {
+    padding-top: 2.5rem;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #6a1b9a;
     text-align: center;
-    color: #8638a4;
-    margin-bottom: 0.5rem;
-    position: relative;
     text-transform: uppercase;
-    @include tablet {
-      margin: 1rem 0;
-    }
-    &:before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: -10px;
-      width: 50%;
-      height: 3px;
-      background: linear-gradient(
-        90deg,
-        rgba(134, 56, 164, 1) 0%,
-        rgba(234, 76, 137, 1) 100%
-      );
-      border-radius: 2px;
-    }
-    &-fitness {
-      font-family: "HelveticaBold", "sans-serif";
-      font-size: 1.5rem;
-      text-align: center;
-      color: #8638a4;
-      margin-bottom: 0.5rem;
-      position: relative;
-      text-transform: uppercase;
-      @include tablet {
-        margin: 1rem 0;
-      }
-      &:before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -10px;
-        width: 50%;
-        height: 3px;
-        background: linear-gradient(
-          90deg,
-          rgba(134, 56, 164, 1) 0%,
-          rgba(234, 76, 137, 1) 100%
-        );
-        border-radius: 2px;
-      }
-    }
+    font-weight: bold;
+    letter-spacing: 1px; // Slight increase in letter spacing for a more open feel
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); // Soft shadow for depth
   }
-  &__container {
+
+  &__section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 2rem;
     align-items: center;
-    padding: 1rem;
+    padding-bottom: 2rem; // Added padding to avoid elements touching the container's edges
+
     @include tablet {
-      display: flex;
       flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-    @include desktop {
-      width: 70rem;
-      flex-wrap: nowrap;
+      justify-content: space-around;
+      flex-wrap: wrap; // Enables wrapping of child elements
     }
   }
-  &__wrapper {
-    background-color: rgba(218, 203, 223, 0.458);
+
+  &__card {
+    background-color: #ede7f6; // Light purple background
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s;
     padding: 1rem;
+    width: 300px; // Ensuring consistent width
     margin-bottom: 1.5rem;
-    border-radius: 1rem;
-    @include tablet {
-      margin: 0;
+
+    &:hover {
+      transform: translateY(-10px);
     }
   }
-  &__title {
-    padding: 0.75rem;
+
+  &__image-wrapper {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s, filter 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+  }
+
+  &__card-title {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
     font-family: "Helvetica", "sans-serif";
     text-transform: uppercase;
-    font-size: 1.25rem;
-    font-weight: 500;
   }
-  &__img {
-    width: 100%;
-    height: 10rem;
-    border-radius: 8px;
-    object-fit: cover;
-    &-container {
-      width: 15rem;
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    @include tablet {
-      width: 80%;
-    }
-  }
   &__button {
     background-color: #ea4c89;
+    color: white;
+    border: none;
     border-radius: 8px;
-    border-style: none;
-    box-sizing: border-box;
-    color: #ffffff;
-    cursor: pointer;
-    display: inline-block;
-    font-weight: 500;
-    font-family: "Helvetica", "sans-serif";
-    text-transform: uppercase;
-    height: 40px;
-    line-height: 20px;
-    list-style: none;
-    margin: 0.5rem;
-    outline: none;
-    padding: 10px 16px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    transition: color 100ms;
-    vertical-align: baseline;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    &:hover,
-    &:focus {
-      background-color: #bb3d6e;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #c13584;
     }
   }
 
-  &__book-event {
+  &__booking {
     background-color: #f3f3f3;
     padding: 2rem;
     border-radius: 1.5rem;
     text-align: center;
     margin: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    @include tablet {
-      margin: 3rem 10rem 1rem;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.03);
     }
   }
-  &__book-event:hover {
-    transform: scale(1.02);
-  }
-  &__book-event-title {
-    font-family: "HelveticaBold", "sans-serif";
+
+  &__booking-title {
     font-size: 1.25rem;
-    color: #8638a4;
     margin-bottom: 1rem;
   }
-  &__book-event-description {
-    font-family: "Helvetica", "sans-serif";
-    font-size: 1.125rem;
-    color: #555;
+
+  &__booking-description {
+    font-size: 1rem;
     margin-bottom: 1.5rem;
-    line-height: 1.5;
   }
-  &__book-event-button {
+
+  &__booking-button {
     background-color: #ea4c89;
-    border-radius: 8px;
+    color: white;
     border: none;
-    color: #ffffff;
-    cursor: pointer;
-    font-weight: 500;
-    font-family: "Helvetica", "sans-serif";
-    text-transform: uppercase;
-    height: 45px;
-    line-height: 22px;
+    border-radius: 8px;
     padding: 12px 20px;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  &__book-event-button:hover,
-  &__book-event-button:focus {
-    background-color: #bb3d6e;
-    transform: translateY(-2px);
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+
+    &:hover {
+      background-color: #c13584;
+      transform: translateY(-2px);
+    }
   }
 }

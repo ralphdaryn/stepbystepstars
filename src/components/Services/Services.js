@@ -18,23 +18,23 @@ const Services = () => {
 
   return (
     <div id="services" className="services">
-      <h1 className="services__text">
-        Your <span className="services__text-name">Step by Step</span> Journey
-        Begins Here!
+      <h1 className="services__title">
+        Your <span className="services__title--highlight">Step by Step</span>{" "}
+        Journey Begins Here!
       </h1>
 
       {/* Birthday Parties Section */}
-      <h2 className="services__caption">Birthday Parties</h2>
-      <div className="services__container">
-        <div className="services__wrapper">
-          <div className="services__img-container">
+      <h2 className="services__section-title">Birthday Parties</h2>
+      <div className="services__section">
+        <div className="services__card">
+          <div className="services__image-wrapper">
             <img
-              className="services__img"
+              className="services__image"
               src={dancepartyImg}
-              alt="dance party pic"
+              alt="Dance party"
             />
           </div>
-          <h2 className="services__title">Dance Party</h2>
+          <h2 className="services__card-title">Dance Party</h2>
           <button
             className="services__button"
             onClick={() => goToServicePage("/danceparty")}
@@ -43,15 +43,15 @@ const Services = () => {
           </button>
         </div>
 
-        <div className="services__wrapper">
-          <div className="services__img-container">
+        <div className="services__card">
+          <div className="services__image-wrapper">
             <img
-              className="services__img"
+              className="services__image"
               src={facepaintImg}
-              alt="facepaint pic"
+              alt="Face painting"
             />
           </div>
-          <h2 className="services__title">Face Painting</h2>
+          <h2 className="services__card-title">Face Painting</h2>
           <button
             className="services__button"
             onClick={() => goToServicePage("/facepainting")}
@@ -60,11 +60,15 @@ const Services = () => {
           </button>
         </div>
 
-        <div className="services__wrapper">
-          <div className="services__img-container">
-            <img className="services__img" src={musicalImg} alt="musical pic" />
+        <div className="services__card">
+          <div className="services__image-wrapper">
+            <img
+              className="services__image"
+              src={musicalImg}
+              alt="Musical babies"
+            />
           </div>
-          <h2 className="services__title">Musical Babies</h2>
+          <h2 className="services__card-title">Musical Babies</h2>
           <button
             className="services__button"
             onClick={() => goToServicePage("/musicalbabies")}
@@ -75,13 +79,17 @@ const Services = () => {
       </div>
 
       {/* Fitness Section */}
-      <h2 className="services__caption-fitness">Fitness Class</h2>
-      <div className="services__container">
-        <div className="services__wrapper">
-          <div className="services__img-container">
-            <img className="services__img" src={fitnessImg} alt="fitness pic" />
+      <h2 className="services__section-title--fitness">Fitness Class</h2>
+      <div className="services__section">
+        <div className="services__card">
+          <div className="services__image-wrapper">
+            <img
+              className="services__image"
+              src={fitnessImg}
+              alt="Fitness with mom"
+            />
           </div>
-          <h2 className="services__title">Mommy and Me</h2>
+          <h2 className="services__card-title">Mommy and Me</h2>
           <button
             className="services__button"
             onClick={() => goToServicePage("/mommyandme")}
@@ -90,11 +98,15 @@ const Services = () => {
           </button>
         </div>
 
-        <div className="services__wrapper">
-          <div className="services__img-container">
-            <img className="services__img" src={fitnessImg} alt="fitness pic" />
+        <div className="services__card">
+          <div className="services__image-wrapper">
+            <img
+              className="services__image"
+              src={fitnessImg}
+              alt="Group fitness"
+            />
           </div>
-          <h2 className="services__title">Group Fitness</h2>
+          <h2 className="services__card-title">Group Fitness</h2>
           <button
             className="services__button"
             onClick={() => goToServicePage("/groupfitness")}
@@ -103,11 +115,15 @@ const Services = () => {
           </button>
         </div>
 
-        <div className="services__wrapper">
-          <div className="services__img-container">
-            <img className="services__img" src={fitnessImg} alt="fitness pic" />
+        <div className="services__card">
+          <div className="services__image-wrapper">
+            <img
+              className="services__image"
+              src={fitnessImg}
+              alt="Private training"
+            />
           </div>
-          <h2 className="services__title">Private Training</h2>
+          <h2 className="services__card-title">Private Training</h2>
           <button
             className="services__button"
             onClick={() => goToServicePage("/privatetraining")}
@@ -116,15 +132,13 @@ const Services = () => {
           </button>
         </div>
       </div>
-      <div className="services__book-event">
-        <h2 className="services__book-event-title">Plan Your Event</h2>
-        <p className="services__book-event-description">
+
+      <div className="services__booking">
+        <h2 className="services__booking-title">Plan Your Event</h2>
+        <p className="services__booking-description">
           Click below to start with our easy booking form!
         </p>
-        <button
-          className="services__book-event-button"
-          onClick={goToBookingForm}
-        >
+        <button className="services__booking-button" onClick={goToBookingForm}>
           Start Planning
         </button>
       </div>
