@@ -16,6 +16,10 @@
     @include tablet {
       padding: 2rem;
     }
+    @include desktop {
+      justify-content: center;
+      gap: 3rem;
+    }
   }
 
   &__logo {
@@ -182,7 +186,13 @@
             }
           }
         }
+        &-item {
+          ul {
+            padding-left: 1rem;
+          }
+        }
       }
+
     }
 
     &-icons {
