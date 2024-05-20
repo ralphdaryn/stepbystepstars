@@ -4,6 +4,7 @@ import facepaintImg from "../../assets/images/facepaintkids.png";
 import dancepartyImg from "../../assets/images/dancepartykids.jpg";
 import musicalImg from "../../assets/images/danceparty.png";
 import fitnessImg from "../../assets/images/fitnessmom.png";
+import mommyandme from "../../assets/images/mommyandme.jpeg";
 
 const Services = () => {
   const navigate = useNavigate();
@@ -19,7 +20,8 @@ const Services = () => {
   return (
     <div id="services" className="services">
       <h1 className="services__title">
-        Your <span className="services__title--highlight">Step by Step</span> Journey Begins Here!
+        Your <span className="services__title--highlight">Step by Step</span>{" "}
+        Journey Begins Here!
       </h1>
 
       {/* Birthday Parties Section */}
@@ -84,7 +86,7 @@ const Services = () => {
           <div className="services__image-wrapper">
             <img
               className="services__image"
-              src={fitnessImg}
+              src={mommyandme}
               alt="Fitness with mom"
             />
           </div>
@@ -137,10 +139,7 @@ const Services = () => {
         <p className="services__booking-description">
           Click below to start with our easy booking form!
         </p>
-        <button
-          className="services__booking-button"
-          onClick={goToBookingForm}
-        >
+        <button className="services__booking-button" onClick={goToBookingForm}>
           Start Planning
         </button>
       </div>

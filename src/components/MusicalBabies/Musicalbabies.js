@@ -1,9 +1,14 @@
 import "./Musicalbabies.scss";
+import musicalbabiesVideo from "../../assets/images/musicalbabies.MP4";
 
 const Musicalbabies = () => {
   return (
     <div className="musicalbabies">
       <h2 className="musicalbabies__title">Musical Babies</h2>
+      <video className="musicalbabies__video" controls autoPlay muted>
+        <source src={musicalbabiesVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <p className="musicalbabies__subtitle">
         Introducing our Musical Babies Program - a harmonious blend of joy and
         learning for little ones aged 3 and under. Join us for an engaging
@@ -14,4 +19,5 @@ const Musicalbabies = () => {
     </div>
   );
 };
+
 export default Musicalbabies;

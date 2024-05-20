@@ -1,3 +1,28 @@
 .musicalbabies {
-    margin-top: 8rem;
+  padding: 1rem;
+  margin-top: 7rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &__title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  &__video {
+    width: 100%;
+    max-width: 15rem; // Limits size on larger screens
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    outline: none; // Removes the default focus outline
+  }
+
+  &__subtitle {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #666;
+    text-align: justify;
+  }
 }

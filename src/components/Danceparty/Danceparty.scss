@@ -1,3 +1,24 @@
 .danceparty {
-    margin-top: 8rem;
+  padding: 1rem;
+  margin-top: 6.5rem;
+
+  &__title {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: .5rem 0;
+    color: #333;
+  }
+
+  &__image {
+    width: 100%;
+    display: block; // Ensures no extra space below the image
+    border-radius: 0.5rem; // Adds slight rounding to the edges for a modern look
+    margin-bottom: 1rem;
+  }
+
+  &__subtitle {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #666;
+  }
 }
