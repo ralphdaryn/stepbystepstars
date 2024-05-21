@@ -15,6 +15,10 @@
   &__title {
     padding: 0.5rem;
     padding-top: 3rem;
+    font-weight: 400;
+  }
+  &__subtitle {
+    font-weight: 400;
   }
 
   &__facebook {
@@ -33,7 +37,7 @@
 
   &__text {
     margin: 0.25rem;
-    font-weight: 600;
+    font-weight: 400;
   }
 
   &__container {
@@ -73,7 +77,7 @@
   }
 
   &__message {
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.25rem;
   }
 
   &__testimonial {

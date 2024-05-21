@@ -1,14 +1,13 @@
 .mommyandme {
-  padding: 1rem;
-  margin-top: 6.5rem;
+  margin-top: 7.5rem;
   text-align: center;
-  background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   &__title {
     color: #333;
     font-weight: 400;
+    margin-bottom: 0.5rem;
   }
 
   &__container {
@@ -29,6 +28,6 @@
   &__subtitle {
     color: #666;
     text-align: justify;
-    padding: .5rem;
+    padding: 0.5rem;
   }
 }

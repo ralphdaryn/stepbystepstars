@@ -40,7 +40,7 @@
     padding-top: 2.5rem;
     font-size: 1.75rem;
     margin-bottom: 1rem;
-    color: #466a8e;
+    color: #9c1d9d;
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
@@ -123,17 +123,17 @@
   }
 
   .services__booking {
-    background-color: #f4f0fd; // Soft, light purple for a calm, modern look
+    background-color: #faeaf7; // Soft, light purple for a calm, modern look
     padding: 1.5rem;
     border-radius: 20px;
     text-align: center;
     margin: 1.5rem;
-    box-shadow: 8px 8px 15px #dcd6e7, -8px -8px 15px #ffffff; // Subtle shadows for depth with a purple tint
+    box-shadow: 8px 8px 15px #dcd6e7, -8px -8px 15px #ffffff;
     transition: box-shadow 0.3s, transform 0.3s;
 
     &:hover {
-      box-shadow: 2px 2px 5px #dcd6e7, -2px -2px 5px #ffffff; // Reduced intensity on hover
-      transform: scale(1.05); // Enlarging on hover
+      box-shadow: 2px 2px 5px #dcd6e7, -2px -2px 5px #ffffff;
+      transform: scale(1.05);
     }
 
     @include tablet {
@@ -142,29 +142,24 @@
   }
 
   .services__booking-title {
-    font-size: 1.5rem; // Increased size for more emphasis
     margin-bottom: 1rem;
-    color: #c82eb1; // A vibrant teal for a striking contrast
-    font-weight: bold; // Bold weight for better visibility
-    font-family: "Montserrat", sans-serif; // Using Montserrat for a modern, geometric look
-    text-shadow: 2px 2px 4px rgba(23, 162, 184, 0.2); // Adding a subtle shadow for depth
+    color: #d358c1;
   }
 
   .services__booking-description {
-    font-size: 1.15rem; // For readability
-    color: #000000; // Soft grey-purple for a gentle contrast
-    margin-bottom: 2rem; // Spacing for visual separation
+    font-size: 1.15rem;
+    color: #000000;
+    margin-bottom: 2rem;
   }
 
   .services__booking-button {
-    background-color: #9c77b9; // Vibrant purple
+    background-color: #9c77b9;
     color: #ffffff;
     border: none;
     border-radius: 12px;
     padding: 15px 30px;
     font-size: 1.1rem;
-    font-weight: 500; // Medium weight
-    box-shadow: 4px 4px 8px #b6a8c9, -4px -4px 8px #ffffff; // Neumorphic effect
+    font-weight: 500;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
 
