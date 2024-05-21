@@ -87,7 +87,7 @@ const Reviews = () => {
                 </div>
                 <div className="reviews__avatar">
                   <div className="reviews__avatar-circle">
-                    {review.author[0]}
+                    {review.author}
                   </div>
                 </div>
                 <div className="reviews__date">{review.date}</div>

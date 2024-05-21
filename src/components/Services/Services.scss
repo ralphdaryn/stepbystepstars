@@ -21,10 +21,10 @@
     text-transform: uppercase;
     font-size: 1.75rem; // Using rem for scalability and accessibility
     padding-top: 1.5rem;
-    color: #3156a3; // Rich, vibrant purple, not too dark
+    color: #59447c; // Rich, vibrant purple, not too dark
 
     &:hover {
-      color: #4161a5; // A slightly lighter, luminous purple on hover
+      color: #4c3177; // A slightly lighter, luminous purple on hover
     }
 
     &--highlight {
@@ -40,7 +40,7 @@
     padding-top: 2.5rem;
     font-size: 1.75rem;
     margin-bottom: 1rem;
-    color: #6a1b9a;
+    color: #466a8e;
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
@@ -100,6 +100,7 @@
 
   &__card-title {
     font-size: 1.25rem;
+    font-weight: 400;
     margin-top: 0.5rem;
     margin-bottom: 1rem;
     font-family: "Helvetica", "sans-serif";
@@ -123,10 +124,10 @@
 
   .services__booking {
     background-color: #f4f0fd; // Soft, light purple for a calm, modern look
-    padding: 1.25rem;
+    padding: 1.5rem;
     border-radius: 20px;
     text-align: center;
-    margin: 2rem;
+    margin: 1.5rem;
     box-shadow: 8px 8px 15px #dcd6e7, -8px -8px 15px #ffffff; // Subtle shadows for depth with a purple tint
     transition: box-shadow 0.3s, transform 0.3s;
 
@@ -136,14 +137,14 @@
     }
 
     @include tablet {
-      margin: 2rem 8rem;
+      margin: 2rem 10rem;
     }
   }
 
   .services__booking-title {
     font-size: 1.5rem; // Increased size for more emphasis
     margin-bottom: 1rem;
-    color: #4d679d; // A vibrant teal for a striking contrast
+    color: #c82eb1; // A vibrant teal for a striking contrast
     font-weight: bold; // Bold weight for better visibility
     font-family: "Montserrat", sans-serif; // Using Montserrat for a modern, geometric look
     text-shadow: 2px 2px 4px rgba(23, 162, 184, 0.2); // Adding a subtle shadow for depth

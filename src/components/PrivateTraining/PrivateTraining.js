@@ -1,9 +1,14 @@
 import "./PrivateTraining.scss";
+import privatetraining from "../../assets/images/privatetraining.mp4";
 
 const PrivateTraining = () => {
   return (
     <div className="private-training">
       <h2 className="private-training__title">Private Training</h2>
+      <video className="groupfitness__video" controls autoPlay muted>
+        <source src={privatetraining} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <p className="private-training__subtitle">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi est unde
         impedit cumque, repellendus veritatis ratione similique reprehenderit
