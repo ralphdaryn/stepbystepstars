@@ -1,18 +1,18 @@
 .danceparty {
-  padding: 1rem;
+  padding: 0.5rem 2rem;
   margin-top: 7rem;
 
   &__title {
     text-align: center;
     color: #333;
     font-weight: 400;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 
   &__image {
     width: 100%;
-    display: block; // Ensures no extra space below the image
-    border-radius: 0.5rem; // Adds slight rounding to the edges for a modern look
+    display: block;
+    border-radius: 0.5rem;
     margin-bottom: 1rem;
   }
 
@@ -20,5 +20,6 @@
     font-size: 0.9rem;
     line-height: 1.4;
     color: #666;
+    margin-bottom: 0.5rem;
   }
 }

@@ -6,7 +6,7 @@ const Facepaint = () => {
   return (
     <div className="facepaint">
       <h2 className="facepaint__title">Face Painting</h2>
-      <div className="facepaint__images">
+      <div className="facepaint__container">
         <img
           src={facepaint1}
           className="facepaint__image"
