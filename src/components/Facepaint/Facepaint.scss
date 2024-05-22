@@ -22,21 +22,17 @@
   }
 
   &__image {
-    max-width: 7.5rem;
+    width: 8rem;
     border-radius: 0.5rem;
   }
 
   &__subtitle {
-    line-height: 1.4;
     color: #666;
     text-align: justify;
-    width: 16rem;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
     &-container {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
     }
   }
 }

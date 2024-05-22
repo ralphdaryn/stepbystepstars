@@ -19,8 +19,10 @@ const Danceparty = () => {
         </p>
         <p className="danceparty__subtitle">
           Make your celebration unforgettable with our dynamic one-hour
-          entertainment service. Let's turn your party into a showstopper!
-          🕺💃🎥🎈
+          entertainment service.
+        </p>
+        <p className="danceparty__subtitle">
+          Let's turn your party into a showstopper! 🕺💃🎥🎈
         </p>
       </div>
     </div>

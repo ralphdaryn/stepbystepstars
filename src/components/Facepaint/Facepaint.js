@@ -21,13 +21,17 @@ const Facepaint = () => {
       <div className="facepaint__subtitle-container">
         <p className="facepaint__subtitle">
           Transform your celebration with our Face Painting Extravaganza! 🌈🎨
+        </p>
+        <p className="facepaint__subtitle">
           One hour of artistic magic that brings 8-12 kids to life with creative
           designs.
         </p>
         <p className="facepaint__subtitle">
           From whimsical butterflies to fierce superheroes, our talented artists
-          will make your party a canvas of joy. Book now and let the
-          face-painting fun begin!
+          will make your party a canvas of joy.
+        </p>
+        <p className="facepaint__subtitle">
+          Book now and let the face-painting fun begin!
         </p>
       </div>
     </div>

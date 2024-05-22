@@ -9,13 +9,19 @@ const Musicalbabies = () => {
         <source src={musicalbabiesVideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <p className="musicalbabies__subtitle">
-        Introducing our Musical Babies Program - a harmonious blend of joy and
-        learning for little ones aged 3 and under. Join us for an engaging
-        half-hour session of interactive fun featuring circle time, musical
-        instruments, Montessori toys, parachute play! Watch your child blossom
-        in a melody of laughter and discovery.
-      </p>
+      <div>
+        <p className="musicalbabies__subtitle">
+          Introducing our Musical Babies Program - a harmonious blend of joy and
+          learning for little ones aged 3 and under.
+        </p>
+        <p className="musicalbabies__subtitle">
+          Join us for an engaging half-hour session of interactive fun featuring
+          circle time, musical instruments, Montessori toys, parachute play!
+        </p>
+        <p className="musicalbabies__subtitle">
+          Watch your child blossom in a melody of laughter and discovery.
+        </p>
+      </div>
     </div>
   );
 };
