@@ -19,7 +19,7 @@
   }
 
   &__image-container {
-    width: 100%;
+    width: 16rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,9 +37,8 @@
   }
 
   &__image {
-    width: 70%; // slightly smaller to fit aesthetically within container
-    max-width: 300px; // maximum width to control image size on larger screens
-    border-radius: 10px; // consistent rounded corners with the container
+    width: 12rem;
+    border-radius: 10px; 
   }
 
   &__icons-wrapper {
@@ -67,7 +66,7 @@
   }
 
   &__subtitle {
-    margin: 0.25rem;
+    margin: 0.5rem 0;
     &-wrapper {
       text-align: justify;
       font-size: 1rem;

@@ -16,7 +16,8 @@
     gap: 1rem;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 0 2rem;
+    margin-bottom: 0.5rem;
   }
 
   &__image {
@@ -28,6 +29,6 @@
   &__subtitle {
     color: #666;
     text-align: justify;
-    padding: 0.5rem;
+    padding: 0.5rem 2rem;
   }
 }
