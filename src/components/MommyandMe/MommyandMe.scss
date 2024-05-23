@@ -2,44 +2,58 @@
 @use "../../styles/partials/mixins" as *;
 
 .mommyandme {
-  margin-top: 7.5rem;
+  margin-top: 7rem;
+  padding: 0.5rem 2rem;
+  @include tablet {
+    padding: 2rem 4rem;
+  }
+  @include desktop {
+    padding: 2rem 20rem 4rem;
+  }
+
   &__title {
     font-weight: 400;
     margin-bottom: 0.5rem;
     text-align: center;
     color: #333;
     @include tablet {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
   }
 
   &__slider {
     margin-bottom: 1.5rem;
-    .slick-slide {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
   }
 
-  &__container {
+  &__slide {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 0.5rem;
-    overflow: hidden;
   }
 
   &__image {
     width: 100%;
-    object-fit: contain;
+    height: 22.5rem;
+    object-fit: cover;
     border-radius: 8px;
-    height: 20rem;
+    @include tablet {
+      object-fit: contain;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include tablet {
+      align-items: flex-start;
+    }
   }
 
   &__subtitle {
     color: #666;
     text-align: justify;
-    padding: 0.25rem 2rem;
+    margin: 0.25rem 0;
   }
 }

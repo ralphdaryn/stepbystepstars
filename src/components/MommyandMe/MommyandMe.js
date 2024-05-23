@@ -25,37 +25,39 @@ const MommyandMe = () => {
   return (
     <div className="mommyandme">
       <h2 className="mommyandme__title">Mommy and Me</h2>
-      <Slider {...settings} className="mommyandme__slider">
-        {[mommyandme1, mommyandme2, mommyandme3, mommyandme4].map(
-          (image, index) => (
-            <div key={index} className="mommyandme__container">
-              <img
-                className="mommyandme__image"
-                src={image}
-                alt={`Slide ${index + 1}`}
-              />
-            </div>
-          )
-        )}
-      </Slider>
-      <div className="mommyandme__wrapper">
-        <p className="mommyandme__subtitle">
-          Join our Mommy and Me Fitness Class, where all fitness levels are
-          welcome!
-        </p>
-        <p className="mommyandme__subtitle">
-          This engaging class is designed for moms with babies, providing a
-          fantastic opportunity to meet and socialize with fellow moms.
-        </p>
-        <p className="mommyandme__subtitle">
-          Embrace a full-body conditioning experience with a special focus on
-          core restoration. Strengthen your body while creating lasting
-          connections in a supportive community.
-        </p>
-        <p className="mommyandme__subtitle">
-          Come be a part of a fitness journey that celebrates both motherhood
-          and well-being!
-        </p>
+      <div className="mommyandme__container">
+        <Slider {...settings} className="mommyandme__slider">
+          {[mommyandme1, mommyandme2, mommyandme3, mommyandme4].map(
+            (image, index) => (
+              <div key={index} className="mommyandme__slide">
+                <img
+                  className="mommyandme__image"
+                  src={image}
+                  alt={`Slide ${index + 1}`}
+                />
+              </div>
+            )
+          )}
+        </Slider>
+
+        <div className="mommyandme__wrapper">
+          <p className="mommyandme__subtitle">
+            Join our Mommy and Me Fitness Class, where all fitness levels are
+            welcome!
+          </p>
+          <p className="mommyandme__subtitle">
+            This engaging class is designed for moms with babies, providing a
+            fantastic opportunity to meet and socialize with fellow moms.
+            Embrace a full-body conditioning experience with a special focus on
+            core restoration. Strengthen your body while creating lasting
+            connections in a supportive community.
+          </p>
+
+          <p className="mommyandme__subtitle">
+            Come be a part of a fitness journey that celebrates both motherhood
+            and well-being!
+          </p>
+        </div>
       </div>
     </div>
   );
