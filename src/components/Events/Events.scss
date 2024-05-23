@@ -4,8 +4,14 @@
 .events-form {
   display: flex;
   flex-direction: column;
-  padding: 0 2rem 0.5rem;
+  padding: 0 4rem 2rem;
   margin-top: 8rem;
+  @include tablet {
+    padding: 0 14rem 2rem;
+  }
+  @include desktop {
+    padding: 0 30rem 2rem;
+  }
 
   &__title {
     text-align: center;
