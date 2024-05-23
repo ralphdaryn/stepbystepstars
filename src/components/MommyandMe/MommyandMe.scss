@@ -1,3 +1,6 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
 .mommyandme {
   margin-top: 7.5rem;
   text-align: center;
@@ -8,6 +11,9 @@
     color: #333;
     font-weight: 400;
     margin-bottom: 0.5rem;
+    @include tablet {
+      margin-bottom: 1.5rem;
+    }
   }
 
   &__container {

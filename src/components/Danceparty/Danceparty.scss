@@ -5,7 +5,7 @@
   padding: 0.5rem 2rem;
   margin-top: 7rem;
   @include tablet {
-    padding: 1rem 2rem;
+    padding: 2rem 4rem;
   }
   @include desktop {
     padding: 2rem 12rem 4rem;
@@ -26,7 +26,10 @@
     font-weight: 400;
     margin-bottom: 0.5rem;
     @include tablet {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    @include desktop {
+      margin-bottom: 2rem;
     }
   }
 
@@ -36,6 +39,9 @@
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
     @include tablet {
+      width: 22.5rem;
+    }
+    @include desktop {
       width: 25rem;
     }
   }
