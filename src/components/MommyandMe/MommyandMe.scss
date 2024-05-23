@@ -3,33 +3,38 @@
 
 .mommyandme {
   margin-top: 7.5rem;
-  text-align: center;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
   &__title {
-    color: #333;
     font-weight: 400;
     margin-bottom: 0.5rem;
+    text-align: center;
+    color: #333;
     @include tablet {
       margin-bottom: 1.5rem;
     }
   }
 
+  &__slider {
+    margin-bottom: 1.5rem;
+    .slick-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
   &__container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
     justify-content: center;
     align-items: center;
-    padding: 0 2rem;
     margin-bottom: 0.5rem;
+    overflow: hidden;
   }
 
   &__image {
     width: 100%;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    object-fit: contain;
+    border-radius: 8px;
+    height: 20rem;
   }
 
   &__subtitle {
