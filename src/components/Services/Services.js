@@ -138,7 +138,7 @@ const Services = () => {
       <div className="services__booking">
         <h2 className="services__booking-title">Plan Your Event</h2>
         <p className="services__booking-description">
-          Click below to start with our easy booking form!
+          Click here to start with our easy booking form!
         </p>
         <button className="services__booking-button" onClick={goToBookingForm}>
           Start Planning
