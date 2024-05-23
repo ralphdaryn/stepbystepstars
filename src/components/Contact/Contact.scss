@@ -2,20 +2,17 @@
 @use "../../styles/partials/mixins" as *;
 
 .contact {
-  margin: 7.5rem 1rem 0.5rem;
-  padding: 2rem 4rem;
+  margin: 7.5rem 2rem 1rem;
   background-color: #ebe2ee;
   border-radius: 1rem;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 1rem 2.5rem;
   @include tablet {
-    padding: 1rem 8rem;
+    margin: 7.5rem 12rem .5rem;
+    padding: 1rem 6rem;
   }
   @include desktop {
-    margin: 7.5rem 30rem 2rem;
+    margin: 7.5rem 24rem 1rem;
   }
 
   &__container {
@@ -23,7 +20,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 10rem;
   }
 
   &__title {
