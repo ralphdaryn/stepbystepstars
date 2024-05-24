@@ -40,6 +40,7 @@
     display: none;
     @include desktop {
       display: flex;
+      align-items: center; /* Align items in the center */
     }
     &-span {
       &:hover {
@@ -48,6 +49,7 @@
     }
     &-list {
       display: flex;
+      align-items: center; /* Ensures alignment with the button */
     }
     &-link {
       padding: 0 0.75rem;
@@ -58,6 +60,9 @@
 
       a {
         color: black;
+        display: inline-block; /* Ensures alignment with the button */
+        height: 40px; /* Matches button height */
+        line-height: 40px; /* Centers text vertically */
         &:hover {
           color: #8638a4;
         }
@@ -69,12 +74,16 @@
           content: "";
           position: absolute;
           left: 0;
-          bottom: -5px;
+          bottom: -3px; /* Adjusted bottom position for the underline */
           width: calc(100% - 2rem);
           height: 3px;
           background-color: #8638a4;
           margin-left: 1rem;
         }
+      }
+
+      &.contact-button::after {
+        content: none; /* Removes the underline from the contact button */
       }
 
       .arrow-icon {
@@ -90,16 +99,15 @@
         top: 100%;
         left: 0;
         background-color: #fff;
-        padding: 0.5rem;
-        margin-top: 0.5rem;
+        padding: 0.25rem; /* Reduced padding for less spacing */
+        margin-top: 0.25rem; /* Reduced margin for less spacing */
         border-radius: 0.5rem;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
         z-index: 10;
-        transition: all 0.3s ease;
         width: max-content;
 
         li {
-          padding: 0.5rem 1rem;
+          padding: 0.25rem 1rem; /* Reduced padding for less spacing */
           font-size: 1rem;
 
           a {
@@ -166,18 +174,16 @@
 
       &-dropdown {
         display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: #fff;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        z-index: 10;
-        transition: all 0.3s ease;
+        position: relative; /* Changed to relative to display under the item */
+        flex-direction: column; /* Ensure items are stacked */
+        background-color: #f9f6fb;
+        padding: 0.25rem; /* Reduced padding for less spacing */
+        width: 100%; /* Ensure dropdown takes full width */
+
         li {
-          padding: 0.5rem 0;
+          padding: 0.25rem 1rem; /* Reduced padding for less spacing */
           font-size: 1rem;
+
           a {
             font-weight: normal;
             &:hover {
@@ -185,12 +191,11 @@
             }
           }
         }
-        &-item {
-          ul {
-            padding-left: 1rem;
-          }
-        }
       }
+    }
+
+    &-link:hover .header__sidebar-dropdown {
+      display: flex; /* Show dropdown on hover */
     }
 
     &-icons {
@@ -215,6 +220,33 @@
     }
     &-text {
       font-weight: 400;
+    }
+  }
+
+  .contact-button {
+    @include desktop {
+      background-color: #a864c1;
+      border-radius: 8px;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      height: 40px;
+      line-height: 20px;
+      padding: 10px 16px;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+
+      &:hover,
+      &:focus {
+        background-color: #86509a;
+      }
+
+      &::after {
+        content: none; /* Removes the underline from the contact button */
+      }
     }
   }
 }

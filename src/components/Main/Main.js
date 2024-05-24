@@ -1,4 +1,5 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react"; 
+import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import debounce from "lodash.debounce";
 import "./Main.scss";
@@ -13,12 +14,14 @@ const useInView = () => {
 
   useEffect(() => {
     const checkInView = debounce(() => {
-      const rect = ref.current.getBoundingClientRect();
-      const elemTop = rect.top;
-      const elemBottom = rect.bottom;
-      const isVisible = elemTop < window.innerHeight && elemBottom >= 0;
+      if (ref.current) {
+        const rect = ref.current.getBoundingClientRect();
+        const elemTop = rect.top;
+        const elemBottom = rect.bottom;
+        const isVisible = elemTop < window.innerHeight && elemBottom >= 0;
 
-      setInView(isVisible);
+        setInView(isVisible);
+      }
     }, 100);
 
     window.addEventListener("scroll", checkInView);
@@ -57,6 +60,17 @@ const ScrollFade = ({ children }) => {
 };
 
 const Main = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state && location.state.scrollTo) {
+      const section = document.getElementById(location.state.scrollTo);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   return (
     <div>
       <div className="main__carousel">

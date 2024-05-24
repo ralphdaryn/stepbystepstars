@@ -8,7 +8,6 @@ import {
   FaFacebook,
   FaInstagramSquare,
 } from "react-icons/fa";
-import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import "./Header.scss";
 import logo from "../../assets/images/logo.png";
 
@@ -19,7 +18,7 @@ const Header = () => {
     useState(false);
   const [showFitnessDropdown, setShowFitnessDropdown] = useState(false);
 
-  const navigate = useNavigate(); // Use useNavigate hook
+  const navigate = useNavigate();
   const location = useLocation();
 
   const toggleNavigation = () => {
@@ -47,10 +46,16 @@ const Header = () => {
   const handleContactClick = () => {
     handleLinkClick("Contact");
     if (location.pathname !== "/") {
-      navigate("/#contact-section");
+      navigate("/", { state: { scrollTo: "contact-section" } });
     } else {
-      scroll.scrollTo(document.getElementById("contact-section").offsetTop);
+      document
+        .getElementById("contact-section")
+        .scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const handleDropdownClick = (dropdownSetter) => {
+    dropdownSetter((prevState) => !prevState);
   };
 
   return (
@@ -190,14 +195,12 @@ const Header = () => {
                 activeLink === "Contact" ? "active" : ""
               }`}
             >
-              <ScrollLink
-                to="contact-section"
-                smooth={true}
-                duration={500}
+              <button
+                className="header__button contact-button"
                 onClick={handleContactClick}
               >
                 Contact
-              </ScrollLink>
+              </button>
             </li>
           </ul>
         </nav>
@@ -216,7 +219,7 @@ const Header = () => {
             <li className="header__sidebar-link">
               <span
                 onClick={() =>
-                  setShowBirthdayPartiesDropdown(!showBirthdayPartiesDropdown)
+                  handleDropdownClick(setShowBirthdayPartiesDropdown)
                 }
               >
                 Birthday Parties{" "}
@@ -256,9 +259,7 @@ const Header = () => {
               )}
             </li>
             <li className="header__sidebar-link">
-              <span
-                onClick={() => setShowFitnessDropdown(!showFitnessDropdown)}
-              >
+              <span onClick={() => handleDropdownClick(setShowFitnessDropdown)}>
                 Fitness{" "}
                 {showFitnessDropdown ? <FaArrowDown /> : <FaArrowRight />}
               </span>
@@ -307,18 +308,10 @@ const Header = () => {
                 Events <FaArrowRight />
               </Link>
             </li>
-            <li
-              className="header__sidebar-link"
-              onClick={() => handleLinkClick("Contact")}
-            >
-              <ScrollLink
-                to="contact-section"
-                smooth={true}
-                duration={500}
-                onClick={handleContactClick}
-              >
+            <li className="header__sidebar-link" onClick={handleContactClick}>
+              <span>
                 Contact <FaArrowRight />
-              </ScrollLink>
+              </span>
             </li>
           </ul>
           <ul className="header__sidebar-icons">
