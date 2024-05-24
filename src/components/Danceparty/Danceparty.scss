@@ -2,22 +2,26 @@
 @use "../../styles/partials/mixins" as *;
 
 .danceparty {
-  padding: 0.5rem 2rem;
+  padding: 0.25rem 2rem;
   margin-top: 7rem;
+
   @include tablet {
-    padding: 2rem 4rem 6rem;
+    padding: .5rem 4rem 6.5rem;
   }
+
   @include desktop {
-    padding: 2rem 16rem 8rem;
+    padding: .5rem 14rem 8rem;
   }
 
   &__header {
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
+
     @include tablet {
       margin-bottom: 1.5rem;
     }
+
     @include desktop {
       margin-bottom: 2rem;
     }
@@ -44,9 +48,11 @@
     display: block;
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
+
     @include tablet {
       width: 22.5rem;
     }
+
     @include desktop {
       width: 25rem;
     }

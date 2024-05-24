@@ -11,7 +11,8 @@ const BackButton = () => {
 
   return (
     <button className="back-button" onClick={handleBackClick}>
-      <FaArrowLeft className="back-button-icon" /> Back
+      <FaArrowLeft className="back-button-icon" />
+      <span className="back-button-text">Back</span>
     </button>
   );
 };

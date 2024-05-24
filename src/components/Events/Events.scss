@@ -4,13 +4,13 @@
 .events-form {
   display: flex;
   flex-direction: column;
-  padding: 0 4rem 2rem;
-  margin-top: 8rem;
+  padding: 0.25rem 2rem 2rem;
+  margin-top: 7rem;
   @include tablet {
-    padding: 0 14rem 2rem;
+    padding: 0.5rem 4rem 2rem;
   }
   @include desktop {
-    padding: 0 30rem 2rem;
+    padding: 0.5rem 14rem 2rem;
   }
 
   &__header {

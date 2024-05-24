@@ -1,22 +1,41 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
 .back-button {
   display: flex;
   align-items: center;
-  padding: .5rem;
+  padding: 0.5rem;
   background-color: #a26ef6;
   color: #fff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s;
+
   &:hover {
     background-color: #8258c5;
   }
+
   &:focus {
     outline: none;
+  }
+
+  .back-button-text {
+    display: none; // Initially hide the text
+
+    @include tablet {
+      display: inline; // Show text on tablet
+    }
+
+    @include desktop {
+      display: inline; // Show text on desktop
+    }
   }
 }
 
 .back-button-icon {
-  font-size: 1rem;
-  margin-right: .25rem;
+  font-size: .85rem;
+  @include tablet {
+    margin-right: 0.25rem;
+  }
 }

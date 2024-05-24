@@ -2,13 +2,13 @@
 @use "../../styles/partials/mixins" as *;
 
 .private-training {
-  padding: 0.5rem 2rem;
+  padding: 0.25rem 2rem;
   margin-top: 7rem;
   @include tablet {
-    padding: 2rem 4rem;
+    padding: .5rem 4rem;
   }
   @include desktop {
-    padding: 2rem 12rem;
+    padding: .5rem 14rem;
   }
 
   &__header {
