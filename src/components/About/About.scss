@@ -5,17 +5,23 @@
   padding: 0.5rem 2rem;
   margin-top: 7rem;
 
-  &__title {
-    text-align: center;
-    color: #333; // hex color for dark gray
-    font-weight: 400; // bolder font-weight for modern typography
-    margin-bottom: 0.5rem;
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
     @include tablet {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
     @include desktop {
       margin-bottom: 2rem;
     }
+  }
+
+  &__title {
+    color: #333;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 400;
   }
 
   &__container {
@@ -24,7 +30,7 @@
     align-items: center;
     @include tablet {
       flex-direction: row;
-      gap: 2rem;
+      gap: 1.5rem;
     }
     @include desktop {
       justify-content: center;
@@ -34,7 +40,6 @@
   }
 
   &__image-container {
-    // width: 16rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,7 +52,7 @@
     transition: transform 0.3s ease-in-out;
 
     &:hover {
-      transform: translateY(-5px); // subtle lift effect on hover
+      transform: translateY(-5px);
     }
   }
 
@@ -72,12 +77,12 @@
 
   &__icon-envelope,
   &__icon-phone {
-    color: #a5a1a1; // gray color in hex
+    color: #a5a1a1;
   }
 
   &__icon-envelope:hover,
   &__icon-phone:hover {
-    color: #4caf50; // vibrant green color on hover in hex
+    color: #4caf50;
   }
 
   &__subtitle {

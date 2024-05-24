@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import debounce from "lodash.debounce";
 import "./Main.scss";
 import Carousel from "../ImageCarousel/ImageCarousel";
 import Services from "../Services/Services";
@@ -11,14 +12,14 @@ const useInView = () => {
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
-    const checkInView = () => {
+    const checkInView = debounce(() => {
       const rect = ref.current.getBoundingClientRect();
       const elemTop = rect.top;
       const elemBottom = rect.bottom;
       const isVisible = elemTop < window.innerHeight && elemBottom >= 0;
 
       setInView(isVisible);
-    };
+    }, 100);
 
     window.addEventListener("scroll", checkInView);
     checkInView();
@@ -71,7 +72,9 @@ const Main = () => {
               <Reviews />
             </ScrollFade>
             <ScrollFade key="contact">
-              <Contact />
+              <div id="contact-section">
+                <Contact />
+              </div>
             </ScrollFade>
           </div>
         </div>

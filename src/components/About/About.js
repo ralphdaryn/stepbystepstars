@@ -1,11 +1,15 @@
 import "./About.scss";
 import laurenImg from "../../assets/images/about.png";
 import { FaEnvelope, FaPhone } from "react-icons/fa";
+import BackButton from "../BackButton/BackButton";
 
 const About = () => {
   return (
     <div className="about">
-      <h2 className="about__title">Our Story</h2>
+      <div className="about__header">
+        <BackButton />
+        <h2 className="about__title">Our Story</h2>
+      </div>
       <div className="about__container">
         <div className="about__image-container">
           <img className="about__image" src={laurenImg} alt="bio pic" />

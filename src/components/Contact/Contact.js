@@ -6,15 +6,15 @@ const Contact = () => {
     name: "",
     email: "",
     message: "",
-    phoneNumber: "", 
+    phoneNumber: "",
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((prevData) => ({
+      ...prevData,
       [name]: value,
-    });
+    }));
   };
 
   const handleSubmit = (e) => {
@@ -27,44 +27,25 @@ const Contact = () => {
       <div className="contact__container">
         <h2 className="contact__title">Contact</h2>
         <form onSubmit={handleSubmit}>
+          {["name", "email", "phoneNumber"].map((field) => (
+            <div key={field} className="contact__form-group">
+              <label htmlFor={field} className="contact__label">
+                {field.charAt(0).toUpperCase() + field.slice(1)}
+              </label>
+              <input
+                type={field === "email" ? "email" : "text"}
+                id={field}
+                name={field}
+                value={formData[field]}
+                onChange={handleInputChange}
+                className="contact__input"
+              />
+            </div>
+          ))}
           <div className="contact__form-group">
-            <label htmlFor="name" className="contact__label">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              className="contact__input"
-            />
-          </div>
-
-          <div className="contact__form-group">
-            <label htmlFor="email" className="contact__label">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              className="contact__input"
-            />
-          </div>
-
-          <div className="contact__form-group">
-            <label htmlFor="phoneNumber" className="contact__label">Phone Number</label>
-            <input
-              type="text"
-              id="phoneNumber"
-              name="phoneNumber"
-              value={formData.phoneNumber}
-              onChange={handleInputChange}
-              className="contact__input"
-            />
-          </div>
-
-          <div className="contact__form-group">
-            <label htmlFor="message" className="contact__label">Message</label>
+            <label htmlFor="message" className="contact__label">
+              Message
+            </label>
             <textarea
               id="message"
               name="message"

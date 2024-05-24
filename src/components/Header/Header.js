@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import {
   FaBars,
   FaTimes,
@@ -8,6 +8,7 @@ import {
   FaFacebook,
   FaInstagramSquare,
 } from "react-icons/fa";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import "./Header.scss";
 import logo from "../../assets/images/logo.png";
 
@@ -17,6 +18,9 @@ const Header = () => {
   const [showBirthdayPartiesDropdown, setShowBirthdayPartiesDropdown] =
     useState(false);
   const [showFitnessDropdown, setShowFitnessDropdown] = useState(false);
+
+  const navigate = useNavigate(); // Use useNavigate hook
+  const location = useLocation();
 
   const toggleNavigation = () => {
     setShowNavigation(!showNavigation);
@@ -38,6 +42,15 @@ const Header = () => {
     closeSidebar();
     setShowBirthdayPartiesDropdown(false);
     setShowFitnessDropdown(false);
+  };
+
+  const handleContactClick = () => {
+    handleLinkClick("Contact");
+    if (location.pathname !== "/") {
+      navigate("/#contact-section");
+    } else {
+      scroll.scrollTo(document.getElementById("contact-section").offsetTop);
+    }
   };
 
   return (
@@ -177,9 +190,14 @@ const Header = () => {
                 activeLink === "Contact" ? "active" : ""
               }`}
             >
-              <Link to="/contact" onClick={() => handleLinkClick("Contact")}>
+              <ScrollLink
+                to="contact-section"
+                smooth={true}
+                duration={500}
+                onClick={handleContactClick}
+              >
                 Contact
-              </Link>
+              </ScrollLink>
             </li>
           </ul>
         </nav>
@@ -293,9 +311,14 @@ const Header = () => {
               className="header__sidebar-link"
               onClick={() => handleLinkClick("Contact")}
             >
-              <Link to="/contact">
+              <ScrollLink
+                to="contact-section"
+                smooth={true}
+                duration={500}
+                onClick={handleContactClick}
+              >
                 Contact <FaArrowRight />
-              </Link>
+              </ScrollLink>
             </li>
           </ul>
           <ul className="header__sidebar-icons">

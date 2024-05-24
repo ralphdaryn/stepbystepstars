@@ -41,7 +41,7 @@
   }
 
   &__input,
-  &__textarea {
+  &__textarea-message {
     width: 100%;
     padding: 0.25rem;
     border-radius: 8px;
@@ -52,23 +52,6 @@
     }
     @include desktop {
       padding: 0.25rem 0.5rem;
-    }
-    &-message {
-      width: 100%;
-      padding: 0.5rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      resize: none;
-      @include tablet {
-        width: 14rem;
-        padding: 2rem;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        resize: none;
-      }
-      @include desktop {
-        padding: 1rem 1.5rem 2rem;
-      }
     }
   }
 
