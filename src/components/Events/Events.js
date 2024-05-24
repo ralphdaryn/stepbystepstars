@@ -1,5 +1,6 @@
 import "./Events.scss";
 import { useState, useEffect } from "react";
+import BackButton from "../BackButton/BackButton";
 
 const Events = () => {
   const [formData, setFormData] = useState({
@@ -33,7 +34,11 @@ const Events = () => {
     <div>
       <form className="events-form" onSubmit={handleSubmit}>
         <div className="events-form__field">
-          <h2 className="events-form__title">Events</h2>
+          <div className="events-form__header">
+            <BackButton />
+            <h2 className="events-form__title">Events</h2>
+          </div>
+          {/* <h2 className="events-form__title">Events</h2> */}
           <label className="events-form__label">First Name:</label>
           <input
             className="events-form__input"

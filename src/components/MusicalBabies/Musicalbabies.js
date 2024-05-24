@@ -1,16 +1,19 @@
 import "./Musicalbabies.scss";
 import musicalbabiesVideo from "../../assets/images/musicalbabies.MP4";
+import BackButton from "../BackButton/BackButton";
 
 const Musicalbabies = () => {
   return (
     <div className="musicalbabies">
-      <h2 className="musicalbabies__title">Musical Babies</h2>
+      <div className="musicalbabies__header">
+        <BackButton />
+        <h2 className="musicalbabies__title">Musical Babies</h2>
+      </div>
       <div className="musicalbabies__container">
         <video className="musicalbabies__video" controls autoPlay muted>
           <source src={musicalbabiesVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-
         <div className="musicalbabies__wrapper">
           <p className="musicalbabies__subtitle">
             Introducing our Musical Babies Program - a harmonious blend of joy

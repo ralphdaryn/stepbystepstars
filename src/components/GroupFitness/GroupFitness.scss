@@ -2,12 +2,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .groupfitness {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 0.5rem 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 7rem;
   @include tablet {
     padding: 2rem 4rem;
@@ -16,16 +11,17 @@
     padding: 2rem 12rem;
   }
 
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
   &__title {
-    margin-bottom: 0.5rem;
+    text-align: center;
     color: #333;
     font-weight: 400;
-    @include tablet {
-      margin-bottom: 1.5rem;
-    }
-    @include desktop {
-      margin-bottom: 2rem;
-    }
+    margin: 0 auto;
   }
 
   &__container {
@@ -51,7 +47,7 @@
   &__video {
     width: 100%;
     max-width: 15rem;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     margin-bottom: 1rem;
     outline: none;
   }

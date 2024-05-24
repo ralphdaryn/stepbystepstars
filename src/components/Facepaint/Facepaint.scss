@@ -10,18 +10,23 @@
   @include desktop {
     padding: 2rem 12rem 4rem;
   }
-
-  &__title {
-    text-align: center;
-    color: #333;
-    font-weight: 400;
-    margin-bottom: 0.5rem;
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
     @include tablet {
       margin-bottom: 1.5rem;
     }
     @include desktop {
       margin-bottom: 2rem;
     }
+  }
+
+  &__title {
+    text-align: center;
+    color: #333;
+    font-weight: 400;
+    margin: 0 auto;
   }
 
   &__container {

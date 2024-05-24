@@ -1,11 +1,16 @@
 import "./Facepaint.scss";
 import facepaint1 from "../../assets/images/facepaint1.jpeg";
 import facepaint2 from "../../assets/images/facepaint2.jpeg";
+import BackButton from "../BackButton/BackButton";
 
 const Facepaint = () => {
   return (
     <div className="facepaint">
-      <h2 className="facepaint__title">Face Painting</h2>
+      <div className="facepaint__header">
+        <BackButton />
+        <h2 className="facepaint__title">Face Painting</h2>
+      </div>
+
       <div className="facepaint__container">
         <div className="facepaint__wrapper">
           <img

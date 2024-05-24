@@ -13,12 +13,17 @@
     padding: 0 30rem 2rem;
   }
 
+  &__header {
+    display: flex;
+    align-items: flex-start;
+  }
+
   &__title {
-    text-align: center;
     text-transform: uppercase;
-    margin-bottom: 1rem;
+    margin: 0 auto;
     color: #8638a4;
     font-weight: 400;
+    margin-bottom: 1rem;
   }
 
   &__field {

@@ -1,10 +1,14 @@
 import "./GroupFitness.scss";
 import groupfitness from "../../assets/images/groupfitness.mp4";
+import BackButton from "../BackButton/BackButton";
 
 const GroupFitness = () => {
   return (
     <div className="groupfitness">
-      <h2 className="groupfitness__title">Group Fitness</h2>
+      <div className="groupfitness__header">
+        <BackButton />
+        <h2 className="groupfitness__title">Group Fitness</h2>
+      </div>
       <div className="groupfitness__container">
         <video className="groupfitness__video" controls autoPlay muted>
           <source src={groupfitness} type="video/mp4" />

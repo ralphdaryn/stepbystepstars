@@ -1,0 +1,22 @@
+.back-button {
+  display: flex;
+  align-items: center;
+  padding: .5rem;
+  background-color: #a26ef6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: #8258c5;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.back-button-icon {
+  font-size: 1rem;
+  margin-right: .25rem;
+}

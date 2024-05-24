@@ -6,6 +6,7 @@ import mommyandme1 from "../../assets/images/mommyandme1.jpeg";
 import mommyandme2 from "../../assets/images/mommyandme2.jpeg";
 import mommyandme3 from "../../assets/images/mommyandme3.jpeg";
 import mommyandme4 from "../../assets/images/mommyandme4.jpeg";
+import BackButton from "../BackButton/BackButton";
 
 const MommyandMe = () => {
   const settings = {
@@ -24,7 +25,10 @@ const MommyandMe = () => {
 
   return (
     <div className="mommyandme">
-      <h2 className="mommyandme__title">Mommy and Me</h2>
+      <div className="mommyandme__header">
+        <BackButton />
+        <h2 className="mommyandme__title">Mommy and Me</h2>
+      </div>
       <div className="mommyandme__container">
         <Slider {...settings} className="mommyandme__slider">
           {[mommyandme1, mommyandme2, mommyandme3, mommyandme4].map(

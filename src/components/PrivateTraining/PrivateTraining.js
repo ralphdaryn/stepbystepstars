@@ -1,10 +1,14 @@
 import "./PrivateTraining.scss";
 import privatetraining from "../../assets/images/privatetraining.mp4";
+import BackButton from "../BackButton/BackButton";
 
 const PrivateTraining = () => {
   return (
     <div className="private-training">
-      <h2 className="private-training__title">Private Training</h2>
+      <div className="private-training__header">
+        <BackButton />
+        <h2 className="private-training__title">Private Training</h2>
+      </div>
       <div className="private-training__container">
         <video className="private-training__video" controls autoPlay muted>
           <source src={privatetraining} type="video/mp4" />
