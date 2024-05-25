@@ -32,6 +32,13 @@
     font-weight: 400;
     margin: 0 auto;
     text-align: center;
+    padding-right: 1.25rem;
+    @include tablet {
+      padding-right: 3rem;
+    }
+    @include desktop {
+      padding-right: 5rem;
+    }
   }
 
   &__container {

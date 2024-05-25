@@ -32,13 +32,12 @@ const Events = () => {
 
   return (
     <div>
+      <div className="events-header">
+        <BackButton />
+        <h2 className="events-title">Events</h2>
+      </div>
       <form className="events-form" onSubmit={handleSubmit}>
         <div className="events-form__field">
-          <div className="events-form__header">
-            <BackButton />
-            <h2 className="events-form__title">Events</h2>
-          </div>
-          {/* <h2 className="events-form__title">Events</h2> */}
           <label className="events-form__label">First Name:</label>
           <input
             className="events-form__input"
@@ -150,9 +149,11 @@ const Events = () => {
             required
           />
         </div>
-        <button className="events-form__submit" type="submit">
-          Submit
-        </button>
+        <div className="events-form__field events-form__field--submit">
+          <button className="events-form__submit" type="submit">
+            Submit
+          </button>
+        </div>
       </form>
     </div>
   );
