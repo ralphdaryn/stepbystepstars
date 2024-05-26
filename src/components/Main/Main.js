@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react"; 
+import { useRef, useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import debounce from "lodash.debounce";
