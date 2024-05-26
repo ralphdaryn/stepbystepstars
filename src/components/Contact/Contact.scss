@@ -40,10 +40,23 @@
     margin-bottom: 0.5rem;
   }
 
-  &__input,
-  &__textarea-message {
+  &__input {
     width: 100%;
     padding: 0.25rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: none;
+    @include tablet {
+      width: 12rem;
+    }
+    @include desktop {
+      padding: 0.25rem 0.5rem;
+    }
+  }
+  &__textarea-message {
+    width: 100%;
+    height: 4.5rem;
+    padding: 0.5rem;
     border-radius: 8px;
     border: 1px solid #ccc;
     resize: none;
