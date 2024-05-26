@@ -2,15 +2,15 @@
 @use "../../styles/partials/mixins" as *;
 
 .danceparty {
-  padding: 0.25rem 2rem;
+  padding: 0.25rem 2rem 0.5rem;
   margin-top: 7rem;
 
   @include tablet {
-    padding: .5rem 4rem 6.5rem;
+    padding: 0.5rem 4rem 7rem;
   }
 
   @include desktop {
-    padding: .5rem 14rem 8rem;
+    padding: 0.5rem 14rem 8rem;
   }
 
   &__header {
@@ -33,6 +33,7 @@
     margin: 0 auto;
     text-align: center;
     padding-right: 1.25rem;
+    font-size: 1.75rem;
     @include tablet {
       padding-right: 3rem;
     }
@@ -45,7 +46,7 @@
     @include tablet {
       display: flex;
       flex-direction: row;
-      gap: 1.5rem;
+      gap: 2rem;
       align-items: flex-start;
     }
   }
@@ -57,7 +58,7 @@
     margin-bottom: 0.5rem;
 
     @include tablet {
-      width: 22.5rem;
+      width: 20.5rem;
     }
 
     @include desktop {
@@ -67,7 +68,16 @@
 
   &__subtitle {
     color: #666;
-    margin-bottom: 0.5rem;
+    margin: 0.25rem 0;
     text-align: justify;
+    line-height: 1.3;
+    @include tablet {
+      font-size: 1.05rem;
+      margin: 0 0 .5rem;
+    }
+    @include desktop {
+      font-size: 1.25rem;
+      line-height: 1.4;
+    }
   }
 }

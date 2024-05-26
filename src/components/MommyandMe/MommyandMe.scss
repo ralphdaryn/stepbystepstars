@@ -5,10 +5,10 @@
   margin-top: 7rem;
   padding: 0.25rem 2rem;
   @include tablet {
-    padding: .5rem 4rem;
+    padding: 0.5rem 4rem;
   }
   @include desktop {
-    padding: .5rem 14rem 4rem;
+    padding: 0.5rem 14rem 4rem;
   }
 
   &__header {
@@ -22,7 +22,8 @@
     color: #333;
     font-weight: 400;
     margin: 0 auto;
-    padding-right: .5rem;
+    padding-right: 0.5rem;
+    font-size: 1.75rem;
     @include tablet {
       padding-right: 4rem;
     }
@@ -55,6 +56,11 @@
     align-items: center;
     @include tablet {
       align-items: flex-start;
+      width: 36rem;
+      margin: 0 auto;
+    }
+    @include desktop {
+      width: 50rem;
     }
   }
 
@@ -62,5 +68,12 @@
     color: #666;
     text-align: justify;
     margin: 0.25rem 0;
+    @include tablet {
+      font-size: 1.05rem;
+      line-height: 1.4;
+    }
+    @include desktop {
+      font-size: 1.25rem;
+    }
   }
 }
