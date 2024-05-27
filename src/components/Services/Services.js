@@ -11,10 +11,12 @@ const Services = () => {
   const navigate = useNavigate();
 
   const goToServicePage = (path) => {
+    window.scrollTo(0, 0);
     navigate(path);
   };
 
   const goToBookingForm = () => {
+    window.scrollTo(0, 0);
     navigate("/events");
   };
 
