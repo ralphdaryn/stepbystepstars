@@ -44,7 +44,7 @@
     padding-top: 2.5rem;
     font-size: 1.75rem;
     margin-bottom: .75rem;
-    color: #9c1d9d;
+    color: #9b59b6;
     text-align: center;
     text-transform: uppercase;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
@@ -101,7 +101,7 @@
 
   &__card-title {
     font-size: 1.25rem;
-    font-weight: 400;
+    font-weight: 700;
     margin-top: 0.5rem;
     margin-bottom: 1rem;
     font-family: "Helvetica", "sans-serif";
@@ -109,17 +109,18 @@
   }
 
   &__button {
-    background-color: #ea4c89;
+    background-color: #a864c1;
     color: white;
     border: none;
     border-radius: 8px;
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
+    font-weight: 700;
     transition: background-color 0.3s;
     cursor: pointer;
 
     &:hover {
-      background-color: #c13584;
+      background-color: #86509a;
     }
   }
 

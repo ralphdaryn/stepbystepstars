@@ -83,7 +83,7 @@ const Services = () => {
       </div>
 
       {/* Fitness Section */}
-      <h2 className="services__section-title--fitness">Fitness Class</h2>
+      <h2 className="services__section-title--fitness">Fitness</h2>
       <div className="services__section">
         <div className="services__card">
           <div className="services__image-wrapper">
