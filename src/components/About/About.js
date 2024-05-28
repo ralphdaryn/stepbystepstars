@@ -1,34 +1,29 @@
 import "./About.scss";
 import laurenImg from "../../assets/images/about.png";
-import {
-  FaFacebook,
-  FaInstagramSquare,
-  FaEnvelope,
-  FaPhone,
-} from "react-icons/fa";
+import { FaEnvelope, FaPhone } from "react-icons/fa";
+import BackButton from "../BackButton/BackButton";
 
 const About = () => {
   return (
-    <div id="about" className="about">
-      <h2 className="about__title">Meet Lauren Paul</h2>
+    <div className="about">
+      <div className="about__header">
+        <BackButton />
+        <h2 className="about__title">Our Story</h2>
+      </div>
       <div className="about__container">
         <div className="about__image-container">
           <img className="about__image" src={laurenImg} alt="bio pic" />
           <div className="about__icons-wrapper">
-            <div className="about__icons">
-              <a href="https://facebook.com/stepbystepstars">
-                <FaFacebook className="about__icons-facebook" />
-              </a>
-              <a href="https://instagram.com/stepbystepstars">
-                <FaInstagramSquare className="about__icons-instagram" />
-              </a>
-              <a href="mailto:stepbystepstars@gmail.com">
-                <FaEnvelope className="about__icons-envelope" />
-              </a>
-              <a href="tel:6479988074">
-                <FaPhone className="about__icons-phone" />
-              </a>
-            </div>
+            <a href="mailto:stepbystepstars@gmail.com" className="about__icon">
+              <FaEnvelope className="about__icon-envelope" />
+            </a>
+            <a href="tel:6479988074" className="about__icon">
+              <FaPhone className="about__icon-phone" />
+            </a>
+          </div>
+          <div className="about__text-wrapper">
+            <h4 className="about__text">Lauren Paul</h4>
+            <p className="about__subtext">Step by Step</p>
           </div>
         </div>
         <div className="about__subtitle-wrapper">
@@ -42,9 +37,7 @@ const About = () => {
             My personal journey led me to discover effective strategies to stay
             active and healthy despite a hectic schedule. Now, I'm dedicated to
             sharing these secrets with other women, empowering them to
-            prioritize their well-being. Join me in group fitness classes and
-            personal training sessions designed not only to build strength but
-            also to fit seamlessly into your busy life.
+            prioritize their well-being.
           </p>
           <p className="about__subtitle">
             Together, we'll create a balanced and sustainable approach to
@@ -53,11 +46,6 @@ const About = () => {
             lifestyle where each workout becomes a step towards a healthier and
             happier you.
           </p>
-          {/* <div className="about__text-wrapper">
-            <h4 className="about__text">Lauren Paul</h4>
-            <h5 className="about__text">Step By Step</h5>
-            <p className="about__text-number">647-998-8074</p>
-          </div> */}
         </div>
       </div>
     </div>

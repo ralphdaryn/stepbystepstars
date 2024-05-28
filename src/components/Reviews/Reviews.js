@@ -160,6 +160,7 @@ const Reviews = () => {
     <div className="reviews">
       <h2 className="reviews__title">What Our Clients Say About Us</h2>
       <a
+<<<<<<< HEAD
         href="https://facebook.com/stepbystepstars"
         className="reviews__facebook"
       >
@@ -168,6 +169,15 @@ const Reviews = () => {
       <h3 className="reviews__subtitle">
         <a href="https://facebook.com/stepbystepstars">Step By Step Stars</a>
       </h3>
+=======
+        href="https://www.facebook.com/stepbystepstars/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaFacebook className="reviews__facebook" />
+      </a>
+      <h3 className="reviews__subtitle">Step By Step Stars</h3>
+>>>>>>> develop
       <p className="reviews__text">
         Rating 5.0{" "}
         {[...Array(5)].map((_, index) => (
@@ -175,12 +185,8 @@ const Reviews = () => {
         ))}{" "}
         (over 50+ reviews)
       </p>
-      {reviews.map((review) => (
-        <div className="reviews__testimonial" key={review.id}></div>
-      ))}
-
       <div className="reviews__wrapper">
-        <Slider {...settings} className="reviews">
+        <Slider {...settings} className="reviews__slider">
           {reviews.map((review) => (
             <div className="reviews__testimonial" key={review.id}>
               <div className="reviews__container">
@@ -191,7 +197,9 @@ const Reviews = () => {
                   ))}
                 </div>
                 <div className="reviews__avatar">
-                  <div className="reviews__avatar-circle">{review.author}</div>
+                  <div className="reviews__avatar-circle">
+                    {review.author}
+                  </div>
                 </div>
                 <div className="reviews__date">{review.date}</div>
               </div>

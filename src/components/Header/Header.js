@@ -1,17 +1,25 @@
-import "./Header.scss";
 import { useState } from "react";
-import logo from "../../assets/images/logo.png";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import {
   FaBars,
   FaTimes,
   FaArrowRight,
+  FaArrowDown,
   FaFacebook,
   FaInstagramSquare,
 } from "react-icons/fa";
+import "./Header.scss";
+import logo from "../../assets/images/logo.png";
 
 const Header = () => {
   const [showNavigation, setShowNavigation] = useState(false);
   const [activeLink, setActiveLink] = useState("");
+  const [showBirthdayPartiesDropdown, setShowBirthdayPartiesDropdown] =
+    useState(false);
+  const [showFitnessDropdown, setShowFitnessDropdown] = useState(false);
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleNavigation = () => {
     setShowNavigation(!showNavigation);
@@ -24,18 +32,38 @@ const Header = () => {
   const handleLinkClick = (link) => {
     setActiveLink(link);
     closeSidebar();
+    setShowBirthdayPartiesDropdown(false);
+    setShowFitnessDropdown(false);
   };
 
   const handleLogoClick = () => {
+    setActiveLink("");
     closeSidebar();
+    setShowBirthdayPartiesDropdown(false);
+    setShowFitnessDropdown(false);
+  };
+
+  const handleContactClick = () => {
+    handleLinkClick("Contact");
+    if (location.pathname !== "/") {
+      navigate("/", { state: { scrollTo: "contact-section" } });
+    } else {
+      document
+        .getElementById("contact-section")
+        .scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleDropdownClick = (dropdownSetter) => {
+    dropdownSetter((prevState) => !prevState);
   };
 
   return (
     <div className={`header ${showNavigation ? "open" : ""}`}>
       <div className="header__container">
-        <a href="/" onClick={handleLogoClick}>
-          <img className="header__logo" src={logo} alt="step by step logo" />
-        </a>
+        <Link to="/" onClick={handleLogoClick}>
+          <img className="header__logo" src={logo} alt="Step by Step Logo" />
+        </Link>
         {showNavigation ? (
           <FaTimes
             className="header__navbar"
@@ -56,57 +84,123 @@ const Header = () => {
                 activeLink === "Home" ? "active" : ""
               }`}
             >
-              <a href="/" onClick={() => handleLinkClick("Home")}>
+              <Link to="/" onClick={() => handleLinkClick("Home")}>
                 Home
-              </a>
+              </Link>
             </li>
             <li
-              className={`header__navigation-link ${
-                activeLink === "BirthdayParties" ? "active" : ""
-              }`}
+              className="header__navigation-link"
+              onMouseEnter={() => setShowBirthdayPartiesDropdown(true)}
+              onMouseLeave={() => setShowBirthdayPartiesDropdown(false)}
             >
-              <a
-                href="#birthdayparties"
-                onClick={() => handleLinkClick("BirthdayParties")}
-              >
-                Birthday Parties
-              </a>
+              <span className="header__navigation-span">
+                Birthday Parties{" "}
+                {showBirthdayPartiesDropdown ? (
+                  <FaArrowDown className="arrow-icon" />
+                ) : (
+                  <FaArrowRight className="arrow-icon" />
+                )}
+              </span>
+              {showBirthdayPartiesDropdown && (
+                <ul className="header__navigation-link-dropdown">
+                  <li>
+                    <Link
+                      to="/danceparty"
+                      onClick={() => handleLinkClick("Dance Party")}
+                    >
+                      Dance Party
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/facepainting"
+                      onClick={() => handleLinkClick("Face Painting")}
+                    >
+                      Face Painting
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/musicalbabies"
+                      onClick={() => handleLinkClick("Musical Babies")}
+                    >
+                      Musical Babies
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </li>
             <li
-              className={`header__navigation-link ${
-                activeLink === "Fitness" ? "active" : ""
-              }`}
+              className="header__navigation-link"
+              onMouseEnter={() => setShowFitnessDropdown(true)}
+              onMouseLeave={() => setShowFitnessDropdown(false)}
             >
-              <a href="#fitness" onClick={() => handleLinkClick("Fitness")}>
-                Fitness
-              </a>
+              <span className="header__navigation-span">
+                Fitness{" "}
+                {showFitnessDropdown ? (
+                  <FaArrowDown className="arrow-icon" />
+                ) : (
+                  <FaArrowRight className="arrow-icon" />
+                )}
+              </span>
+              {showFitnessDropdown && (
+                <ul className="header__navigation-link-dropdown">
+                  <li>
+                    <Link
+                      to="/mommyandme"
+                      onClick={() => handleLinkClick("Mommy and Me")}
+                    >
+                      Mommy and Me
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/groupfitness"
+                      onClick={() => handleLinkClick("Group Fitness")}
+                    >
+                      Group Fitness
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/privatetraining"
+                      onClick={() => handleLinkClick("Private Training")}
+                    >
+                      Private Training
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </li>
             <li
               className={`header__navigation-link ${
                 activeLink === "About" ? "active" : ""
               }`}
             >
-              <a href="#ourstory" onClick={() => handleLinkClick("About")}>
+              <Link to="/ourstory" onClick={() => handleLinkClick("About")}>
                 Our Story
-              </a>
+              </Link>
             </li>
             <li
               className={`header__navigation-link ${
-                activeLink === "Services" ? "active" : ""
+                activeLink === "Events" ? "active" : ""
               }`}
             >
-              <a href="#events" onClick={() => handleLinkClick("Services")}>
+              <Link to="/events" onClick={() => handleLinkClick("Events")}>
                 Events
-              </a>
+              </Link>
             </li>
             <li
               className={`header__navigation-link ${
                 activeLink === "Contact" ? "active" : ""
               }`}
             >
-              <a href="#contact" onClick={() => handleLinkClick("Contact")}>
+              <button
+                className="header__button contact-button"
+                onClick={handleContactClick}
+              >
                 Contact
-              </a>
+              </button>
             </li>
           </ul>
         </nav>
@@ -114,47 +208,121 @@ const Header = () => {
       {showNavigation && (
         <div className="header__sidebar">
           <ul className="header__sidebar-list">
-            <li className="header__sidebar-link" onClick={closeSidebar}>
-              <a href="/">
+            <li
+              className="header__sidebar-link"
+              onClick={() => handleLinkClick("Home")}
+            >
+              <Link to="/">
                 Home <FaArrowRight />
-              </a>
+              </Link>
             </li>
-            <li className="header__sidebar-link" onClick={closeSidebar}>
-              <a href="#birthdayparties">
-                Birthday Parties <FaArrowRight />
-              </a>
+            <li className="header__sidebar-link">
+              <span
+                onClick={() =>
+                  handleDropdownClick(setShowBirthdayPartiesDropdown)
+                }
+              >
+                Birthday Parties{" "}
+                {showBirthdayPartiesDropdown ? (
+                  <FaArrowDown />
+                ) : (
+                  <FaArrowRight />
+                )}
+              </span>
+              {showBirthdayPartiesDropdown && (
+                <ul className="header__sidebar-dropdown">
+                  <li className="header__sidebar-dropdown-item">
+                    <Link
+                      to="/danceparty"
+                      onClick={() => handleLinkClick("Dance Party")}
+                    >
+                      Dance Party
+                    </Link>
+                  </li>
+                  <li className="header__sidebar-dropdown-item">
+                    <Link
+                      to="/facepainting"
+                      onClick={() => handleLinkClick("Face Painting")}
+                    >
+                      Face Painting
+                    </Link>
+                  </li>
+                  <li className="header__sidebar-dropdown-item">
+                    <Link
+                      to="/musicalbabies"
+                      onClick={() => handleLinkClick("Musical Babies")}
+                    >
+                      Musical Babies
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </li>
-            <li className="header__sidebar-link" onClick={closeSidebar}>
-              <a href="#fitness">
-                Fitness <FaArrowRight />
-              </a>
+            <li className="header__sidebar-link">
+              <span onClick={() => handleDropdownClick(setShowFitnessDropdown)}>
+                Fitness{" "}
+                {showFitnessDropdown ? <FaArrowDown /> : <FaArrowRight />}
+              </span>
+              {showFitnessDropdown && (
+                <ul className="header__sidebar-dropdown">
+                  <li>
+                    <Link
+                      to="/mommyandme"
+                      onClick={() => handleLinkClick("Mommy and Me")}
+                    >
+                      Mommy and Me
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/groupfitness"
+                      onClick={() => handleLinkClick("Group Fitness")}
+                    >
+                      Group Fitness
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/privatetraining"
+                      onClick={() => handleLinkClick("Private Training")}
+                    >
+                      Private Training
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </li>
-            <li className="header__sidebar-link" onClick={closeSidebar}>
-              <a href="#ourstory">
+            <li
+              className="header__sidebar-link"
+              onClick={() => handleLinkClick("About")}
+            >
+              <Link to="/ourstory">
                 Our Story <FaArrowRight />
-              </a>
+              </Link>
             </li>
-            <li className="header__sidebar-link" onClick={closeSidebar}>
-              <a href="#events">
+            <li
+              className="header__sidebar-link"
+              onClick={() => handleLinkClick("Events")}
+            >
+              <Link to="/events">
                 Events <FaArrowRight />
-              </a>
+              </Link>
             </li>
-            <li className="header__sidebar-link" onClick={closeSidebar}>
-              <a href="#contact">
+            <li className="header__sidebar-link" onClick={handleContactClick}>
+              <span>
                 Contact <FaArrowRight />
-              </a>
+              </span>
             </li>
           </ul>
           <ul className="header__sidebar-icons">
             <li className="header__sidebar-facebook">
               <a href="https://facebook.com/stepbystepstars">
-                <FaFacebook size={35} />
+                <FaFacebook />
               </a>
             </li>
-
             <li className="header__sidebar-instagram">
               <a href="https://instagram.com/stepbystepstars">
-                <FaInstagramSquare size={35} />
+                <FaInstagramSquare />
               </a>
             </li>
           </ul>

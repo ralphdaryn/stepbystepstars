@@ -1,0 +1,95 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.events-header {
+  display: flex;
+  align-items: flex-start;
+  margin: 7.5rem 2rem 0;
+  @include tablet {
+    margin-left: 4rem;
+  }
+  @include desktop {
+    margin-left: 14rem;
+  }
+}
+
+.events-title {
+  text-transform: uppercase;
+  margin: 0 auto;
+  color: #8638a4;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  padding-right: 1.5rem;
+  @include tablet {
+    padding-right: 4.5rem;
+  }
+  @include desktop {
+    padding-right: 16rem;
+  }
+}
+
+.events-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 3rem 2rem;
+
+  @include tablet {
+    padding: 0 10rem 2rem;
+  }
+
+  @include desktop {
+    padding: 0 20rem 2rem;
+  }
+
+  &__field {
+    margin-bottom: 1rem;
+    width: 100%;
+
+    @include tablet {
+      width: 75%;
+      margin: 0 auto;
+    }
+
+    @include desktop {
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    &--submit {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.25rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  &__submit {
+    padding: 0.75rem;
+    font-size: 1rem;
+    background-color: #a864c1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #86509a;
+    }
+    @include tablet {
+      margin-top: 1rem;
+    }
+  }
+}
