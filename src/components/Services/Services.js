@@ -15,11 +15,6 @@ const Services = () => {
     navigate(path);
   };
 
-  const goToBookingForm = () => {
-    window.scrollTo(0, 0);
-    navigate("/events");
-  };
-
   return (
     <div id="services" className="services">
       <h1 className="services__title">
@@ -135,16 +130,6 @@ const Services = () => {
             View Details
           </button>
         </div>
-      </div>
-
-      <div className="services__booking">
-        <h2 className="services__booking-title">Plan Your Event</h2>
-        <p className="services__booking-description">
-          Click here to start with our easy booking form!
-        </p>
-        <button className="services__booking-button" onClick={goToBookingForm}>
-          Start Planning
-        </button>
       </div>
     </div>
   );

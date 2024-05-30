@@ -4,30 +4,27 @@
 @keyframes pulseNeon {
   0%,
   100% {
-    text-shadow: 0 0 12px #9b59b6, 0 0 17px #9b59b6, 0 0 22px #9b59b6; // Vibrant purple neon glow
+    text-shadow: 0 0 12px #9b59b6, 0 0 17px #9b59b6, 0 0 22px #9b59b6;
   }
   50% {
-    text-shadow: 0 0 17px #9b59b6, 0 0 22px #9b59b6, 0 0 27px #9b59b6; // Enhanced brightness at peak
+    text-shadow: 0 0 17px #9b59b6, 0 0 22px #9b59b6, 0 0 27px #9b59b6; 
   }
 }
 
 .services {
-  @include tablet {
-    padding: 1rem 0;
-  }
+  background-color: rgba(249, 246, 251, 0.9);
 
   &__title {
     text-transform: uppercase;
     font-size: 1.9rem;
-    padding-top: 1.5rem;
     color: #59447c;
     &:hover {
-      color: #4c3177; // A slightly lighter, luminous purple on hover
+      color: #4c3177;
     }
 
     &--highlight {
-      color: #ffffff; // Bright white to stand out against the purple background
-      font-weight: bold; // Enhanced weight for emphasis
+      color: #ffffff;
+      font-weight: bold;
       text-shadow: 0 0 12px #9b59b6, 0 0 17px #9b59b6, 0 0 22px #9b59b6;
       animation: pulseNeon 2s infinite ease-in-out;
     }
@@ -43,7 +40,7 @@
   &__section-title--fitness {
     padding-top: 2.5rem;
     font-size: 1.75rem;
-    margin-bottom: .75rem;
+    margin-bottom: 0.75rem;
     color: #9b59b6;
     text-align: center;
     text-transform: uppercase;
@@ -59,11 +56,10 @@
     flex-direction: column;
     gap: 2rem;
     align-items: center;
-    padding-bottom: 2rem; 
     @include tablet {
       flex-direction: row;
       justify-content: space-evenly;
-      flex-wrap: wrap; 
+      flex-wrap: wrap;
     }
   }
 
@@ -121,55 +117,6 @@
 
     &:hover {
       background-color: #86509a;
-    }
-  }
-
-  .services__booking {
-    background-color: #e0a4b829;
-    padding: 1.5rem;
-    border-radius: 20px;
-    text-align: center;
-    margin: 1.5rem;
-    box-shadow: 8px 8px 15px #dcd6e7, -8px -8px 15px #ffffff;
-    transition: box-shadow 0.3s, transform 0.3s;
-
-    &:hover {
-      box-shadow: 2px 2px 5px #dcd6e7, -2px -2px 5px #ffffff;
-      transform: scale(1.05);
-    }
-
-    @include tablet {
-      margin: 2rem 10rem;
-    }
-  }
-
-  .services__booking-title {
-    margin-bottom: 1rem;
-    color: #d358c1;
-    font-size: 1.75rem;
-  }
-
-  .services__booking-description {
-    font-size: 1.15rem;
-    color: #000000;
-    margin-bottom: 2rem;
-  }
-
-  .services__booking-button {
-    background-color: #d358c1;
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    padding: 0.75rem 1.5rem;
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #a9469a; // Darker purple on hover
-      transform: translateY(-3px); // Lift effect
-      box-shadow: none; // "Pressed" effect
     }
   }
 }

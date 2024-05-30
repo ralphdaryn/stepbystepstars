@@ -2,6 +2,9 @@
 @use "../../styles/partials/mixins" as *;
 
 .reviews {
+  background-color: rgba(255, 255, 255, .9);
+  padding: 1.5rem;
+  border-radius: 1rem;
   .slick-prev,
   .slick-next {
     cursor: pointer;
@@ -13,8 +16,6 @@
     }
   }
   &__title {
-    padding: 0.5rem;
-    padding-top: 3rem;
     font-weight: 400;
   }
   &__subtitle {
@@ -27,12 +28,12 @@
     margin: 0.5rem;
     cursor: pointer;
     &:hover {
-      color: #3b5998; // Darker blue on hover to indicate interactivity
+      color: #3b5998;
     }
   }
 
   &__icon {
-    color: #ffd700; // Gold color for the stars
+    color: #ffd700;
   }
 
   &__text {

@@ -5,6 +5,7 @@ import debounce from "lodash.debounce";
 import "./Main.scss";
 import Carousel from "../ImageCarousel/ImageCarousel";
 import Services from "../Services/Services";
+import EventPlan from "../EventPlan/EventPlan";
 import Reviews from "../Reviews/Reviews";
 import Contact from "../Contact/Contact";
 
@@ -81,6 +82,9 @@ const Main = () => {
           <div className="main__section">
             <ScrollFade key="services">
               <Services />
+            </ScrollFade>
+            <ScrollFade key="eventplan">
+              <EventPlan />
             </ScrollFade>
             <ScrollFade key="reviews">
               <Reviews />

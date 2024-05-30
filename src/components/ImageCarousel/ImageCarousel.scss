@@ -1,63 +1,14 @@
-// @use "../../styles/partials/colors" as *;
-// @use "../../styles/partials/mixins" as *;
-
-// .image-carousel {
-//   padding-top: 7rem;
-  
-
-//   &__slider {
-//     position: relative;
-
-//     .slick-prev,
-//     .slick-next,
-//     .slick-dots {
-//       display: none !important;
-//     }
-
-//     animation: fadeIn 1s ease-in-out;
-//   }
-
-//   &__container {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     height: 12rem;
-
-//     @include tablet {
-//       height: 22.5rem;
-//     }
-
-//     @include desktop {
-//       height: auto;
-//       width: 100vw;
-//     }
-//   }
-
-//   &__image {
-//     width: 100%;
-//     height: 100%;
-//     object-fit: cover;
-//     transition: opacity 0.5s ease;
-
-//     @include desktop {
-//       object-fit: cover;
-//       width: 100vw;
-//       height: 110vh;
-//     }
-//   }
-// }
-
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/mixins" as *;
 
 .image-carousel {
   padding-top: 7rem;
-  position: fixed;  /* Make the carousel fixed */
+  position: fixed;  
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;  /* Full screen height */
-  z-index: -1;  /* Ensure it is behind other content */
+  height: 100vh;
+  z-index: -1;  
 
   &__slider {
     height: 100%;
@@ -80,10 +31,19 @@
   }
 
   &__container {
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 12rem;
+
+    @include tablet {
+      height: 22.5rem;
+    }
+
+    @include desktop {
+      height: 100vh;
+      width: 100vw;
+    }
   }
 
   &__image {
