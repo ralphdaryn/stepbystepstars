@@ -4,7 +4,10 @@
 .reviews {
   background-color: rgba(255, 255, 255, .9);
   padding: 1.5rem;
-  border-radius: 1rem;
+  border-radius: .5rem;
+  @include tablet {
+    padding: 2rem 2.5rem;
+  }
   .slick-prev,
   .slick-next {
     cursor: pointer;

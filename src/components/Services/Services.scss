@@ -7,24 +7,24 @@
     text-shadow: 0 0 12px #9b59b6, 0 0 17px #9b59b6, 0 0 22px #9b59b6;
   }
   50% {
-    text-shadow: 0 0 17px #9b59b6, 0 0 22px #9b59b6, 0 0 27px #9b59b6; 
+    text-shadow: 0 0 17px #9b59b6, 0 0 22px #9b59b6, 0 0 27px #9b59b6;
   }
 }
 
 .services {
-  background-color: rgba(249, 246, 251, 0.9);
-
   &__title {
     text-transform: uppercase;
-    font-size: 1.9rem;
-    color: #59447c;
-    &:hover {
-      color: #4c3177;
-    }
+    font-size: 1.9rem; /* Kept the original font size */
+    color: rgb(222, 196, 252);
+    font-weight: bold; /* Added bold font weight */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2),
+      /* Softer dark shadow for depth */ 0 0 8px rgba(156, 88, 215, 0.4),
+      /* Subtle purple glow for emphasis */ 0 0 15px rgba(156, 88, 215, 0.4); /* Further glow for effect */
+    animation: fadeIn 1s ease-in-out, pulseNeon 2s infinite ease-in-out;
 
     &--highlight {
       color: #ffffff;
-      font-weight: bold;
+      font-weight: 700;
       text-shadow: 0 0 12px #9b59b6, 0 0 17px #9b59b6, 0 0 22px #9b59b6;
       animation: pulseNeon 2s infinite ease-in-out;
     }
@@ -32,22 +32,41 @@
       font-size: 2rem;
     }
     @include desktop {
-      font-size: 2.75rem;
+      font-size: 3.25rem;
+    }
+  }
+
+  @keyframes pulseText {
+    0%,
+    100% {
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3),
+        0 0 5px rgba(142, 68, 173, 0.5);
+    }
+    50% {
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3),
+        0 0 10px rgba(142, 68, 173, 0.8);
     }
   }
 
   &__section-title,
   &__section-title--fitness {
     padding-top: 2.5rem;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     margin-bottom: 0.75rem;
-    color: #9b59b6;
+    color: #ebceff; /* Dark purple */
     text-align: center;
     text-transform: uppercase;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.1rem;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3),
+      0 0 3px rgba(142, 68, 173, 0.5), 0 0 5px rgba(142, 68, 173, 0.5);
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    transition: color 0.3s ease-in-out;
+    animation: pulseText 2s infinite ease-in-out;
+
     @include tablet {
       margin-bottom: 1.5rem;
       padding-top: 3rem;
+      font-size: 1.75rem;
     }
   }
 
