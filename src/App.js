@@ -12,12 +12,19 @@ import MommyandMe from "./components/MommyandMe/MommyandMe";
 import GroupFitness from "./components/GroupFitness/GroupFitness";
 import PrivateTraining from "./components/PrivateTraining/PrivateTraining";
 import Events from "./components/Events/Events";
+import './Background.css';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Header />
+        <div className="background">
+          {/* Render 50 spans to match the CSS animation */}
+          {Array.from({ length: 50 }, (_, i) => (
+            <span key={i} />
+          ))}
+        </div>
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/ourstory" element={<About />} />

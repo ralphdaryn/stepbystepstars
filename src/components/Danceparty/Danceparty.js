@@ -1,6 +1,7 @@
-import './Danceparty.scss';
-import danceparty from '../../assets/images/danceparty2.jpg';
-import BackButton from '../BackButton/BackButton';
+import "./Danceparty.scss";
+import danceparty from "../../assets/images/danceparty2.jpg";
+import BackButton from "../BackButton/BackButton";
+import ContactButton from "../ContactButton/ContactButton";
 
 const Danceparty = () => {
   return (
@@ -10,11 +11,7 @@ const Danceparty = () => {
         <h2 className="danceparty__title">Dance Party</h2>
       </div>
       <div className="danceparty__container">
-        <img
-          className="danceparty__image"
-          alt="dance party"
-          src={danceparty}
-        />
+        <img className="danceparty__image" alt="dance party" src={danceparty} />
         <div className="danceparty__subtitle-container">
           <p className="danceparty__subtitle">
             Immerse in an hour of non-stop fun: dance parties that transform
@@ -29,6 +26,9 @@ const Danceparty = () => {
           <p className="danceparty__subtitle">
             Let's turn your party into a showstopper! 🕺💃🎥🎈
           </p>
+          <div className="danceparty__button">
+            <ContactButton />
+          </div>
         </div>
       </div>
     </div>

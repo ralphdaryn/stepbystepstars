@@ -61,6 +61,11 @@ const Header = () => {
   return (
     <div className={`header ${showNavigation ? "open" : ""}`}>
       <div className="header__container">
+        <div className="background">
+          {Array.from({ length: 50 }, (_, i) => (
+            <span key={i} />
+          ))}
+        </div>
         <Link to="/" onClick={handleLogoClick}>
           <img className="header__logo" src={logo} alt="Step by Step Logo" />
         </Link>
