@@ -5,7 +5,6 @@ const ContactButton = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-
   const handleContactClick = () => {
     if (location.pathname !== "/") {
       navigate("/", { state: { scrollTo: "contact-section" } });
@@ -15,7 +14,6 @@ const ContactButton = () => {
         .scrollIntoView({ behavior: "smooth" });
     }
   };
-
 
   return (
     <button className="contact-button" onClick={handleContactClick}>
