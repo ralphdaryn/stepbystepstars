@@ -315,7 +315,7 @@ const Header = () => {
             </li>
             <li className="header__sidebar-link" onClick={handleContactClick}>
               <span>
-                Contact <FaArrowRight />
+                Contact Us<FaArrowRight />
               </span>
             </li>
           </ul>
