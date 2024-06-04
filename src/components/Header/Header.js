@@ -204,7 +204,7 @@ const Header = () => {
                 className="header__button contact-button"
                 onClick={handleContactClick}
               >
-                Contact
+                Contact Us
               </button>
             </li>
           </ul>

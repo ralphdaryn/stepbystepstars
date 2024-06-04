@@ -9,11 +9,12 @@
   color: #fff;
   border: none;
   border-radius: 8px;
+  font-weight: 700;
   cursor: pointer;
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: #8258c5;
+    background-color: #86509a;
   }
 
   &:focus {
@@ -34,7 +35,7 @@
 }
 
 .back-button-icon {
-  font-size: .85rem;
+  font-size: 0.85rem;
   @include tablet {
     margin-right: 0.25rem;
   }
