@@ -17,7 +17,7 @@ const ContactButton = () => {
 
   return (
     <button className="contact-button" onClick={handleContactClick}>
-      Contact
+      Contact Us
     </button>
   );
 };
