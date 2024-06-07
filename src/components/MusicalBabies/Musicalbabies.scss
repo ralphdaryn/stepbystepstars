@@ -2,7 +2,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .musicalbabies {
-  padding: 0.25rem 2rem .5rem;
+  padding: 0.25rem 2rem 0.5rem;
   margin-top: 7rem;
   background-color: rgba(255, 255, 255, 0.4);
   @include tablet {
@@ -27,7 +27,7 @@
   &__title {
     text-align: center;
     color: #000;
-    font-weight: 400;
+    font-weight: 700;
     margin: 0 auto;
     padding-right: 0.75rem;
     font-size: 1.75rem;
