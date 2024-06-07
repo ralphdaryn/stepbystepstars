@@ -13,10 +13,14 @@
 }
 
 .main {
-  background-color: #f9f6fb;
-  @include desktop {
-    padding-top: 7rem;
+  padding-top: 19rem;
+  @include tablet {
+    padding-top: 29rem;
   }
+  @include desktop {
+    padding-top: 35rem;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -24,6 +28,7 @@
     align-items: center;
     text-align: center;
   }
+
   &__wrapper {
     padding: 1.25rem 0 0.5rem 0;
     display: flex;
@@ -31,10 +36,12 @@
     align-items: center;
     justify-content: center;
   }
+
   &__list {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
     &-item {
       font-weight: 700;
       display: flex;
@@ -42,6 +49,7 @@
       gap: 0.5rem;
       font-family: "HelveticaBold", "sans-serif";
     }
+
     &-more {
       margin-top: auto;
     }
@@ -49,6 +57,7 @@
     &-icon {
       color: purple;
     }
+
     &-check {
       color: green;
     }
@@ -61,30 +70,37 @@
     align-items: center;
     gap: 1rem;
   }
+
   &__icons {
     font-size: 2.5rem;
+
     &-list {
       display: flex;
       justify-content: center;
       align-items: flex-start;
       gap: 1rem;
     }
+
     &-facebook {
       color: #0866ff;
       transition: color 0.3s ease;
+
       &:hover {
         color: #3b5998;
       }
     }
+
     &-instagram {
       color: #ae40af;
       transition: color 0.3s ease;
+
       &:hover {
         color: #8b338c;
       }
     }
     animation: fadeIn 1s ease-in-out;
   }
+
   &__button {
     background-color: #a864c1;
     border-radius: 8px;

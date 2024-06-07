@@ -2,6 +2,7 @@ import "./Facepaint.scss";
 import facepaint1 from "../../assets/images/facepaint1.jpeg";
 import facepaint2 from "../../assets/images/facepaint2.jpeg";
 import BackButton from "../BackButton/BackButton";
+import ContactButton from "../ContactButton/ContactButton";
 
 const Facepaint = () => {
   return (
@@ -40,6 +41,9 @@ const Facepaint = () => {
           <p className="facepaint__subtitle">
             Book now and let the face-painting fun begin!
           </p>
+          <div className="facepaint__button">
+            <ContactButton />
+          </div>
         </div>
       </div>
     </div>

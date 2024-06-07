@@ -4,6 +4,7 @@
 .mommyandme {
   margin-top: 7rem;
   padding: 0.25rem 2rem;
+  background-color: rgba(255, 255, 255, 0.4);
   @include tablet {
     padding: 0.5rem 4rem;
   }
@@ -19,8 +20,8 @@
 
   &__title {
     text-align: center;
-    color: #333;
-    font-weight: 400;
+    color: #000;
+    font-weight: 700;
     margin: 0 auto;
     padding-right: 0.5rem;
     font-size: 1.75rem;
@@ -65,8 +66,8 @@
   }
 
   &__subtitle {
-    color: #666;
-    text-align: justify;
+    color: #000;
+    text-align: left;
     margin: 0.25rem 0;
     @include tablet {
       font-size: 1.05rem;
@@ -75,5 +76,11 @@
     @include desktop {
       font-size: 1.25rem;
     }
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
   }
 }

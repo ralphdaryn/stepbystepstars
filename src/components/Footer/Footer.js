@@ -5,6 +5,11 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer__container">
+        <div className="background">
+          {Array.from({ length: 50 }, (_, i) => (
+            <span key={i} />
+          ))}
+        </div>
         <div className="footer__icons">
           <a href="https://facebook.com/stepbystepstars">
             <FaFacebook className="footer__facebook" />

@@ -61,6 +61,11 @@ const Header = () => {
   return (
     <div className={`header ${showNavigation ? "open" : ""}`}>
       <div className="header__container">
+        <div className="background">
+          {Array.from({ length: 50 }, (_, i) => (
+            <span key={i} />
+          ))}
+        </div>
         <Link to="/" onClick={handleLogoClick}>
           <img className="header__logo" src={logo} alt="Step by Step Logo" />
         </Link>
@@ -199,7 +204,7 @@ const Header = () => {
                 className="header__button contact-button"
                 onClick={handleContactClick}
               >
-                Contact
+                Contact Us
               </button>
             </li>
           </ul>
@@ -310,7 +315,7 @@ const Header = () => {
             </li>
             <li className="header__sidebar-link" onClick={handleContactClick}>
               <span>
-                Contact <FaArrowRight />
+                Contact Us<FaArrowRight />
               </span>
             </li>
           </ul>

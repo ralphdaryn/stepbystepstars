@@ -1,6 +1,7 @@
 import "./Musicalbabies.scss";
 import musicalbabiesVideo from "../../assets/images/musicalbabies.MP4";
 import BackButton from "../BackButton/BackButton";
+import ContactButton from "../ContactButton/ContactButton";
 
 const Musicalbabies = () => {
   return (
@@ -27,6 +28,9 @@ const Musicalbabies = () => {
           <p className="musicalbabies__subtitle">
             Watch your child blossom in a melody of laughter and discovery.
           </p>
+          <div className="musicalbabies__button">
+            <ContactButton />
+          </div>
         </div>
       </div>
     </div>

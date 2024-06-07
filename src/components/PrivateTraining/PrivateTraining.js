@@ -1,6 +1,7 @@
 import "./PrivateTraining.scss";
 import privatetraining from "../../assets/images/privatetraining.mp4";
 import BackButton from "../BackButton/BackButton";
+import EventsButton from "../EventsButton/EventsButton";
 
 const PrivateTraining = () => {
   return (
@@ -29,6 +30,9 @@ const PrivateTraining = () => {
             voluptatum iste nisi. Officia amet repellendus facilis debitis
             aspernatur!
           </p>
+          <div className="private-training__button">
+            <EventsButton />
+          </div>
         </div>
       </div>
     </div>
