@@ -10,7 +10,7 @@ const EventsButton = () => {
 
   return (
     <button className="events-button" onClick={handleButtonClick}>
-      Book Here
+      Book Your Event
     </button>
   );
 };
