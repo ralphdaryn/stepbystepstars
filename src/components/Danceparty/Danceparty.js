@@ -1,7 +1,7 @@
 import "./Danceparty.scss";
 import danceparty from "../../assets/images/danceparty2.jpg";
 import BackButton from "../BackButton/BackButton";
-import ContactButton from "../ContactButton/ContactButton";
+import EventsButton from "../EventsButton/EventsButton";
 
 const Danceparty = () => {
   return (
@@ -27,7 +27,7 @@ const Danceparty = () => {
             Let's turn your party into a showstopper! 🕺💃🎥🎈
           </p>
           <div className="danceparty__button">
-            <ContactButton />
+            <EventsButton />
           </div>
         </div>
       </div>
