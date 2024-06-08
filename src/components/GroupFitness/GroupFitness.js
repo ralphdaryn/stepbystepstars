@@ -1,7 +1,7 @@
 import "./GroupFitness.scss";
 import groupfitness from "../../assets/images/groupfitness.mp4";
 import BackButton from "../BackButton/BackButton";
-import EventsButton from "../EventsButton/EventsButton";
+import ContactButton from "../ContactButton/ContactButton";
 
 const GroupFitness = () => {
   return (
@@ -31,7 +31,7 @@ const GroupFitness = () => {
             nihil voluptatum recusandae.
           </p>
           <div className="groupfitness__button">
-            <EventsButton />
+            <ContactButton />
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import "./PrivateTraining.scss";
 import privatetraining from "../../assets/images/privatetraining.mp4";
 import BackButton from "../BackButton/BackButton";
-import EventsButton from "../EventsButton/EventsButton";
+import ContactButton from "../ContactButton/ContactButton";
 
 const PrivateTraining = () => {
   return (
@@ -31,7 +31,7 @@ const PrivateTraining = () => {
             aspernatur!
           </p>
           <div className="private-training__button">
-            <EventsButton />
+            <ContactButton />
           </div>
         </div>
       </div>

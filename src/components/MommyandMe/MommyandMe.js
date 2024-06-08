@@ -7,7 +7,7 @@ import mommyandme2 from "../../assets/images/mommyandme2.jpeg";
 import mommyandme3 from "../../assets/images/mommyandme3.jpeg";
 import mommyandme4 from "../../assets/images/mommyandme4.jpeg";
 import BackButton from "../BackButton/BackButton";
-import EventsButton from "../EventsButton/EventsButton";
+import ContactButton from "../ContactButton/ContactButton";
 
 const MommyandMe = () => {
   const settings = {
@@ -65,7 +65,7 @@ const MommyandMe = () => {
         </div>
       </div>
       <div className="mommyandme__button">
-        <EventsButton />
+        <ContactButton />
       </div>
     </div>
   );

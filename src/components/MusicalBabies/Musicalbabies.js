@@ -1,7 +1,7 @@
 import "./Musicalbabies.scss";
 import musicalbabiesVideo from "../../assets/images/musicalbabies.MP4";
 import BackButton from "../BackButton/BackButton";
-import ContactButton from "../ContactButton/ContactButton";
+import EventsButton from "../EventsButton/EventsButton";
 
 const Musicalbabies = () => {
   return (
@@ -29,7 +29,7 @@ const Musicalbabies = () => {
             Watch your child blossom in a melody of laughter and discovery.
           </p>
           <div className="musicalbabies__button">
-            <ContactButton />
+            <EventsButton />
           </div>
         </div>
       </div>
