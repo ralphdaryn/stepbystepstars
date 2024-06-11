@@ -11,7 +11,7 @@
 
   @include tablet {
     margin: 3rem auto;
-    padding: 2rem 2rem;
+    padding: 1.5rem 3rem;
     max-width: 600px;
   }
 
@@ -33,7 +33,7 @@
   }
 
   &__form-group {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     width: 100%;
   }
 
@@ -53,7 +53,6 @@
 
   &__label {
     font-size: 1.1rem;
-    color: #555;
     margin-bottom: 0.5rem;
     display: block;
     @include tablet {
@@ -62,7 +61,8 @@
   }
 
   &__input,
-  &__textarea-message {
+  &__textarea-message,
+  &__select {
     width: 100%;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;

@@ -7,6 +7,7 @@ const Contact = () => {
     email: "",
     message: "",
     phoneNumber: "",
+    subject: "",
   });
 
   const handleInputChange = (e) => {
@@ -28,7 +29,9 @@ const Contact = () => {
         <h2 className="contact__title">Contact Us</h2>
         <form onSubmit={handleSubmit}>
           <div className="contact__form-group">
-            <label htmlFor="name" className="contact__label">Name</label>
+            <label htmlFor="name" className="contact__label">
+              Name
+            </label>
             <input
               type="text"
               id="name"
@@ -40,7 +43,9 @@ const Contact = () => {
           </div>
           <div className="contact__form-group contact__form-group--row">
             <div className="contact__form-group contact__form-group--half">
-              <label htmlFor="email" className="contact__label">Email</label>
+              <label htmlFor="email" className="contact__label">
+                Email
+              </label>
               <input
                 type="email"
                 id="email"
@@ -51,7 +56,9 @@ const Contact = () => {
               />
             </div>
             <div className="contact__form-group contact__form-group--half">
-              <label htmlFor="phoneNumber" className="contact__label">Phone Number</label>
+              <label htmlFor="phoneNumber" className="contact__label">
+                Phone Number
+              </label>
               <input
                 type="text"
                 id="phoneNumber"
@@ -63,7 +70,26 @@ const Contact = () => {
             </div>
           </div>
           <div className="contact__form-group">
-            <label htmlFor="message" className="contact__label">Message</label>
+            <label htmlFor="subject" className="contact__label">
+              Subject
+            </label>
+            <select
+              id="subject"
+              name="subject"
+              value={formData.subject}
+              onChange={handleInputChange}
+              className="contact__input"
+            >
+              <option value="general">General</option>
+              <option value="parties">Birthday Parties</option>
+              <option value="fitness">Fitness</option>
+              <option value="feedback">Feedback</option>
+            </select>
+          </div>
+          <div className="contact__form-group">
+            <label htmlFor="message" className="contact__label">
+              Message
+            </label>
             <textarea
               id="message"
               name="message"
