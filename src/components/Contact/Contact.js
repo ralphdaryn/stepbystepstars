@@ -25,7 +25,7 @@ const Contact = () => {
   return (
     <div className="contact">
       <div className="contact__container">
-        <h2 className="contact__title">Contact</h2>
+        <h2 className="contact__title">Contact Us</h2>
         <form onSubmit={handleSubmit}>
           {["name", "email", "phoneNumber"].map((field) => (
             <div key={field} className="contact__form-group">
