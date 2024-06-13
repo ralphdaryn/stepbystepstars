@@ -3,8 +3,8 @@
 
 .reviews {
   background-color: rgba(255, 255, 255, 0.95);
-  padding: 2rem;
   border-radius: 0.5rem;
+  padding: 2rem;
   @include tablet {
     padding: 2rem 2.5rem;
   }
@@ -80,26 +80,5 @@
 
   &__date {
     padding: 0.25rem;
-  }
-
-  &__slider {
-    .reviews__slider-prev,
-    .reviews__slider-next {
-      cursor: pointer;
-      color: #0866ff;
-      font-size: 2rem;
-
-      &::before {
-        color: inherit;
-      }
-    }
-
-    .reviews__slider-prev {
-      left: -2.5rem;
-    }
-
-    .reviews__slider-next {
-      right: -2.5rem;
-    }
   }
 }
