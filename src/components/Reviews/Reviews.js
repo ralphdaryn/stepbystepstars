@@ -1,6 +1,7 @@
 import "./Reviews.scss";
 import Slider from "react-slick";
 import { FaFacebook, FaStar } from "react-icons/fa";
+import GoogleIcon from "../GoogleIcon/GoogleIcon";
 
 const Reviews = () => {
   const reviews = [
@@ -60,13 +61,22 @@ const Reviews = () => {
   return (
     <div className="reviews">
       <h2 className="reviews__title">What Our Clients Say About Us</h2>
-      <a
-        href="https://www.facebook.com/stepbystepstars/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaFacebook className="reviews__facebook" />
-      </a>
+      <div className="reviews__socials">
+        <a
+          href="https://www.google.com/search?q=step+by+step+stars+google+reviews&rlz=1C1CHZN_enCA1060CA1060&oq=step+by&gs_lcrp=EgZjaHJvbWUqCAgAEEUYJxg7MggIABBFGCcYOzINCAEQLhixAxjJAxiABDIGCAIQRRg5MgwIAxAjGCcYgAQYigUyDQgEEC4YrwEYxwEYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBwgHEAAYgAQyDQgIEAAYkgMYgAQYigUyBwgJEAAYgASoAgiwAgE&sourceid=chrome&ie=UTF-8#lrd=0x89d4d0b52fe49513:0x27e19329664bd353,1,,,,"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GoogleIcon className="reviews__google" />
+        </a>
+        <a
+          href="https://www.facebook.com/stepbystepstars/reviews"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaFacebook className="reviews__facebook" />
+        </a>
+      </div>
       <h3 className="reviews__subtitle">Step By Step Stars</h3>
       <p className="reviews__text">
         Rating 5.0{" "}
