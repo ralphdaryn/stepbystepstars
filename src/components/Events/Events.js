@@ -34,7 +34,7 @@ const Events = () => {
     <div>
       <div className="events-header">
         <BackButton />
-        <h2 className="events-title">Events</h2>
+        <h2 className="events-title">BOOK AN EVENT</h2>
       </div>
       <form className="events-form" onSubmit={handleSubmit}>
         <div className="events-form__field">
