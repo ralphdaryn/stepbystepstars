@@ -4,7 +4,6 @@ import { FaFacebook, FaStar } from "react-icons/fa";
 import GoogleIcon from "../GoogleIcon/GoogleIcon";
 
 const Reviews = () => {
-  // State to manage the current category and the index of the displayed review
   const [category, setCategory] = useState("Birthday Parties");
   const [index, setIndex] = useState(0);
 
@@ -54,34 +53,38 @@ const Reviews = () => {
       date: "02/25/23",
       type: "Birthday Parties",
     },
-    // Add more reviews with 'type' for other categories...
   ];
 
-  // Filter reviews by the selected category
   const filteredReviews = reviews.filter((review) => review.type === category);
 
-  // Change the category and reset the index
   const handleCategoryChange = (newCategory) => {
     setCategory(newCategory);
-    setIndex(0); // Reset index when changing category
+    setIndex(0);
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % filteredReviews.length);
-    }, 8000); // Change review every 3000 milliseconds
-
-    return () => clearInterval(interval); // Clean up the interval on component unmount or when dependency changes
-  }, [filteredReviews.length, category]); // Depend on category and number of filtered reviews
+    }, 8000);
+    return () => clearInterval(interval);
+  }, [filteredReviews.length, category]);
 
   return (
     <div className="reviews">
       <h2 className="reviews__title">What Our Clients Say About Us</h2>
       <div className="reviews__buttons">
-        <div className="reviews__buttons-birthday"onClick={() => handleCategoryChange("Birthday Parties")}>
+        <div
+          className="reviews__buttons-birthday"
+          onClick={() => handleCategoryChange("Birthday Parties")}
+        >
           Birthday Parties
         </div>
-        <div className="reviews__buttons-fitness"onClick={() => handleCategoryChange("Fitness")}>Fitness</div>
+        <div
+          className="reviews__buttons-fitness"
+          onClick={() => handleCategoryChange("Fitness")}
+        >
+          Fitness
+        </div>
       </div>
       <div className="reviews__socials">
         <a
@@ -100,6 +103,13 @@ const Reviews = () => {
         </a>
       </div>
       <h3 className="reviews__subtitle">Step By Step Stars</h3>
+      <p className="reviews__text">
+        Rating 5.0{" "}
+        {[...Array(5)].map((_, index) => (
+          <FaStar key={index} className="reviews__icon" />
+        ))}{" "}
+        (over 50+ reviews)
+      </p>
       {filteredReviews.length > 0 && (
         <div className="reviews__wrapper">
           <div className="reviews__testimonial">
