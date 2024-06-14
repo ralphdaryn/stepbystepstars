@@ -78,10 +78,10 @@ const Reviews = () => {
     <div className="reviews">
       <h2 className="reviews__title">What Our Clients Say About Us</h2>
       <div className="reviews__buttons">
-        <button onClick={() => handleCategoryChange("Birthday Parties")}>
+        <div className="reviews__buttons-birthday"onClick={() => handleCategoryChange("Birthday Parties")}>
           Birthday Parties
-        </button>
-        <button onClick={() => handleCategoryChange("Fitness")}>Fitness</button>
+        </div>
+        <div className="reviews__buttons-fitness"onClick={() => handleCategoryChange("Fitness")}>Fitness</div>
       </div>
       <div className="reviews__socials">
         <a

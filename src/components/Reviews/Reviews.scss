@@ -1,3 +1,109 @@
+// @use "../../styles/partials/colors" as *;
+// @use "../../styles/partials/mixins" as *;
+
+// .reviews {
+//   background-color: rgba(255, 255, 255, 0.95);
+//   border-radius: 0.5rem;
+//   padding: 2rem;
+//   @include tablet {
+//     padding: 2rem 2.5rem;
+//   }
+
+//   &__title {
+//     font-weight: 400;
+//   }
+
+//   &__subtitle {
+//     font-weight: 400;
+//   }
+
+//   &__socials {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     gap: 1rem;
+//   }
+
+//   &__facebook,
+//   &__google {
+//     font-size: 5.25rem;
+//     margin: 0.5rem;
+//     cursor: pointer;
+//   }
+
+//   &__facebook {
+//     color: #0866ff;
+
+//     &:hover {
+//       color: #3b5998;
+//     }
+//   }
+
+//   &__google {
+//     width: 5.5rem;
+//     height: 5.5rem;
+
+//     &:hover {
+//       opacity: 0.4;
+//     }
+//   }
+
+//   &__icon {
+//     color: #ffd700;
+//   }
+
+//   &__text {
+//     margin: 0.25rem;
+//     font-weight: 400;
+//   }
+
+//   &__container {
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//   }
+
+//   &__wrapper {
+//     padding: 0.5rem;
+//     width: 17rem;
+//     height: 21rem;
+//     margin: 0 auto;
+//     border: 1px solid #000;
+//     border-radius: 8px;
+
+//     @include tablet {
+//       width: 30rem;
+//       height: 15rem;
+//     }
+//   }
+
+//   &__avatar {
+//     width: 3.5rem;
+//     height: 3.5rem;
+//     border-radius: 50%;
+//     background-color: #ccc;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     color: #fff;
+//     font-size: 0.85rem;
+//   }
+
+//   &__message {
+//     padding-bottom: 0.25rem;
+//   }
+
+//   &__testimonial {
+//     margin-bottom: 0.5rem;
+//   }
+
+//   &__date {
+//     padding: 0.25rem;
+//   }
+// }
+
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/mixins" as *;
 
@@ -10,7 +116,7 @@
   }
 
   &__title {
-    font-weight: 400;
+    font-weight: 700;
   }
 
   &__subtitle {
@@ -33,7 +139,6 @@
 
   &__facebook {
     color: #0866ff;
-
     &:hover {
       color: #3b5998;
     }
@@ -42,7 +147,6 @@
   &__google {
     width: 5.5rem;
     height: 5.5rem;
-
     &:hover {
       opacity: 0.4;
     }
@@ -72,7 +176,6 @@
     margin: 0 auto;
     border: 1px solid #000;
     border-radius: 8px;
-
     @include tablet {
       width: 30rem;
       height: 15rem;
@@ -101,5 +204,53 @@
 
   &__date {
     padding: 0.25rem;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    &-birthday {
+      width: 10.5rem;
+      background-image: linear-gradient(135deg, #f56edc, #6454f0);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      padding: 0.25rem;
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0.25rem;
+      text-transform: uppercase;
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+      &:active {
+        transform: translateY(2px);
+      }
+    }
+    &-fitness {
+      width: 5.5rem;
+      background-image: linear-gradient(135deg, #f56edc, #6454f0);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      padding: 0.25rem;
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0.25rem;
+      text-transform: uppercase;
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+      &:active {
+        transform: translateY(2px);
+      }
+    }
   }
 }
