@@ -1,25 +1,31 @@
 import "./Reviews.scss";
-import Slider from "react-slick";
+import { useState, useEffect } from "react";
 import { FaFacebook, FaStar } from "react-icons/fa";
 import GoogleIcon from "../GoogleIcon/GoogleIcon";
 
 const Reviews = () => {
+  // State to manage the current category and the index of the displayed review
+  const [category, setCategory] = useState("Birthday Parties");
+  const [index, setIndex] = useState(0);
+
   const reviews = [
     {
       id: 1,
       message:
-        "We hired Step by Step Stars for my son’s second birthday. The kids and especially the birthday boy had a wonderful time 🙂 Lauren was high energy and got both the kids and adults up and dancing. The video we received was adorable! High recommend Lauren and her team!",
+        "We hired Step by Step Stars for my son’s second birthday. The kids and especially the birthday boy had a wonderful time 🙂 Lauren was high energy and got both the kids and adults up and dancing. The video we received was adorable! Highly recommend Lauren and her team!",
       stars: 5,
       author: "Sa Kaur",
       date: "01/22/24",
+      type: "Birthday Parties",
     },
     {
       id: 2,
       message:
-        "I highly recommend Step By Step Stars and Lauren for your parties. She skillfully managed a group of 25 eight-year-old kids, effortlessly entertaining them. The children had a fantastic time learning choreographies, dancing, laughing, and thoroughly enjoying themselves. Lauren and her team member did an outstanding job.",
+        "Join our fitness dance party to stay fit and have fun! Our trainers ensure you get the best workout while enjoying the dance.",
       stars: 5,
-      author: "Mirey Kara",
-      date: "12/11/23",
+      author: "John Doe",
+      date: "02/15/24",
+      type: "Fitness",
     },
     {
       id: 3,
@@ -28,6 +34,7 @@ const Reviews = () => {
       stars: 5,
       author: "Gabriela Estrada",
       date: "09/17/23",
+      type: "Fitness",
     },
     {
       id: 4,
@@ -36,6 +43,7 @@ const Reviews = () => {
       stars: 5,
       author: "Alyssa Galego",
       date: "08/29/23",
+      type: "Birthday Parties",
     },
     {
       id: 5,
@@ -44,26 +52,40 @@ const Reviews = () => {
       stars: 5,
       author: "Asal Famili",
       date: "02/25/23",
+      type: "Birthday Parties",
     },
+    // Add more reviews with 'type' for other categories...
   ];
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    arrows: false,
+  // Filter reviews by the selected category
+  const filteredReviews = reviews.filter((review) => review.type === category);
+
+  // Change the category and reset the index
+  const handleCategoryChange = (newCategory) => {
+    setCategory(newCategory);
+    setIndex(0); // Reset index when changing category
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % filteredReviews.length);
+    }, 8000); // Change review every 3000 milliseconds
+
+    return () => clearInterval(interval); // Clean up the interval on component unmount or when dependency changes
+  }, [filteredReviews.length, category]); // Depend on category and number of filtered reviews
 
   return (
     <div className="reviews">
       <h2 className="reviews__title">What Our Clients Say About Us</h2>
+      <div className="reviews__buttons">
+        <button onClick={() => handleCategoryChange("Birthday Parties")}>
+          Birthday Parties
+        </button>
+        <button onClick={() => handleCategoryChange("Fitness")}>Fitness</button>
+      </div>
       <div className="reviews__socials">
         <a
-          href="https://www.google.com/search?q=step+by+step+stars+google+reviews&rlz=1C1CHZN_enCA1060CA1060&oq=step+by&gs_lcrp=EgZjaHJvbWUqCAgAEEUYJxg7MggIABBFGCcYOzINCAEQLhixAxjJAxiABDIGCAIQRRg5MgwIAxAjGCcYgAQYigUyDQgEEC4YrwEYxwEYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBwgHEAAYgAQyDQgIEAAYkgMYgAQYigUyBwgJEAAYgASoAgiwAgE&sourceid=chrome&ie=UTF-8#lrd=0x89d4d0b52fe49513:0x27e19329664bd353,1,,,,"
+          href="https://www.google.com/search?q=step+by+step+stars+google+reviews"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -78,33 +100,30 @@ const Reviews = () => {
         </a>
       </div>
       <h3 className="reviews__subtitle">Step By Step Stars</h3>
-      <p className="reviews__text">
-        Rating 5.0{" "}
-        {[...Array(5)].map((_, index) => (
-          <FaStar key={index} className="reviews__icon" />
-        ))}{" "}
-        (over 50+ reviews)
-      </p>
-      <div className="reviews__wrapper">
-        <Slider {...settings} className="reviews__slider">
-          {reviews.map((review) => (
-            <div className="reviews__testimonial" key={review.id}>
-              <div className="reviews__container">
-                <p className="reviews__message">{review.message}</p>
-                <div>
-                  {[...Array(review.stars)].map((_, index) => (
-                    <FaStar key={index} className="reviews__icon" />
-                  ))}
-                </div>
-                <div className="reviews__avatar">
-                  <div className="reviews__avatar-circle">{review.author}</div>
-                </div>
-                <div className="reviews__date">{review.date}</div>
+      {filteredReviews.length > 0 && (
+        <div className="reviews__wrapper">
+          <div className="reviews__testimonial">
+            <div className="reviews__container">
+              <p className="reviews__message">
+                {filteredReviews[index].message}
+              </p>
+              <div>
+                {[...Array(filteredReviews[index].stars)].map(
+                  (_, starIndex) => (
+                    <FaStar key={starIndex} className="reviews__icon" />
+                  )
+                )}
               </div>
+              <div className="reviews__avatar">
+                <div className="reviews__avatar-circle">
+                  {filteredReviews[index].author}
+                </div>
+              </div>
+              <div className="reviews__date">{filteredReviews[index].date}</div>
             </div>
-          ))}
-        </Slider>
-      </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
