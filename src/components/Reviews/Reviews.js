@@ -72,20 +72,7 @@ const Reviews = () => {
   return (
     <div className="reviews">
       <h2 className="reviews__title">What Our Clients Say About Us</h2>
-      <div className="reviews__buttons">
-        <div
-          className="reviews__buttons-birthday"
-          onClick={() => handleCategoryChange("Birthday Parties")}
-        >
-          Birthday Parties
-        </div>
-        <div
-          className="reviews__buttons-fitness"
-          onClick={() => handleCategoryChange("Fitness")}
-        >
-          Fitness
-        </div>
-      </div>
+
       <div className="reviews__socials">
         <a
           href="https://www.google.com/search?q=step+by+step+stars+google+reviews"
@@ -101,6 +88,20 @@ const Reviews = () => {
         >
           <FaFacebook className="reviews__facebook" />
         </a>
+      </div>
+      <div className="reviews__buttons">
+        <div
+          className="reviews__buttons-birthday"
+          onClick={() => handleCategoryChange("Birthday Parties")}
+        >
+          Birthday Parties
+        </div>
+        <div
+          className="reviews__buttons-fitness"
+          onClick={() => handleCategoryChange("Fitness")}
+        >
+          Fitness
+        </div>
       </div>
       <h3 className="reviews__subtitle">Step By Step Stars</h3>
       <p className="reviews__text">
