@@ -11,47 +11,74 @@ const Reviews = () => {
     {
       id: 1,
       message:
-        "We hired Step by Step Stars for my son’s second birthday. The kids and especially the birthday boy had a wonderful time 🙂 Lauren was high energy and got both the kids and adults up and dancing. The video we received was adorable! Highly recommend Lauren and her team!",
+        "I recently hired step by step stars for my son’s birthday. The team did an amazing job and the kids love their facepaint! See you in our next parties!!!",
       stars: 5,
-      author: "Sa Kaur",
-      date: "01/22/24",
+      author: "Tamara Cruz",
       type: "Birthday Parties",
     },
     {
       id: 2,
       message:
-        "Join our fitness dance party to stay fit and have fun! Our trainers ensure you get the best workout while enjoying the dance.",
+        "We hired Step by Step Stars for my son’s second birthday. The kids and especially the birthday boy had a wonderful time 🙂 Lauren was high energy and got both the kids and adults up and dancing. The video we received was adorable! Highly recommend Lauren and her team!",
       stars: 5,
-      author: "John Doe",
-      date: "02/15/24",
-      type: "Fitness",
+      author: "Sa Kaur",
+      type: "Birthday Parties",
     },
     {
       id: 3,
       message:
-        "I've worked with Lauren and the Step by Step Stars team two years in a row now for our Girl's Soccer Tournament. Lauren and her team had face painting available for 60 - 80 youth and did an absolutely amazing job!! All the kids LOVED it and were so thrilled. Thank you Lauren and team!!!!",
+        "Only 2 weeks in and I already love working out with Lauren and the other moms! Sessions are fun but also kicks your butt and gets your heart rate high and calories burnt, which is exactly what you need from a great fitness class :)",
       stars: 5,
-      author: "Gabriela Estrada",
-      date: "09/17/23",
+      author: "Oishee Mondal",
       type: "Fitness",
     },
     {
       id: 4,
       message:
-        "Lauren and her team recently came to host a dance party at my daughter's 5th birthday. The girls had the BEST time and the music video she sent a few days later was adorable. Thank you Lauren and team! The birthday girl had the best time!",
+        "I've worked with Lauren and the Step by Step Stars team two years in a row now for our Girl's Soccer Tournament. Lauren and her team had face painting available for 60 - 80 youth and did an absolutely amazing job!! All the kids LOVED it and were so thrilled. Thank you Lauren and team!!!!",
       stars: 5,
-      author: "Alyssa Galego",
-      date: "08/29/23",
+      author: "Gabriela Estrada",
       type: "Birthday Parties",
     },
     {
       id: 5,
       message:
+        "Lauren and her team recently came to host a dance party at my daughter's 5th birthday. The girls had the BEST time and the music video she sent a few days later was adorable. Thank you Lauren and team! The birthday girl had the best time!",
+      stars: 5,
+      author: "Alyssa Galego",
+      type: "Birthday Parties",
+    },
+    {
+      id: 6,
+      message:
         "Last week I hired Lauren and her crew for my daughter's 8th birthday party. The face painting was amazing. They kept the kids entertained and they had so much fun dancing and playing. The best part of it was the music video which she sent the day after the party. It was a great gift for my daughter to keep the memories of her 8th birthday. I highly recommend her :)",
       stars: 5,
       author: "Asal Famili",
-      date: "02/25/23",
       type: "Birthday Parties",
+    },
+    {
+      id: 7,
+      message:
+        "I’ve been doing the fitness classes where I can bring my baby. The place is clean, warm, and cozy for my little one to roam while I work up a good sweat! The music is great and Lauren is so sweet. She’s motivating, pushes us in the best way possible, and overall just fun to talk to :)",
+      stars: 5,
+      author: "Chantel Persaud",
+      type: "Fitness",
+    },
+    {
+      id: 8,
+      message:
+        "Lauren is amazing! So glad to have found her mommy and baby fitness classes 😀. Signing up, was the best decision I made this year, I look forward to every class and have been getting so fit and energized! I recommend her classes to everyone I meet.",
+      stars: 5,
+      author: "Yasmina Tehami",
+      type: "Fitness",
+    },
+    {
+      id: 9,
+      message:
+        "We have fallen in love with Lauren because she is humble, leads with her heart, and has a great sense of humor. Lauren and I connected via social media, and although I always wanted to attend her classes it took a bit to align with my schedule. In the meantime, she encouraged me to look into other mommy and me fitness programs. She authentically wants women to fall back in love with movement...",
+      stars: 5,
+      author: "Adriana MacNeil",
+      type: "Fitness",
     },
   ];
 
@@ -75,7 +102,7 @@ const Reviews = () => {
 
       <div className="reviews__socials">
         <a
-          href="https://www.google.com/search?q=step+by+step+stars+google+reviews"
+          href="https://www.google.com/search?q=step+by+step+stars+google+reviews#lrd=0x89d4d0b52fe49513:0x27e19329664bd353,1,,,,"
           target="_blank"
           rel="noopener noreferrer"
         >

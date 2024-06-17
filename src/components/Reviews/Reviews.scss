@@ -32,6 +32,9 @@
   &__google {
     margin: 0.25rem;
     cursor: pointer;
+    @include tablet {
+      margin: 0.5rem;
+    }
   }
 
   &__facebook {
@@ -108,8 +111,12 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    margin: 0.5rem 0;
+    margin: .25rem 0;
     cursor: pointer;
+    @include tablet {
+      margin-right: 3rem;
+      gap: 1.5rem;
+    }
     &-birthday {
       margin: 0;
       width: 10.5rem;
