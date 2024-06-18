@@ -31,10 +31,10 @@ const Events = () => {
   }, []);
 
   return (
-    <div>
-      <div className="events-header">
+    <div className="events">
+      <div className="events__header">
         <BackButton />
-        <h2 className="events-title">BOOK AN EVENT</h2>
+        <h2 className="events__title">Book an event</h2>
       </div>
       <form className="events-form" onSubmit={handleSubmit}>
         <div className="events-form__field">
