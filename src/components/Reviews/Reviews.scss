@@ -111,10 +111,9 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    margin: .25rem 0;
+    margin: .5rem 0;
     cursor: pointer;
     @include tablet {
-      margin: .5rem 0;
       margin-right: 3rem;
       gap: 1.5rem;
     }
