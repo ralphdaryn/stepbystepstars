@@ -68,10 +68,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    @include tablet {
-      gap: 3rem;
-    }
+    gap: 3rem;
     @include desktop {
       gap: 8rem;
     }

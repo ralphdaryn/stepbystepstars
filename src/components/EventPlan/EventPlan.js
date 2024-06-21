@@ -11,7 +11,7 @@ const EventPlan = () => {
     <div className="eventplan">
       <h2 className="eventplan__title">Plan Your Event</h2>
       <p className="eventplan__subtitle">
-        Ready to make your child's birthday unforgettable?
+        Make every birthday a day to remember. Click below to start planning!
       </p>
       <button className="eventplan__button" onClick={goToBookingForm}>
         Start Planning
