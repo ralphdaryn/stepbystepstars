@@ -109,6 +109,7 @@
     padding: 0.25rem;
     font-size: 1.5rem;
     color: #333;
+    cursor: pointer;
 
     &-icon {
       font-size: 2rem;
@@ -117,6 +118,9 @@
         width: 2.55rem;
         height: 2.55rem;
         padding: .25rem;
+        &:hover {
+          opacity: 0.4;
+        }
       }
     }
   }

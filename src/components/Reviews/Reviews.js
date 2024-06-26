@@ -83,7 +83,7 @@ const Reviews = () => {
     {
       id: 9,
       message:
-        "We have fallen in love with Lauren because she is humble, leads with her heart, and has a great sense of humor. Lauren and I connected via social media, and although I always wanted to attend her classes it took a bit to align with my schedule. In the meantime, she encouraged me to look into other mommy and me fitness programs. She authentically wants women to fall back in love with movement...",
+        "We have fallen in love with Lauren because she is humble, leads with her heart, and has a great sense of humor. Lauren and I connected via social media, and although I always wanted to attend her classes it took a bit to align with my schedule. In the meantime, she encouraged me to look into other mommy and me fitness programs...",
       stars: 5,
       author: "Adriana MacNeil",
       type: "Fitness",
