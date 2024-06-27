@@ -168,9 +168,21 @@ const Reviews = () => {
               </div>
               <div className="reviews__source">
                 {filteredReviews[index].source === "Facebook" ? (
-                  <FaFacebook className="reviews__source-icon reviews__facebook" />
+                  <a
+                    href="https://www.facebook.com/stepbystepstars/reviews"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaFacebook className="reviews__source-icon reviews__facebook" />
+                  </a>
                 ) : (
-                  <GoogleIcon className="reviews__source-icon-google" />
+                  <a
+                    href="https://www.google.com/search?q=step+by+step+stars+google+reviews#lrd=0x89d4d0b52fe49513:0x27e19329664bd353,1,,,,"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <GoogleIcon className="reviews__source-icon-google" />
+                  </a>
                 )}
               </div>
             </div>
