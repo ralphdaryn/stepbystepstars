@@ -6,6 +6,7 @@
 .pnp.js
 # Ignore node_modules in root and server folder
 node_modules/
+client/node_modules/
 server/node_modules/
 
 
