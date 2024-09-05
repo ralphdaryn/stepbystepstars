@@ -1,0 +1,129 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.about {
+  padding: 0.25rem 2rem;
+  margin-top: 7rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  @include tablet {
+    padding: 0.5rem 4rem 2rem;
+  }
+  @include desktop {
+    padding: 0.5rem 14rem 4rem;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    color: #000;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 700;
+    padding-right: 2rem;
+    font-size: 1.75rem;
+    @include tablet {
+      padding-right: 3rem;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include tablet {
+      flex-direction: row;
+      gap: 2rem;
+    }
+    @include desktop {
+      justify-content: center;
+      align-items: center;
+      height: 25rem;
+    }
+  }
+
+  &__image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    background-color: #f0f0f0;
+    padding: 1rem;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  &__image {
+    width: 12rem;
+    border-radius: 10px;
+  }
+
+  &__icons-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+  }
+
+  &__icon-envelope,
+  &__icon-phone {
+    color: #a5a1a1;
+  }
+
+  &__icon-envelope:hover,
+  &__icon-phone:hover {
+    color: #4caf50;
+  }
+
+  &__subtitle {
+    margin: 0.5rem 0;
+    @include tablet {
+      margin: 0;
+      line-height: 1.4;
+      font-size: 1.05rem;
+    }
+    @include desktop {
+      font-size: 1.25rem;
+    }
+    &-wrapper {
+      text-align: left;
+      color: #000;
+      margin-bottom: 1rem;
+      padding: 0;
+      @include tablet {
+        margin: 0;
+        padding: 0;
+        height: 25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      @include desktop {
+        width: 37.5rem;
+      }
+    }
+  }
+  &__text-wrapper {
+    margin-top: 1rem;
+  }
+
+  &__text {
+    text-align: center;
+  }
+}
