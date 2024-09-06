@@ -23,7 +23,7 @@ const Services = () => {
       </h1>
 
       {/* Birthday Parties Section */}
-      <h2 className="services__section-title">Birthday Parties</h2>
+      <h2 className="services__section-title">S TOWN (INDOOR PLACE)</h2>
       <div className="services__section">
         <div className="services__card">
           <div className="services__image-wrapper">
@@ -33,12 +33,29 @@ const Services = () => {
               alt="Dance party"
             />
           </div>
-          <h2 className="services__card-title">Dance Party</h2>
+          <h2 className="services__card-title">BIRTHDAY PartIES</h2>
           <button
             className="services__button"
             onClick={() => goToServicePage("/danceparty")}
           >
-            View Details
+            COMING SOON
+          </button>
+        </div>
+
+        <div className="services__card">
+          <div className="services__image-wrapper">
+            <img
+              className="services__image"
+              src={musicalImg}
+              alt="Musical babies"
+            />
+          </div>
+          <h2 className="services__card-title">DROP IN PLAY</h2>
+          <button
+            className="services__button"
+            onClick={() => goToServicePage("/musicalbabies")}
+          >
+            COMING SOON
           </button>
         </div>
 
@@ -54,23 +71,6 @@ const Services = () => {
           <button
             className="services__button"
             onClick={() => goToServicePage("/facepainting")}
-          >
-            View Details
-          </button>
-        </div>
-
-        <div className="services__card">
-          <div className="services__image-wrapper">
-            <img
-              className="services__image"
-              src={musicalImg}
-              alt="Musical babies"
-            />
-          </div>
-          <h2 className="services__card-title">Musical Babies</h2>
-          <button
-            className="services__button"
-            onClick={() => goToServicePage("/musicalbabies")}
           >
             View Details
           </button>
