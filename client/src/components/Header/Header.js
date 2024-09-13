@@ -227,7 +227,7 @@ const Header = () => {
                   handleDropdownClick(setShowBirthdayPartiesDropdown)
                 }
               >
-                Birthday Parties{" "}
+                S-TOWN (INDOOR PLACE){" "}
                 {showBirthdayPartiesDropdown ? (
                   <FaArrowDown />
                 ) : (
@@ -241,7 +241,15 @@ const Header = () => {
                       to="/danceparty"
                       onClick={() => handleLinkClick("Dance Party")}
                     >
-                      Dance Party
+                      Birthday Parties
+                    </Link>
+                  </li>
+                  <li className="header__sidebar-dropdown-item">
+                    <Link
+                      to="/musicalbabies"
+                      onClick={() => handleLinkClick("Musical Babies")}
+                    >
+                      Drop in Play
                     </Link>
                   </li>
                   <li className="header__sidebar-dropdown-item">
@@ -250,14 +258,6 @@ const Header = () => {
                       onClick={() => handleLinkClick("Face Painting")}
                     >
                       Face Painting
-                    </Link>
-                  </li>
-                  <li className="header__sidebar-dropdown-item">
-                    <Link
-                      to="/musicalbabies"
-                      onClick={() => handleLinkClick("Musical Babies")}
-                    >
-                      Musical Babies
                     </Link>
                   </li>
                 </ul>
@@ -315,7 +315,8 @@ const Header = () => {
             </li>
             <li className="header__sidebar-link" onClick={handleContactClick}>
               <span>
-                Contact Us<FaArrowRight />
+                Contact Us
+                <FaArrowRight />
               </span>
             </li>
           </ul>
