@@ -99,7 +99,7 @@ const Header = () => {
               onMouseLeave={() => setShowBirthdayPartiesDropdown(false)}
             >
               <span className="header__navigation-span">
-                Birthday Parties{" "}
+                S-TOWN{" "}
                 {showBirthdayPartiesDropdown ? (
                   <FaArrowDown className="arrow-icon" />
                 ) : (
@@ -113,7 +113,15 @@ const Header = () => {
                       to="/danceparty"
                       onClick={() => handleLinkClick("Dance Party")}
                     >
-                      Dance Party
+                      Birthday Parties
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/musicalbabies"
+                      onClick={() => handleLinkClick("Musical Babies")}
+                    >
+                      Drop In Play
                     </Link>
                   </li>
                   <li>
@@ -122,14 +130,6 @@ const Header = () => {
                       onClick={() => handleLinkClick("Face Painting")}
                     >
                       Face Painting
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/musicalbabies"
-                      onClick={() => handleLinkClick("Musical Babies")}
-                    >
-                      Musical Babies
                     </Link>
                   </li>
                 </ul>
