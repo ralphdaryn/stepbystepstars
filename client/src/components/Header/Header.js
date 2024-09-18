@@ -99,7 +99,7 @@ const Header = () => {
               onMouseLeave={() => setShowBirthdayPartiesDropdown(false)}
             >
               <span className="header__navigation-span">
-                S-TOWN{" "}
+                S-Town{" "}
                 {showBirthdayPartiesDropdown ? (
                   <FaArrowDown className="arrow-icon" />
                 ) : (
@@ -227,7 +227,7 @@ const Header = () => {
                   handleDropdownClick(setShowBirthdayPartiesDropdown)
                 }
               >
-                S-TOWN (INDOOR PLACE){" "}
+                S-Town (Indoor Place){" "}
                 {showBirthdayPartiesDropdown ? (
                   <FaArrowDown />
                 ) : (
