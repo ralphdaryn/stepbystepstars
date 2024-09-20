@@ -21,9 +21,42 @@ const Events = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData); // Log or process formData as needed
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent the default form submission behavior
+
+    try {
+      const response = await fetch("http://localhost:5001/api/bookings", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData), // Convert the formData to JSON format
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log(result); // Log the response from the server
+        alert("Booking created successfully!");
+        // Optionally, reset the form data here after successful submission
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phoneNumber: "",
+          eventName: "",
+          eventAddress: "",
+          dateOfEvent: "",
+          timeOfEvent: "",
+          ageRange: "",
+          numberOfChildren: "",
+        });
+      } else {
+        alert("Failed to create booking.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("An error occurred while creating the booking.");
+    }
   };
 
   useEffect(() => {
