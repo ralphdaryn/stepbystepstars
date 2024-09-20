@@ -21,20 +21,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Simple validation check for empty fields
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.phoneNumber ||
-      !formData.subject ||
-      !formData.message
-    ) {
-      alert("Please fill in all fields.");
-      return; // Stop the submission if any field is empty
-    }
-
     try {
-      // Log form data before sending to the server
       console.log("Form data sent to server:", formData);
 
       const response = await fetch("http://localhost:5001/api/contact", {
@@ -46,18 +33,17 @@ const Contact = () => {
       });
 
       const data = await response.json();
-      // Log the response from the server
       console.log("Response from server:", data);
 
       if (response.ok) {
-        alert("Your message has been sent!");
+        alert("Your message has been successfully submitted!"); // Alert on successful submission
         setFormData({
           name: "",
           email: "",
           message: "",
           phoneNumber: "",
           subject: "",
-        }); // Reset the form after submission
+        });
       } else {
         alert("Failed to send your message.");
       }
@@ -83,6 +69,7 @@ const Contact = () => {
               value={formData.name}
               onChange={handleInputChange}
               className="contact__input"
+              required
             />
           </div>
           <div className="contact__form-group contact__form-group--row">
@@ -97,6 +84,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleInputChange}
                 className="contact__input"
+                required
               />
             </div>
             <div className="contact__form-group contact__form-group--half">
@@ -110,6 +98,7 @@ const Contact = () => {
                 value={formData.phoneNumber}
                 onChange={handleInputChange}
                 className="contact__input"
+                required
               />
             </div>
           </div>
@@ -123,6 +112,7 @@ const Contact = () => {
               value={formData.subject}
               onChange={handleInputChange}
               className="contact__input"
+              required
             >
               <option value="">Select a Subject</option>
               <option value="general">General</option>
@@ -141,6 +131,7 @@ const Contact = () => {
               value={formData.message}
               onChange={handleInputChange}
               className="contact__textarea-message"
+              required
             ></textarea>
           </div>
           <button className="contact__button" type="submit">

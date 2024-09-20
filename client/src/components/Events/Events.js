@@ -22,7 +22,7 @@ const Events = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent the default form submission behavior
+    e.preventDefault();
 
     try {
       const response = await fetch("http://localhost:5001/api/bookings", {
@@ -30,14 +30,13 @@ const Events = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData), // Convert the formData to JSON format
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
         const result = await response.json();
-        console.log(result); // Log the response from the server
+        console.log(result);
         alert("Booking created successfully!");
-        // Optionally, reset the form data here after successful submission
         setFormData({
           firstName: "",
           lastName: "",
@@ -60,7 +59,7 @@ const Events = () => {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
   }, []);
 
   return (
