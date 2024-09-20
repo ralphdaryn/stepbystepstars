@@ -18,9 +18,53 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form data submitted:", formData);
+
+    // Simple validation check for empty fields
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.phoneNumber ||
+      !formData.subject ||
+      !formData.message
+    ) {
+      alert("Please fill in all fields.");
+      return; // Stop the submission if any field is empty
+    }
+
+    try {
+      // Log form data before sending to the server
+      console.log("Form data sent to server:", formData);
+
+      const response = await fetch("http://localhost:5001/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      // Log the response from the server
+      console.log("Response from server:", data);
+
+      if (response.ok) {
+        alert("Your message has been sent!");
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+          phoneNumber: "",
+          subject: "",
+        }); // Reset the form after submission
+      } else {
+        alert("Failed to send your message.");
+      }
+    } catch (error) {
+      console.error("Error submitting form data:", error);
+      alert("An error occurred while sending your message.");
+    }
   };
 
   return (
@@ -80,6 +124,7 @@ const Contact = () => {
               onChange={handleInputChange}
               className="contact__input"
             >
+              <option value="">Select a Subject</option>
               <option value="general">General</option>
               <option value="parties">Birthday Parties</option>
               <option value="fitness">Fitness</option>
