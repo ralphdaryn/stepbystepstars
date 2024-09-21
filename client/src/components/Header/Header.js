@@ -227,7 +227,7 @@ const Header = () => {
                   handleDropdownClick(setShowBirthdayPartiesDropdown)
                 }
               >
-                S-Town (Indoor Place){" "}
+                S-Town (Indoor Play){" "}
                 {showBirthdayPartiesDropdown ? (
                   <FaArrowDown />
                 ) : (
