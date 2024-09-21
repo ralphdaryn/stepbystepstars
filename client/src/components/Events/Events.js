@@ -8,11 +8,8 @@ const Events = () => {
     lastName: "",
     email: "",
     phoneNumber: "",
-    eventName: "",
-    eventAddress: "",
     dateOfEvent: "",
     timeOfEvent: "",
-    ageRange: "",
     numberOfChildren: "",
   });
 
@@ -114,28 +111,6 @@ const Events = () => {
           />
         </div>
         <div className="events-form__field">
-          <label className="events-form__label">Event Name:</label>
-          <input
-            className="events-form__input"
-            type="text"
-            name="eventName"
-            value={formData.eventName}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="events-form__field">
-          <label className="events-form__label">Event Address:</label>
-          <input
-            className="events-form__input"
-            type="text"
-            name="eventAddress"
-            value={formData.eventAddress}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="events-form__field">
           <label className="events-form__label">Date of Event:</label>
           <input
             className="events-form__input"
@@ -153,19 +128,6 @@ const Events = () => {
             type="time"
             name="timeOfEvent"
             value={formData.timeOfEvent}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="events-form__field">
-          <label className="events-form__label">
-            Age Range of Children/Attendees:
-          </label>
-          <input
-            className="events-form__input"
-            type="text"
-            name="ageRange"
-            value={formData.ageRange}
             onChange={handleChange}
             required
           />
