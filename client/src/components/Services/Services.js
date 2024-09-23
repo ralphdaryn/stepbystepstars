@@ -1,6 +1,6 @@
 import "./Services.scss";
 import { useNavigate } from "react-router-dom";
-import staytunedImg from '../../assets/images/stay-tuned.png'
+import staytunedImg from "../../assets/images/stay-tuned.png";
 import facepaintImg from "../../assets/images/facepaintkids.png";
 import musicalImg from "../../assets/images/danceparty.png";
 import fitnessImg from "../../assets/images/fitnessmom.png";
@@ -24,7 +24,9 @@ const Services = () => {
       </h1>
 
       {/* Birthday Parties Section */}
-      <h2 className="services__section-title">S-TOWN <br></br>(INDOOR PLACE)</h2>
+      <h2 className="services__section-title">
+        S-TOWN <br></br>(INDOOR PLACE)
+      </h2>
       <div className="services__section">
         <div className="services__card">
           <div className="services__image-wrapper">
