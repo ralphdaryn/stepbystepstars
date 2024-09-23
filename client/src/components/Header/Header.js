@@ -94,6 +94,15 @@ const Header = () => {
               </Link>
             </li>
             <li
+              className={`header__navigation-link ${
+                activeLink === "About" ? "active" : ""
+              }`}
+            >
+              <Link to="/ourstory" onClick={() => handleLinkClick("About")}>
+                Our Story
+              </Link>
+            </li>
+            <li
               className="header__navigation-link"
               onMouseEnter={() => setShowBirthdayPartiesDropdown(true)}
               onMouseLeave={() => setShowBirthdayPartiesDropdown(false)}
@@ -179,20 +188,11 @@ const Header = () => {
             </li>
             <li
               className={`header__navigation-link ${
-                activeLink === "About" ? "active" : ""
-              }`}
-            >
-              <Link to="/ourstory" onClick={() => handleLinkClick("About")}>
-                Our Story
-              </Link>
-            </li>
-            <li
-              className={`header__navigation-link ${
                 activeLink === "Events" ? "active" : ""
               }`}
             >
               <Link to="/events" onClick={() => handleLinkClick("Events")}>
-                Events
+                Upcoming Events
               </Link>
             </li>
             <li
@@ -219,6 +219,14 @@ const Header = () => {
             >
               <Link to="/">
                 Home <FaArrowRight />
+              </Link>
+            </li>
+            <li
+              className="header__sidebar-link"
+              onClick={() => handleLinkClick("About")}
+            >
+              <Link to="/ourstory">
+                Our Story <FaArrowRight />
               </Link>
             </li>
             <li className="header__sidebar-link">
@@ -299,18 +307,10 @@ const Header = () => {
             </li>
             <li
               className="header__sidebar-link"
-              onClick={() => handleLinkClick("About")}
-            >
-              <Link to="/ourstory">
-                Our Story <FaArrowRight />
-              </Link>
-            </li>
-            <li
-              className="header__sidebar-link"
               onClick={() => handleLinkClick("Events")}
             >
               <Link to="/events">
-                Events <FaArrowRight />
+                Upcoming Events <FaArrowRight />
               </Link>
             </li>
             <li className="header__sidebar-link" onClick={handleContactClick}>
