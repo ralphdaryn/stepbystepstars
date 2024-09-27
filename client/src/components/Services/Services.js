@@ -2,8 +2,6 @@ import "./Services.scss";
 import { useNavigate } from "react-router-dom";
 import staytunedImg from "../../assets/images/stay-tuned.png";
 import facepaintImg from "../../assets/images/facepaintkids.png";
-import musicalImg from "../../assets/images/danceparty.png";
-import fitnessImg from "../../assets/images/fitnessmom.png";
 import mommyandme from "../../assets/images/mommyandme.jpeg";
 import privatetraining from "../../assets/images/privatetraining.jpg";
 
@@ -49,7 +47,7 @@ const Services = () => {
           <div className="services__image-wrapper">
             <img
               className="services__image"
-              src={musicalImg}
+              src={staytunedImg}
               alt="Musical babies"
             />
           </div>
@@ -104,7 +102,7 @@ const Services = () => {
           <div className="services__image-wrapper">
             <img
               className="services__image"
-              src={fitnessImg}
+              src={staytunedImg}
               alt="Group fitness"
             />
           </div>

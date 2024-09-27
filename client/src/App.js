@@ -12,6 +12,7 @@ import MommyandMe from "./components/MommyandMe/MommyandMe";
 import GroupFitness from "./components/GroupFitness/GroupFitness";
 import PrivateTraining from "./components/PrivateTraining/PrivateTraining";
 import Events from "./components/Events/Events";
+import WaiverForm from "./components/WaiverForm/WaiverForm";
 import './Background.css';
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/groupfitness" element={<GroupFitness />} />
           <Route path="/privatetraining" element={<PrivateTraining />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/waiver" element={<WaiverForm />} /> 
         </Routes>
         <Footer />
       </div>

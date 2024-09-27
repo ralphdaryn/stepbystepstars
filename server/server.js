@@ -5,14 +5,13 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 
 // Middleware
-app.use(express.json());
+app.use(express.json({ limit: "10mb" })); // Increase the limit to handle large base64 images
 app.use(cors());
 
-// Temporary in-memory storage for bookings
+// Temporary in-memory storage for bookings, contact submissions, and waivers
 let bookings = [];
-
-// Temporary in-memory storage for contact form submissions
 let contactSubmissions = [];
+let waivers = [];
 
 // Basic route
 app.get("/", (req, res) => {
@@ -35,23 +34,69 @@ app.post("/api/bookings", (req, res) => {
 app.post("/api/contact", (req, res) => {
   const { name, email, phoneNumber, subject, message } = req.body;
 
-  // Log raw request body for debugging
-  console.log("Raw request body:", req.body);
-
   // Server-side validation to check if any field is empty
   if (!name || !email || !phoneNumber || !subject || !message) {
-    console.log("Error: Missing fields");
     return res.status(400).json({ message: "All fields are required." });
   }
 
   // Save the contact form submission
   contactSubmissions.push({ name, email, phoneNumber, subject, message });
 
-  // Log the received contact form data
-  console.log("Received contact form submission:", { name, email, phoneNumber, subject, message });
+  // Respond with a success message
+  res
+    .status(201)
+    .json({ message: "Contact form submitted successfully", data: req.body });
+});
 
-  // Respond with a success message and return the data received
-  res.status(201).json({ message: "Contact form submitted successfully", data: req.body });
+// Route to handle waiver form submissions
+app.post("/api/waiver", (req, res) => {
+  const {
+    participantName,
+    date,
+    address,
+    phone,
+    email,
+    emergencyContact,
+    emergencyPhone,
+    childName,
+    childAge,
+    signature,
+  } = req.body;
+
+  // Server-side validation for the waiver form fields
+  if (
+    !participantName ||
+    !date ||
+    !address ||
+    !phone ||
+    !email ||
+    !emergencyContact ||
+    !emergencyPhone ||
+    !signature
+  ) {
+    return res
+      .status(400)
+      .json({ message: "All fields are required, including the signature." });
+  }
+
+  // Save the waiver form submission
+  waivers.push({
+    participantName,
+    date,
+    address,
+    phone,
+    email,
+    emergencyContact,
+    emergencyPhone,
+    childName,
+    childAge,
+    signature,
+  });
+
+  // Respond with a success message
+  res
+    .status(201)
+    .json({ message: "Waiver submitted successfully", waiverData: req.body });
 });
 
 // Start the server
