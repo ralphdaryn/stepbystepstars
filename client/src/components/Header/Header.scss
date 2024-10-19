@@ -33,7 +33,7 @@
       top: 0;
       left: 0;
       overflow: hidden;
-      z-index: -1; 
+      z-index: -1;
 
       span {
         width: 2vmin;
@@ -498,8 +498,40 @@
   }
 
   &__logo {
-    width: 12vh;
-    border-radius: 3rem;
+    width: clamp(
+      80px,
+      8vw,
+      120px
+    ); /* Default size, responsive between 80px and 120px */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular shape */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    object-fit: cover; /* Prevent distortion */
+    display: block;
+    margin: 0 auto; /* Center horizontally */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    max-width: 120px; /* Prevent excessive scaling */
+
+    // Apply styles for Tablet (768px+)
+    @include tablet {
+      width: clamp(90px, 8vw, 130px); /* Slightly larger for tablet */
+    }
+
+    // Apply styles for Desktop (1280px+)
+    @include desktop {
+      width: clamp(100px, 6vw, 150px); /* Adjust size for desktop */
+    }
+
+    // Large Screens (1440px and up)
+    @media (min-width: 1440px) {
+      width: 100px; /* Keep it controlled on large screens */
+    }
+
+    // Hover Effect
+    &:hover {
+      transform: scale(1.05); /* Subtle zoom effect */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    }
   }
 
   &__navbar {
