@@ -1,14 +1,21 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-require("dotenv").config();
+
+//Console log stripe key
+console.log("Stripe Secret Key:", process.env.STRIPE_SECRET_KEY);
+
+
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+
 const app = express();
 const PORT = process.env.PORT || 5001;
 
 // Middleware
-app.use(express.json({ limit: "10mb" })); // Increase the limit to handle large base64 images
+app.use(express.json({ limit: "10mb" })); // Increase limit for large payloads
 app.use(cors());
 
-// Temporary in-memory storage for bookings, contact submissions, and waivers
+// Temporary in-memory storage
 let bookings = [];
 let contactSubmissions = [];
 let waivers = [];
@@ -20,13 +27,20 @@ app.get("/", (req, res) => {
 
 // Route to get all bookings
 app.get("/api/bookings", (req, res) => {
-  res.json(bookings); // Send all stored bookings
+  res.json(bookings);
 });
 
 // Route to create a new booking
 app.post("/api/bookings", (req, res) => {
-  const booking = req.body;
-  bookings.push(booking); // Add new booking to in-memory array
+  const { eventName, date, time, customerName, customerEmail, tickets } = req.body;
+
+  if (!eventName || !date || !time || !customerName || !customerEmail || !tickets) {
+    return res.status(400).json({ message: "All fields are required." });
+  }
+
+  const booking = { eventName, date, time, customerName, customerEmail, tickets };
+  bookings.push(booking);
+
   res.status(201).json({ message: "Booking created successfully", booking });
 });
 
@@ -34,69 +48,68 @@ app.post("/api/bookings", (req, res) => {
 app.post("/api/contact", (req, res) => {
   const { name, email, phoneNumber, subject, message } = req.body;
 
-  // Server-side validation to check if any field is empty
   if (!name || !email || !phoneNumber || !subject || !message) {
     return res.status(400).json({ message: "All fields are required." });
   }
 
-  // Save the contact form submission
   contactSubmissions.push({ name, email, phoneNumber, subject, message });
 
-  // Respond with a success message
-  res
-    .status(201)
-    .json({ message: "Contact form submitted successfully", data: req.body });
+  res.status(201).json({ message: "Contact form submitted successfully", data: req.body });
 });
 
 // Route to handle waiver form submissions
 app.post("/api/waiver", (req, res) => {
   const {
-    participantName,
-    date,
-    address,
-    phone,
-    email,
-    emergencyContact,
-    emergencyPhone,
-    childName,
-    childAge,
-    signature,
+    participantName, date, address, phone, email, emergencyContact,
+    emergencyPhone, childName, childAge, signature,
   } = req.body;
 
-  // Server-side validation for the waiver form fields
   if (
-    !participantName ||
-    !date ||
-    !address ||
-    !phone ||
-    !email ||
-    !emergencyContact ||
-    !emergencyPhone ||
-    !signature
+    !participantName || !date || !address || !phone || !email ||
+    !emergencyContact || !emergencyPhone || !signature
   ) {
-    return res
-      .status(400)
-      .json({ message: "All fields are required, including the signature." });
+    return res.status(400).json({ message: "All fields are required, including the signature." });
   }
 
-  // Save the waiver form submission
   waivers.push({
-    participantName,
-    date,
-    address,
-    phone,
-    email,
-    emergencyContact,
-    emergencyPhone,
-    childName,
-    childAge,
-    signature,
+    participantName, date, address, phone, email, emergencyContact,
+    emergencyPhone, childName, childAge, signature,
   });
 
-  // Respond with a success message
-  res
-    .status(201)
-    .json({ message: "Waiver submitted successfully", waiverData: req.body });
+  res.status(201).json({ message: "Waiver submitted successfully", waiverData: req.body });
+});
+
+// Stripe Checkout Session Route
+app.post("/api/create-checkout-session", async (req, res) => {
+  const { eventName, tickets, price } = req.body;
+
+  if (!eventName || !tickets || !price) {
+    return res.status(400).json({ message: "All fields are required." });
+  }
+
+  try {
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ["card"],
+      line_items: [
+        {
+          price_data: {
+            currency: "usd",
+            product_data: { name: eventName },
+            unit_amount: price * 100, // Stripe expects the amount in cents
+          },
+          quantity: tickets,
+        },
+      ],
+      mode: "payment",
+      success_url: "http://localhost:3000/success",
+      cancel_url: "http://localhost:3000/cancel",
+    });
+
+    res.json({ url: session.url });
+  } catch (error) {
+    console.error("Error creating checkout session:", error);
+    res.status(500).json({ message: "Failed to create checkout session" });
+  }
 });
 
 // Start the server
