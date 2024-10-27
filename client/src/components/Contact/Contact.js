@@ -24,7 +24,7 @@ const Contact = () => {
     try {
       console.log("Form data sent to server:", formData);
 
-      const response = await fetch("http://localhost:5001/api/contact", {
+      const response = await fetch("/.netlify/functions/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
