@@ -1,6 +1,6 @@
 [build]
-  command = "npm run build"  # Build the React frontend
-  publish = "client/build"   # Publish the React build output
+  command = "npm run build --prefix client"
+  publish = "client/build"
 
 [functions]
-  directory = "netlify/functions"  # Points to your serverless functions
+  directory = "netlify/functions"
