@@ -20,7 +20,7 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
       const response = await fetch("/.netlify/functions/contact", {
         method: "POST",
@@ -29,20 +29,27 @@ const Contact = () => {
         },
         body: JSON.stringify(formData),
       });
-  
+
       if (!response.ok) {
-        throw new Error(`Error: ${response.statusText}`);
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Failed to send message.");
       }
-  
-      const data = await response.json();
-      alert("Your message has been successfully submitted!");
-      setFormData({ name: "", email: "", message: "", phoneNumber: "", subject: "" });
+
+      const data = await response.json(); // Use the response data
+      alert(data.message || "Your message has been successfully submitted!");
+      
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+        phoneNumber: "",
+        subject: "",
+      });
     } catch (error) {
       console.error("Error submitting form data:", error);
       alert("An error occurred while sending your message.");
     }
   };
-  
 
   return (
     <div className="contact">
