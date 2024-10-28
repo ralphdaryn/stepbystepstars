@@ -14,6 +14,7 @@ import PrivateTraining from "./components/PrivateTraining/PrivateTraining";
 import Events from "./components/Events/Events";
 import WaiverForm from "./components/WaiverForm/WaiverForm";
 import './Background.css';
+import RibbonCutting from "./components/RibbonCutting/RibbonCutting";
 
 function App() {
   return (
@@ -38,6 +39,8 @@ function App() {
           <Route path="/privatetraining" element={<PrivateTraining />} />
           <Route path="/events" element={<Events />} />
           <Route path="/waiver" element={<WaiverForm />} /> 
+          <Route path="/ribbon-cutting" element={<RibbonCutting />} />
+          <Route path="/" element={<RibbonCutting />} />
         </Routes>
         <Footer />
       </div>
