@@ -9,6 +9,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
     "framer-motion": "^11.1.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -48,6 +49,6 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "sass": "^1.80.4",
-    "sass-loader": "^13.3.3"
+    "sass-loader": "^16.0.2"
   }
 }
