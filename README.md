@@ -1,4 +1,4 @@
-🌟 Step By Step Club
+# 🌟 Step By Step Club
 The Step By Step Club is a real-life web application for kids that promotes personal growth through engaging, guided activities and fosters a sense of belonging with strong community support. In addition to personal development, the club functions as a fitness hub with a seamless event booking system. Parents and children can easily schedule and manage workshops, classes, and birthday parties with just a few clicks.
 
 This project demonstrates my full-stack development skills using modern technologies and showcases my ability to build user-friendly, dynamic applications with robust backend infrastructure.
@@ -7,18 +7,19 @@ This project demonstrates my full-stack development skills using modern technolo
 👉 Live Site: Step By Step Club
 👉 GitHub Repository: Explore the Code
 
-📖 Overview
+# 📖 Overview
 The Step By Step Club provides an interactive platform where kids can explore activities that encourage fitness, creativity, and personal growth. Designed with simplicity and ease of use, the website enables parents to schedule events such as workshops, classes, or even birthday parties in real-time.
 
 The platform seamlessly integrates user authentication and event management with a visually appealing interface, making it intuitive for children and parents alike.
 
-🌟 Key Features
+# 🌟 Key Features
 Interactive Guided Activities – Helps kids develop new skills through structured, enjoyable sessions.
 Fitness Classes & Workshops – Promotes healthy living through various fitness activities and group sessions.
 Event Booking System – Effortlessly schedule classes, workshops, and birthday parties.
 Mobile-Friendly Design – Responsive and optimized for all devices, ensuring smooth access anywhere, anytime.
 Admin Dashboard – Event managers can easily view, update, and manage bookings.
-🛠 Tech Stack
+
+# 🛠 Tech Stack
 Front-End:
 HTML5 – Structure and layout of the website
 CSS3 / SASS – Styling with reusable and maintainable code
