@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+🌟 Step By Step Club
+The Step By Step Club is a real-life web application for kids that promotes personal growth through engaging, guided activities and fosters a sense of belonging with strong community support. In addition to personal development, the club functions as a fitness hub with a seamless event booking system. Parents and children can easily schedule and manage workshops, classes, and birthday parties with just a few clicks.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project demonstrates my full-stack development skills using modern technologies and showcases my ability to build user-friendly, dynamic applications with robust backend infrastructure.
 
-## Available Scripts
+🚀 Live Demo
+👉 Live Site: https:stepbystepclub.ca
+👉 GitHub Repository: https://github.com/ralphdaryn/stepbystepstars
 
-In the project directory, you can run:
+📖 Overview
+The Step By Step Club provides an interactive platform where kids can explore activities that encourage fitness, creativity, and personal growth. Designed with simplicity and ease of use, the website enables parents to schedule events such as workshops, classes, or even birthday parties in real-time.
 
-### `npm start`
+The platform seamlessly integrates user authentication and event management with a visually appealing interface, making it intuitive for children and parents alike.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🌟 Key Features
+Interactive Guided Activities – Helps kids develop new skills through structured, enjoyable sessions.
+Fitness Classes & Workshops – Promotes healthy living through various fitness activities and group sessions.
+Event Booking System – Effortlessly schedule classes, workshops, and birthday parties.
+Mobile-Friendly Design – Responsive and optimized for all devices, ensuring smooth access anywhere, anytime.
+Admin Dashboard – Event managers can easily view, update, and manage bookings.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🛠 Tech Stack
+Front-End:
+HTML5 – Structure and layout of the website
+CSS3 / SASS – Styling with reusable and maintainable code
+JavaScript (ES6) – Interactive and dynamic functionality
+React.js – Front-end library for building responsive, component-based UI
 
-### `npm test`
+Back-End:
+Node.js / Express.js – Handles backend logic and API routes
+SQL (MySQL) – Relational database for event and user data
+RESTful APIs – Communication between front-end and back-end
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Deployment & Tools:
+Netlify – Front-end hosting for fast and reliable delivery
+AWS S3 – Storage for static assets
+Postman – API testing and debugging
+Git / GitHub – Version control and project collaboration
 
-### `npm run build`
+📋 Installation
+Clone the repository:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+bash
+Copy code
+git clone https://github.com/ralphdaryn/stepbystepstars.git
+cd stepbystepstars
+Install dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+bash
+Copy code
+# Front-end dependencies
+cd client
+npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Back-end dependencies
+cd ../server
+npm install
+Set up environment variables:
+Create a .env file in the root directory with necessary credentials (e.g., database URL, API keys).
 
-### `npm run eject`
+Run the application:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+bash
+Copy code
+# Start client
+cd client
+npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Start server
+cd ../server
+npm run dev
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+🖥️ Usage
+Browse activities and events available for your child.
+Book workshops or classes using the event management system.
+Manage your bookings through your personal dashboard.
+View or update bookings 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+Event Booking System:
+📡 API Endpoints
+GET /api/events – Retrieve all available events
+POST /api/events – Add a new event
+PUT /api/events/
+– Update an event
+DELETE /api/events/
+– Remove an event
+POST /api/auth/signup – User registration
+POST /api/auth/login – User login
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+📧 Contact
+Have any questions or feedback? Reach out!
 
-### Code Splitting
+GitHub: ralphdaryn
+Email: ralphdarync@gmail.com
+LinkedIn: https://www.linkedin.com/in/ralphdaryn/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+💬 Closing Note
+The Step By Step Club project reflects my passion for building meaningful, user-friendly applications that combine creativity, fitness, and community. This project demonstrates my ability to create dynamic, responsive web applications with modern tools and frameworks. Thank you for visiting, and I look forward to your feedback!
