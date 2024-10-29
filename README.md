@@ -4,8 +4,8 @@ The Step By Step Club is a real-life web application for kids that promotes pers
 This project demonstrates my full-stack development skills using modern technologies and showcases my ability to build user-friendly, dynamic applications with robust backend infrastructure.
 
 🚀 Live Demo
-👉 Live Site: https:stepbystepclub.ca
-👉 GitHub Repository: https://github.com/ralphdaryn/stepbystepstars
+👉 Live Site: Step By Step Club
+👉 GitHub Repository: Explore the Code
 
 📖 Overview
 The Step By Step Club provides an interactive platform where kids can explore activities that encourage fitness, creativity, and personal growth. Designed with simplicity and ease of use, the website enables parents to schedule events such as workshops, classes, or even birthday parties in real-time.
@@ -18,25 +18,21 @@ Fitness Classes & Workshops – Promotes healthy living through various fitness 
 Event Booking System – Effortlessly schedule classes, workshops, and birthday parties.
 Mobile-Friendly Design – Responsive and optimized for all devices, ensuring smooth access anywhere, anytime.
 Admin Dashboard – Event managers can easily view, update, and manage bookings.
-
 🛠 Tech Stack
 Front-End:
 HTML5 – Structure and layout of the website
 CSS3 / SASS – Styling with reusable and maintainable code
 JavaScript (ES6) – Interactive and dynamic functionality
 React.js – Front-end library for building responsive, component-based UI
-
 Back-End:
 Node.js / Express.js – Handles backend logic and API routes
 SQL (MySQL) – Relational database for event and user data
 RESTful APIs – Communication between front-end and back-end
-
 Deployment & Tools:
 Netlify – Front-end hosting for fast and reliable delivery
 AWS S3 – Storage for static assets
 Postman – API testing and debugging
 Git / GitHub – Version control and project collaboration
-
 📋 Installation
 Clone the repository:
 
@@ -69,15 +65,11 @@ npm start
 # Start server
 cd ../server
 npm run dev
-
 🖥️ Usage
 Browse activities and events available for your child.
 Book workshops or classes using the event management system.
 Manage your bookings through your personal dashboard.
-View or update bookings 
-
-
-Event Booking System:
+View or update bookings via the admin dashboard.
 📡 API Endpoints
 GET /api/events – Retrieve all available events
 POST /api/events – Add a new event
@@ -87,14 +79,13 @@ DELETE /api/events/
 – Remove an event
 POST /api/auth/signup – User registration
 POST /api/auth/login – User login
-
-
 📧 Contact
 Have any questions or feedback? Reach out!
 
 GitHub: ralphdaryn
 Email: ralphdarync@gmail.com
-LinkedIn: https://www.linkedin.com/in/ralphdaryn/
-
+LinkedIn: linkedin.com/in/ralphdaryn
 💬 Closing Note
-The Step By Step Club project reflects my passion for building meaningful, user-friendly applications that combine creativity, fitness, and community. This project demonstrates my ability to create dynamic, responsive web applications with modern tools and frameworks. Thank you for visiting, and I look forward to your feedback!
+The Step By Step Club project reflects my passion for building meaningful, user-friendly applications that combine creativity, fitness, and community. This project demonstrates my ability to create dynamic, responsive web applications with modern tools and frameworks.
+
+Thank you for visiting, and I look forward to your feedback!
