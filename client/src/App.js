@@ -15,6 +15,8 @@ import Events from "./components/Events/Events";
 import WaiverForm from "./components/WaiverForm/WaiverForm";
 import './Background.css';
 import RibbonCutting from "./components/RibbonCutting/RibbonCutting";
+import Success from "./components/StatusPage/Success";
+import Cancel from "./components/StatusPage/Cancel";
 
 function App() {
   return (
@@ -40,6 +42,8 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/waiver" element={<WaiverForm />} /> 
           <Route path="/ribbon-cutting" element={<RibbonCutting />} />
+          <Route path="/success" element={<Success />} />
+          <Route path="/cancel" element={<Cancel />} />
           <Route path="/" element={<RibbonCutting />} />
         </Routes>
         <Footer />

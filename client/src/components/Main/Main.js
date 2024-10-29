@@ -8,6 +8,7 @@ import Services from "../Services/Services";
 import EventPlan from "../EventPlan/EventPlan";
 import Reviews from "../Reviews/Reviews";
 import Contact from "../Contact/Contact";
+import RibbonCutting from "../RibbonCutting/RibbonCutting";
 
 const useInView = () => {
   const ref = useRef(null);
@@ -80,6 +81,9 @@ const Main = () => {
       <div className="main">
         <div className="main__container">
           <div className="main__section">
+          <ScrollFade key="ribbon">
+              <RibbonCutting/>
+            </ScrollFade>
             <ScrollFade key="services">
               <Services />
             </ScrollFade>
