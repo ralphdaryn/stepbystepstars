@@ -1,8 +1,6 @@
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 exports.handler = async (event) => {
-  console.log("Received event:", event.body); // Log incoming event for debugging
-
   try {
     const { quantity } = JSON.parse(event.body);
 
@@ -18,19 +16,19 @@ exports.handler = async (event) => {
       line_items: [
         {
           price_data: {
-            currency: "usd",
-            product_data: { name: "Grand Opening Ribbon Cutting" },
-            unit_amount: 1000, // $10 per child
+            currency: "cad", // Change to CAD
+            product_data: {
+              name: "Grand Opening Ribbon Cutting",
+            },
+            unit_amount: 1000, // Amount in cents ($10.00 CAD)
           },
-          quantity,
+          quantity: quantity,
         },
       ],
       mode: "payment",
-      success_url: `${process.env.CLIENT_URL}/success`, // Redirect to your domain on success
-      cancel_url: `${process.env.CLIENT_URL}/cancel`,  // Redirect to your domain on cancel
+      success_url: `${process.env.CLIENT_URL}/success`,
+      cancel_url: `${process.env.CLIENT_URL}/cancel`,
     });
-
-    console.log("Checkout session URL:", session.url); // Debugging log
 
     return {
       statusCode: 200,
