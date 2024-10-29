@@ -6,33 +6,26 @@ const RibbonCutting = () => {
 
   const handleCheckout = async () => {
     try {
-      const response = await fetch("/.netlify/functions/checkout", {
+      const response = await fetch("/api/checkout", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ quantity }),
       });
-
+  
       if (!response.ok) {
         const errorData = await response.json();
         console.error("Checkout session creation failed:", errorData);
         alert(errorData.error || "Failed to create checkout session.");
         return;
       }
-
+  
       const data = await response.json();
-      if (data.url) {
-        console.log("Redirecting to:", data.url); // Debugging log
-        window.location.href = data.url;
-      } else {
-        alert("No checkout URL returned.");
-      }
+      window.location.href = data.url;
     } catch (error) {
       console.error("Error during checkout:", error);
       alert("Checkout failed. Please try again.");
     }
-  };
+  };  
 
   return (
     <div style={{ textAlign: "center" }}>
