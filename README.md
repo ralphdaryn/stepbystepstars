@@ -19,7 +19,6 @@ Mobile-Friendly Design – Responsive and optimized for all devices, ensuring sm
 Admin Dashboard – Event managers can easily view, update, and manage bookings.
 
 # 🛠 Tech Stack
-
 # Front-End:
 HTML5 – Structure and layout of the website
 CSS3 / SASS – Styling with reusable and maintainable code
