@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ticketImage from "../../assets/images/ticket.jpeg";
+import ticketImage from "../../assets/images/ticket.jpeg"; // Information image
 import "./RibbonCutting.scss";
 
 const RibbonCutting = () => {
@@ -37,23 +37,33 @@ const RibbonCutting = () => {
           <label htmlFor="quantity" className="ribbon-cutting__label">
             Number of Children:
           </label>
-          <input
+          <select
             id="quantity"
-            type="number"
             className="ribbon-cutting__input"
             value={quantity}
-            onChange={(e) =>
-              setQuantity(Math.max(1, parseInt(e.target.value) || 1))
-            }
-            min="1"
+            onChange={(e) => setQuantity(parseInt(e.target.value))}
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+        <div className="ribbon-cutting__image-container">
+          <img
+            src={ticketImage}
+            alt="Grand Opening Information"
+            className="ribbon-cutting__image"
           />
         </div>
         <button className="ribbon-cutting__button" onClick={handleCheckout}>
-          <img
-            src={ticketImage}
-            alt="Ribbon Cutting Ticket"
-            className="ribbon-cutting__image"
-          />
+          Purchase Ticket
         </button>
       </div>
     </div>
