@@ -39,15 +39,10 @@ Git / GitHub – Version control and project collaboration
 
 # 📋 Installation
 Clone the repository:
-bash
-Copy code
 git clone https://github.com/ralphdaryn/stepbystepstars.git
 cd stepbystepstars
 
-Install dependencies:
-bash
-Copy code
-
+# Install dependencies:
 Front-end dependencies
 cd client
 npm install
@@ -55,12 +50,8 @@ npm install
 Back-end dependencies
 cd ../server
 npm install
-Set up environment variables:
-Create a .env file in the root directory with necessary credentials (e.g., database URL, API keys).
-Run the application:
 
-bash
-Copy code
+# Run the application:
 
 Start client
 cd client
