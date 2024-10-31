@@ -5,6 +5,7 @@ exports.handler = async (event) => {
   try {
     const { quantity } = JSON.parse(event.body);
 
+    // Validate quantity
     if (!quantity || quantity <= 0) {
       return {
         statusCode: 400,
@@ -12,16 +13,22 @@ exports.handler = async (event) => {
       };
     }
 
+    // Base price in cents (e.g., $10.00 CAD)
+    const basePrice = 1000; // $10.00 CAD
+    const taxRate = 0.13; // 13% tax
+    const totalAmount = Math.round(basePrice * (1 + taxRate)); // $10 + 13% tax, in cents
+
+    // Create Stripe checkout session
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       line_items: [
         {
           price_data: {
-            currency: "cad", // Change to CAD
+            currency: "cad", // Set to CAD
             product_data: {
               name: "Grand Opening Ribbon Cutting",
             },
-            unit_amount: 1000, // Amount in cents ($10.00 CAD)
+            unit_amount: totalAmount, // Total amount per item, including tax
           },
           quantity: quantity,
         },
