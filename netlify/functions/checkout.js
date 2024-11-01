@@ -26,7 +26,8 @@ exports.handler = async (event) => {
           price_data: {
             currency: "cad", // Set to CAD
             product_data: {
-              name: "Grand Opening Ticket ($10 + HST)\nEach ticket includes one child and one adult", // Display $10 + tax in the item name
+              name: "Grand Opening Ticket ($10 + HST)", // Main product name
+              description: "Each ticket includes one child and one adult", // Additional details in description
             },
             unit_amount: totalAmount, // Total amount per item, including tax
           },
