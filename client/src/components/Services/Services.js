@@ -1,9 +1,12 @@
 import "./Services.scss";
 import { useNavigate } from "react-router-dom";
-import staytunedImg from "../../assets/images/stay-tuned.png";
+// import staytunedImg from "../../assets/images/stay-tuned.png";
 import facepaintImg from "../../assets/images/facepaintkids.png";
 import mommyandme from "../../assets/images/mommyandme.jpeg";
 import privatetraining from "../../assets/images/privatetraining.jpg";
+import birthdayParties from '../../assets/images/birthdayparties.jpeg';
+import dropnplay from '../../assets/images/dropnplay.jpg';
+import groupfitness from '../../assets/images/groupfitness.jpeg';
 
 
 const Services = () => {
@@ -30,24 +33,24 @@ const Services = () => {
           <div className="services__image-wrapper">
             <img
               className="services__image"
-              src={staytunedImg}
+              src={birthdayParties}
               alt="Dance party"
             />
           </div>
-          <h2 className="services__card-title">BIRTHDAY PartIES</h2>
+          <h2 className="services__card-title">Birthday Parties</h2>
           <button
             className="services__button"
             onClick={() => goToServicePage("/danceparty")}
           >
-            COMING SOON
+            View Details
           </button>
         </div>
 
         <div className="services__card">
           <div className="services__image-wrapper">
             <img
-              className="services__image"
-              src={staytunedImg}
+              className="services__image-drop"
+              src={dropnplay}
               alt="Musical babies"
             />
           </div>
@@ -102,7 +105,7 @@ const Services = () => {
           <div className="services__image-wrapper">
             <img
               className="services__image"
-              src={staytunedImg}
+              src={groupfitness}
               alt="Group fitness"
             />
           </div>

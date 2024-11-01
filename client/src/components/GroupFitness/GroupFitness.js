@@ -17,18 +17,25 @@ const GroupFitness = () => {
         </video>
         <div className="groupfitness_wrapper">
           <p className="groupfitness__subtitle">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            necessitatibus dolores veniam. Pariatur, quidem exercitatione.
+            Boost your fitness with an energizing group workout that combines
+            strength, cardio, and flexibility for a total body experience.
           </p>
           <p className="groupfitness__subtitle">
-            voluptatibus excepturi corrupti aliquam saepe consectetur,
-            repellendus incidunt magni nam magnam iusto in ipsa ea dolorum, eum
-            nihil voluptatum recusandae.
+            Designed for all levels, this class uses a mix of high-energy
+            intervals, functional movements, and core-focused exercises to
+            maximize results. Each session is adaptable to individual fitness
+            levels, making it perfect for beginners and experienced participants
+            alike. Bring your motivation and leave with a sense of
+            accomplishment, improved endurance, and increased strength!
           </p>
           <p className="groupfitness__subtitle">
-            voluptatibus excepturi corrupti aliquam saepe consectetur,
-            repellendus incidunt magni nam magnam iusto in ipsa ea dolorum, eum
-            nihil voluptatum recusandae.
+            What to Expect:
+            <ul>
+              <li>• Dynamic warm-up to get the blood flowing.</li>
+              <li>• Varied circuits targeting different muscle groups.</li>
+              <li>• Core and balance work to enhance stability.</li>
+              <li>• Cool down and stretching to finish.</li>
+            </ul>
           </p>
           <div className="groupfitness__button">
             <ContactButton />

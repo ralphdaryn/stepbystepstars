@@ -17,19 +17,47 @@ const PrivateTraining = () => {
         </video>
         <div className="private-training__wrapper">
           <p className="private-training__subtitle">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. eveniet.
-            Sequi at temporibus ipsa voluptatibus tempore fugiat totam
+            Take your fitness journey to the next level with personalized
+            training and coaching designed to fit your unique needs, goals, and
+            lifestyle.
           </p>
           <p className="private-training__subtitle">
-            Quasi est unde impedit cumque, repellendus veritatis ratione
-            similique reprehenderit molestiae nam expedita, modi eligendi optio
-            saepe.
+            Each session is crafted to provide you with expert guidance,
+            support, and accountability, helping you build strength, improve
+            endurance, and boost overall health.
           </p>
           <p className="private-training__subtitle">
-            iusto et quod eveniet, excepturi rerum veniam? Cumque soluta
-            voluptatum iste nisi. Officia amet repellendus facilis debitis
-            aspernatur!
+            Whether you’re a beginner or looking to break through a fitness
+            plateau, I’ll be there every step of the way to keep you motivated,
+            informed, and progressing toward your goals.
           </p>
+          <p className="private-training__subtitle">
+            What to Expect:
+            <ul>
+              <li>
+                • Customized workouts tailored to your specific goals,
+                preferences, and fitness level.
+              </li>
+              <li>
+                • Safe and effective techniques focused on proper form and
+                injury prevention.
+              </li>
+              <li>
+                • Ongoing coaching and support to build healthy, sustainable
+                habits.
+              </li>
+              <li>
+                • A balanced approach incorporating fitness, nutrition, and
+                lifestyle adjustments.
+              </li>
+            </ul>
+            <br></br>
+            <p>
+              Start today and take the first step toward becoming your best
+              self!
+            </p>
+          </p>
+
           <div className="private-training__button">
             <ContactButton />
           </div>
