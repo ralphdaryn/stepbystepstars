@@ -75,8 +75,9 @@ const WaiverForm = () => {
       <h2>Group Fitness Class Waiver and Release of Liability</h2>
 
       <div className="waiver-content">
+       <h3>Nature of Activity:</h3>
         <p>
-          <strong>Nature of Activity:</strong> Step By Step Club Inc. provides
+          <strong>Step By Step Club Inc. </strong> provides
           fitness related activities and classes including but not limited to:
           dance classes, strength classes, cardio, muscular endurance, climbing,
           jumping etc.
