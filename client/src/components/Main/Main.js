@@ -79,6 +79,7 @@ const Main = () => {
         <Carousel />
       </div>
       <div className="main">
+      <h2 className="main__text">Welcome to S-Town!</h2>
         <div className="main__container">
           <div className="main__section">
           <ScrollFade key="ribbon">

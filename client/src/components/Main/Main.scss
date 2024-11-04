@@ -21,6 +21,34 @@
     padding-top: 35rem;
   }
 
+  &__text {
+    font-size: 1.8rem;
+    text-align: center;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+    font-size: 1.9rem; /* Kept the original font size */
+    color: rgb(249, 234, 255);
+    font-weight: bold; /* Added bold font weight */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2),
+      /* Softer dark shadow for depth */ 0 0 8px rgba(156, 88, 215, 0.4),
+      /* Subtle purple glow for emphasis */ 0 0 15px rgba(156, 88, 215, 0.4); /* Further glow for effect */
+    animation: fadeIn 1s ease-in-out, pulseNeon 2s infinite ease-in-out;
+
+    &--highlight {
+      color: #ffffff;
+      font-weight: 700;
+      text-shadow: 0 0 12px #9b59b6, 0 0 17px #9b59b6, 0 0 22px #9b59b6;
+      animation: pulseNeon 2s infinite ease-in-out;
+    }
+    @include tablet {
+      font-size: 3rem;
+      padding-bottom: 2rem;
+    }
+    @include desktop {
+      font-size: 3.55rem;
+    }
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
