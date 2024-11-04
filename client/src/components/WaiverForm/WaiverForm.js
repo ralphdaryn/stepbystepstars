@@ -41,7 +41,7 @@ const WaiverForm = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:5001/api/waiver", {
+      const response = await fetch("/.netlify/functions/waiver", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
