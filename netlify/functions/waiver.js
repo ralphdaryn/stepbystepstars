@@ -11,8 +11,6 @@ exports.handler = async (event) => {
       email,
       emergencyContact,
       emergencyPhone,
-      childName,
-      childAge,
       signature,
     } = JSON.parse(event.body);
 
@@ -45,9 +43,7 @@ exports.handler = async (event) => {
              Phone: ${phone}\n
              Email: ${email}\n
              Emergency Contact: ${emergencyContact}\n
-             Emergency Phone: ${emergencyPhone}\n
-             Child Name: ${childName}\n
-             Child Age: ${childAge}\n`,
+             Emergency Phone: ${emergencyPhone}\n`,
       attachments: [
         {
           filename: "signature.png",
