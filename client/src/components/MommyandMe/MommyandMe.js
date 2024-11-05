@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -7,7 +8,6 @@ import mommyandme2 from "../../assets/images/mommyandme2.jpeg";
 import mommyandme3 from "../../assets/images/mommyandme3.jpeg";
 import mommyandme4 from "../../assets/images/mommyandme4.jpeg";
 import BackButton from "../BackButton/BackButton";
-import ContactButton from "../ContactButton/ContactButton";
 
 const MommyandMe = () => {
   const settings = {
@@ -22,6 +22,7 @@ const MommyandMe = () => {
     variableWidth: false,
     fade: true,
     pauseOnHover: false,
+    arrows: false,
   };
 
   return (
@@ -64,9 +65,9 @@ const MommyandMe = () => {
           </p>
         </div>
       </div>
-      <div className="mommyandme__button">
-        <ContactButton />
-      </div>
+      <button className="mommyandme__button">
+        <Link to="/waiver" className="mommyandme__button-link">Enroll Today!</Link>
+      </button>
     </div>
   );
 };

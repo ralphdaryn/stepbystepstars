@@ -81,6 +81,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #a864c1;
+    border-radius: 8px;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    height: 40px;
+    line-height: 20px;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 100ms;
+    user-select: none;
+    touch-action: manipulation;
+
+    &:hover {
+      background-color: #86509a;
+    }
+
+    &-link {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
   }
 }
