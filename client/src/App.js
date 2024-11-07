@@ -5,7 +5,7 @@ import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
-import BirthdayParty from "./components/BirthdayParty/BirthdayParty";
+import BirthdayParties from "./components/BirthdayParties/BirthdayParties";
 import Facepaint from "./components/Facepaint/Facepaint";
 import MusicalBabies from "./components/MusicalBabies/Musicalbabies";
 import MommyandMe from "./components/MommyandMe/MommyandMe";
@@ -33,7 +33,7 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/ourstory" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/birthdayparty" element={<BirthdayParty />} />
+          <Route path="/birthdayparties" element={<BirthdayParties />} />
           <Route path="/facepainting" element={<Facepaint />} />
           <Route path="/musicalbabies" element={<MusicalBabies />} />
           <Route path="/mommyandme" element={<MommyandMe />} />

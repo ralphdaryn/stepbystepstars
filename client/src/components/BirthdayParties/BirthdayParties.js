@@ -1,9 +1,9 @@
-import "./BirthdayParty.scss";
+import "./BirthdayParties.scss";
 import danceparty from "../../assets/images/danceparty2.jpg";
 import BackButton from "../BackButton/BackButton";
 import EventsButton from "../EventsButton/EventsButton";
 
-const BirthdayParty = () => {
+const BirthdayParties = () => {
   return (
     <div className="birthday-party">
       <div className="birthday-party__header">
@@ -33,4 +33,4 @@ const BirthdayParty = () => {
   );
 };
 
-export default BirthdayParty;
+export default BirthdayParties;

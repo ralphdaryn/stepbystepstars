@@ -40,7 +40,7 @@ const Services = () => {
           <h2 className="services__card-title">Birthday Parties</h2>
           <button
             className="services__button"
-            onClick={() => goToServicePage("/birthdayparty")}
+            onClick={() => goToServicePage("/birthdayparties")}
           >
             View Details
           </button>
