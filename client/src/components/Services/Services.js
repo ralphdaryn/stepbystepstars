@@ -1,6 +1,5 @@
 import "./Services.scss";
 import { useNavigate } from "react-router-dom";
-// import staytunedImg from "../../assets/images/stay-tuned.png";
 import facepaintImg from "../../assets/images/facepaintkids.png";
 import mommyandme from "../../assets/images/mommyandme.jpeg";
 import privatetraining from "../../assets/images/privatetraining.jpg";
@@ -57,7 +56,7 @@ const Services = () => {
           <h2 className="services__card-title">DROP IN PLAY</h2>
           <button
             className="services__button"
-            onClick={() => goToServicePage("/musicalbabies")}
+            onClick={() => goToServicePage("/dropinplay")}
           >
             COMING SOON
           </button>
