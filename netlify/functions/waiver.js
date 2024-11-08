@@ -4,21 +4,47 @@ const nodemailer = require("nodemailer");
 exports.handler = async (event) => {
   try {
     const {
+      waiverType,
       participantName,
+      parentName,
       date,
       address,
       phone,
       email,
       emergencyContact,
       emergencyPhone,
+      childName,
+      childAge,
       signature,
     } = JSON.parse(event.body);
 
-    // Validate required fields
-    if (!participantName || !date || !address || !phone || !email || !signature) {
+    // Validate required fields based on waiver type
+    if (
+      waiverType === "groupFitness" &&
+      (!participantName || !date || !address || !phone || !email || !signature)
+    ) {
       return {
         statusCode: 400,
-        body: JSON.stringify({ error: "All required fields must be filled" }),
+        body: JSON.stringify({
+          error: "All required fields must be filled for group fitness waiver",
+        }),
+      };
+    } else if (
+      waiverType === "kidsPlayArea" &&
+      (!parentName ||
+        !childName ||
+        !childAge ||
+        !date ||
+        !address ||
+        !phone ||
+        !email ||
+        !signature)
+    ) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({
+          error: "All required fields must be filled for kids play area waiver",
+        }),
       };
     }
 
@@ -31,19 +57,34 @@ exports.handler = async (event) => {
       },
     });
 
-    // Define the email options
+    // Customize email content based on waiver type
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: process.env.RECIPIENT_EMAIL,
-      subject: "New Waiver Form Submission",
-      text: `New waiver form submission:\n
-             Participant Name: ${participantName}\n
-             Date: ${date}\n
-             Address: ${address}\n
-             Phone: ${phone}\n
-             Email: ${email}\n
-             Emergency Contact: ${emergencyContact}\n
-             Emergency Phone: ${emergencyPhone}\n`,
+      subject:
+        waiverType === "groupFitness"
+          ? "New Group Fitness Waiver Submission"
+          : "New Kids Play Area Waiver Submission",
+      text:
+        waiverType === "groupFitness"
+          ? `Group Fitness Waiver Submission:\n
+           Participant Name: ${participantName}\n
+           Date: ${date}\n
+           Address: ${address}\n
+           Phone: ${phone}\n
+           Email: ${email}\n
+           Emergency Contact: ${emergencyContact}\n
+           Emergency Phone: ${emergencyPhone}\n`
+          : `Kids Play Area Waiver Submission:\n
+           Parent/Guardian Name: ${parentName}\n
+           Child’s Name: ${childName}\n
+           Child’s Age: ${childAge}\n
+           Date: ${date}\n
+           Address: ${address}\n
+           Phone: ${phone}\n
+           Email: ${email}\n
+           Emergency Contact: ${emergencyContact}\n
+           Emergency Phone: ${emergencyPhone}\n`,
       attachments: [
         {
           filename: "signature.png",
