@@ -53,10 +53,10 @@ const Services = () => {
               alt="Musical babies"
             />
           </div>
-          <h2 className="services__card-title">DROP IN PLAY</h2>
+          <h2 className="services__card-title">SPECIAL EVENTS</h2>
           <button
             className="services__button"
-            onClick={() => goToServicePage("/dropinplay")}
+            onClick={() => goToServicePage("/specialevents")}
           >
             COMING SOON
           </button>

@@ -7,7 +7,7 @@ import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import BirthdayParties from "./components/BirthdayParties/BirthdayParties";
 import Facepaint from "./components/Facepaint/Facepaint";
-import DropinPlay from "./components/DropinPlay/DropinPlay";
+import SpecialEvents from "./components/SpecialEvents/SpecialEvents";
 import MommyandMe from "./components/MommyandMe/MommyandMe";
 import GroupFitness from "./components/GroupFitness/GroupFitness";
 import PrivateTraining from "./components/PrivateTraining/PrivateTraining";
@@ -35,7 +35,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/birthdayparties" element={<BirthdayParties />} />
           <Route path="/facepainting" element={<Facepaint />} />
-          <Route path="/dropinplay" element={<DropinPlay />} />
+          <Route path="/specialevents" element={<SpecialEvents />} />
           <Route path="/mommyandme" element={<MommyandMe />} />
           <Route path="/groupfitness" element={<GroupFitness />} />
           <Route path="/privatetraining" element={<PrivateTraining />} />

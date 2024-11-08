@@ -119,7 +119,7 @@ const Header = () => {
                 <ul className="header__navigation-link-dropdown">
                   <li>
                     <Link
-                      to="/danceparty"
+                      to="/birthdayparties"
                       onClick={() => handleLinkClick("Dance Party")}
                     >
                       Birthday Parties
@@ -127,10 +127,10 @@ const Header = () => {
                   </li>
                   <li>
                     <Link
-                      to="/musicalbabies"
+                      to="/specialevents"
                       onClick={() => handleLinkClick("Musical Babies")}
                     >
-                      Drop In Play
+                      Special Events
                     </Link>
                   </li>
                   <li>
@@ -246,7 +246,7 @@ const Header = () => {
                 <ul className="header__sidebar-dropdown">
                   <li className="header__sidebar-dropdown-item">
                     <Link
-                      to="/danceparty"
+                      to="/birthdayparties"
                       onClick={() => handleLinkClick("Dance Party")}
                     >
                       Birthday Parties
@@ -254,10 +254,10 @@ const Header = () => {
                   </li>
                   <li className="header__sidebar-dropdown-item">
                     <Link
-                      to="/musicalbabies"
+                      to="/specialevents"
                       onClick={() => handleLinkClick("Musical Babies")}
                     >
-                      Drop in Play
+                      Special Events
                     </Link>
                   </li>
                   <li className="header__sidebar-dropdown-item">

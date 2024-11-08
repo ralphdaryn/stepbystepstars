@@ -1,28 +1,28 @@
-import "./DropinPlay.scss";
+import "./SpecialEvents.scss";
 import musicalbabiesVideo from "../../assets/images/musicalbabies.MP4";
 import BackButton from "../BackButton/BackButton";
 import EventsButton from "../EventsButton/EventsButton";
 
-const DropinPlay = () => {
+const SpecialEvents = () => {
   return (
-    <div className="dropinplay">
-      <div className="dropinplay__header">
+    <div className="special-events">
+      <div className="special-events__header">
         <BackButton />
-        <h2 className="dropinplay__title">Drop in Play</h2>
+        <h2 className="special-events__title">Special Events</h2>
       </div>
-      <div className="dropinplay__container">
-        <video className="dropinplay__video" controls autoPlay muted>
+      <div className="special-events__container">
+        <video className="special-events__video" controls autoPlay muted>
           <source src={musicalbabiesVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="dropinplay__wrapper">
-          <p className="dropinplay__subtitle">
+        <div className="special-events__wrapper">
+          <p className="special-events__subtitle">
             Come visit us at S-Town, where kids can explore, play, and learn through interactive pretend play!
           </p>
-          <p className="dropinplay__subtitle">
+          <p className="special-events__subtitle">
             Let your kids take the lead while you support their creativity and growth and don’t forget — you can also book your next birthday party at S-Town for a unique and unforgettable celebration!
           </p>
-          <div className="dropinplay__button">
+          <div className="special-events__button">
             <EventsButton />
           </div>
         </div>
@@ -31,4 +31,4 @@ const DropinPlay = () => {
   );
 };
 
-export default DropinPlay;
+export default SpecialEvents;
