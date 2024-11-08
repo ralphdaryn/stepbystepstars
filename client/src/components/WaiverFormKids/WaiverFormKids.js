@@ -12,7 +12,7 @@ const WaiverFormKids = () => {
     email: "",
     emergencyContact: "",
     emergencyPhone: "",
-    children: [{ childName: "", childAge: "" }], // Initialize with one child
+    children: [{ childName: "", childAge: "" }], 
   });
 
   const sigCanvas = useRef(null);
@@ -291,7 +291,7 @@ const WaiverFormKids = () => {
           </div>
         ))}
 
-        <button type="button" onClick={addChild}>
+        <button type="button" onClick={addChild} className="action-button">
           Add Another Child
         </button>
 
