@@ -27,7 +27,7 @@ const SpecialEvents = () => {
           </p>
           <div className="special-events__container">
             <button className="special-events__button">
-              <Link to="/waiverkids">Please Sign Waiver</Link>
+              <Link to="/waiverkids">Sign Waiver Here</Link>
             </button>
           </div>
         </div>

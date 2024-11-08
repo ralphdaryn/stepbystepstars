@@ -12,18 +12,32 @@ const WaiverFormKids = () => {
     email: "",
     emergencyContact: "",
     emergencyPhone: "",
-    childName: "",
-    childAge: "",
+    children: [{ childName: "", childAge: "" }], // Initialize with one child
   });
 
   const sigCanvas = useRef(null);
 
-  const handleChange = (e) => {
+  const handleChange = (e, index) => {
     const { name, value } = e.target;
+    if (name === "childName" || name === "childAge") {
+      const newChildren = [...formData.children];
+      newChildren[index][name] = value;
+      setFormData({ ...formData, children: newChildren });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
+  };
+
+  const addChild = () => {
     setFormData({
       ...formData,
-      [name]: value,
+      children: [...formData.children, { childName: "", childAge: "" }],
     });
+  };
+
+  const removeChild = (index) => {
+    const newChildren = formData.children.filter((_, i) => i !== index);
+    setFormData({ ...formData, children: newChildren });
   };
 
   const handleSignatureClear = () => {
@@ -61,8 +75,7 @@ const WaiverFormKids = () => {
         email: "",
         emergencyContact: "",
         emergencyPhone: "",
-        childName: "",
-        childAge: "",
+        children: [{ childName: "", childAge: "" }],
       });
       sigCanvas.current.clear();
     } catch (err) {
@@ -83,11 +96,11 @@ const WaiverFormKids = () => {
             <strong>Step By Step Club Inc.</strong> is a children’s indoor play
             area facility that provides an opportunity for montessori pretend
             play in mimicking real world environments and fitness-related
-            recreational activities for children. Step by Step Club Inc.
+            recreational activities for children. Step By Step Club Inc.
             provides each child with the opportunity to be physically active
             while exploring different environments (including but not limited to
             bouncy castles, stairs, ramps). There are many benefits to pretend
-            play, health and wellness, Step by Step Club Inc. and staff value
+            play, health and wellness, Step By Step Club Inc. and staff value
             participant safety and take great measures to reduce the risk of
             injury. Step By Step Club Inc. informs all PARENT(s)/GUARDIAN(s) to
             understand that there are risks of injury in all physical activity.
@@ -247,27 +260,40 @@ const WaiverFormKids = () => {
           />
         </label>
 
-        <label>
-          Child’s Name:
-          <input
-            type="text"
-            name="childName"
-            value={formData.childName}
-            onChange={handleChange}
-            required
-          />
-        </label>
+        <h3>Children’s Information</h3>
+        {formData.children.map((child, index) => (
+          <div key={index} className="child-info">
+            <label>
+              Child’s Name:
+              <input
+                type="text"
+                name="childName"
+                value={child.childName}
+                onChange={(e) => handleChange(e, index)}
+                required
+              />
+            </label>
+            <label>
+              Child’s Age:
+              <input
+                type="number"
+                name="childAge"
+                value={child.childAge}
+                onChange={(e) => handleChange(e, index)}
+                required
+              />
+            </label>
+            {formData.children.length > 1 && (
+              <button type="button" onClick={() => removeChild(index)}>
+                Remove Child
+              </button>
+            )}
+          </div>
+        ))}
 
-        <label>
-          Child’s Age:
-          <input
-            type="number"
-            name="childAge"
-            value={formData.childAge}
-            onChange={handleChange}
-            required
-          />
-        </label>
+        <button type="button" onClick={addChild}>
+          Add Another Child
+        </button>
 
         <h3>Signature</h3>
         <SignatureCanvas
