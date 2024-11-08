@@ -58,7 +58,7 @@ const Services = () => {
             className="services__button"
             onClick={() => goToServicePage("/specialevents")}
           >
-            COMING SOON
+            View Details
           </button>
         </div>
 

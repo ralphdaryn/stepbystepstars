@@ -73,7 +73,7 @@ const WaiverForm = () => {
 
   return (
     <div>
-      <div className ="waiver-form__button">
+      <div className="waiver-form__button">
         <BackButton />
       </div>
       <form className="waiver-form" onSubmit={handleSubmit}>
@@ -101,33 +101,51 @@ const WaiverForm = () => {
               <strong>Assumption of Risk:</strong> I understand that
               participating in physical exercise, including but not limited to
               aerobic and anaerobic activities, can be physically demanding. I
-              agree to assume full responsibility for any risk of injury,
-              damage, or harm that may result from my participation.
+              am aware that the risk of injury from such activities exists,
+              including but not limited to bumps, paralysis, death, muscle
+              strains/sprains, abrasions and contusions, broken bones, brain
+              injury, ligament and joint injuries, concussions, bruises,
+              scrapes, falls, and other potential injuries. I agree to assume
+              full responsibility for any risk of injury, damage, or harm that
+              may result from my participation.
             </li>
             <li>
               <strong>Medical Clearance:</strong> I confirm that I am in good
-              physical health and have consulted with my physician if necessary.
+              physical health and have consulted with my physician before
+              participating in the class if necessary. I have disclosed any
+              pre-existing medical conditions or injuries that may affect my
+              ability to participate safely.
             </li>
             <li>
               <strong>Release of Liability:</strong> In consideration of being
               allowed to participate in the fitness classes, I hereby release
-              and discharge Step By Step Club Inc., its owners, members,
-              officers, and employees from any liability.
+              and discharge Step By Step Inc., its owners, members, officers,
+              employees, equipment manufacturers, representatives and sponsoring
+              agencies from any and all liability, claims, demands, or causes of
+              action related to injuries, death, damages, or losses that may
+              occur arising from my participation. This release applies to any
+              physical injury, illness, or damage that may occur as a result of
+              my participation.
             </li>
             <li>
               <strong>Indemnification:</strong> I agree to indemnify and hold
-              harmless Step By Step Club Inc. from any claims, damages, or legal
-              actions arising out of my participation.
+              harmless Step By Step Club Inc., iits owners, members, officers,
+              employees, equipment manufacturers, representatives and sponsoring
+              agencies from any claims, damages, or legal actions arising out of
+              my participation in fitness related activities.
             </li>
             <li>
               <strong>Consent to Medical Treatment:</strong> In the event of an
               emergency, I consent to receive any medical treatment deemed
-              necessary by emergency personnel or healthcare providers.
+              necessary by emergency personnel or healthcare providers. I
+              understand that I am responsible for any medical expenses that may
+              result from my injury or illness.
             </li>
             <li>
               <strong>Photograph and Video Release:</strong> I grant Step By
               Step Club Inc. permission to use photographs or videos taken
-              during class for promotional purposes.
+              during class for promotional purposes. I understand that I will
+              not receive any compensation for the use of such images.
             </li>
           </ol>
         </div>
