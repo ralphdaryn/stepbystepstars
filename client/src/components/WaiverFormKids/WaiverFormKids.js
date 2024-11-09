@@ -86,12 +86,12 @@ const WaiverFormKids = () => {
 
   return (
     <div>
-      <div className="waiver-form__button">
+      <div className="waiver-form-kids__button">
         <BackButton />
       </div>
-      <form className="waiver-form" onSubmit={handleSubmit}>
+      <form className="waiver-form-kids" onSubmit={handleSubmit}>
         <h2>Kids Play Area Waiver and Release of Liability</h2>
-        <div className="waiver-content">
+        <div className="waiver-form-kids__content">
           <p>
             <strong>Step By Step Club Inc.</strong> is a children’s indoor play
             area facility that provides an opportunity for montessori pretend
@@ -291,7 +291,7 @@ const WaiverFormKids = () => {
           </div>
         ))}
 
-        <button type="button" onClick={addChild} className="action-button">
+        <button className="waiver-form-kids__blue" type="button" onClick={addChild} >
           Add Another Child
         </button>
 
@@ -302,7 +302,7 @@ const WaiverFormKids = () => {
           canvasProps={{ width: 500, height: 200, className: "sigCanvas" }}
         />
 
-        <button type="button" onClick={handleSignatureClear}>
+        <button className="waiver-form-kids__clear" type="button" onClick={handleSignatureClear}>
           Clear Signature
         </button>
 

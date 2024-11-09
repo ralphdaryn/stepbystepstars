@@ -78,7 +78,7 @@ const WaiverForm = () => {
       </div>
       <form className="waiver-form" onSubmit={handleSubmit}>
         <h2>Group Fitness Class Waiver and Release of Liability</h2>
-        <div className="waiver-content">
+        <div className="waiver-form__content">
           <h3>Nature of Activity:</h3>
           <p>
             <strong>Step By Step Club Inc. </strong> provides fitness related

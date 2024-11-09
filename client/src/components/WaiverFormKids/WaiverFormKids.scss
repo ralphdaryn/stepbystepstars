@@ -2,9 +2,6 @@
 @use "../../styles/partials/mixins" as *;
 
 .waiver-form-kids {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   max-width: 100%;
   padding: 1rem;
   margin: 8rem 1rem 1rem;
@@ -89,7 +86,7 @@
     }
   }
 
-  .waiver-content {
+  &__content {
     max-height: 400px;
     overflow-y: scroll;
     padding: 0.5rem 1.5rem;
@@ -158,11 +155,11 @@
     }
 
     &:first-of-type {
-      background-color: #ccc;
+      background-color: #007bff;
       margin-bottom: 1rem;
 
       &:hover {
-        background-color: #999;
+        background-color: #0056b3;
       }
     }
 
@@ -175,5 +172,8 @@
       font-size: 1.2rem;
       padding: 0.75rem;
     }
+  }
+  &__clear {
+    background-color: #ccc !important;
   }
 }
