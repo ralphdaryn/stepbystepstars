@@ -175,5 +175,8 @@
   }
   &__clear {
     background-color: #ccc !important;
+    &:hover {
+      background-color: #999 !important;
+    }
   }
 }
