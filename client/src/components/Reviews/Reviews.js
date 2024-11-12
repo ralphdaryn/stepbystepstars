@@ -101,7 +101,7 @@ const Reviews = () => {
           <GoogleIcon className="reviews__google" />
         </a>
         <a
-          href="https://www.facebook.com/stepbystepstars/reviews"
+          href="https://www.facebook.com/stepxstepclub/reviews"
           target="_blank"
           rel="noopener noreferrer"
         >

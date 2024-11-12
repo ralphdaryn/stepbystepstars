@@ -322,12 +322,12 @@ const Header = () => {
           </ul>
           <ul className="header__sidebar-icons">
             <li className="header__sidebar-facebook">
-              <a href="https://facebook.com/stepbystepstars">
+              <a href="https://www.facebook.com/stepxstepclub/">
                 <FaFacebook />
               </a>
             </li>
             <li className="header__sidebar-instagram">
-              <a href="https://instagram.com/stepbystepstars">
+              <a href="https://www.instagram.com/stepxstepclub/">
                 <FaInstagramSquare />
               </a>
             </li>

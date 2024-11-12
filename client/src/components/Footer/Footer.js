@@ -11,10 +11,10 @@ const Footer = () => {
           ))}
         </div>
         <div className="footer__icons">
-          <a href="https://facebook.com/stepbystepstars">
+          <a href="https://www.facebook.com/stepxstepclub/">
             <FaFacebook className="footer__facebook" />
           </a>
-          <a href="https://instagram.com/stepbystepstars">
+          <a href="https://www.instagram.com/stepxstepclub/">
             <FaInstagramSquare className="footer__instagram" />
           </a>
         </div>
