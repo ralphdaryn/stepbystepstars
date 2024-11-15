@@ -8,7 +8,7 @@ import Services from "../Services/Services";
 import EventPlan from "../EventPlan/EventPlan";
 import Reviews from "../Reviews/Reviews";
 import Contact from "../Contact/Contact";
-import RibbonCutting from "../RibbonCutting/RibbonCutting";
+// import RibbonCutting from "../RibbonCutting/RibbonCutting";
 
 const useInView = () => {
   const ref = useRef(null);
@@ -79,12 +79,12 @@ const Main = () => {
         <Carousel />
       </div>
       <div className="main">
-      <h2 className="main__text">Welcome to S-Town!</h2>
+      {/* <h2 className="main__text">Welcome to S-Town!</h2> */}
         <div className="main__container">
           <div className="main__section">
-          <ScrollFade key="ribbon">
+          {/* <ScrollFade key="ribbon">
               <RibbonCutting/>
-            </ScrollFade>
+            </ScrollFade> */}
             <ScrollFade key="services">
               <Services />
             </ScrollFade>
