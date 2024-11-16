@@ -1,7 +1,8 @@
 import "./BirthdayParties.scss";
-import danceparty from "../../assets/images/danceparty2.jpg";
 import BackButton from "../BackButton/BackButton";
 import EventsButton from "../EventsButton/EventsButton";
+import birthdayPackage from '../../assets/images/birthdaypackage.jpg';
+import birthdayPackage2 from '../../assets/images/birthdaypackage2.jpg';
 
 const BirthdayParties = () => {
   return (
@@ -11,7 +12,8 @@ const BirthdayParties = () => {
         <h2 className="birthday-party__title">Birthday Parties</h2>
       </div>
       <div className="birthday-party__container">
-        <img className="birthday-party__image" alt="dance party" src={danceparty} />
+        <img className="birthday-party__image" alt="bday party" src={birthdayPackage} />
+        <img className="birthday-party__image" alt="bday party 2" src={birthdayPackage2} />
         <div className="birthday-party__subtitle-container">
           <p className="birthday-party__subtitle">
             Welcome to S TOWN, where kids can explore, play and learn through

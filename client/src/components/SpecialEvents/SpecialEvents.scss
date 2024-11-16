@@ -48,6 +48,16 @@
     }
   }
 
+  &__waiver {
+    background-color: #ede7f6;
+    text-transform: uppercase;
+    padding: 1.5rem 3rem;
+    border-radius: 20px;
+    text-align: center;
+    margin: 1.5rem;
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+
   &__video {
     width: 15rem;
     border-radius: 0.5rem;

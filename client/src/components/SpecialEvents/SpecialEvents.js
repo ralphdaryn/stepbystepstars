@@ -1,7 +1,6 @@
 import "./SpecialEvents.scss";
 import musicalbabiesVideo from "../../assets/images/musicalbabies.MP4";
 import BackButton from "../BackButton/BackButton";
-import { Link } from "react-router-dom";
 
 const SpecialEvents = () => {
   return (
@@ -25,11 +24,6 @@ const SpecialEvents = () => {
             growth and don’t forget — you can also book your next birthday party
             at S-Town for a unique and unforgettable celebration!
           </p>
-          <div className="special-events__container">
-            <button className="special-events__button">
-              <Link to="/waiverkids">Sign Waiver Here</Link>
-            </button>
-          </div>
         </div>
       </div>
     </div>
