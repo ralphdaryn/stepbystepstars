@@ -36,6 +36,14 @@
     }
   }
 
+  &__subtitle {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    color: #d03232;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -48,67 +56,71 @@
     }
   }
 
-  &__waiver {
-    background-color: #dddafa;
-    text-transform: uppercase;
-    padding: 1rem 3rem;
-    border-radius: 20px;
-    text-align: center;
-    margin: 1.5rem;
-    transition: box-shadow 0.3s, transform 0.3s;
+  &__image {
+    width: 100%;
   }
 
-  &__video {
-    width: 15rem;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-    outline: none;
-    @include tablet {
-      width: 18rem;
+  .special-events {
+    &__image-container {
+      position: relative;
+      width: 100%;
+    }
+  
+    &__image {
+      width: 100%;
+      display: block;
+    }
+  
+    &__link {
+      position: absolute;
+      display: block;
+      background: none;
+      border: none;
+      color: transparent;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+  
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.5); // Highlight on hover
+        color: #fff; // For testing visibility
+      }
+    }
+  
+    &__link--section1 {
+      top: 20.5%;
+      left: 0%;
+      width: 100%;
+      height: 10%;
+    }
+  
+    &__link--section2 {
+      top: 32.5%;
+      left: 0%;
+      width: 100%;
+      height: 10%;
+    }
+  
+    &__link--section3 {
+      top: 45%;
+      left: 0%;
+      width: 100%;
+      height: 10%;
+    }
+  
+    &__link--section4 {
+      top: 56.5%;
+      left: 0%;
+      width: 100%;
+      height: 10%;
+    }
+  
+    &__link--section5 {
+      top: 68%;
+      left: 0%;
+      width: 100%;
+      height: 10%;
     }
   }
-
-  &__subtitle {
-    text-align: left;
-    color: #000;
-    margin-bottom: 0.5rem;
-    line-height: 1.3;
-    @include tablet {
-      font-size: 1.05rem;
-      line-height: 1.4;
-    }
-    @include desktop {
-      font-size: 1.25rem;
-    }
-  }
-  &__button {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #a864c1;
-    border-radius: 8px;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 700;
-    height: 40px;
-    line-height: 20px;
-    padding: 10px 16px;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 100ms;
-    user-select: none;
-    touch-action: manipulation;
-    margin: 1rem;
-
-    &:hover {
-      background-color: #86509a;
-    }
-
-    &__button {
-      text-align: center;
-    }
-  }
+  
 }

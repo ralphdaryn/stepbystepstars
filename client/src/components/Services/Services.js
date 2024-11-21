@@ -80,10 +80,10 @@ const Services = () => {
         </div>
       </div>
 
-      <div className="special-events__container">
-        <div className="special-events__waiver">
+      <div className="services__container">
+        <div className="services__waiver">
           <h2>Waiver</h2>
-          <button className="special-events__button">
+          <button className="services__button">
           <Link to="/waiverkids">Sign Waiver Here</Link>
         </button>
         </div>

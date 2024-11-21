@@ -1,4 +1,5 @@
-import './Success.scss'; // Import the SCSS styles
+import "./Success.scss"; // Import the SCSS styles'
+
 
 const Success = () => (
   <div className="success-container">

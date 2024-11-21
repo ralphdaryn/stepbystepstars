@@ -82,6 +82,20 @@
     }
   }
 
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__waiver {
+    width: 15rem;
+    padding: 1rem;
+    background-color: rgba(255, 192, 203, 0.8);
+    border-radius: 15px;
+  }
+
   &__card {
     background-color: #ede7f6; // Light purple background
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
