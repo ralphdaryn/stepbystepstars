@@ -6,7 +6,7 @@ import privatetraining from "../../assets/images/privatetraining.jpg";
 import birthdayParties from "../../assets/images/birthdayparties.jpeg";
 import dropnplay from "../../assets/images/dropnplay.jpg";
 import groupfitness from "../../assets/images/groupfitness.jpeg";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Services = () => {
   const navigate = useNavigate();
@@ -80,14 +80,14 @@ const Services = () => {
         </div>
       </div>
 
-      <div className="services__container">
+      {/* <div className="services__container">
         <div className="services__waiver">
           <h2>Waiver</h2>
           <button className="services__button">
           <Link to="/waiverkids">Sign Waiver Here</Link>
         </button>
         </div>
-      </div>
+      </div> */}
 
       {/* Fitness Section */}
       <h2 className="services__section-title--fitness">Fitness</h2>

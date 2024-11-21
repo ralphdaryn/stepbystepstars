@@ -33,13 +33,106 @@
     font-size: 1.75rem;
     @include tablet {
       padding-right: 3rem;
+      font-size: 2.5rem;
+    }
+  }
+
+  &__intro {
+    text-align: center;
+    margin: 1rem auto 1rem;
+    padding: 0.75rem;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 240, 240, 0.7),
+      rgba(255, 255, 255, 0.5)
+    );
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    @include tablet {
+      padding: 1rem;
+    }
+    @include desktop {
+      padding: 1.5rem 2rem;
+    }
+
+    &-text {
+      color: #333;
+      font-weight: 700;
+      line-height: 1.6;
+      @include tablet {
+        font-size: 1.5rem;
+      }
+      @include desktop {
+        font-size: 1.75rem;
+      }
+
+      &::before,
+      &::after {
+        content: "✨";
+        margin: 0 0.25rem;
+        font-size: 1.5rem;
+
+        @include desktop {
+          font-size: 2rem;
+        }
+      }
     }
   }
 
   &__subtitle {
-    margin-bottom: 1rem;
     text-align: center;
-    font-size: 1.25rem;
+    margin: 2rem 0;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 700;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: relative;
+    background: linear-gradient(
+      90deg,
+      #ff4f4f,
+      #33d17a
+    ); // Lighter red and green gradient
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include tablet {
+      font-size: 2rem;
+    }
+    @include desktop {
+      font-size: 2.75rem;
+    }
+
+    &::before,
+    &::after {
+      content: "✨";
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+
+      @include desktop {
+        font-size: 2rem;
+      }
+    }
+
+    &:hover {
+      animation: light-christmas-glow 1.5s infinite ease-in-out;
+    }
+  }
+
+  @keyframes light-christmas-glow {
+    0% {
+      text-shadow: 0 0 6px rgba(255, 79, 79, 0.6),
+        0 0 8px rgba(51, 209, 122, 0.504), 0 0 12px rgba(255, 79, 79, 0.452);
+    }
+    50% {
+      text-shadow: 0 0 8px rgba(51, 209, 122, 0.689),
+        0 0 12px rgba(255, 79, 79, 0.437), 0 0 16px rgba(51, 209, 122, 0.552);
+    }
+    100% {
+      text-shadow: 0 0 6px rgba(255, 79, 79, 0.51),
+        0 0 8px rgba(51, 209, 122, 0.457), 0 0 12px rgba(255, 79, 79, 0.301);
+    }
   }
 
   &__container {
@@ -63,12 +156,12 @@
       position: relative;
       width: 100%;
     }
-  
+
     &__image {
       width: 100%;
       display: block;
     }
-  
+
     &__link {
       position: absolute;
       display: block;
@@ -78,41 +171,41 @@
       cursor: pointer;
       width: 100%;
       height: 100%;
-  
+
       &:hover {
-        background-color: rgba(0, 0, 0, 0.5); // Highlight on hover
-        color: #fff; // For testing visibility
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
       }
     }
-  
+
     &__link--section1 {
       top: 20.5%;
       left: 0%;
       width: 100%;
       height: 10%;
     }
-  
+
     &__link--section2 {
       top: 32.5%;
       left: 0%;
       width: 100%;
       height: 10%;
     }
-  
+
     &__link--section3 {
       top: 45%;
       left: 0%;
       width: 100%;
       height: 10%;
     }
-  
+
     &__link--section4 {
       top: 56.5%;
       left: 0%;
       width: 100%;
       height: 10%;
     }
-  
+
     &__link--section5 {
       top: 68%;
       left: 0%;
@@ -120,5 +213,4 @@
       height: 10%;
     }
   }
-  
 }
