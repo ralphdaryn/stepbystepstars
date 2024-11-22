@@ -191,7 +191,7 @@ const Header = () => {
                 activeLink === "Events" ? "active" : ""
               }`}
             >
-              <Link to="/events" onClick={() => handleLinkClick("Events")}>
+              <Link to="/specialevents" onClick={() => handleLinkClick("Events")}>
                 Upcoming Events
               </Link>
             </li>
@@ -309,7 +309,7 @@ const Header = () => {
               className="header__sidebar-link"
               onClick={() => handleLinkClick("Events")}
             >
-              <Link to="/events">
+              <Link to="/specialevents">
                 Upcoming Events <FaArrowRight />
               </Link>
             </li>
