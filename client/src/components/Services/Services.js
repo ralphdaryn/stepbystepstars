@@ -80,15 +80,6 @@ const Services = () => {
         </div>
       </div>
 
-      {/* <div className="services__container">
-        <div className="services__waiver">
-          <h2>Waiver</h2>
-          <button className="services__button">
-          <Link to="/waiverkids">Sign Waiver Here</Link>
-        </button>
-        </div>
-      </div> */}
-
       {/* Fitness Section */}
       <h2 className="services__section-title--fitness">Fitness</h2>
       <div className="services__section">
@@ -143,6 +134,14 @@ const Services = () => {
           </button>
         </div>
       </div>
+      {/* <div className="services__container">
+        <div className="services__waiver">
+          <h2>Waiver</h2>
+          <button className="services__button">
+            <Link to="/waiverkids">Sign Waiver Here</Link>
+          </button>
+        </div>
+      </div> */}
     </div>
   );
 };
