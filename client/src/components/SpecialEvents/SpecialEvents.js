@@ -42,7 +42,7 @@ const SpecialEvents = () => {
       <div className="special-events__intro">
         <p className="special-events__intro-text">
           Welcome to our Special Events! <br />
-          Check out the exclusive events below and grab your tickets today!
+          Check out the exclusive events below to grab your tickets today!
         </p>
       </div>
       <div>
