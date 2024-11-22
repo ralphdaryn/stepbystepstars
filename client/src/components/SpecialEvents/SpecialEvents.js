@@ -113,9 +113,6 @@ const SpecialEvents = () => {
           Click Here To Buy Tickets!
         </button>
       </div>
-      <div className="special-events__container">
-        <div className="special-events__wrapper"></div>
-      </div>
     </div>
   );
 };
