@@ -88,14 +88,13 @@
     line-height: 1.5;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    border-radius: 15px;
     position: relative;
     background: linear-gradient(
       90deg,
-      #ff4f4f,
-      #33d17a
-    ); // Lighter red and green gradient
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+      rgba(255, 79, 79, 0.4),
+      rgba(51, 209, 122, 0.4)
+    ); /* Transparent red and green gradient */
 
     @include tablet {
       font-size: 2rem;

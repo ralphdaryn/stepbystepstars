@@ -2,6 +2,7 @@ import "./SpecialEvents.scss";
 import BackButton from "../BackButton/BackButton";
 import holiday from "../../assets/images/holiday.jpeg";
 import ImageCarouselTwo from "../ImageCarouselEvent/ImageCarouselEvent";
+import ChristmasMarket from "../ChristmasMarket/ChristmasMarket";
 
 const SpecialEvents = () => {
   const handleCheckout = async (eventName, tickets, price) => {
@@ -50,7 +51,7 @@ const SpecialEvents = () => {
       </div>
       <div>
         <h3 className="special-events__subtitle">
-          Click on the event below to purchase your tickets!
+          Click the event below to buy your tickets!
         </h3>
       </div>
       <div className="special-events__image-container">
@@ -113,6 +114,7 @@ const SpecialEvents = () => {
           Click Here To Buy Tickets!
         </button>
       </div>
+      <ChristmasMarket handleCheckout={handleCheckout} />
     </div>
   );
 };
