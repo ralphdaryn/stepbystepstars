@@ -23,7 +23,7 @@ const ImageCarouselTwo = ({ handleCheckout }) => {
       src: eventCarousel3,
       eventName: "Christmas Minis w/ Fazs Photography",
       tickets: 1,
-      price: 150,
+      price: 100,
     },
     {
       src: eventCarousel4,
