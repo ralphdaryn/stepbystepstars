@@ -77,7 +77,7 @@ const SpecialEvents = () => {
         <button
           className="special-events__link special-events__link--section3"
           onClick={() =>
-            handleCheckout("Christmas Minis w/ Fazs Photography", 1, 100)
+            handleCheckout("Christmas Minis w/ Fazs Photography", 1, 150)
           }
         >
           Click Here To Buy Tickets!
