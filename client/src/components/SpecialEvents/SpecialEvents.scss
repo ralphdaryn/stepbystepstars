@@ -60,12 +60,12 @@
 
     @include tablet {
       padding: 1rem;
-      max-width: 60%;
+      max-width: 80%;
     }
 
     @include desktop {
       padding: 1.5rem 2rem;
-      max-width: 50%;
+      max-width: 100%;
     }
 
     &-text {
@@ -220,12 +220,24 @@
     height: 10%;
   }
 
-  &__santa {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  &__santa-clause {
+    &-img {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 1rem 0;
+      @include tablet {
+        width: 25rem;
+      }
+    }
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     &-button {
+      margin: 0.5rem;
       display: inline-block;
       padding: 0.6rem 1.2rem;
       font-size: 1.1rem;

@@ -99,30 +99,25 @@ const SpecialEvents = () => {
         >
           Click Here To Buy Tickets!
         </button>
-        {/* <button
-          className="special-events__link special-events__link--section5"
-          onClick={() =>
-            handleCheckout(
-              "Step into Christmas: Family Christmas Market",
-              1,
-              15
-            )
-          }
-        >
-          Click Here To Buy Tickets!
-        </button> */}
       </div>
       <ImageCarouselTwo handleCheckout={handleCheckout} />
       <ChristmasMarket handleCheckout={handleCheckout} />
-      <div>
-        <img
-          className="special-events__santa"
-          src={SantaClause}
-          alt="santa img"
-        ></img>
-        <button className="special-events__santa-button" onClick={handleLink}>
-          Buy Tickets for Santa Clause is coming to S-Town!
-        </button>
+      <div className="special-events__santa-clause">
+        <div className="special-events__santa-clause-wrapper">
+          <img
+            className="special-events__santa-clause-img"
+            src={SantaClause}
+            alt="santa img"
+          ></img>
+        </div>
+        <div className="special-events__santa-clause-wrapper">
+          <button
+            className="special-events__santa-clause-button"
+            onClick={handleLink}
+          >
+            Buy Tickets for Santa Clause is coming to S-Town!
+          </button>
+        </div>
       </div>
     </div>
   );
