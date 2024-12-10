@@ -18,10 +18,14 @@ const ChristmasMarket = ({ handleCheckout }) => {
   const handleCalculateAndCheckout = () => {
     // Add ticket prices directly
     const totalPrice =
-      individualPassQty * 15 + adultPassQty * 10 + familyPassQty * 30 + extraChildQty * 5;
+      individualPassQty * 15 +
+      adultPassQty * 10 +
+      familyPassQty * 30 +
+      extraChildQty * 5;
 
     // Add total tickets directly (1 pass = 1 ticket)
-    const totalTickets = individualPassQty + adultPassQty + familyPassQty + extraChildQty;
+    const totalTickets =
+      individualPassQty + adultPassQty + familyPassQty + extraChildQty;
 
     // Prevent checkout if no tickets are selected
     if (totalTickets === 0) {
@@ -49,6 +53,8 @@ const ChristmasMarket = ({ handleCheckout }) => {
         <br />
         Additional Child: $5 each
         <br /> (Kids 3 and under free)
+        <br /> Includes: Hot Cocoa Lounge, Live Performances, Santa Photo Station, Kids
+        Craft, Face Painting and tons of raffle prizes to be won!
       </p>
       <div className="christmas-market__form">
         <div className="christmas-market__quantity">
