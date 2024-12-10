@@ -31,7 +31,9 @@ exports.handler = async (event) => {
                 2
               )}, HST (13%): $${hstAmount.toFixed(2)}, Total: $${(
                 baseAmount + hstAmount
-              ).toFixed(2)}`, // Include the breakdown in the description
+              ).toFixed(
+                2
+              )}\n\n Includes 3 Cocktails or Mocktails (non-alcoholic) \n\n Cocktail #1: Christmas Mojito \n\n Cocktail #2: Mistletoe's Kiss (a vodka rosemary fizz) \n\n Cocktail #3: Gingerbread Martini \n\n Light refreshments will also be provided.`,
             },
             unit_amount: Math.round(totalAmount), // Convert to cents and round
           },
