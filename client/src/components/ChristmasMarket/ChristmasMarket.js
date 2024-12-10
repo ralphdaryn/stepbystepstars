@@ -5,6 +5,7 @@ const ChristmasMarket = ({ handleCheckout }) => {
   const [individualPassQty, setIndividualPassQty] = useState(0);
   const [familyPassQty, setFamilyPassQty] = useState(0);
   const [extraChildQty, setExtraChildQty] = useState(0);
+  const [adultPassQty, setAdultPassQty] = useState(0);
 
   const handleIncrement = (setter, value) => {
     setter(value + 1);
@@ -17,10 +18,10 @@ const ChristmasMarket = ({ handleCheckout }) => {
   const handleCalculateAndCheckout = () => {
     // Add ticket prices directly
     const totalPrice =
-      individualPassQty * 15 + familyPassQty * 30 + extraChildQty * 5;
+      individualPassQty * 15 + adultPassQty * 10 + familyPassQty * 30 + extraChildQty * 5;
 
     // Add total tickets directly (1 pass = 1 ticket)
-    const totalTickets = individualPassQty + familyPassQty + extraChildQty;
+    const totalTickets = individualPassQty + adultPassQty + familyPassQty + extraChildQty;
 
     // Prevent checkout if no tickets are selected
     if (totalTickets === 0) {
@@ -41,6 +42,8 @@ const ChristmasMarket = ({ handleCheckout }) => {
       <h4>Step into Christmas: Family Christmas Market</h4>
       <p>
         Individual Pass: $15 each (1 adult, 1 child)
+        <br />
+        Adult Pass: $10 each
         <br />
         Family Pass: $30 each (2 adults, 3 children)
         <br />
@@ -63,6 +66,22 @@ const ChristmasMarket = ({ handleCheckout }) => {
               onClick={() =>
                 handleIncrement(setIndividualPassQty, individualPassQty)
               }
+            >
+              +
+            </button>
+          </div>
+        </div>
+        <div className="christmas-market__quantity">
+          <label>Adult Pass:</label>
+          <div className="christmas-market__counter">
+            <button
+              onClick={() => handleDecrement(setAdultPassQty, adultPassQty)}
+            >
+              -
+            </button>
+            <span>{adultPassQty}</span>
+            <button
+              onClick={() => handleIncrement(setAdultPassQty, adultPassQty)}
             >
               +
             </button>
