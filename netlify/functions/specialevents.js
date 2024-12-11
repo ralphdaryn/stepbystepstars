@@ -18,6 +18,22 @@ exports.handler = async (event) => {
     const hstAmount = baseAmount * 0.13;
     const totalAmount = (baseAmount + hstAmount) * 100; // Stripe requires amount in cents
 
+    // Determine description based on the event name
+    let description = `Base Price: $${baseAmount.toFixed(
+      2
+    )}, HST (13%): $${hstAmount.toFixed(2)}, Total: $${(
+      baseAmount + hstAmount
+    ).toFixed(2)}`;
+
+    if (eventName === "Cheers to the Holidays: Cocktail Crafting for Moms") {
+      description +=
+        `\n\n Includes 3 Cocktails or Mocktails (non-alcoholic) \n\n` +
+        `Cocktail #1: Christmas Mojito \n\n` +
+        `Cocktail #2: Mistletoe's Kiss (a vodka rosemary fizz) \n\n` +
+        `Cocktail #3: Gingerbread Martini \n\n` +
+        `Light refreshments will also be provided.`;
+    }
+
     // Create a Stripe Checkout session
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
@@ -27,13 +43,7 @@ exports.handler = async (event) => {
             currency: "cad", // Set currency to CAD
             product_data: {
               name: eventName,
-              description: `Base Price: $${baseAmount.toFixed(
-                2
-              )}, HST (13%): $${hstAmount.toFixed(2)}, Total: $${(
-                baseAmount + hstAmount
-              ).toFixed(
-                2
-              )}\n\n Includes 3 Cocktails or Mocktails (non-alcoholic) \n\n Cocktail #1: Christmas Mojito \n\n Cocktail #2: Mistletoe's Kiss (a vodka rosemary fizz) \n\n Cocktail #3: Gingerbread Martini \n\n Light refreshments will also be provided.`,
+              description,
             },
             unit_amount: Math.round(totalAmount), // Convert to cents and round
           },
