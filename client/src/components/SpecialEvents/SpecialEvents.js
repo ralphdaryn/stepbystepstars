@@ -1,7 +1,6 @@
 import "./SpecialEvents.scss";
 import BackButton from "../BackButton/BackButton";
 import ImageCarouselTwo from "../ImageCarouselEvent/ImageCarouselEvent";
-// import holiday from "../../assets/images/holiday.jpeg";
 import ChristmasMarket from "../ChristmasMarket/ChristmasMarket";
 import SantaClause from "../../assets/images/santaclause.jpeg";
 
@@ -53,40 +52,6 @@ const SpecialEvents = () => {
       </div>
 
       <div className="special-events__image-container">
-        {/* <img
-          className="special-events__image"
-          src={holiday}
-          alt="holiday pic"
-        /> */}
-        {/* Overlay clickable sections */}
-        {/* <button
-          className="special-events__link special-events__link--section1"
-          onClick={() =>
-            handleCheckout("Holiday Mini: w/ Raspberry Studios", 1, 100)
-          }
-        >
-          Click Here To Buy Tickets!
-        </button> */}
-        {/* <button
-          className="special-events__link special-events__link--section2"
-          onClick={() =>
-            handleCheckout(
-              "Holly Jolly Stokes: Holiday Sip and Paint for Moms",
-              1,
-              40
-            )
-          }
-        >
-          Click Here To Buy Tickets!
-        </button> */}
-        {/* <button
-          className="special-events__link special-events__link--section3"
-          onClick={() =>
-            handleCheckout("Christmas Minis w/ Fazs Photography", 1, 150)
-          }
-        >
-          Click Here To Buy Tickets!
-        </button> */}
         <button
           className="special-events__link special-events__link--section4"
           onClick={() =>
