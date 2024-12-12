@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import "./Header.scss";
 import logo from "../../assets/images/logo.png";
+import logo2 from "../../assets/images/stown-purple.jpeg";
 
 const Header = () => {
   const [showNavigation, setShowNavigation] = useState(false);
@@ -66,9 +67,12 @@ const Header = () => {
             <span key={i} />
           ))}
         </div>
-        <Link to="/" onClick={handleLogoClick}>
-          <img className="header__logo" src={logo} alt="Step by Step Logo" />
-        </Link>
+        <div className="header__logo-container">
+          <Link to="/" onClick={() => handleLogoClick("Home")}>
+            <img className="header__logo-stown" src={logo2} alt="stown logo" />
+            <img className="header__logo" src={logo} alt="Step by Step Logo" />
+          </Link>
+        </div>
         {showNavigation ? (
           <FaTimes
             className="header__navbar"
@@ -191,7 +195,10 @@ const Header = () => {
                 activeLink === "Events" ? "active" : ""
               }`}
             >
-              <Link to="/specialevents" onClick={() => handleLinkClick("Events")}>
+              <Link
+                to="/specialevents"
+                onClick={() => handleLinkClick("Events")}
+              >
                 Upcoming Events
               </Link>
             </li>

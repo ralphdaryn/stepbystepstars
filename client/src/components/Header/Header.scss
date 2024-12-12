@@ -532,6 +532,47 @@
       transform: scale(1.05); /* Subtle zoom effect */
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
     }
+
+    &-stown {
+      width: clamp(
+        120px,
+        8vw,
+        120px
+      ); /* Default size, responsive between 80px and 120px */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      object-fit: cover; /* Prevent distortion */
+      display: block;
+      margin: 0 auto; /* Center horizontally */
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      max-width: 120px; /* Prevent excessive scaling */
+
+      // Apply styles for Tablet (768px+)
+      @include tablet {
+        width: clamp(130px, 8vw, 130px); /* Slightly larger for tablet */
+      }
+
+      // Apply styles for Desktop (1280px+)
+      @include desktop {
+        width: clamp(140px, 6vw, 150px); /* Adjust size for desktop */
+      }
+
+      // Large Screens (1440px and up)
+      @media (min-width: 1440px) {
+        width: 140px; /* Keep it controlled on large screens */
+      }
+      &:hover {
+        transform: scale(1.05); /* Subtle zoom effect */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+      }
+    }
+
+    &-container a {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+    }
   }
 
   &__navbar {
