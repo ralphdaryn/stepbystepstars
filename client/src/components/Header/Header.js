@@ -131,18 +131,18 @@ const Header = () => {
                   </li>
                   <li>
                     <Link
-                      to="/waiverkids"
-                      onClick={() => handleLinkClick("Musical Babies")}
-                    >
-                      Waiver
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
                       to="/dropinplay"
                       onClick={() => handleLinkClick("Face Painting")}
                     >
                       Drop In Play
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/waiverkids"
+                      onClick={() => handleLinkClick("Musical Babies")}
+                    >
+                      Waiver
                     </Link>
                   </li>
                 </ul>
@@ -261,18 +261,18 @@ const Header = () => {
                   </li>
                   <li className="header__sidebar-dropdown-item">
                     <Link
-                      to="/waiverkids"
-                      onClick={() => handleLinkClick("Musical Babies")}
-                    >
-                      Waiver
-                    </Link>
-                  </li>
-                  <li className="header__sidebar-dropdown-item">
-                    <Link
                       to="/dropinplay"
                       onClick={() => handleLinkClick("Face Painting")}
                     >
                       Drop in Play
+                    </Link>
+                  </li>
+                  <li className="header__sidebar-dropdown-item">
+                    <Link
+                      to="/waiverkids"
+                      onClick={() => handleLinkClick("Musical Babies")}
+                    >
+                      Waiver
                     </Link>
                   </li>
                 </ul>
