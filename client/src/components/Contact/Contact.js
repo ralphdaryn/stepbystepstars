@@ -1,7 +1,10 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "./Contact.scss";
 import { useState } from "react";
 
 const Contact = () => {
+  const location = useLocation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -9,6 +12,14 @@ const Contact = () => {
     phoneNumber: "",
     subject: "",
   });
+
+  useEffect(() => {
+    if (location.state?.scrollTo === "contact-section") {
+      document
+        .getElementById("contact-section")
+        .scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -37,7 +48,7 @@ const Contact = () => {
 
       const data = await response.json(); // Use the response data
       alert(data.message || "Your message has been successfully submitted!");
-      
+
       setFormData({
         name: "",
         email: "",
