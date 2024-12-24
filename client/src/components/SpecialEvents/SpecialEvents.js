@@ -1,8 +1,5 @@
 import "./SpecialEvents.scss";
 import BackButton from "../BackButton/BackButton";
-import ImageCarouselTwo from "../ImageCarouselEvent/ImageCarouselEvent";
-import ChristmasMarket from "../ChristmasMarket/ChristmasMarket";
-import SantaClause from "../../assets/images/santaclause.jpeg";
 
 const SpecialEvents = () => {
   const handleCheckout = async (eventName, tickets, price) => {
@@ -34,10 +31,6 @@ const SpecialEvents = () => {
     }
   };
 
-  const handleLink = () => {
-    window.location.href = "https://buy.stripe.com/6oEaG113K7xMdyM4gl";
-  };
-
   return (
     <div className="special-events">
       <div className="special-events__header">
@@ -64,25 +57,6 @@ const SpecialEvents = () => {
         >
           Click Here To Buy Tickets!
         </button>
-      </div>
-      <ImageCarouselTwo handleCheckout={handleCheckout} />
-      <ChristmasMarket handleCheckout={handleCheckout} />
-      <div className="special-events__santa-clause">
-        <div className="special-events__santa-clause-wrapper">
-          <img
-            className="special-events__santa-clause-img"
-            src={SantaClause}
-            alt="santa img"
-          ></img>
-        </div>
-        <div className="special-events__santa-clause-wrapper">
-          <button
-            className="special-events__santa-clause-button"
-            onClick={handleLink}
-          >
-            Buy Tickets for Santa Clause is coming to S-Town!
-          </button>
-        </div>
       </div>
     </div>
   );
