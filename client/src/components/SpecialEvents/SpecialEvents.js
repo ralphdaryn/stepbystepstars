@@ -1,34 +1,13 @@
 import "./SpecialEvents.scss";
 import BackButton from "../BackButton/BackButton";
+import newYearImg from "../../assets/images/newyear.JPEG";
 
 const SpecialEvents = () => {
-  const handleCheckout = async (eventName, tickets, price) => {
-    try {
-      const response = await fetch("/.netlify/functions/specialevents", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          eventName,
-          tickets,
-          price,
-        }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        // Redirect to Stripe Checkout
-        window.location.href = data.url;
-      } else {
-        console.error("Error during checkout:", data.error);
-        alert("Failed to create checkout session. Please try again.");
-      }
-    } catch (error) {
-      console.error("Checkout error:", error);
-      alert("An error occurred. Please try again.");
-    }
+  const linkToBuyTickets = () => {
+    window.open(
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=751129&k_class_tab=66373",
+      "_blank"
+    );
   };
 
   return (
@@ -43,17 +22,15 @@ const SpecialEvents = () => {
           Check out the exclusive events below to grab your tickets today!
         </p>
       </div>
-
       <div className="special-events__image-container">
+        <img
+          src={newYearImg}
+          alt="New Year Celebration"
+          className="special-events__image"
+        />
         <button
-          className="special-events__link special-events__link--section4"
-          onClick={() =>
-            handleCheckout(
-              "Cheers to the Holidays: Cocktail Crafting for Moms",
-              1,
-              60
-            )
-          }
+          className="special-events__button"
+          onClick={linkToBuyTickets}
         >
           Click Here To Buy Tickets!
         </button>

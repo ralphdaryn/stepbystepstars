@@ -1,6 +1,7 @@
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/mixins" as *;
 
+// Special Events Main Container
 .special-events {
   padding: 0.25rem 2rem 0.5rem;
   margin-top: 7rem;
@@ -14,6 +15,7 @@
     padding: 0.5rem 14rem 8rem;
   }
 
+  // Header Section
   &__header {
     display: flex;
     align-items: center;
@@ -46,6 +48,7 @@
     }
   }
 
+  // Intro Section
   &__intro {
     text-align: center;
     margin: 1rem auto 1rem;
@@ -94,181 +97,62 @@
     }
   }
 
-  &__subtitle {
-    text-align: center;
-    margin: 2rem 0;
-    font-size: 1.5rem;
-    color: #333;
-    font-weight: 700;
-    line-height: 1.5;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-radius: 15px;
-    position: relative;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 79, 79, 0.4),
-      rgba(51, 209, 122, 0.4)
-    ); /* Transparent red and green gradient */
-
-    @include tablet {
-      font-size: 2rem;
-    }
-
-    @include desktop {
-      font-size: 2.75rem;
-    }
-
-    &::before,
-    &::after {
-      content: "✨";
-      margin: 0 0.5rem;
-      font-size: 1.5rem;
-
-      @include desktop {
-        font-size: 2rem;
-      }
-    }
-
-    &:hover {
-      animation: light-christmas-glow 1.5s infinite ease-in-out;
-    }
-  }
-
-  @keyframes light-christmas-glow {
-    0% {
-      text-shadow: 0 0 6px rgba(255, 79, 79, 0.6),
-        0 0 8px rgba(51, 209, 122, 0.504), 0 0 12px rgba(255, 79, 79, 0.452);
-    }
-    50% {
-      text-shadow: 0 0 8px rgba(51, 209, 122, 0.689),
-        0 0 12px rgba(255, 79, 79, 0.437), 0 0 16px rgba(51, 209, 122, 0.552);
-    }
-    100% {
-      text-shadow: 0 0 6px rgba(255, 79, 79, 0.51),
-        0 0 8px rgba(51, 209, 122, 0.457), 0 0 12px rgba(255, 79, 79, 0.301);
-    }
-  }
-
+  // Image Container
   &__image-container {
     position: relative;
     width: 100%;
+    max-width: 600px; // Prevent the container from exceeding screen width
     margin: 1rem auto;
+    display: flex; // Added to center the button
+    flex-direction: column;
+    justify-content: center; // Horizontally center
+    align-items: center; // Vertically center
+    gap: 1rem;
 
     @include tablet {
-      width: 60%;
+      width: 80%;
     }
 
     @include desktop {
-      width: 50%;
+      width: 60%;
     }
   }
 
   &__image {
     width: 100%;
-    display: block;
+    max-width: 100%; // Prevent image from exceeding container size
+    height: auto; // Maintain aspect ratio
+    border-radius: 8px;
   }
 
-  &__link {
-    position: absolute;
-    display: block;
-    background: none;
+  // Button Styling
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center; // Ensures the text inside the button is centered
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #976ed9, #a98fd5); // Original gradient
     border: none;
-    color: transparent;
+    border-radius: 8px;
     cursor: pointer;
-    width: 100%;
-    height: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
     &:hover {
-      background-color: rgba(0, 0, 0, 0.5);
-      color: #fff;
+      background: linear-gradient(
+        135deg,
+        #b183e7,
+        #9c74e4
+      ); // Original hover gradient
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
-  }
 
-  &__link--section1 {
-    top: 20.5%;
-    left: 0%;
-    width: 100%;
-    height: 10%;
-  }
-
-  &__link--section2 {
-    top: 32.5%;
-    left: 0%;
-    width: 100%;
-    height: 10%;
-  }
-
-  &__link--section3 {
-    top: 45%;
-    left: 0%;
-    width: 100%;
-    height: 10%;
-  }
-
-  &__link--section4 {
-    top: 56.5%;
-    left: 0%;
-    width: 100%;
-    height: 10%;
-  }
-
-  &__link--section5 {
-    top: 68%;
-    left: 0%;
-    width: 100%;
-    height: 10%;
-  }
-
-  &__santa-clause {
-    &-img {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 1rem 0;
-      @include tablet {
-        width: 25rem;
-      }
-    }
-    &-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    &-button {
-      margin: 0.5rem;
-      display: inline-block;
-      padding: 0.6rem 1.2rem;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #fff;
-      background: linear-gradient(135deg, #976ed9, #a98fd5);
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-
-      @include tablet {
-        font-size: 1.25rem;
-        padding: 0.75rem 2rem;
-      }
-
-      @include desktop {
-        font-size: 1.5rem;
-        padding: 1rem 2.5rem;
-      }
-
-      &:hover {
-        background: linear-gradient(135deg, #b183e7, #9c74e4);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-      }
-
-      &:focus {
-        outline: none;
-        box-shadow: 0 0 5px rgba(151, 110, 217, 0.8);
-      }
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 5px rgba(151, 110, 217, 0.8);
     }
   }
 }
