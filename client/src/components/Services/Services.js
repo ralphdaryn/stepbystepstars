@@ -24,7 +24,7 @@ const Services = () => {
 
       {/* Birthday Parties Section */}
       <h2 className="services__section-title">
-        S-TOWN <br></br>(INDOOR PLACE)
+        S-TOWN <br></br>(INDOOR PLAY CENTER)
       </h2>
       <div className="services__section">
         <div className="services__card">
