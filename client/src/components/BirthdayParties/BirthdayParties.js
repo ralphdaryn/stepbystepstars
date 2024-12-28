@@ -1,8 +1,8 @@
 import "./BirthdayParties.scss";
 import BackButton from "../BackButton/BackButton";
 import EventsButton from "../EventsButton/EventsButton";
-import birthdayPackage from '../../assets/images/birthdaypackage.jpg';
-import birthdayPackage2 from '../../assets/images/birthdaypackage2.jpg';
+import birthdayPackage from '../../assets/images/birthdaypackage.jpeg';
+import birthdayPackage2 from '../../assets/images/birthdaypackage2.jpeg';
 
 const BirthdayParties = () => {
   return (

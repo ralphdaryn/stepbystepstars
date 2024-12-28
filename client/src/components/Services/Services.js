@@ -1,10 +1,10 @@
 import "./Services.scss";
 import { useNavigate } from "react-router-dom";
-import facepaintImg from "../../assets/images/facepaintkids.png";
 import mommyandme from "../../assets/images/mommyandme.jpeg";
 import privatetraining from "../../assets/images/privatetraining.jpg";
-import birthdayParties from "../../assets/images/birthdayparties.jpeg";
-import dropnplay from "../../assets/images/dropnplay.jpg";
+import birthdayParties from "../../assets/images/birthdayparty3.JPEG";
+import specialEvents from "../../assets/images/specialevents.jpeg";
+import dropInPlay from "../../assets/images/dropinplay4.JPEG";
 import groupfitness from "../../assets/images/groupfitness.jpeg";
 
 const Services = () => {
@@ -48,7 +48,7 @@ const Services = () => {
           <div className="services__image-wrapper">
             <img
               className="services__image-drop"
-              src={dropnplay}
+              src={specialEvents}
               alt="Musical babies"
             />
           </div>
@@ -65,7 +65,7 @@ const Services = () => {
           <div className="services__image-wrapper">
             <img
               className="services__image"
-              src={facepaintImg}
+              src={dropInPlay}
               alt="Face painting"
             />
           </div>
