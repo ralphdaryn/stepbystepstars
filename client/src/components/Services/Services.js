@@ -124,7 +124,7 @@ const Services = () => {
               alt="Private training"
             />
           </div>
-          <h2 className="services__card-title">Private Training</h2>
+          <h2 className="services__card-title">Personal Training</h2>
           <button
             className="services__button"
             onClick={() => goToServicePage("/privatetraining")}

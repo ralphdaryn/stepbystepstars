@@ -1,14 +1,18 @@
 import "./PrivateTraining.scss";
 import privatetraining from "../../assets/images/privatetraining.mp4";
 import BackButton from "../BackButton/BackButton";
-import ContactButton from "../ContactButton/ContactButton";
 
 const PrivateTraining = () => {
+  const handleButtonClick = () => {
+    window.location.href =
+      "https://www.wellnessliving.com/rs/appointment-new/step_by_step_club?dtu_redirect=2024-12-31+15%3A28%3A54&id_class_tab=3&id_mode=1&s_id=78Epip";
+  };
+
   return (
     <div className="private-training">
       <div className="private-training__header">
         <BackButton />
-        <h2 className="private-training__title">Private Training</h2>
+        <h2 className="private-training__title">Personal Training</h2>
       </div>
       <div className="private-training__container">
         <video className="private-training__video" controls autoPlay muted>
@@ -57,9 +61,13 @@ const PrivateTraining = () => {
               self!
             </p>
           </p>
-
-          <div className="private-training__button">
-            <ContactButton />
+          <div className="private-training__container">
+            <button
+              className="private-training__button"
+              onClick={handleButtonClick}
+            >
+              Book Here
+            </button>
           </div>
         </div>
       </div>
