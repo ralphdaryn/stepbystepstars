@@ -25,6 +25,10 @@ const MommyandMe = () => {
     arrows: false,
   };
 
+  const handleButtonClick = () => {
+    window.location = "https://www.wellnessliving.com/rs/event/step_by_step_club?k_business=651877&k_class_tab=66299&uid=0&id_class_tab=2"
+  }
+
   return (
     <div className="mommyandme">
       <div className="mommyandme__header">
@@ -66,7 +70,7 @@ const MommyandMe = () => {
         </div>
       </div>
       <button className="mommyandme__button">
-        <Link to="/waiver" className="mommyandme__button-link">Enroll Today!</Link>
+        <Link onClick={handleButtonClick} className="mommyandme__button-link">Enroll Today!</Link>
       </button>
     </div>
   );

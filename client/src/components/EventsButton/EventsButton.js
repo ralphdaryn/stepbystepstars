@@ -1,11 +1,9 @@
 import "./EventsButton.scss";
-import { useNavigate } from "react-router-dom";
 
 const EventsButton = () => {
-  const navigate = useNavigate();
-
   const handleButtonClick = () => {
-    navigate("/events");
+    window.location.href =
+      "https://www.wellnessliving.com/rs/appointment-new/step_by_step_club?dtu_redirect=2024-12-31+14%3A54%3A22&id_class_tab=3&id_mode=1&k_class_tab=66298&s_id=OzPPUQ";
   };
 
   return (
@@ -14,4 +12,5 @@ const EventsButton = () => {
     </button>
   );
 };
+
 export default EventsButton;
