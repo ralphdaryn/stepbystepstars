@@ -66,7 +66,7 @@ const PrivateTraining = () => {
               className="private-training__button"
               onClick={handleButtonClick}
             >
-              Book Here
+              Sign Up Today!
             </button>
           </div>
         </div>

@@ -1,9 +1,12 @@
 import "./GroupFitness.scss";
 import groupfitness from "../../assets/images/groupfitness.mp4";
 import BackButton from "../BackButton/BackButton";
-import ContactButton from "../ContactButton/ContactButton";
 
 const GroupFitness = () => {
+  const handleButtonClick = () => {
+    window.open("https://www.wellnessliving.com/rs/catalog-list.html?a_shop_category%5B%5D=1102664&is_filter=1&k_business=651877");
+  };
+
   return (
     <div className="groupfitness">
       <div className="groupfitness__header">
@@ -37,8 +40,11 @@ const GroupFitness = () => {
               <li>• Cool down and stretching to finish.</li>
             </ul>
           </p>
-          <div className="groupfitness__button">
-            <ContactButton />
+          <div className="groupfitness__container">
+            <button
+              className="groupfitness__button"
+              onClick={handleButtonClick}
+            >Sign Up Today!</button>
           </div>
         </div>
       </div>

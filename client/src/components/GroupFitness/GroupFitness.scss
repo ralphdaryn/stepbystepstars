@@ -64,6 +64,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #a864c1;
+    border-radius: 8px;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    height: 40px;
+    line-height: 20px;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 100ms;
+    user-select: none;
+    touch-action: manipulation;
     margin: 1rem;
+
+    &:hover {
+      background-color: #86509a;
+    }
   }
 }
