@@ -16,8 +16,8 @@ const Main = () => {
         <div className="main__container">
           <div className="main__section">
             <Services />
-            <Waiver />
             <EventPlan />
+            <Waiver />
             <Reviews />
             <Contact />
           </div>

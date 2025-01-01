@@ -139,7 +139,7 @@ const Header = () => {
                   </li>
                   <li>
                     <Link
-                      to="/waiverkids"
+                      to="/waiverpage"
                       onClick={() => handleLinkClick("Musical Babies")}
                     >
                       Waiver
@@ -269,7 +269,7 @@ const Header = () => {
                   </li>
                   <li className="header__sidebar-dropdown-item">
                     <Link
-                      to="/waiverkids"
+                      to="/waiverpage"
                       onClick={() => handleLinkClick("Musical Babies")}
                     >
                       Waiver

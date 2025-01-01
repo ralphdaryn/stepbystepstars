@@ -1,13 +1,16 @@
-import './Waiver.scss'; 
-import { Link } from 'react-router-dom';
+import "./Waiver.scss";
 
-const Waiver = ({ linkPath = "/waiverkids", buttonText = "Sign Waiver Here" }) => {
+const Waiver = () => {
+  const handleClick = () => {
+    window.location.href = "/waiverpage";
+  };
+
   return (
     <div className="waiver__container">
       <div className="waiver__content">
-        <h2 className="waiver__title">Waiver</h2>
-        <button className="waiver__button">
-          <Link to={linkPath} className="waiver__link">{buttonText}</Link>
+        <h2 className="waiver__title">Waivers</h2>
+        <button className="waiver__button" onClick={handleClick}>
+          Click Here
         </button>
       </div>
     </div>
