@@ -94,7 +94,7 @@ const Reviews = () => {
 
       <div className="reviews__socials">
         <a
-          href="https://www.google.com/search?q=step+by+step+stars+google+reviews#lrd=0x89d4d0b52fe49513:0x27e19329664bd353,1,,,,"
+          href="https://www.google.com/maps/place/S+Town+Club+Pickering+-+Play+Place+and+Birthday+Party+Center/@43.8384561,-79.0860957,17z/data=!4m18!1m9!3m8!1s0x89d4d0b52fe49513:0x27e19329664bd353!2sS+Town+Club+Pickering+-+Play+Place+and+Birthday+Party+Center!8m2!3d43.8310488!4d-79.0830569!9m1!1b1!16s%2Fg%2F11csqz5jnt!3m7!1s0x89d4d0b52fe49513:0x27e19329664bd353!8m2!3d43.8310488!4d-79.0830569!9m1!1b1!16s%2Fg%2F11csqz5jnt?authuser=0&hl=en&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
           target="_blank"
           rel="noopener noreferrer"
         >
