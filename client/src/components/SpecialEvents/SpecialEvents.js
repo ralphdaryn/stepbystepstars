@@ -1,11 +1,11 @@
 import "./SpecialEvents.scss";
 import BackButton from "../BackButton/BackButton";
-import newYearImg from "../../assets/images/newyear.JPEG";
+import visionBoard from "../../assets/images/visionBoard.jpeg";
 
 const SpecialEvents = () => {
   const linkToBuyTickets = () => {
     window.open(
-      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=751129&k_class_tab=66373",
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=754019&k_class_tab=66373",
       "_blank"
     );
   };
@@ -24,7 +24,7 @@ const SpecialEvents = () => {
       </div>
       <div className="special-events__image-container">
         <img
-          src={newYearImg}
+          src={visionBoard}
           alt="New Year Celebration"
           className="special-events__image"
         />
