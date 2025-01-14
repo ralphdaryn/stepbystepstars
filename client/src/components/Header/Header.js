@@ -214,6 +214,12 @@ const Header = () => {
                 Contact Us
               </button>
             </li>
+            <li className="header__navigation">
+              <p className="header__navigation-text">
+                1400 Bayly St. Unit 13B,<br></br> Pickering, ON <br></br> L1W
+                3R2
+              </p>
+            </li>
           </ul>
         </nav>
       </div>
@@ -339,6 +345,11 @@ const Header = () => {
               </a>
             </li>
           </ul>
+          <div>
+            <p className="header__sidebar-text">
+              1400 Bayly St. Unit 13B,<br></br> Pickering, ON<br></br> L1W 3R2
+            </p>
+          </div>
           <div className="header__sidebar-footer">
             <p className="header__sidebar-text">Step By Step © 2024</p>
           </div>

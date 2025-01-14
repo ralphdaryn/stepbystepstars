@@ -673,6 +673,10 @@
         background-color: #fff;
       }
     }
+    &-text {
+      font-size: 0.85rem;
+      padding-left: .5rem;
+    }
   }
 
   &__sidebar {
@@ -751,6 +755,11 @@
           }
         }
       }
+    }
+
+    &-text {
+      text-align: center;
+      margin: 0.75rem;
     }
 
     &-link:hover .header__sidebar-dropdown {
