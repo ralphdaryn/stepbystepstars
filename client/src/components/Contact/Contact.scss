@@ -12,13 +12,13 @@
   @include tablet {
     margin: 3rem auto;
     padding: 2rem;
-    max-width: 900px;
+    max-width: 650px;
   }
 
   @include desktop {
     margin: 4rem auto;
     padding: 2.5rem;
-    max-width: 1200px;
+    max-width: 900px;
   }
 
   &__wrapper {
@@ -28,7 +28,7 @@
 
     @include tablet {
       flex-direction: row;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
       gap: 1.5rem;
     }
@@ -52,7 +52,7 @@
     &::after {
       content: "";
       display: block;
-      width: 86%;
+      width: 80%;
       height: 3px;
       background-color: #a864c1;
       margin: 0.5rem auto 0;
@@ -60,6 +60,9 @@
       left: 50%;
       transform: translateX(-50%);
       bottom: -3px;
+      @include tablet {
+        width: 30%;
+      }
     }
   }
 
@@ -143,6 +146,9 @@
       border-radius: 1rem;
       border: none;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      @include tablet {
+        height: 450px;
+      }
     }
   }
 }

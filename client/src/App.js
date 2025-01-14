@@ -12,11 +12,9 @@ import MommyandMe from "./components/MommyandMe/MommyandMe";
 import GroupFitness from "./components/GroupFitness/GroupFitness";
 import PrivateTraining from "./components/PrivateTraining/PrivateTraining";
 import Events from "./components/Events/Events";
-import WaiverPage from "./components/WaiverPage/WaiverPage";
 import WaiverForm from "./components/WaiverForm/WaiverForm";
 import WaiverFormKids from "./components/WaiverFormKids/WaiverFormKids";
 import "./Background.css";
-import RibbonCutting from "./components/RibbonCutting/RibbonCutting";
 import Success from "./components/StatusPage/Success";
 import Cancel from "./components/StatusPage/Cancel";
 
@@ -43,12 +41,9 @@ function App() {
           <Route path="/privatetraining" element={<PrivateTraining />} />
           <Route path="/events" element={<Events />} />
           <Route path="/waiver" element={<WaiverForm />} />
-          <Route path="/waiverpage" element={<WaiverPage />} />
           <Route path="/waiverkids" element={<WaiverFormKids />} />
-          <Route path="/ribbon-cutting" element={<RibbonCutting />} />
           <Route path="/success" element={<Success />} />
           <Route path="/cancel" element={<Cancel />} />
-          <Route path="/" element={<RibbonCutting />} />
         </Routes>
         <Footer />
       </div>
