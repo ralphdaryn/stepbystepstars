@@ -48,11 +48,14 @@
     font-weight: 700;
     color: #212121;
     position: relative;
+    @include tablet {
+      font-size: 3rem;
+    }
 
     &::after {
       content: "";
       display: block;
-      width: 80%;
+      width: 60%;
       height: 3px;
       background-color: #a864c1;
       margin: 0.5rem auto 0;
@@ -61,6 +64,9 @@
       transform: translateX(-50%);
       bottom: -3px;
       @include tablet {
+        width: 40%;
+      }
+      @include desktop {
         width: 30%;
       }
     }
