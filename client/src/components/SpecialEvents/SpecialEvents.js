@@ -1,6 +1,7 @@
 import "./SpecialEvents.scss";
 import BackButton from "../BackButton/BackButton";
 import specialEvent from "../../assets/images/findingBalance.JPG";
+import specialEvent2 from "../../assets/images/PrincessSuperhero.jpeg";
 
 const SpecialEvents = () => {
   const linkToBuyTickets = () => {
@@ -9,7 +10,12 @@ const SpecialEvents = () => {
       "_blank"
     );
   };
-
+  const linkToBuyTickets2 = () => {
+    window.open(
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=760385&k_class_tab=66373",
+      "_blank"
+    );
+  };
   return (
     <div className="special-events">
       <div className="special-events__header">
@@ -28,10 +34,17 @@ const SpecialEvents = () => {
           alt="Special Event"
           className="special-events__image"
         />
-        <button
-          className="special-events__button"
-          onClick={linkToBuyTickets}
-        >
+        <button className="special-events__button" onClick={linkToBuyTickets}>
+          Click Here To Buy Tickets!
+        </button>
+      </div>
+      <div className="special-events__image-container">
+        <img
+          src={specialEvent2}
+          alt="Special Event"
+          className="special-events__image"
+        />
+        <button className="special-events__button" onClick={linkToBuyTickets2}>
           Click Here To Buy Tickets!
         </button>
       </div>
