@@ -5,6 +5,7 @@ import EventPlan from "../EventPlan/EventPlan";
 import Reviews from "../Reviews/Reviews";
 import Contact from "../Contact/Contact";
 import Waiver from "../Waiver/Waiver";
+import MailingList from "../MailingList/MailingList";
 
 const Main = () => {
   return (
@@ -19,6 +20,7 @@ const Main = () => {
             <EventPlan />
             <Waiver />
             <Reviews />
+            <MailingList />
             <Contact />
           </div>
         </div>

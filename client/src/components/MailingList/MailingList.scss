@@ -1,0 +1,105 @@
+@use "../../styles/partials/mixins" as *;
+
+.mailing-list {
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    #dab6ff,
+    #c4a9f2
+  ); // Mailing list background
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+
+  &__container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  // Enhanced Header Title
+  &__heading {
+    font-size: 2rem; // Larger font size
+    margin-bottom: 1.5rem; // Balanced spacing
+    font-weight: 700;
+    text-align: center;
+    color: #773e8d;
+  }
+
+  &__description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__label {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+
+  // Updated Input Styling
+  &__input {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #f5edff; // Light complementary shade for inputs
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #602b6e; // Darker purple for focus state
+      box-shadow: 0 0 6px #602b6e; // Glow effect with darker color
+    }
+  }
+
+  &__checkbox-group {
+    display: flex;
+    align-items: center;
+  }
+
+  &__checkbox-label {
+    font-size: 0.9rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  // Button Styling
+  &__button {
+    color: #ffffff;
+    background: linear-gradient(135deg, #602b6e, #773e8d);
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.75rem 2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(135deg, #4a204d, #602b6e);
+      color: #fff;
+    }
+  }
+
+  &__message {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #333;
+  }
+}
