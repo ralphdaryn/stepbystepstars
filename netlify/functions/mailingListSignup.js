@@ -60,7 +60,7 @@ exports.handler = async (event) => {
                 <img 
                   src="https://stepbystepclub.ca/static/media/stown-purple.5d2b02d4745e0734dcae.jpeg" 
                   alt="Second Logo" 
-                  style="width: 140px; height: auto;" 
+                  style="width: 125px; height: auto;" 
                 />
               </div>
               <h1 style="font-size: 24px; color: #773e8d; margin-bottom: 5px;">Welcome to Step By Step Club!</h1>
