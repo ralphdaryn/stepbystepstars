@@ -1,12 +1,12 @@
 import "./SpecialEvents.scss";
 import BackButton from "../BackButton/BackButton";
-import specialEvent from "../../assets/images/findingBalance.JPG";
-import specialEvent2 from "../../assets/images/PrincessSuperhero.jpeg";
+import specialEvent from "../../assets/images/PrincessSuperhero.jpeg";
+import specialEvent2 from "../../assets/images/soca.jpeg";
 
 const SpecialEvents = () => {
   const linkToBuyTickets = () => {
     window.open(
-      "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=755357",
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=764015&k_class_tab=66373",
       "_blank"
     );
   };
@@ -34,7 +34,7 @@ const SpecialEvents = () => {
           alt="Special Event"
           className="special-events__image"
         />
-        <button className="special-events__button" onClick={linkToBuyTickets}>
+        <button className="special-events__button" onClick={linkToBuyTickets2}>
           Click Here To Buy Tickets!
         </button>
       </div>
@@ -44,7 +44,7 @@ const SpecialEvents = () => {
           alt="Special Event"
           className="special-events__image"
         />
-        <button className="special-events__button" onClick={linkToBuyTickets2}>
+        <button className="special-events__button" onClick={linkToBuyTickets}>
           Click Here To Buy Tickets!
         </button>
       </div>
