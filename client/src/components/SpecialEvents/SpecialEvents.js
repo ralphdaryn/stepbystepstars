@@ -1,6 +1,5 @@
 import "./SpecialEvents.scss";
 import BackButton from "../BackButton/BackButton";
-import specialEvent from "../../assets/images/PrincessSuperhero.jpeg";
 import specialEvent2 from "../../assets/images/soca.jpeg";
 import specialEvent3 from "../../assets/images/blackhistory.JPG";
 
@@ -8,12 +7,6 @@ const SpecialEvents = () => {
   const linkToBuyTickets = () => {
     window.open(
       "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=764015&k_class_tab=66373",
-      "_blank"
-    );
-  };
-  const linkToBuyTickets2 = () => {
-    window.open(
-      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=760385&k_class_tab=66373",
       "_blank"
     );
   };
@@ -35,16 +28,6 @@ const SpecialEvents = () => {
           Welcome to our Special Events! <br />
           Check out the exclusive events below to grab your tickets today!
         </p>
-      </div>
-      <div className="special-events__image-container">
-        <img
-          src={specialEvent}
-          alt="Special Event"
-          className="special-events__image"
-        />
-        <button className="special-events__button" onClick={linkToBuyTickets2}>
-          Click Here To Buy Tickets!
-        </button>
       </div>
       <div className="special-events__image-container">
         <img
