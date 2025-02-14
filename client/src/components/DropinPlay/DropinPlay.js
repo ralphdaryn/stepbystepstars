@@ -110,7 +110,7 @@ const DropinPlay = () => {
               <li>$15.00 - Ages 1-3</li>
               <li>$10.00 - Kids under 1</li>
               <li>$5.00 - Extra observer (adult)</li>
-              <li>Each family includes two adults.</li>
+              <li>Each family includes one adult</li>
             </ul>
           </div>
 
