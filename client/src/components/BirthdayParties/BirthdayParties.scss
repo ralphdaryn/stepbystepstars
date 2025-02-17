@@ -50,6 +50,17 @@
     }
   }
 
+  &__wrapper {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+    }
+    @include desktop {
+      max-width: 1280px;
+    }
+  }
+
   &__image {
     width: 100%;
     display: block;
@@ -61,7 +72,23 @@
     }
 
     @include desktop {
-      width: 42rem;
+      width: 33rem;
+    }
+  }
+
+  &__video {
+    width: 100%;
+    max-width: 600px; // Adjust for responsiveness
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    @include tablet {
+      max-width: 450px;
+    }
+
+    @include desktop {
+      max-width: 700px;
     }
   }
 
