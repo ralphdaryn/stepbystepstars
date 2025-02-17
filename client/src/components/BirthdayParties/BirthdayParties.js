@@ -1,8 +1,7 @@
 import "./BirthdayParties.scss";
 import BackButton from "../BackButton/BackButton";
 import EventsButton from "../EventsButton/EventsButton";
-import birthdayPackage from '../../assets/images/birthdaypackage.jpeg';
-import birthdayPackage2 from '../../assets/images/birthdaypackage2.jpeg';
+import birthdayPackage from "../../assets/images/birthdaypackage.jpeg";
 
 const BirthdayParties = () => {
   return (
@@ -12,8 +11,14 @@ const BirthdayParties = () => {
         <h2 className="birthday-party__title">Birthday Parties</h2>
       </div>
       <div className="birthday-party__container">
-        <img className="birthday-party__image" alt="bday party" src={birthdayPackage} />
-        <img className="birthday-party__image" alt="bday party 2" src={birthdayPackage2} />
+        <img
+          className="birthday-party__image"
+          alt="bday party"
+          src={birthdayPackage}
+        />
+        <div className="birthday-party__button">
+          <EventsButton />
+        </div>
         <div className="birthday-party__subtitle-container">
           <p className="birthday-party__subtitle">
             Welcome to S TOWN, where kids can explore, play and learn through
@@ -24,11 +29,15 @@ const BirthdayParties = () => {
             role-playing and imaginative exploration.
           </p>
           <p className="birthday-party__subtitle">
-            The design is crafted to allow your child to take the lead while you, as parents are meant to support and encourage their development. S Town promotes key developmental skill such as problem-solving, language development, social interaction, and cognitive flexibility. By engaging in these realistic, hands-on activities, children will not only have fun but also strengthen their understanding of real-world tasks and scenarios, helping them build social-emotional skills and boosting their creativity.
+            The design is crafted to allow your child to take the lead while
+            you, as parents are meant to support and encourage their
+            development. S Town promotes key developmental skill such as
+            problem-solving, language development, social interaction, and
+            cognitive flexibility. By engaging in these realistic, hands-on
+            activities, children will not only have fun but also strengthen
+            their understanding of real-world tasks and scenarios, helping them
+            build social-emotional skills and boosting their creativity.
           </p>
-          <div className="birthday-party__button">
-            <EventsButton />
-          </div>
         </div>
       </div>
     </div>
