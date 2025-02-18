@@ -57,7 +57,7 @@ exports.handler = async (event) => {
     // Email content for the club
     const clubMailOptions = {
       from: process.env.EMAIL_USER,
-      to: process.env.RECIPIENT_EMAIL,
+      to: "stepxstepcontracts@gmail.com",
       subject: "New Kids Play Area Waiver Submission",
       text: `Kids Play Area Waiver Submission:
 
