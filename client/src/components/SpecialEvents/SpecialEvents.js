@@ -1,19 +1,33 @@
 import "./SpecialEvents.scss";
 import BackButton from "../BackButton/BackButton";
 import specialEvents from "../../assets/images/soca.jpeg";
-import specialEvent2 from "../../assets/images/blackhistory.JPG";
+import specialEvents2 from "../../assets/images/glowparty.jpeg";
+import specialEvents3 from "../../assets/images/singmusic.jpeg";
+import specialEvents4 from "../../assets/images/sesamestreet.jpeg";
+import specialEvents5 from "../../assets/images/marchbreakhours.jpeg";
 
 const SpecialEvents = () => {
   const linkToBuyTickets = () => {
     window.open(
-      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=763527&k_class_tab=66373",
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=764015&k_class_tab=66373",
       "_blank"
     );
   };
-
   const linkToBuyTickets2 = () => {
     window.open(
-      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=764015&k_class_tab=66373",
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=776835&k_class_tab=66373",
+      "_blank"
+    );
+  };
+  const linkToBuyTickets3 = () => {
+    window.open(
+      "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=776845",
+      "_blank"
+    );
+  };
+  const linkToBuyTickets4 = () => {
+    window.open(
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=776846&k_class_tab=66373",
       "_blank"
     );
   };
@@ -32,7 +46,7 @@ const SpecialEvents = () => {
       </div>
       <div className="special-events__image-container">
         <img
-          src={specialEvent2}
+          src={specialEvents}
           alt="Special Event"
           className="special-events__image"
         />
@@ -42,13 +56,41 @@ const SpecialEvents = () => {
       </div>
       <div className="special-events__image-container">
         <img
-          src={specialEvents}
+          src={specialEvents2}
           alt="Special Event"
           className="special-events__image"
         />
         <button className="special-events__button" onClick={linkToBuyTickets2}>
           Click Here To Buy Tickets!
         </button>
+      </div>
+      <div className="special-events__image-container">
+        <img
+          src={specialEvents3}
+          alt="Special Event"
+          className="special-events__image"
+        />
+        <button className="special-events__button" onClick={linkToBuyTickets3}>
+          Click Here To Buy Tickets!
+        </button>
+      </div>
+      <div className="special-events__image-container">
+        <img
+          src={specialEvents4}
+          alt="Special Event"
+          className="special-events__image"
+        />
+        <button className="special-events__button" onClick={linkToBuyTickets4}>
+          Click Here To Buy Tickets!
+        </button>
+      </div>
+      <div className="special-events__image-container">
+        <img
+          src={specialEvents5}
+          alt="Special Event"
+          className="special-events__image"
+        />
+        <h2 className="special-events__subtext">Join our over March Break for drop-in play and fun activities!</h2>
       </div>
     </div>
   );
