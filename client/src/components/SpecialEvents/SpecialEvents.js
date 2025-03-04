@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./SpecialEvents.scss";
 import BackButton from "../BackButton/BackButton";
-import specialEvents from "../../assets/images/soca.jpeg";
 import specialEvents2 from "../../assets/images/glowparty.jpeg";
 import specialEvents3 from "../../assets/images/singmusic.jpeg";
 import specialEvents4 from "../../assets/images/sesamestreet.jpeg";
@@ -16,13 +15,6 @@ const SpecialEvents = () => {
 
   const closeImage = () => {
     setSelectedImage(null);
-  };
-
-  const linkToBuyTickets = () => {
-    window.open(
-      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=764015&k_class_tab=66373",
-      "_blank"
-    );
   };
   const linkToBuyTickets2 = () => {
     window.open(
@@ -57,17 +49,7 @@ const SpecialEvents = () => {
       </div>
 
       {/* Images with Modal Click */}
-      <div className="special-events__image-container">
-        <img
-          src={specialEvents}
-          alt="Special Event"
-          className="special-events__image"
-          onClick={() => openImage(specialEvents)}
-        />
-        <button className="special-events__button" onClick={linkToBuyTickets}>
-          Click Here To Buy Tickets!
-        </button>
-      </div>
+  
 
       <div className="special-events__image-container">
         <img
