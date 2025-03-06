@@ -24,7 +24,7 @@ const SpecialEvents = () => {
   };
   const linkToBuyTickets3 = () => {
     window.open(
-      "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=776845",
+      "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=778829",
       "_blank"
     );
   };
