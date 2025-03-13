@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./SpecialEvents.scss";
 import BackButton from "../BackButton/BackButton";
-import specialEvents3 from "../../assets/images/singmusic.jpeg";
 import specialEvents4 from "../../assets/images/sesamestreet.jpeg";
 import specialEvents5 from "../../assets/images/marchbreakhours.jpeg";
 
@@ -14,12 +13,6 @@ const SpecialEvents = () => {
 
   const closeImage = () => {
     setSelectedImage(null);
-  };
-  const linkToBuyTickets3 = () => {
-    window.open(
-      "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=778829",
-      "_blank"
-    );
   };
   const linkToBuyTickets4 = () => {
     window.open(
@@ -40,18 +33,6 @@ const SpecialEvents = () => {
           Check out the exclusive events below to grab your tickets today!
         </p>
       </div>
-      <div className="special-events__image-container">
-        <img
-          src={specialEvents3}
-          alt="Special Event"
-          className="special-events__image"
-          onClick={() => openImage(specialEvents3)}
-        />
-        <button className="special-events__button" onClick={linkToBuyTickets3}>
-          Click Here To Buy Tickets!
-        </button>
-      </div>
-
       <div className="special-events__image-container">
         <img
           src={specialEvents4}
