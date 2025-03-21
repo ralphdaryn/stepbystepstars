@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./SpecialEvents.scss";
 import BackButton from "../BackButton/BackButton";
-import specialEvents4 from "../../assets/images/sesamestreet.jpeg";
-import specialEvents5 from "../../assets/images/marchbreakhours.jpeg";
+import specialEvents from "../../assets/images/sensory_play.jpeg";
+import specialEvents2 from "../../assets/images/easter_egg.jpeg";
 
 const SpecialEvents = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -14,9 +14,16 @@ const SpecialEvents = () => {
   const closeImage = () => {
     setSelectedImage(null);
   };
-  const linkToBuyTickets4 = () => {
+  const linkToBuyTickets = () => {
     window.open(
-      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=776846&k_class_tab=66373",
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=783878&k_class_tab=66373",
+      "_blank"
+    );
+  };
+
+  const linkToBuyTickets2 = () => {
+    window.open(
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=784859&k_class_tab=66373",
       "_blank"
     );
   };
@@ -35,26 +42,26 @@ const SpecialEvents = () => {
       </div>
       <div className="special-events__image-container">
         <img
-          src={specialEvents4}
+          src={specialEvents}
           alt="Special Event"
           className="special-events__image"
-          onClick={() => openImage(specialEvents4)}
+          onClick={() => openImage(specialEvents)}
         />
-        <button className="special-events__button" onClick={linkToBuyTickets4}>
+        <button className="special-events__button" onClick={linkToBuyTickets}>
           Click Here To Buy Tickets!
         </button>
       </div>
 
       <div className="special-events__image-container">
         <img
-          src={specialEvents5}
+          src={specialEvents2}
           alt="Special Event"
           className="special-events__image"
-          onClick={() => openImage(specialEvents5)}
+          onClick={() => openImage(specialEvents2)}
         />
-        <h2 className="special-events__subtext">
-          Join our over March Break for drop-in play and fun activities!
-        </h2>
+        <button className="special-events__button" onClick={linkToBuyTickets2}>
+          Click Here To Buy Tickets!
+        </button>
       </div>
 
       {/* Image Modal */}
