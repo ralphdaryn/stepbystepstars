@@ -59,6 +59,8 @@ const Header = () => {
     dropdownSetter((prevState) => !prevState);
   };
 
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className={`header ${showNavigation ? "open" : ""}`}>
       <div className="header__container">
@@ -351,7 +353,9 @@ const Header = () => {
             </p>
           </div>
           <div className="header__sidebar-footer">
-            <p className="header__sidebar-text">Step By Step © 2024</p>
+            <p className="header__sidebar-footer-text">
+              © Step By Step {currentYear}
+            </p>
           </div>
         </div>
       )}
