@@ -66,7 +66,7 @@ const SpecialEvents = () => {
           onClick={() => openMedia(specialEvents3)}
         />
         <button className="special-events__button" onClick={linkToBuyTickets3}>
-          Click Here To Buy Tickets!
+          Click to Register Here!
         </button>
       </div>
 
@@ -78,7 +78,7 @@ const SpecialEvents = () => {
           onClick={() => openMedia(specialEvents)}
         />
         <button className="special-events__button" onClick={linkToBuyTickets}>
-          Click Here To Buy Tickets!
+          Click to Register Here!
         </button>
       </div>
 
@@ -90,7 +90,7 @@ const SpecialEvents = () => {
           onClick={() => openMedia(specialEvents2)}
         />
         <button className="special-events__button" onClick={linkToBuyTickets2}>
-          Click Here To Buy Tickets!
+          Click to Register Here!
         </button>
       </div>
 
@@ -107,7 +107,7 @@ const SpecialEvents = () => {
           Your browser does not support the video tag.
         </video>
         <button className="special-events__button" onClick={linkToBuyTickets4}>
-          Click Here To Buy Tickets!
+          Click to Register Here!
         </button>
       </div>
 
