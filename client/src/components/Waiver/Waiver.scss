@@ -6,6 +6,10 @@
   border-radius: 0.5rem;
   padding: 2rem;
   text-align: center;
+  transition: box-shadow 0.3s, transform 0.3s;
+  &:hover {
+    transform: scale(1.05);
+  }
   @include tablet {
     padding: 2rem 2.5rem;
   }
