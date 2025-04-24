@@ -1,31 +1,18 @@
 import { useState } from "react";
 import "./SpecialEvents.scss";
 import BackButton from "../BackButton/BackButton";
-import specialEvents2 from "../../assets/images/easter_egg.jpeg";
 import specialEvents3 from "../../assets/images/latin.jpeg";
 import specialEvents4 from "../../assets/images/stroller-fitness.jpeg";
 import specialEvents5 from "../../assets/images/french_camp.jpeg";
 import specialEvents6 from "../../assets/images/summer_camp.jpeg";
+import specialEvents7 from "../../assets/images/mommy-fitness.jpeg";
+import specialEvents8 from "../../assets/images/soca-boxing.jpeg";
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
 
   const openMedia = (mediaSrc) => setSelectedMedia(mediaSrc);
   const closeMedia = () => setSelectedMedia(null);
-
-  const linkToBuyTickets = () => {
-    window.open(
-      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=784859&k_class_tab=66373",
-      "_blank"
-    );
-  };
-
-  const linkToBuyTickets2 = () => {
-    window.open(
-      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=787030&k_class_tab=68173",
-      "_blank"
-    );
-  };
 
   const linkToBuyTickets3 = () => {
     window.open(
@@ -55,6 +42,20 @@ const SpecialEvents = () => {
     );
   };
 
+  const linkToBuyTickets7 = () => {
+    window.open(
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=780540&k_class_tab=66299",
+      "_blank"
+    );
+  };
+
+  const linkToBuyTickets8 = () => {
+    window.open(
+      "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=794025",
+      "_blank"
+    );
+  };
+
   return (
     <div className="special-events">
       <div className="special-events__header">
@@ -70,37 +71,7 @@ const SpecialEvents = () => {
       </div>
 
       <div className="special-events__card-wrapper">
-        <div className="special-events__image-container">
-          <video
-            className="special-events__image"
-            autoPlay
-            muted
-            loop
-            playsInline
-            onClick={() => openMedia("/videos/boxing_poster.mp4")}
-          >
-            <source src="/videos/boxing_poster.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <button
-            className="special-events__button"
-            onClick={linkToBuyTickets2}
-          >
-            Click Here to Register!
-          </button>
-        </div>
-
-        <div className="special-events__image-container">
-          <img
-            src={specialEvents2}
-            alt="Special Event"
-            className="special-events__image"
-            onClick={() => openMedia(specialEvents2)}
-          />
-          <button className="special-events__button" onClick={linkToBuyTickets}>
-            Click Here to Register!
-          </button>
-        </div>
+  
 
         <div className="special-events__image-container">
           <img
@@ -116,6 +87,20 @@ const SpecialEvents = () => {
             Click Here to Register!
           </button>
         </div>
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents8}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents8)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets8}
+          >
+            Click Here to Register!
+          </button>
+        </div>
 
         <div className="special-events__image-container">
           <img
@@ -127,6 +112,21 @@ const SpecialEvents = () => {
           <button
             className="special-events__button"
             onClick={linkToBuyTickets4}
+          >
+            Click Here to Register!
+          </button>
+        </div>
+
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents7}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents7)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets7}
           >
             Click Here to Register!
           </button>

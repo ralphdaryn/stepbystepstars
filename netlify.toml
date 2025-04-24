@@ -2,3 +2,8 @@
 command = "npm install --prefix client && npm run build --prefix client"
 functions = "netlify/functions"
 publish = "client/build"
+
+[dev]
+  framework = "create-react-app"
+  targetPort = 3000
+  command = "npm start --prefix client"
