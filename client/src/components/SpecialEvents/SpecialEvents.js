@@ -1,25 +1,17 @@
 import { useState } from "react";
 import "./SpecialEvents.scss";
 import BackButton from "../BackButton/BackButton";
-import specialEvents3 from "../../assets/images/latin.jpeg";
 import specialEvents4 from "../../assets/images/stroller-fitness.jpeg";
 import specialEvents5 from "../../assets/images/french_camp.jpeg";
 import specialEvents6 from "../../assets/images/summer_camp.jpeg";
 import specialEvents7 from "../../assets/images/mommy-fitness.jpeg";
-import specialEvents8 from "../../assets/images/soca-boxing.jpeg";
+import specialEvents8 from "../../assets/images/mother-day.jpeg";
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
 
   const openMedia = (mediaSrc) => setSelectedMedia(mediaSrc);
   const closeMedia = () => setSelectedMedia(null);
-
-  const linkToBuyTickets3 = () => {
-    window.open(
-      "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=794025",
-      "_blank"
-    );
-  };
 
   const linkToBuyTickets4 = () => {
     window.open(
@@ -51,7 +43,7 @@ const SpecialEvents = () => {
 
   const linkToBuyTickets8 = () => {
     window.open(
-      "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=794025",
+      "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=800326",
       "_blank"
     );
   };
@@ -71,22 +63,6 @@ const SpecialEvents = () => {
       </div>
 
       <div className="special-events__card-wrapper">
-  
-
-        <div className="special-events__image-container">
-          <img
-            src={specialEvents3}
-            alt="Special Event"
-            className="special-events__image"
-            onClick={() => openMedia(specialEvents3)}
-          />
-          <button
-            className="special-events__button"
-            onClick={linkToBuyTickets3}
-          >
-            Click Here to Register!
-          </button>
-        </div>
         <div className="special-events__image-container">
           <img
             src={specialEvents8}
@@ -101,7 +77,6 @@ const SpecialEvents = () => {
             Click Here to Register!
           </button>
         </div>
-
         <div className="special-events__image-container">
           <img
             src={specialEvents4}
