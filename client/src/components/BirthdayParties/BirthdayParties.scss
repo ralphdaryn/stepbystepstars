@@ -49,6 +49,9 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    @include tablet {
+      gap: 2.5rem;
+    }
   }
 
   &__wrapper {
@@ -57,14 +60,13 @@
     align-items: center;
     gap: 1rem;
 
-    @include desktop {
+    @include tablet {
       flex-direction: row;
     }
   }
 
   &__image {
     width: 100%;
-    width: 20rem;
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
 
@@ -73,7 +75,7 @@
     }
 
     @include tablet {
-      width: 25rem;
+      width: 22rem;
     }
 
     @include desktop {
@@ -106,12 +108,20 @@
   &__subtitle {
     margin: 0 auto;
     font-size: 1.25rem;
-  }
   &-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #f0ebee;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
+}
 }
 
 /* Image Modal Styling */
