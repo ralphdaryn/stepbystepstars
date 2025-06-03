@@ -60,7 +60,7 @@ const GroupFitness = () => {
               className="groupfitness__button"
               onClick={handleButtonClick}
             >
-              Sign Up Today!
+              Join Our Community!
             </button>
           </div>
         </div>

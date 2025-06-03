@@ -4,7 +4,7 @@
 .waiver-form {
   max-width: 100%;
   padding: 1rem;
-  margin: 8rem 1rem 1rem;
+  margin: 1rem;
   display: flex;
   flex-direction: column;
   font-size: 1rem;
@@ -14,13 +14,11 @@
   @include tablet {
     max-width: 600px;
     margin: 0 auto;
-    margin-top: 9rem;
   }
 
   @include desktop {
     max-width: 800px;
     margin: 0 auto;
-    margin-top: 8.5em;
     padding: 4rem;
   
   }

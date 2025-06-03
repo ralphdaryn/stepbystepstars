@@ -37,6 +37,7 @@
     font-weight: 500;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
+    margin-top: 1rem;
 
     &:hover {
       background-color: #a9469a; // Darker purple on hover

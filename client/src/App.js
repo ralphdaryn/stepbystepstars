@@ -17,14 +17,15 @@ import WaiverFormKids from "./components/WaiverFormKids/WaiverFormKids";
 import "./Background.css";
 import Success from "./components/StatusPage/Success";
 import Cancel from "./components/StatusPage/Cancel";
+import Alert from "./components/Alert/Alert";
 
 function App() {
   return (
     <Router>
       <div className="App">
+       <Alert/>
         <Header />
         <div className="background">
-          {/* Render 50 spans to match the CSS animation */}
           {Array.from({ length: 50 }, (_, i) => (
             <span key={i} />
           ))}
