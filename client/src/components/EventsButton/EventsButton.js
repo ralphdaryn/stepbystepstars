@@ -8,7 +8,7 @@ const EventsButton = () => {
 
   return (
     <button className="events-button" onClick={handleButtonClick}>
-      Learn More
+      Connect With Your Event Planner
     </button>
   );
 };
