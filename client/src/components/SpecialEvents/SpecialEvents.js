@@ -4,6 +4,7 @@ import BackButton from "../BackButton/BackButton";
 import specialEvents from "../../assets/images/french_camp.jpeg";
 import specialEvents1 from "../../assets/images/summer_camp.jpeg";
 import specialEvents2 from "../../assets/images/soca-june.jpeg";
+import specialEvents3 from '../../assets/images/fathersday.jpeg';
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -32,6 +33,13 @@ const SpecialEvents = () => {
     );
   };
 
+  const linkToBuyTickets3 = () => {
+    window.open(
+      "  https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=814839&k_class_tab=66373",
+      "_blank"
+    );
+  };
+
   return (
     <div className="special-events">
       <div className="special-events__header">
@@ -47,6 +55,20 @@ const SpecialEvents = () => {
       </div>
 
       <div className="special-events__card-wrapper">
+      <div className="special-events__image-container">
+          <img
+            src={specialEvents3}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents3)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets3}
+          >
+            Click Here to Register!
+          </button>
+        </div>
         <div className="special-events__image-container">
           <img
             src={specialEvents2}
