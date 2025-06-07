@@ -6,6 +6,7 @@ import specialEvents1 from "../../assets/images/summer_camp.jpeg";
 import specialEvents2 from "../../assets/images/soca-june.jpeg";
 import specialEvents3 from "../../assets/images/fathersday.jpeg";
 import specialEvents4 from "../../assets/images/mommy-fitness2.jpeg";
+import specialEvents5 from "../../assets/images/family-workout.jpeg";
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -44,6 +45,13 @@ const SpecialEvents = () => {
   const linkToBuyTickets4 = () => {
     window.open(
       "    https://www.wellnessliving.com/rs/catalog-list.html?a_shop_category%5B%5D=1102551&is_filter=1&k_business=651877",
+      "_blank"
+    );
+  };
+
+  const linkToBuyTickets5 = () => {
+    window.open(
+      "    https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=815172",
       "_blank"
     );
   };
@@ -87,6 +95,20 @@ const SpecialEvents = () => {
           <button
             className="special-events__button"
             onClick={linkToBuyTickets3}
+          >
+            Click Here to Register!
+          </button>
+        </div>
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents5}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents3)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets5}
           >
             Click Here to Register!
           </button>
