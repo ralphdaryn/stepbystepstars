@@ -14,11 +14,14 @@ const StrollerFitness = () => {
         <BackButton />
         <h2 className="stroller-fitness__title">Stroller Fitness</h2>
       </div>
+
+      {/* ---------- main flex row/column ---------- */}
       <div className="stroller-fitness__container">
         <video className="stroller-fitness__video" controls autoPlay muted>
           <source src={strollerfitness} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+
         <div className="stroller-fitness__wrapper">
           <p className="stroller-fitness__subtitle">
             Tired of scrolling while your coffee goes cold and your muscles go
@@ -39,30 +42,22 @@ const StrollerFitness = () => {
             What to Expect:
             <ul>
               <li>
-                • A full-body workout that balances challenge and accessibility
-                for moms at any stage.
+                A full-body workout scalable for all stages of motherhood.
               </li>
-              <li>
-                • A supportive space where babies are welcome and your
-                well-being comes first.
-              </li>
-              <li>
-                • Encouragement, energy, and connection—you’re not doing this
-                alone.
-              </li>
-              <li>• Real talk, real sweat, and no judgment.</li>
+              <li>A welcoming space where babies are part of the fun.</li>
+              <li>Encouragement, energy, and community—you’re never alone.</li>
+              <li>Real talk, real sweat, zero judgment.</li>
             </ul>
             <br />
             <p>Let’s move, mama—your journey begins here.</p>
           </p>
-          <div className="stroller-fitness__container">
-            <button
-              className="stroller-fitness__button"
-              onClick={handleButtonClick}
-            >
-              Book Your Spot!
-            </button>
-          </div>
+
+          <button
+            className="stroller-fitness__button"
+            onClick={handleButtonClick}
+          >
+            Book Your Spot!
+          </button>
         </div>
       </div>
     </div>
