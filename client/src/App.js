@@ -18,6 +18,8 @@ import "./Background.css";
 import Success from "./components/StatusPage/Success";
 import Cancel from "./components/StatusPage/Cancel";
 import Alert from "./components/Alert/Alert";
+import StrollerFitness from "./components/StrollerFitness/StrollerFitness";
+
 
 function App() {
   return (
@@ -40,6 +42,7 @@ function App() {
           <Route path="/mommyandme" element={<MommyandMe />} />
           <Route path="/groupfitness" element={<GroupFitness />} />
           <Route path="/privatetraining" element={<PrivateTraining />} />
+          <Route path="/strollerfitness" element={<StrollerFitness />} />
           <Route path="/events" element={<Events />} />
           <Route path="/waiver" element={<WaiverForm />} />
           <Route path="/waiverkids" element={<WaiverFormKids />} />

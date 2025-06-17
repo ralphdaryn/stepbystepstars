@@ -1,0 +1,138 @@
+@use "../../styles/partials/mixins" as *;
+
+.stroller-fitness {
+  padding: 0.25rem 2rem 0.5rem;
+  margin-top: 7rem;
+  background-color: rgba(255, 255, 255, 0.4);
+
+  @include tablet {
+    padding: 0.5rem 4rem 7rem;
+  }
+
+  @include desktop {
+    padding: 0.5rem 14rem 8rem;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      margin-bottom: 1.5rem;
+    }
+
+    @include desktop {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__title {
+    color: #000;
+    font-weight: 700;
+    margin: 0 auto;
+    text-align: center;
+    padding-right: 1.25rem;
+    font-size: 1.75rem;
+
+    @include tablet {
+      padding-right: 3rem;
+    }
+
+    @include desktop {
+      padding-right: 5rem;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    @include tablet {
+      gap: 2.5rem;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    @include tablet {
+      padding: 0 2rem;
+    }
+
+    @include desktop {
+      padding: 0 4rem;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 auto;
+    font-size: 1.25rem;
+
+    &-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0ebee;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      flex-direction: column;
+      max-width: 800px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    ul {
+      margin-top: 1rem;
+      padding-left: 1.5rem;
+      list-style-type: disc;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    p {
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+  }
+
+  &__video {
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    @include tablet {
+      max-width: 300px;
+    }
+
+    @include desktop {
+      max-width: 500px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #333;
+    }
+  }
+}
