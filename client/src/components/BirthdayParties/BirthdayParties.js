@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 import "./BirthdayParties.scss";
 import BackButton from "../BackButton/BackButton";
 import EventsButton from "../EventsButton/EventsButton";
@@ -19,10 +20,27 @@ const BirthdayParties = () => {
 
   return (
     <div className="birthday-party">
+      <Helmet>
+        <title>Birthday Party Venue in Durham | Step By Step Club</title>
+        <meta
+          name="description"
+          content="Plan your child’s next birthday party at Step By Step Club in Durham. Private party space, decorations, activities, and stress-free setup!"
+        />
+        <meta
+          name="keywords"
+          content="birthday party Durham, kids event space, private birthday venue, indoor party Durham"
+        />
+        <link
+          rel="canonical"
+          href="https://www.stepbystepclub.ca/birthdayparties"
+        />
+      </Helmet>
+
       <div className="birthday-party__header">
         <BackButton />
         <h2 className="birthday-party__title">Birthday Parties</h2>
       </div>
+
       <div className="birthday-party__container">
         <div className="birthday-party__video-container">
           <video
@@ -36,6 +54,7 @@ const BirthdayParties = () => {
             poster={birthdayPackage}
           />
         </div>
+
         {/* Images */}
         <div className="birthday-party__wrapper">
           <img
@@ -51,6 +70,7 @@ const BirthdayParties = () => {
             onClick={() => openImage(birthdayPackage2)}
           />
         </div>
+
         <div className="birthday-party__subtitle-container">
           <p className="birthday-party__subtitle">
             Looking for a stress-free birthday party? S-Town Club, a kids'
@@ -62,6 +82,7 @@ const BirthdayParties = () => {
             play areas and customizable options, every celebration is unique!
           </p>
         </div>
+
         <div className="birthday-party__button">
           <EventsButton />
         </div>
