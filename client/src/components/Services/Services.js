@@ -6,6 +6,7 @@ import birthdayParties from "../../assets/images/birthdayparty3.JPEG";
 import specialEvents from "../../assets/images/specialevents.jpeg";
 import dropInPlay from "../../assets/images/dropinplay4.JPEG";
 import groupfitness from "../../assets/images/groupfitness.jpeg";
+import strollerFitness from "../../assets/images/strollerfitness.jpeg";
 
 const Services = () => {
   const navigate = useNavigate();
@@ -128,6 +129,22 @@ const Services = () => {
           <button
             className="services__button"
             onClick={() => goToServicePage("/privatetraining")}
+          >
+            View Details
+          </button>
+        </div>
+        <div className="services__card">
+          <div className="services__image-wrapper">
+            <img
+              className="services__image"
+              src={strollerFitness}
+              alt="Private training"
+            />
+          </div>
+          <h2 className="services__card-title">Stroller Fitness</h2>
+          <button
+            className="services__button"
+            onClick={() => goToServicePage("/strollerfitness")}
           >
             View Details
           </button>
