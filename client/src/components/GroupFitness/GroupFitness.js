@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 import "./GroupFitness.scss";
 import BackButton from "../BackButton/BackButton";
 import groupFitnessImage from "../../assets/images/groupfitness1.jpeg";
@@ -23,10 +24,27 @@ const GroupFitness = () => {
 
   return (
     <div className="groupfitness">
+      <Helmet>
+        <title>Group Fitness for Moms in Durham | Step By Step Club</title>
+        <meta
+          name="description"
+          content="Get stronger together! Join our energizing group fitness classes designed for moms in Durham. Fun, supportive, and results-driven workouts for all levels."
+        />
+        <meta
+          name="keywords"
+          content="group fitness Durham, mom workout classes, postnatal group fitness, strength training for moms, stepbystepclub"
+        />
+        <link
+          rel="canonical"
+          href="https://www.stepbystepclub.ca/groupfitness"
+        />
+      </Helmet>
+
       <div className="groupfitness__header">
         <BackButton />
         <h2 className="groupfitness__title">Group Fitness</h2>
       </div>
+
       <div className="groupfitness__container">
         <div className="groupfitness__wrapper">
           <div className="groupfitness__image">
@@ -55,6 +73,7 @@ const GroupFitness = () => {
             levels, making it perfect for beginners and experienced participants
             alike.
           </p>
+
           <div className="groupfitness__button-container">
             <button
               className="groupfitness__button"
