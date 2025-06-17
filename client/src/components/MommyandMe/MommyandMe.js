@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
@@ -44,10 +45,26 @@ const MommyandMe = () => {
 
   return (
     <div className="mommyandme">
+      <Helmet>
+        <title>
+          Mommy and Me Fitness Classes in Durham | Step By Step Club
+        </title>
+        <meta
+          name="description"
+          content="Join our Mommy and Me fitness classes in Durham. Meet other moms, stay active, and enjoy quality bonding time with your baby in a supportive community."
+        />
+        <meta
+          name="keywords"
+          content="mommy and me Durham, baby and mom workout, postnatal fitness classes, mom baby exercise, stepbystepclub"
+        />
+        <link rel="canonical" href="https://www.stepbystepclub.ca/mommyandme" />
+      </Helmet>
+
       <div className="mommyandme__header">
         <BackButton />
         <h2 className="mommyandme__title">Mommy and Me</h2>
       </div>
+
       <div className="mommyandme__container">
         <Slider {...settings} className="mommyandme__slider">
           {[mommyandme1, mommyandme2, mommyandme3, mommyandme4].map(
