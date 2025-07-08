@@ -111,7 +111,7 @@ const BirthdayParties = () => {
             className="birthday-party__cta-button"
             onClick={() => {
               window.location.href =
-                "https://www.wellnessliving.com/rs/appointment-new/step_by_step_club?dtu_redirect=2025-07-08+04%3A50%3A26&id_class_tab=3&id_mode=1&k_class_tab=66298&k_service=267220&k_service_category=61177&s_id=kHL0nX";
+                "https://www.wellnessliving.com/rs/appointment-new/step_by_step_club?dtu_redirect=2025-07-08+13%3A41%3A30&id_class_tab=3&id_mode=1&k_class_tab=66298&k_service=267220&k_service_category=61177&s_id=QFXOVY";
             }}
           >
             Connect With Your Event Planner
