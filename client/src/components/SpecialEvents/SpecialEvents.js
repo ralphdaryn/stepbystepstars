@@ -2,7 +2,8 @@ import { useState } from "react";
 import "./SpecialEvents.scss";
 import BackButton from "../BackButton/BackButton";
 import specialEvents from "../../assets/images/mommy-fitness2.jpeg";
-import specialEvents1 from '../../assets/images/soca.jpeg';
+import specialEvents1 from "../../assets/images/soca.jpeg";
+import specialEvents2 from "../../assets/images/baby-dance.jpeg";
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -20,6 +21,13 @@ const SpecialEvents = () => {
   const linkToBuyTickets1 = () => {
     window.open(
       "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=824739&k_class_tab=66373",
+      "_blank"
+    );
+  };
+
+  const linkToBuyTickets2 = () => {
+    window.open(
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=825126&k_class_tab=66299",
       "_blank"
     );
   };
@@ -52,12 +60,29 @@ const SpecialEvents = () => {
         </div>
         <div className="special-events__image-container">
           <img
+            src={specialEvents2}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents2)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets2}
+          >
+            Click Here to Register!
+          </button>
+        </div>
+        <div className="special-events__image-container">
+          <img
             src={specialEvents1}
             alt="Special Event"
             className="special-events__image"
             onClick={() => openMedia(specialEvents1)}
           />
-          <button className="special-events__button" onClick={linkToBuyTickets1}>
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets1}
+          >
             Click Here to Register!
           </button>
         </div>
