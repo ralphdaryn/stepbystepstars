@@ -6,7 +6,7 @@ import Footer from "./components/Footer/Footer";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import BirthdayParties from "./components/BirthdayParties/BirthdayParties";
-import DropinPlay from "./components/DropinPlay/DropinPlay";
+import PrivatePlayGroup from "./components/PrivatePlayGroup/PrivatePlayGroup";
 import SpecialEvents from "./components/SpecialEvents/SpecialEvents";
 import MommyandMe from "./components/MommyandMe/MommyandMe";
 import GroupFitness from "./components/GroupFitness/GroupFitness";
@@ -20,12 +20,11 @@ import Cancel from "./components/StatusPage/Cancel";
 import Alert from "./components/Alert/Alert";
 import StrollerFitness from "./components/StrollerFitness/StrollerFitness";
 
-
 function App() {
   return (
     <Router>
       <div className="App">
-       <Alert/>
+        <Alert />
         <Header />
         <div className="background">
           {Array.from({ length: 50 }, (_, i) => (
@@ -37,7 +36,7 @@ function App() {
           <Route path="/ourstory" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/birthdayparties" element={<BirthdayParties />} />
-          <Route path="/dropinplay" element={<DropinPlay />} />
+          <Route path="/PrivatePlayGroup" element={<PrivatePlayGroup />} />
           <Route path="/specialevents" element={<SpecialEvents />} />
           <Route path="/mommyandme" element={<MommyandMe />} />
           <Route path="/groupfitness" element={<GroupFitness />} />
