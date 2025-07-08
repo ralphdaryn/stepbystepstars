@@ -49,6 +49,7 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+
     @include tablet {
       gap: 2.5rem;
     }
@@ -99,7 +100,6 @@
 
   &__button {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0;
@@ -108,20 +108,20 @@
   &__subtitle {
     margin: 0 auto;
     font-size: 1.25rem;
-  &-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0ebee;
-    border-radius: 12px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    flex-direction: column;
-    align-items: center;
-    max-width: 800px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0ebee;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      flex-direction: column;
+      max-width: 800px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
   }
-}
 }
 
 /* Image Modal Styling */
@@ -161,12 +161,78 @@
   }
 }
 
-/* Fade-in effect */
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+/* FAQ Section */
+.faq {
+  margin-top: 3rem;
+  padding: 1rem;
+  background-color: #f0ebee;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    color: #333;
+  }
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+
+  .faq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #222;
+    padding: 0.5rem 0;
+  }
+
+  .faq-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  .birthday-party__subtext {
+    padding-top: 0.75rem;
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.2;
+
+    ul {
+      margin-top: 0.5rem;
+      padding-left: 1.5rem;
+
+      li {
+        margin-bottom: 0.3rem;
+        list-style-type: disc;
+      }
+    }
   }
 }

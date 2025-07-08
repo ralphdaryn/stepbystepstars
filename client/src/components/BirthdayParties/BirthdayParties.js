@@ -10,12 +10,21 @@ import birthdayVideo from "../../assets/images/bdayparty.mp4";
 const BirthdayParties = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const openImage = (imageSrc) => {
-    setSelectedImage(imageSrc);
-  };
+  const openImage = (imageSrc) => setSelectedImage(imageSrc);
+  const closeImage = () => setSelectedImage(null);
 
-  const closeImage = () => {
-    setSelectedImage(null);
+  const FAQItem = ({ title, children }) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+      <div className="faq-item">
+        <div className="faq-header" onClick={() => setIsOpen(!isOpen)}>
+          <h3 className="birthday__subtitle">{title}</h3>
+          <button className="faq-toggle">{isOpen ? "-" : "+"}</button>
+        </div>
+        {isOpen && <div className="birthday-party__subtext">{children}</div>}
+      </div>
+    );
   };
 
   return (
@@ -55,7 +64,6 @@ const BirthdayParties = () => {
           />
         </div>
 
-        {/* Images */}
         <div className="birthday-party__wrapper">
           <img
             className="birthday-party__image"
@@ -71,16 +79,32 @@ const BirthdayParties = () => {
           />
         </div>
 
-        <div className="birthday-party__subtitle-container">
-          <p className="birthday-party__subtitle">
-            Looking for a stress-free birthday party? S-Town Club, a kids'
-            entertainment center in Durham, offers an all-inclusive experience.
-            With private venues, no need to share space or handle logistics.
-            Packages include food, cakes, decorations, and entertainment like
-            face painting, soft play, and bouncy castles. We handle setup and
-            cleanup, so parents can focus on making memories. With imaginative
-            play areas and customizable options, every celebration is unique!
-          </p>
+        <div className="faq">
+          <h2 className="faq__title">FAQ</h2>
+          <FAQItem title="How many adults are allowed?">
+            Our space can accommodate 350 persons – there is no cap on adults!
+          </FAQItem>
+          <FAQItem title="Can I bring outside food?">
+            Pizza has to be ordered through us; however, you can bring
+            additional outside food at no additional cost.
+          </FAQItem>
+          <FAQItem title="What do you provide for decoration?">
+            For the little stars:
+            <ul>
+              <li>10 plates</li>
+              <li>10 cups</li>
+              <li>10 napkins</li>
+              <li>10 forks</li>
+              <li>Table runner & additional decor</li>
+              <li>Table cloths</li>
+            </ul>
+            <strong>Note:</strong> The number of plates, cups, napkins, etc. is
+            dependent on your package selection.
+          </FAQItem>
+          <FAQItem title="What time slots do you offer?">
+            11:00am–1:00pm, 1:30pm–3:30pm, or 4:00pm–6:00pm — if you’d like a
+            specific time, ask us and we will try our best to accommodate.
+          </FAQItem>
         </div>
 
         <div className="birthday-party__button">
@@ -88,7 +112,6 @@ const BirthdayParties = () => {
         </div>
       </div>
 
-      {/* Full-Screen Image Modal */}
       {selectedImage && (
         <div className="image-modal" onClick={closeImage}>
           <span className="image-modal__close" onClick={closeImage}>
