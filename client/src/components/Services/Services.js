@@ -70,10 +70,10 @@ const Services = () => {
               alt="Face painting"
             />
           </div>
-          <h2 className="services__card-title">Drop in Play</h2>
+          <h2 className="services__card-title">Private Play Group</h2>
           <button
             className="services__button"
-            onClick={() => goToServicePage("/dropinplay")}
+            onClick={() => goToServicePage("/privateplaygroup")}
           >
             View Details
           </button>
