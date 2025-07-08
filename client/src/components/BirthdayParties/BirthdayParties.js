@@ -87,7 +87,7 @@ const BirthdayParties = () => {
             Pizza has to be ordered through us; however, you can bring
             additional outside food at no additional cost.
           </FAQItem>
-          <FAQItem title="What do you provide for decoration?">
+          <FAQItem title="What do you provide for decoration? ">
             For the little stars:
             <ul>
               <li>10 plates</li>
@@ -97,12 +97,13 @@ const BirthdayParties = () => {
               <li>Table runner & additional decor</li>
               <li>Table cloths</li>
             </ul>
+            <br></br>
             <strong>Note:</strong> The number of plates, cups, napkins, etc. is
             dependent on your package selection.
           </FAQItem>
           <FAQItem title="What time slots do you offer?">
-            11:00am–1:00pm, 1:30pm–3:30pm, or 4:00pm–6:00pm — if you’d like a
-            specific time, ask us and we will try our best to accommodate.
+            11:00am–1:00pm, 1:30pm–3:30pm, or 4:00pm–6:00pm <br></br> <br></br>If you’d like a
+            specific time, please ask us and we will try our best to accommodate.
           </FAQItem>
         </div>
 
