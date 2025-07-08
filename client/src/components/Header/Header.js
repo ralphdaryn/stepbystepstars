@@ -106,8 +106,8 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/dropinplay" onClick={() => handleLinkClick("Drop In Play")}>
-                      Drop In Play
+                    <Link to="/privateplaygroup" onClick={() => handleLinkClick("Drop In Play")}>
+                      Private Play Group
                     </Link>
                   </li>
                   <li>
@@ -203,8 +203,8 @@ const Header = () => {
                     </Link>
                   </li>
                   <li className="header__sidebar-dropdown-item">
-                    <Link to="/dropinplay" onClick={() => handleLinkClick("Drop In Play")}>
-                      Drop In Play
+                    <Link to="/privateplaygroup" onClick={() => handleLinkClick("Drop In Play")}>
+                      Private Play Group
                     </Link>
                   </li>
                   <li className="header__sidebar-dropdown-item">
