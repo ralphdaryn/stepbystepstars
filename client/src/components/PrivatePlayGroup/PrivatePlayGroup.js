@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import "./PrivatePlayGroup.scss";
 import BackButton from "../BackButton/BackButton";
 import privatePlayGroupImg from "../../assets/images/dropinplay5.JPEG";
+import privatePlayGroupImg2 from "../../assets/images/dropinplay4.JPEG";
 
 const PrivatePlayGroup = () => {
   return (
@@ -16,7 +17,10 @@ const PrivatePlayGroup = () => {
           name="keywords"
           content="private play group Durham, toddler group play, indoor play area Durham, kids village, pretend play for children"
         />
-        <link rel="canonical" href="https://www.stepbystepclub.ca/privateplaygroup" />
+        <link
+          rel="canonical"
+          href="https://www.stepbystepclub.ca/privateplaygroup"
+        />
       </Helmet>
 
       <div className="privateplaygroup__header">
@@ -27,6 +31,11 @@ const PrivatePlayGroup = () => {
       <div className="privateplaygroup__container">
         <div className="privateplaygroup__wrapper">
           <img
+            src={privatePlayGroupImg2}
+            className="privateplaygroup__image"
+            alt="Child with butterfly face paint"
+          />
+          <img
             src={privatePlayGroupImg}
             className="privateplaygroup__image"
             alt="Child with butterfly face paint"
@@ -35,12 +44,22 @@ const PrivatePlayGroup = () => {
 
         <div className="privateplaygroup__subtitle-container">
           <p className="privateplaygroup__subtitle">
-            Welcome to S TOWN, where kids can explore, play and learn through interactive play! S TOWN - An indoor kids' village designed to foster learning through pretend play. The space includes a variety of miniature environments like a grocery store, salon, veterinary office, and nostalgic 90s café, encouraging role-playing and imagination. It’s all designed so your child can take the lead while you support and encourage their development.
+            Welcome to S TOWN, where kids can explore, play and learn through
+            interactive play! S TOWN - An indoor kids' village designed to
+            foster learning through pretend play. The space includes a variety
+            of miniature environments like a grocery store, salon, veterinary
+            office, and nostalgic 90s café, encouraging role-playing and
+            imagination. It’s all designed so your child can take the lead while
+            you support and encourage their development.
           </p>
           <p className="privateplaygroup__subtitle">
-            S Town promotes key developmental skills such as problem-solving, language development, social interaction, and cognitive flexibility. Through realistic, hands-on activities, children not only have fun but also build real-world awareness, creativity, and emotional skills.
+            S Town promotes key developmental skills such as problem-solving,
+            language development, social interaction, and cognitive flexibility.
+            Through realistic, hands-on activities, children not only have fun
+            but also build real-world awareness, creativity, and emotional
+            skills.
           </p>
-{/* 
+          {/* 
           <div className="privateplaygroup__pricing">
             <h3 className="privateplaygroup__pricing-title">Pricing</h3>
             <ul className="privateplaygroup__pricing-list">
@@ -55,7 +74,8 @@ const PrivatePlayGroup = () => {
           <div className="privateplaygroup__hours">
             <h3 className="privateplaygroup__hours-title">Group Play Hours</h3>
             <p>
-              Group play hours vary due to private bookings. Weekly schedule is posted every Sunday on{" "}
+              Group play hours vary due to private bookings. Weekly schedule is
+              posted every Sunday on{" "}
               <a
                 href="https://www.instagram.com/stownclub/"
                 target="_blank"

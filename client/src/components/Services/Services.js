@@ -4,7 +4,7 @@ import mommyandme from "../../assets/images/mommyandme.jpeg";
 import privatetraining from "../../assets/images/privatetraining.jpg";
 import birthdayParties from "../../assets/images/birthdayparty3.JPEG";
 import specialEvents from "../../assets/images/specialevents.jpeg";
-import dropInPlay from "../../assets/images/dropinplay4.JPEG";
+import dropInPlay from "../../assets/images/playdate.jpeg";
 import groupfitness from "../../assets/images/groupfitness.jpeg";
 import strollerFitness from "../../assets/images/strollerfitness.jpeg";
 
