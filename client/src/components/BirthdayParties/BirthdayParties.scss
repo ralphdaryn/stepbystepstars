@@ -223,7 +223,7 @@
     font-size: 1.15rem;
     font-weight: 600;
     color: #222;
-    gap: .5rem;
+    gap: 0.5rem;
   }
 
   .faq-toggle {
@@ -240,6 +240,24 @@
   }
 
   .birthday-party__subtext {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    pointer-events: none;
+
+    &.visible {
+      max-height: 500px; // You can increase this value if content is taller
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    &.hidden {
+      max-height: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+
     padding-top: 0.75rem;
     font-size: 1rem;
     color: #444;
