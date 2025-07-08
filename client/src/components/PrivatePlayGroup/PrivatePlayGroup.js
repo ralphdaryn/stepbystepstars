@@ -44,38 +44,55 @@ const PrivatePlayGroup = () => {
 
         <div className="privateplaygroup__subtitle-container">
           <p className="privateplaygroup__subtitle">
-            Welcome to S TOWN, where kids can explore, play and learn through
-            interactive play! S TOWN - An indoor kids' village designed to
-            foster learning through pretend play. The space includes a variety
-            of miniature environments like a grocery store, salon, veterinary
-            office, and nostalgic 90s café, encouraging role-playing and
-            imagination. It’s all designed so your child can take the lead while
-            you support and encourage their development.
+            🚨 PRIVATE play dates are now available!
           </p>
           <p className="privateplaygroup__subtitle">
-            S Town promotes key developmental skills such as problem-solving,
-            language development, social interaction, and cognitive flexibility.
-            Through realistic, hands-on activities, children not only have fun
-            but also build real-world awareness, creativity, and emotional
-            skills.
+            Grab your mom friends and head to S TOWN Club — a fully
+            air-conditioned indoor village — for your very own private play
+            group!
           </p>
-          {/* 
-          <div className="privateplaygroup__pricing">
-            <h3 className="privateplaygroup__pricing-title">Pricing</h3>
-            <ul className="privateplaygroup__pricing-list">
-              <li>$16.99 - One child</li>
-              <li>$15.00 - Ages 1-3</li>
-              <li>$10.00 - Kids under 1</li>
-              <li>$5.00 - Extra observer (adult)</li>
-              <li>Each family includes one adult</li>
-            </ul>
-          </div> */}
+          <p className="privateplaygroup__subtitle">
+            Private sessions let your little ones explore freely while you enjoy
+            uninterrupted catch-ups with other moms — no crowds, no
+            overstimulation.
+          </p>
+          <ul className="privateplaygroup__subtitle-list">
+            <li>🌿 No crowds</li>
+            <li>🎯 Ideal for smaller celebrations</li>
+            <li>🧸 Calm, meaningful play for them — and a breather for you</li>
+          </ul>
+          <p className="privateplaygroup__subtitle">
+            <strong>Additional children:</strong> $15 per hour
+          </p>
+
+          <h3 className="privateplaygroup__hours-title">📅 How to Book</h3>
+          <ol className="privateplaygroup__subtitle-list">
+            <li>
+              Email{" "}
+              <a
+                className="privateplaygroup__email-link"
+                href="mailto:stepxstepclub@gmail.com"
+              >
+                stepxstepclub@gmail.com
+              </a>{" "}
+              with your preferred date and time.
+            </li>
+            <li>
+              Our team will confirm availability and next steps within 24 hours.
+            </li>
+          </ol>
+
+          <p className="privateplaygroup__subtitle">
+            We can’t wait to host you and your crew!
+          </p>
 
           <div className="privateplaygroup__hours">
-            <h3 className="privateplaygroup__hours-title">Group Play Hours</h3>
+            <h3 className="privateplaygroup__hours-title">
+              Private Play Group Hours
+            </h3>
             <p>
-              Group play hours vary due to private bookings. Weekly schedule is
-              posted every Sunday on{" "}
+              Group play hours vary due to private bookings. <br />
+              For the latest updates, please check our{" "}
               <a
                 href="https://www.instagram.com/stownclub/"
                 target="_blank"
