@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Helmet } from "react-helmet";
 import "./BirthdayParties.scss";
 import BackButton from "../BackButton/BackButton";
-import EventsButton from "../EventsButton/EventsButton";
 import birthdayPackage from "../../assets/images/birthdaypackage.jpeg";
 import birthdayPackage2 from "../../assets/images/birthdaypackage2.jpeg";
 import birthdayVideo from "../../assets/images/bdayparty.mp4";
@@ -108,7 +107,15 @@ const BirthdayParties = () => {
         </div>
 
         <div className="birthday-party__button">
-          <EventsButton />
+          <button
+            className="birthday-party__cta-button"
+            onClick={() => {
+              window.location.href =
+                "https://www.wellnessliving.com/rs/appointment-new/step_by_step_club?dtu_redirect=2025-07-08+04%3A50%3A26&id_class_tab=3&id_mode=1&k_class_tab=66298&k_service=267220&k_service_category=61177&s_id=kHL0nX";
+            }}
+          >
+            Connect With Your Event Planner
+          </button>
         </div>
       </div>
 

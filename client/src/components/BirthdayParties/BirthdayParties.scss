@@ -105,6 +105,28 @@
     margin: 0;
   }
 
+  &__cta-button {
+    background-color: #a864c1;
+    border-radius: 8px;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    height: 40px;
+    line-height: 20px;
+    padding: 10px 16px;
+    text-align: center;
+    transition: background-color 100ms;
+    user-select: none;
+    touch-action: manipulation;
+    margin-bottom: 0.5rem;
+
+    &:hover {
+      background-color: #86509a;
+    }
+  }
+
   &__subtitle {
     margin: 0 auto;
     font-size: 1.25rem;
@@ -124,7 +146,6 @@
   }
 }
 
-/* Image Modal Styling */
 .image-modal {
   position: fixed;
   top: 0;
@@ -170,7 +191,6 @@
   }
 }
 
-/* FAQ Section */
 .faq {
   margin-top: 3rem;
   padding: 1rem;
