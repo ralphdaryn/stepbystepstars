@@ -166,3 +166,25 @@
     margin-top: 1rem;
   }
 }
+
+.birthday-party__cta-button {
+  background-color: #a864c1;
+  border-radius: 8px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  height: 40px;
+  line-height: 20px;
+  padding: 10px 16px;
+  text-align: center;
+  transition: background-color 100ms;
+  user-select: none;
+  touch-action: manipulation;
+  margin-bottom: 0.5rem;
+
+  &:hover {
+    background-color: #86509a;
+  }
+}
