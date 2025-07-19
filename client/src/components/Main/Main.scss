@@ -2,12 +2,9 @@
 @use "../../styles/partials/mixins" as *;
 
 .main {
-  padding-top: 11rem;
+  padding-top: 9rem;
   @include tablet {
-    padding-top: 23rem;
-  }
-  @include desktop {
-    padding-top: 2rem;
+    padding-top: 21rem;
   }
   &__text {
     font-size: 1.8rem;

@@ -16,16 +16,14 @@
     align-items: center;
     padding: 1.5rem;
     position: fixed;
-    top: 3rem;
+    top: 0;
     z-index: 9998;
     @include tablet {
       padding: 2rem;
-      top: 1.5rem;
     }
     @include desktop {
       justify-content: center;
       gap: 1rem;
-      top: 1.75rem;
     }
 
     .background {
@@ -688,11 +686,9 @@
     position: fixed;
     top: 110px;
     z-index: 100;
-    margin-top: 2.5rem;
 
     @include tablet {
       display: block;
-      margin-top: 1.5rem;
     }
     &-list {
       display: flex;
