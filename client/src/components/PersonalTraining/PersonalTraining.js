@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import "./PersonalTraining.scss";
 import BackButton from "../BackButton/BackButton";
-import personalTrainingVideo from "../../assets/images/privatetraining.mp4";
 import img1 from "../../assets/images/personal-training.JPEG";
 import img2 from "../../assets/images/personal-training2.JPEG";
 import img3 from "../../assets/images/personal-training3.JPEG";
@@ -38,10 +37,6 @@ const PersonalTraining = () => {
       </div>
 
       <div className="personal-training__media">
-        <video className="personal-training__video" controls autoPlay muted>
-          <source src={personalTrainingVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
         <div className="personal-training__carousel">
           <button
             onClick={handlePrev}
