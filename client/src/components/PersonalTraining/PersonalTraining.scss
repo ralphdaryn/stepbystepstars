@@ -1,0 +1,161 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.personal-training {
+  padding: 1rem 1.5rem;
+  margin-top: 6rem;
+  background-color: rgba(255, 255, 255, 0.4);
+
+  @include tablet {
+    padding: 2rem 3rem;
+  }
+
+  @include desktop {
+    padding: 3rem 10rem;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    @include tablet {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    color: #000;
+    font-weight: 700;
+    margin: 0 auto;
+    padding-right: 1rem;
+    font-size: 2rem;
+  }
+
+  &__media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    @include tablet {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+  }
+
+  &__video {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    @include tablet {
+      max-width: 300px;
+    }
+
+    @include desktop {
+      max-width: 300px;
+    }
+  }
+
+  &__carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    &-image {
+      width: 100%;
+      max-width: 800px;
+      max-height: 500px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    &-button {
+      display: none;
+    }
+  }
+
+  &__content {
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: left;
+    padding: 0 1rem;
+
+    @include tablet {
+      margin-top: 3rem;
+    }
+
+    @include desktop {
+      margin-top: 4rem;
+    }
+  }
+
+  &__text {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      font-size: 1.1rem;
+    }
+
+    @include desktop {
+      font-size: 1.15rem;
+    }
+  }
+
+  &__list {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: #444;
+
+    li {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+
+      @include tablet {
+        font-size: 1.05rem;
+      }
+
+      @include desktop {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  &__button {
+    background-color: #a864c1;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+
+    &:hover {
+      background-color: #86509a;
+    }
+
+    @include tablet {
+      font-size: 1.1rem;
+    }
+
+    @include desktop {
+      font-size: 1.15rem;
+    }
+    &-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

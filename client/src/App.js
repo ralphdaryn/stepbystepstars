@@ -10,7 +10,7 @@ import PrivatePlayGroup from "./components/PrivatePlayGroup/PrivatePlayGroup";
 import SpecialEvents from "./components/SpecialEvents/SpecialEvents";
 import MommyandMe from "./components/MommyandMe/MommyandMe";
 import GroupFitness from "./components/GroupFitness/GroupFitness";
-import PrivateTraining from "./components/PrivateTraining/PrivateTraining";
+import PersonalTraining from "./components/PersonalTraining/PersonalTraining";
 import Events from "./components/Events/Events";
 import WaiverForm from "./components/WaiverForm/WaiverForm";
 import WaiverFormKids from "./components/WaiverFormKids/WaiverFormKids";
@@ -40,7 +40,7 @@ function App() {
           <Route path="/specialevents" element={<SpecialEvents />} />
           <Route path="/mommyandme" element={<MommyandMe />} />
           <Route path="/groupfitness" element={<GroupFitness />} />
-          <Route path="/privatetraining" element={<PrivateTraining />} />
+          <Route path="/personaltraining" element={<PersonalTraining />} />
           <Route path="/strollerfitness" element={<StrollerFitness />} />
           <Route path="/events" element={<Events />} />
           <Route path="/waiver" element={<WaiverForm />} />

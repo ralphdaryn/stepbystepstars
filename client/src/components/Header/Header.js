@@ -143,8 +143,8 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/privatetraining" onClick={() => handleLinkClick("Private Training")}>
-                      Private Training
+                    <Link to="/personaltraining" onClick={() => handleLinkClick("Private Training")}>
+                      Personal Training
                     </Link>
                   </li>
                   <li>
@@ -234,8 +234,8 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/privatetraining" onClick={() => handleLinkClick("Private Training")}>
-                      Private Training
+                    <Link to="/personaltraining" onClick={() => handleLinkClick("Private Training")}>
+                      Personal Training
                     </Link>
                   </li>
                   <li>
