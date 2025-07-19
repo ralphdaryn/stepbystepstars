@@ -1,9 +1,10 @@
 import { useState } from "react";
 import "./SpecialEvents.scss";
 import BackButton from "../BackButton/BackButton";
-import specialEvents from "../../assets/images/mommy-fitness2.jpeg";
+import specialEvents from "../../assets/images/specialevents3.jpeg";
 import specialEvents1 from "../../assets/images/soca.jpeg";
 import specialEvents2 from "../../assets/images/baby-dance.jpeg";
+import specialEvents3 from "../../assets/images/specialevents2.jpeg";
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -85,6 +86,20 @@ const SpecialEvents = () => {
           >
             Click Here to Register!
           </button>
+        </div>
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents3}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents3)}
+          />
+          <a
+            href="mailto:stepbystepstars@gmail.com"
+            className="special-events__button"
+          >
+            Click to Register!
+          </a>
         </div>
       </div>
 
