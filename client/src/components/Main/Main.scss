@@ -6,6 +6,9 @@
   @include tablet {
     padding-top: 21rem;
   }
+  @include desktop {
+    padding-top: 8rem;
+  }
   &__text {
     font-size: 1.8rem;
     text-align: center;
