@@ -49,16 +49,16 @@ const GroupFitness = () => {
         <div className="groupfitness__wrapper">
           <div className="groupfitness__image">
             <img
-              src={groupFitnessImage}
-              alt="Group Fitness"
-              className="groupfitness__image-section"
-              onClick={() => openImage(groupFitnessImage)}
-            />
-            <img
               src={groupFitnessImage2}
               alt="Group Fitness Member"
               className="groupfitness__image-section"
               onClick={() => openImage(groupFitnessImage2)}
+            />
+               <img
+              src={groupFitnessImage}
+              alt="Group Fitness"
+              className="groupfitness__image-section"
+              onClick={() => openImage(groupFitnessImage)}
             />
           </div>
 
