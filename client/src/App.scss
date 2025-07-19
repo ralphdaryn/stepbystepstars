@@ -3,17 +3,14 @@
 .App {
     // Base mobile layout
     margin-top: 10rem; 
-    margin-bottom: 1rem;
   
     // Tablet
     @media (min-width: 768px) {
       margin-top: 9rem;
-      margin-bottom: 1rem;
     }
   
     // Desktop
     @media (min-width: 1280px) {
       margin-top: 8.5rem;
-      margin-bottom: 1rem;
     }
   }
