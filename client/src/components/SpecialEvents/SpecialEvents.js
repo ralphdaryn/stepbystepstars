@@ -3,6 +3,7 @@ import "./SpecialEvents.scss";
 import BackButton from "../BackButton/BackButton";
 import specialEvents from "../../assets/images/specialevents3.jpeg";
 import specialEvents3 from "../../assets/images/specialevents2.jpeg";
+import specialEvents2 from "../../assets/images/glowdark_soca.jpeg";
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -13,6 +14,12 @@ const SpecialEvents = () => {
   const linkToBuyTickets = () => {
     window.open(
       "    https://www.wellnessliving.com/rs/catalog-list.html?a_shop_category%5B%5D=1102551&is_filter=1&k_business=651877",
+      "_blank"
+    );
+  };
+  const linkToBuyTickets2 = () => {
+    window.open(
+      "      https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=831803",
       "_blank"
     );
   };
@@ -40,6 +47,20 @@ const SpecialEvents = () => {
             onClick={() => openMedia(specialEvents)}
           />
           <button className="special-events__button" onClick={linkToBuyTickets}>
+            Click Here to Register!
+          </button>
+        </div>
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents2}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents2)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets2}
+          >
             Click Here to Register!
           </button>
         </div>
