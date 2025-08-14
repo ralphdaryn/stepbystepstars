@@ -1,16 +1,5 @@
 @use './styles/partials/globals' as *;
 
 .App {
-    // Base mobile layout
-    margin-top: 8rem; 
-  
-    // Tablet
-    @media (min-width: 768px) {
-      margin-top: 9rem;
-    }
-  
-    // Desktop
-    @media (min-width: 1280px) {
-      margin-top: 8.5rem;
-    }
+    margin-top: 8rem;
   }

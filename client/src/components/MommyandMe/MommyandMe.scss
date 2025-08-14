@@ -1,140 +1,432 @@
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/mixins" as *;
 
-.mommyandme {
-  margin-top: 7rem;
-  padding: 0.25rem 2rem;
-  background-color: rgba(255, 255, 255, 0.4);
-  @include tablet {
-    padding: 0.5rem 4rem;
-  }
+/* ---------------------------- */
+/* Utilities                    */
+/* ---------------------------- */
+.u-nowrap {
+  white-space: nowrap;
+}
+.u-nowrap--fancy {
   @include desktop {
-    padding: 0.5rem 14rem 4rem;
+    background: linear-gradient(90deg, #a864c1 0%, #6a4f7b 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
   }
+}
+.u-nowrap--glow {
+  @include desktop {
+    position: relative;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -0.4rem;
+      width: 72%;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(
+        90deg,
+        rgba(168, 100, 193, 0.5),
+        rgba(106, 79, 123, 0.35)
+      );
+      filter: blur(0.2px);
+    }
+  }
+}
 
+/* Shared placeholder so __layout and __grid can both use it */
+%layout-base {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* ---------------------------- */
+/* Page                         */
+/* ---------------------------- */
+.mommyandme {
+  margin-top: 3rem;
+  padding: 1rem;
+  background: radial-gradient(
+      1200px 600px at 10% -10%,
+      rgba(168, 100, 193, 0.06),
+      transparent 60%
+    ),
+    #f0ebee;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Header */
   &__header {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: .75rem;
     align-items: center;
-    margin-bottom: 1rem;
-  }
+    margin-bottom: 0.75rem;
 
-  &__title {
-    text-align: center;
-    color: #000;
-    font-weight: 700;
-    margin: 0 auto;
-    padding-right: 0.5rem;
-    font-size: 1.75rem;
+    /* subtle divider */
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -0.55rem;
+      width: 86%;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 0, 0, 0.08),
+        transparent
+      );
+    }
+
     @include tablet {
-      padding-right: 4rem;
+      gap: 8rem;
+      justify-content: flex-start;
+    }
+    @include desktop {
+      gap: 10rem;
     }
   }
 
+  &__header-left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    margin: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+  }
+
+  /* HERO */
+  &__hero {
+    position: relative;
+  }
+
   &__slider {
-    margin-bottom: 1.5rem;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.25rem;
+
+    /* Make slick respect the slide height */
+    .slick-track {
+      display: flex;
+      align-items: stretch;
+    }
+    .slick-slide {
+      height: auto;
+      display: flex;
+    }
+    .slick-slide > div {
+      display: flex;
+      width: 100%;
+    }
+
+    /* prettier dots */
+    .slick-dots li button:before {
+      font-size: 8px;
+      opacity: 0.3;
+      color: #6a4f7b;
+    }
+    .slick-dots li.slick-active button:before {
+      opacity: 0.9;
+      color: #a864c1;
+    }
   }
 
   &__slide {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #f6f3f8;
+    width: 100%;
   }
 
   &__image {
     width: 100%;
-    height: 22.5rem;
+    height: 26rem;
     object-fit: cover;
-    border-radius: 8px;
+    display: block;
+
     @include tablet {
       object-fit: contain;
     }
   }
 
-  &__wrapper {
+  &__badge {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    padding: 0.4rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+  }
+
+  /* CONTENT */
+  &__content {
+    max-width: 72rem;
+    margin: 0 auto;
+  }
+
+  &__intro {
+    margin: 0 0 1rem;
+    text-align: center;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+    }
+  }
+
+  &__kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    margin: 0 0 0.25rem;
+    color: #6a4f7b;
+  }
+
+  &__heading {
+    margin: 0 0 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+  }
+
+  /* Preferred class */
+  &__layout {
+    @extend %layout-base;
+  }
+  /* Backward-compatible alias so __grid still works */
+  &__grid {
+    @extend %layout-base;
+  }
+
+  &__panel-title {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    /* tasteful underline */
+    background-image: linear-gradient(
+      120deg,
+      rgba(168, 100, 193, 0.25),
+      rgba(168, 100, 193, 0)
+    );
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 0.35em;
+    padding-bottom: 0.15rem;
+  }
+
+  &__text {
+    margin: 0 0 0.5rem;
+    line-height: 1.55;
+  }
+  &__note {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+  &__brand {
+    color: #a864c1;
+    font-weight: 800;
+  }
+
+  &__list {
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+  &__list-item {
+    line-height: 1.6;
+  }
+
+  &__checklist {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  &__checklist-item {
+    position: relative;
+    padding-left: 1.6rem;
+    line-height: 1.6;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55rem;
+      width: 0.85rem;
+      height: 0.85rem;
+      border-radius: 50%;
+      border: 2px solid #a864c1;
+      box-shadow: inset 0 0 0 4px rgba(168, 100, 193, 0.2);
+    }
+  }
+
+  &__cta-wrap {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    @include tablet {
-      align-items: flex-start;
-      width: 36rem;
-      margin: 0 auto;
-    }
-    @include desktop {
-      width: 50rem;
-    }
-  }
-
-  &__subtitle {
-    color: #000;
-    text-align: left;
-    margin: 0.25rem 0;
-    @include tablet {
-      font-size: 1.05rem;
-      line-height: 1.4;
-    }
-    @include desktop {
-      font-size: 1.25rem;
-    }
-  }
-
-  &__widget {
-    margin: 2rem 0;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-
-    iframe {
-      max-width: 100%;
-      border: none;
-    }
-
-    @include tablet {
-      margin: 2rem auto;
-      width: 36rem;
-    }
-
-    @include desktop {
-      width: 50rem;
-    }
-  }
-
-  &__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
+    gap: 0.5rem;
     margin-top: 1rem;
-    margin-bottom: 1rem;
-    background-color: #a864c1;
-    border-radius: 8px;
+  }
+
+  &__cta {
+    appearance: none;
     border: none;
-    color: #ffffff;
+    background: #a864c1;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1rem;
+    border-radius: 999px;
+    padding: 0.85rem 1.25rem;
     cursor: pointer;
-    font-size: 14px;
-    font-weight: 700;
-    height: 40px;
-    line-height: 20px;
-    padding: 10px 16px;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 100ms;
-    user-select: none;
-    touch-action: manipulation;
+    transition: transform 140ms ease, box-shadow 140ms ease,
+      background 140ms ease;
+    box-shadow: 0 8px 20px rgba(168, 100, 193, 0.35);
 
     &:hover {
-      background-color: #86509a;
+      background: #8e57aa;
+      transform: translateY(-1px);
+    }
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 14px rgba(168, 100, 193, 0.35);
+    }
+    &:focus-visible {
+      outline: 3px solid rgba(168, 100, 193, 0.35);
+      outline-offset: 3px;
+    }
+  }
+
+  &__link {
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* Cards */
+  .card {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  .card--soft {
+    background: linear-gradient(180deg, #ffffff 0%, #fbf8fe 100%);
+  }
+  .card--accent {
+    border-color: rgba(168, 100, 193, 0.28);
+    box-shadow: 0 10px 26px rgba(168, 100, 193, 0.12);
+  }
+
+  /* Tablet */
+  @include tablet {
+    &__title {
+      font-size: 2rem;
     }
 
-    &-link {
-      color: inherit;
-      text-decoration: none;
-      display: block;
-      width: 100%;
-      height: 100%;
-      text-align: center;
+    &__layout,
+    &__grid {
+      flex-direction: row;
+      gap: 1rem;
+      align-items: stretch; /* equal-height cards */
+    }
+
+    &__panel {
+      flex: 1 1 calc(50% - 1rem);
+      max-width: calc(50% - 1rem);
+    }
+
+    &__panel-title {
+      font-size: 1.1rem;
+    }
+  }
+
+  /* Desktop */
+  @include desktop {
+    &__slider {
+      margin-bottom: 1.5rem;
+    }
+
+    &__layout,
+    &__grid {
+      flex-wrap: nowrap;
+      gap: 1.25rem;
+    }
+
+    /* -------- Desktop: make ALL cards bigger -------- */
+    &__panel {
+      /* switch from 3 columns to 2 columns for larger boxes */
+      flex: 1 1 calc(50% - 1.25rem);
+      max-width: calc(50% - 1.25rem);
+
+      /* more breathing room inside each card */
+      padding: 1.5rem;
+    }
+
+    &__panel-title {
+      font-size: 1.25rem;
+    }
+
+    &__text,
+    &__note,
+    &__list-item,
+    &__checklist-item {
+      font-size: 1.05rem; /* bigger body text */
+      line-height: 1.7;
+    }
+
+    &__checklist-item::before {
+      width: 1rem; /* bigger bullet ring to match text */
+      height: 1rem;
+      top: 0.55rem;
+    }
+
+    &__heading {
+      font-size: 1.75rem;
+    }
+
+    &__cta-wrap {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  /* Motion safety */
+  @media (prefers-reduced-motion: reduce) {
+    &__cta,
+    .card,
+    &__intro {
+      transition: none;
     }
   }
 }
