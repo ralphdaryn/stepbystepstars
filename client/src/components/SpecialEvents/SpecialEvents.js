@@ -1,9 +1,10 @@
 import { useState } from "react";
 import "./SpecialEvents.scss";
 import BackButton from "../BackButton/BackButton";
-import specialEvents from "../../assets/images/specialevents3.jpeg";
+import specialEvents from "../../assets/images/mommy-fitness.jpeg";
 import specialEvents3 from "../../assets/images/specialevents2.jpeg";
-import specialEvents2 from "../../assets/images/glowdark_soca.jpeg";
+import specialEvents2 from "../../assets/images/soca-dance.jpeg";
+import specialEvents1 from "../../assets/images/smallGroup.jpeg";
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -13,13 +14,20 @@ const SpecialEvents = () => {
 
   const linkToBuyTickets = () => {
     window.open(
-      "    https://www.wellnessliving.com/rs/catalog-list.html?a_shop_category%5B%5D=1102551&is_filter=1&k_business=651877",
+      " https://www.wellnessliving.com/rs/catalog-list.html?a_shop_category%5B%5D=1102551&a_shop_category%5B%5D=1102664&is_filter=1&k_business=651877",
       "_blank"
     );
   };
   const linkToBuyTickets2 = () => {
     window.open(
-      "      https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=831803",
+      "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=844181",
+      "_blank"
+    );
+  };
+
+  const linkToBuyTickets3 = () => {
+    window.open(
+      "https://www.wellnessliving.com/schedule/step_by_step_club?id_class_tab=1&k_class=844005#dt_date=2025-09-11&f_distance=50&f_latitude=&f_longitude=&filter=1&&id_screen=3&is_appointment_cancel_recurring=&is_appointment_cancel_single=&is_class_cancel=0&&&is_remove=0&is_week=1&&id_screen=3&k_business=651877&&&k_class_tab=0&&is_location=1&k_promotion=0&k_skin=0&&&s_period=week&&sort=&a_day[]=7%2C1%2C2%2C3%2C4%2C5%2C6&a_class[]=844005&a_staff[]=656393%2C660586%2C660587%2C660588&a_time[]=1%2C2%2C3&a_virtual[]=2%2C1&a_location[]=426598",
       "_blank"
     );
   };
@@ -77,6 +85,20 @@ const SpecialEvents = () => {
           >
             Click to Register!
           </a>
+        </div>
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents1}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents1)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets3}
+          >
+            Click Here to Register!
+          </button>
         </div>
       </div>
 
