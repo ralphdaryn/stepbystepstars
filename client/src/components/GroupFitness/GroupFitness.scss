@@ -55,6 +55,7 @@
     flex-direction: column;
     gap: 1rem;
     width: 100%;
+    cursor: pointer;
     @include tablet {
       gap: 3rem;
     }
