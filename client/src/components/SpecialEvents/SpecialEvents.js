@@ -49,6 +49,20 @@ const SpecialEvents = () => {
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
+            src={specialEvents3}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents3)}
+          />
+          <a
+            href="mailto:stepbystepstars@gmail.com"
+            className="special-events__button"
+          >
+            Click to Register!
+          </a>
+        </div>
+        <div className="special-events__image-container">
+          <img
             src={specialEvents}
             alt="Special Event"
             className="special-events__image"
@@ -71,20 +85,6 @@ const SpecialEvents = () => {
           >
             Click Here to Register!
           </button>
-        </div>
-        <div className="special-events__image-container">
-          <img
-            src={specialEvents3}
-            alt="Special Event"
-            className="special-events__image"
-            onClick={() => openMedia(specialEvents3)}
-          />
-          <a
-            href="mailto:stepbystepstars@gmail.com"
-            className="special-events__button"
-          >
-            Click to Register!
-          </a>
         </div>
         <div className="special-events__image-container">
           <img
