@@ -1,10 +1,10 @@
-import { useState } from "react";
 import "./SpecialEvents.scss";
+import { useState } from "react";
 import BackButton from "../BackButton/BackButton";
 import specialEvents from "../../assets/images/mommy-fitness.jpeg";
-import specialEvents3 from "../../assets/images/specialevents2.jpeg";
 import specialEvents2 from "../../assets/images/soca-dance.jpeg";
 import specialEvents1 from "../../assets/images/smallGroup.jpeg";
+import specialEvents3 from '../../assets/images/halloween.jpeg';
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -32,6 +32,14 @@ const SpecialEvents = () => {
     );
   };
 
+  
+  const linkToBuyTickets4 = () => {
+    window.open(
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=859474&k_class_tab=66373",
+      "_blank"
+    );
+  };
+
   return (
     <div className="special-events">
       <div className="special-events__header">
@@ -47,32 +55,7 @@ const SpecialEvents = () => {
       </div>
 
       <div className="special-events__card-wrapper">
-        <div className="special-events__image-container">
-          <img
-            src={specialEvents3}
-            alt="Special Event"
-            className="special-events__image"
-            onClick={() => openMedia(specialEvents3)}
-          />
-          <a
-            href="mailto:stepbystepstars@gmail.com"
-            className="special-events__button"
-          >
-            Click to Register!
-          </a>
-        </div>
-        <div className="special-events__image-container">
-          <img
-            src={specialEvents}
-            alt="Special Event"
-            className="special-events__image"
-            onClick={() => openMedia(specialEvents)}
-          />
-          <button className="special-events__button" onClick={linkToBuyTickets}>
-            Click Here to Register!
-          </button>
-        </div>
-        <div className="special-events__image-container">
+      <div className="special-events__image-container">
           <img
             src={specialEvents2}
             alt="Special Event"
@@ -83,6 +66,31 @@ const SpecialEvents = () => {
             className="special-events__button"
             onClick={linkToBuyTickets2}
           >
+            Click Here to Register!
+          </button>
+        </div>
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents3}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents3)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets4}
+          >
+            Click Here to Register!
+          </button>
+        </div>
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents)}
+          />
+          <button className="special-events__button" onClick={linkToBuyTickets}>
             Click Here to Register!
           </button>
         </div>
