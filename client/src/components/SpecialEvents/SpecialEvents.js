@@ -2,9 +2,9 @@ import "./SpecialEvents.scss";
 import { useState } from "react";
 import BackButton from "../BackButton/BackButton";
 import specialEvents from "../../assets/images/mommy-fitness.jpeg";
-import specialEvents2 from "../../assets/images/soca-dance.jpeg";
 import specialEvents1 from "../../assets/images/smallGroup.jpeg";
-import specialEvents3 from '../../assets/images/halloween.jpeg';
+import specialEvents3 from "../../assets/images/halloween.jpeg";
+import specialEvents4 from "../../assets/images/music-class.jpeg";
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -18,13 +18,7 @@ const SpecialEvents = () => {
       "_blank"
     );
   };
-  const linkToBuyTickets2 = () => {
-    window.open(
-      "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=844181",
-      "_blank"
-    );
-  };
-
+  
   const linkToBuyTickets3 = () => {
     window.open(
       "https://www.wellnessliving.com/schedule/step_by_step_club?id_class_tab=1&k_class=844005#dt_date=2025-09-11&f_distance=50&f_latitude=&f_longitude=&filter=1&&id_screen=3&is_appointment_cancel_recurring=&is_appointment_cancel_single=&is_class_cancel=0&&&is_remove=0&is_week=1&&id_screen=3&k_business=651877&&&k_class_tab=0&&is_location=1&k_promotion=0&k_skin=0&&&s_period=week&&sort=&a_day[]=7%2C1%2C2%2C3%2C4%2C5%2C6&a_class[]=844005&a_staff[]=656393%2C660586%2C660587%2C660588&a_time[]=1%2C2%2C3&a_virtual[]=2%2C1&a_location[]=426598",
@@ -32,10 +26,16 @@ const SpecialEvents = () => {
     );
   };
 
-  
   const linkToBuyTickets4 = () => {
     window.open(
-      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=859474&k_class_tab=66373",
+      "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=859478",
+      "_blank"
+    );
+  };
+
+  const linkToBuyTickets5 = () => {
+    window.open(
+      "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=860045",
       "_blank"
     );
   };
@@ -55,16 +55,16 @@ const SpecialEvents = () => {
       </div>
 
       <div className="special-events__card-wrapper">
-      <div className="special-events__image-container">
+        <div className="special-events__image-container">
           <img
-            src={specialEvents2}
+            src={specialEvents4}
             alt="Special Event"
             className="special-events__image"
-            onClick={() => openMedia(specialEvents2)}
+            onClick={() => openMedia(specialEvents4)}
           />
           <button
             className="special-events__button"
-            onClick={linkToBuyTickets2}
+            onClick={linkToBuyTickets5}
           >
             Click Here to Register!
           </button>
