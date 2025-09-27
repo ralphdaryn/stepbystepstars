@@ -114,13 +114,6 @@ const MommyandMe = () => {
             >
               Enroll Today
             </button>
-            <a
-              className="mommyandme__link"
-              href="#mommyandme-details"
-              aria-label="Jump to program details"
-            >
-              View details
-            </a>
           </div>
         </div>
 
