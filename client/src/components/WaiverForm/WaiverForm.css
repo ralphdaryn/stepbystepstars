@@ -1,0 +1,177 @@
+.waiver-form {
+  max-width: 100%;
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+}
+@media (min-width: 768px) {
+  .waiver-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1280px) {
+  .waiver-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem;
+  }
+}
+.waiver-form__button {
+  width: 6rem;
+  position: relative;
+  top: 120px;
+  left: 20px;
+}
+@media (min-width: 768px) {
+  .waiver-form__button {
+    left: 80px;
+  }
+}
+@media (min-width: 1280px) {
+  .waiver-form__button {
+    left: 230px;
+  }
+}
+.waiver-form h2 {
+  font-size: 1.85rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .waiver-form h2 {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .waiver-form h2 {
+    font-size: 2.5rem;
+  }
+}
+.waiver-form h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+.waiver-form label {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: #333;
+}
+@media (min-width: 768px) {
+  .waiver-form label {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .waiver-form label {
+    font-size: 1.2rem;
+  }
+}
+.waiver-form label input {
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .waiver-form label input {
+    padding: 0.25rem;
+  }
+}
+.waiver-form__content {
+  max-height: 400px;
+  overflow-y: scroll;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  background-color: #f9f9f9;
+}
+@media (min-width: 768px) {
+  .waiver-form__content {
+    max-height: 400px;
+  }
+}
+@media (min-width: 1280px) {
+  .waiver-form__content {
+    max-height: 500px;
+  }
+}
+.waiver-form__content p,
+.waiver-form__content ol,
+.waiver-form__content li {
+  margin-bottom: 1rem;
+}
+.waiver-form__content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .waiver-form__content h3 {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .waiver-form__content h3 {
+    font-size: 1.8rem;
+  }
+}
+.waiver-form .sigCanvas {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 150px;
+}
+@media (min-width: 768px) {
+  .waiver-form .sigCanvas {
+    height: 200px;
+  }
+}
+@media (min-width: 1280px) {
+  .waiver-form .sigCanvas {
+    height: 250px;
+  }
+}
+.waiver-form button {
+  padding: 0.75rem;
+  margin-top: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.waiver-form button:hover {
+  background-color: #0056b3;
+}
+.waiver-form button:first-of-type {
+  background-color: #ccc;
+  margin-bottom: 1rem;
+}
+.waiver-form button:first-of-type:hover {
+  background-color: #999;
+}
+@media (min-width: 768px) {
+  .waiver-form button {
+    font-size: 1.1rem;
+    padding: 0.75rem;
+  }
+}
+@media (min-width: 1280px) {
+  .waiver-form button {
+    font-size: 1.2rem;
+    padding: 0.75rem;
+  }
+}/*# sourceMappingURL=WaiverForm.css.map */

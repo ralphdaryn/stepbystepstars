@@ -1,0 +1,368 @@
+/* ---------------------------- */
+/* Utilities                    */
+/* ---------------------------- */
+.u-nowrap {
+  white-space: nowrap;
+}
+
+@media (min-width: 1280px) {
+  .u-nowrap--fancy {
+    background: linear-gradient(90deg, #a864c1 0%, #6a4f7b 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+}
+
+@media (min-width: 1280px) {
+  .u-nowrap--glow {
+    position: relative;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+  }
+  .u-nowrap--glow::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -0.4rem;
+    width: 72%;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(168, 100, 193, 0.5), rgba(106, 79, 123, 0.35));
+    filter: blur(0.2px);
+  }
+}
+
+/* Shared placeholder so __layout and __grid can both use it */
+.mommyandme__grid, .mommyandme__layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* ---------------------------- */
+/* Page                         */
+/* ---------------------------- */
+.mommyandme {
+  margin-top: 3rem;
+  padding: 1rem;
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(168, 100, 193, 0.06), transparent 60%), #f0ebee;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  /* Header */
+  /* HERO */
+  /* CONTENT */
+  /* Preferred class */
+  /* Backward-compatible alias so __grid still works */
+  /* Cards */
+  /* Tablet */
+  /* Desktop */
+  /* Motion safety */
+}
+.mommyandme__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  /* subtle divider */
+  position: relative;
+}
+.mommyandme__header::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -0.55rem;
+  width: 86%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.08), transparent);
+}
+@media (min-width: 768px) {
+  .mommyandme__header {
+    gap: 8rem;
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 1280px) {
+  .mommyandme__header {
+    gap: 10rem;
+  }
+}
+.mommyandme__header-left {
+  display: flex;
+  align-items: center;
+}
+.mommyandme__title {
+  margin: 0;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+.mommyandme__hero {
+  position: relative;
+}
+.mommyandme__slider {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.25rem;
+  /* Make slick respect the slide height */
+  /* prettier dots */
+}
+.mommyandme__slider .slick-track {
+  display: flex;
+  align-items: stretch;
+}
+.mommyandme__slider .slick-slide {
+  height: auto;
+  display: flex;
+}
+.mommyandme__slider .slick-slide > div {
+  display: flex;
+  width: 100%;
+}
+.mommyandme__slider .slick-dots li button:before {
+  font-size: 8px;
+  opacity: 0.3;
+  color: #6a4f7b;
+}
+.mommyandme__slider .slick-dots li.slick-active button:before {
+  opacity: 0.9;
+  color: #a864c1;
+}
+.mommyandme__slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f6f3f8;
+  width: 100%;
+}
+.mommyandme__image {
+  width: 100%;
+  height: 26rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+@media (min-width: 768px) {
+  .mommyandme__image {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
+.mommyandme__badge {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  padding: 0.4rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+}
+.mommyandme__content {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+.mommyandme__intro {
+  margin: 0 0 1rem;
+  text-align: center;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.mommyandme__intro:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+}
+.mommyandme__kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  margin: 0 0 0.25rem;
+  color: #6a4f7b;
+}
+.mommyandme__heading {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+.mommyandme__panel-title {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  /* tasteful underline */
+  background-image: linear-gradient(120deg, rgba(168, 100, 193, 0.25), rgba(168, 100, 193, 0));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 0.35em;
+  padding-bottom: 0.15rem;
+}
+.mommyandme__text {
+  margin: 0 0 0.5rem;
+  line-height: 1.55;
+}
+.mommyandme__note {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+.mommyandme__brand {
+  color: #a864c1;
+  font-weight: 800;
+}
+.mommyandme__list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+.mommyandme__list-item {
+  line-height: 1.6;
+}
+.mommyandme__checklist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.mommyandme__checklist-item {
+  position: relative;
+  padding-left: 1.6rem;
+  line-height: 1.6;
+}
+.mommyandme__checklist-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  border: 2px solid #a864c1;
+  box-shadow: inset 0 0 0 4px rgba(168, 100, 193, 0.2);
+}
+.mommyandme__cta-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.mommyandme__cta {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  background: #a864c1;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1rem;
+  border-radius: 999px;
+  padding: 0.85rem 1.25rem;
+  cursor: pointer;
+  transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
+  box-shadow: 0 8px 20px rgba(168, 100, 193, 0.35);
+}
+.mommyandme__cta:hover {
+  background: #8e57aa;
+  transform: translateY(-1px);
+}
+.mommyandme__cta:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 14px rgba(168, 100, 193, 0.35);
+}
+.mommyandme__cta:focus-visible {
+  outline: 3px solid rgba(168, 100, 193, 0.35);
+  outline-offset: 3px;
+}
+.mommyandme__link {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.mommyandme .card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.mommyandme .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}
+.mommyandme .card--soft {
+  background: linear-gradient(180deg, #ffffff 0%, #fbf8fe 100%);
+}
+.mommyandme .card--accent {
+  border-color: rgba(168, 100, 193, 0.28);
+  box-shadow: 0 10px 26px rgba(168, 100, 193, 0.12);
+}
+@media (min-width: 768px) {
+  .mommyandme__title {
+    font-size: 2rem;
+  }
+  .mommyandme__layout, .mommyandme__grid {
+    flex-direction: row;
+    gap: 1rem;
+    align-items: stretch; /* equal-height cards */
+  }
+  .mommyandme__panel {
+    flex: 1 1 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+  }
+  .mommyandme__panel-title {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .mommyandme {
+    /* -------- Desktop: make ALL cards bigger -------- */
+  }
+  .mommyandme__slider {
+    margin-bottom: 1.5rem;
+  }
+  .mommyandme__layout, .mommyandme__grid {
+    gap: 1.25rem;
+  }
+  .mommyandme__panel {
+    /* switch from 3 columns to 2 columns for larger boxes */
+    flex: 1 1 calc(50% - 1.25rem);
+    max-width: calc(50% - 1.25rem);
+    /* more breathing room inside each card */
+    padding: 1.5rem;
+  }
+  .mommyandme__panel-title {
+    font-size: 1.25rem;
+  }
+  .mommyandme__text, .mommyandme__note, .mommyandme__list-item, .mommyandme__checklist-item {
+    font-size: 1.05rem; /* bigger body text */
+    line-height: 1.7;
+  }
+  .mommyandme__checklist-item::before {
+    width: 1rem; /* bigger bullet ring to match text */
+    height: 1rem;
+    top: 0.55rem;
+  }
+  .mommyandme__heading {
+    font-size: 1.75rem;
+  }
+  .mommyandme__cta-wrap {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mommyandme__cta,
+  .mommyandme .card, .mommyandme__intro {
+    transition: none;
+  }
+}/*# sourceMappingURL=MommyandMe.css.map */

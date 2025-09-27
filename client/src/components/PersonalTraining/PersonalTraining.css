@@ -1,0 +1,161 @@
+.personal-training {
+  padding: 1rem 1.5rem;
+  margin-top: 6rem;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+@media (min-width: 768px) {
+  .personal-training {
+    padding: 2rem 3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .personal-training {
+    padding: 3rem 10rem;
+  }
+}
+.personal-training__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+  .personal-training__header {
+    margin-bottom: 2rem;
+  }
+}
+.personal-training__title {
+  text-align: center;
+  color: #000;
+  font-weight: 700;
+  margin: 0 auto;
+  padding-right: 1rem;
+  font-size: 2rem;
+}
+.personal-training__media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .personal-training__media {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+.personal-training__video {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 768px) {
+  .personal-training__video {
+    max-width: 300px;
+  }
+}
+@media (min-width: 1280px) {
+  .personal-training__video {
+    max-width: 300px;
+  }
+}
+.personal-training__carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.personal-training__carousel-image {
+  width: 100%;
+  max-width: 800px;
+  max-height: 500px;
+  border-radius: 12px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+.personal-training__carousel-button {
+  display: none;
+}
+.personal-training__content {
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: left;
+  padding: 0 1rem;
+}
+@media (min-width: 768px) {
+  .personal-training__content {
+    margin-top: 3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .personal-training__content {
+    margin-top: 4rem;
+  }
+}
+.personal-training__text {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .personal-training__text {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .personal-training__text {
+    font-size: 1.15rem;
+  }
+}
+.personal-training__list {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+.personal-training__list li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .personal-training__list li {
+    font-size: 1.05rem;
+  }
+}
+@media (min-width: 1280px) {
+  .personal-training__list li {
+    font-size: 1.1rem;
+  }
+}
+.personal-training__button {
+  background-color: #a864c1;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+.personal-training__button:hover {
+  background-color: #86509a;
+}
+@media (min-width: 768px) {
+  .personal-training__button {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .personal-training__button {
+    font-size: 1.15rem;
+  }
+}
+.personal-training__button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=PersonalTraining.css.map */

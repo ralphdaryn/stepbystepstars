@@ -3,11 +3,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./ImageCarousel.scss";
 import carousel1 from "../../assets/images/carousel1.jpg";
-import carousel2 from "../../assets/images/carousel2.jpg";
-import carousel3 from "../../assets/images/carousel3.jpg";
-import carousel4 from "../../assets/images/carousel4.jpg";
-import carousel5 from "../../assets/images/carousel5.jpg";
-import carousel6 from "../../assets/images/carousel6.jpg";
+import carousel2 from "../../assets/images/carousel2.jpeg";
+import carousel3 from "../../assets/images/carousel3.jpeg";
+import carousel4 from "../../assets/images/carousel4.jpeg";
+import carousel5 from "../../assets/images/carousel5.jpeg";
+import carousel6 from "../../assets/images/carousel6.jpeg";
 
 const ImageCarousel = () => {
   const settings = {

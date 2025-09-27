@@ -1,0 +1,264 @@
+.birthday-party {
+  padding: 0.25rem 2rem 0.5rem;
+  margin-top: 7rem;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+@media (min-width: 768px) {
+  .birthday-party {
+    padding: 0.5rem 4rem 7rem;
+  }
+}
+@media (min-width: 1280px) {
+  .birthday-party {
+    padding: 0.5rem 14rem 8rem;
+  }
+}
+.birthday-party__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .birthday-party__header {
+    margin-bottom: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .birthday-party__header {
+    margin-bottom: 2rem;
+  }
+}
+.birthday-party__title {
+  color: #000;
+  font-weight: 700;
+  margin: 0 auto;
+  text-align: center;
+  padding-right: 1.25rem;
+  font-size: 1.75rem;
+}
+@media (min-width: 768px) {
+  .birthday-party__title {
+    padding-right: 3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .birthday-party__title {
+    padding-right: 5rem;
+  }
+}
+.birthday-party__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .birthday-party__container {
+    gap: 2.5rem;
+  }
+}
+.birthday-party__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .birthday-party__wrapper {
+    flex-direction: row;
+  }
+}
+.birthday-party__image {
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+.birthday-party__image:hover {
+  transform: scale(1.05);
+}
+@media (min-width: 768px) {
+  .birthday-party__image {
+    width: 22rem;
+  }
+}
+@media (min-width: 1280px) {
+  .birthday-party__image {
+    width: 30rem;
+  }
+}
+.birthday-party__video {
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 768px) {
+  .birthday-party__video {
+    max-width: 300px;
+  }
+}
+@media (min-width: 1280px) {
+  .birthday-party__video {
+    max-width: 500px;
+  }
+}
+.birthday-party__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.birthday-party__cta-button {
+  background-color: #a864c1;
+  border-radius: 8px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  height: 40px;
+  line-height: 20px;
+  padding: 10px 16px;
+  text-align: center;
+  transition: background-color 100ms;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  touch-action: manipulation;
+  margin-bottom: 0.5rem;
+}
+.birthday-party__cta-button:hover {
+  background-color: #86509a;
+}
+.birthday-party__subtitle {
+  margin: 0 auto;
+  font-size: 1.25rem;
+}
+.birthday-party__subtitle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0ebee;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  flex-direction: column;
+  max-width: 800px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.image-modal__content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.image-modal__close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.image-modal__close:hover {
+  color: red;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.faq {
+  margin-top: 3rem;
+  padding: 1rem;
+  background-color: #f0ebee;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.faq__title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+.faq-item .faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #222;
+  gap: 0.5rem;
+}
+.faq-item .faq-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+}
+.faq-item .faq-toggle:hover {
+  color: #000;
+}
+.faq-item .birthday-party__subtext {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  pointer-events: none;
+  padding-top: 0.75rem;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.2;
+}
+.faq-item .birthday-party__subtext.visible {
+  max-height: 500px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.faq-item .birthday-party__subtext.hidden {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.faq-item .birthday-party__subtext ul {
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+}
+.faq-item .birthday-party__subtext ul li {
+  margin-bottom: 0.3rem;
+  list-style-type: disc;
+}/*# sourceMappingURL=BirthdayParties.css.map */

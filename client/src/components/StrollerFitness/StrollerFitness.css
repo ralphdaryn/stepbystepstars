@@ -1,0 +1,135 @@
+.stroller-fitness {
+  padding: 0.25rem 2rem 0.5rem;
+  margin-top: 7rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  /* ---------- header ---------- */
+  /* ---------- main flex row/column ---------- */
+  /* video sizing */
+  /* ---------- text column ---------- */
+  /* CTA button */
+}
+@media (min-width: 768px) {
+  .stroller-fitness {
+    padding: 0.5rem 4rem 7rem;
+  }
+}
+@media (min-width: 1280px) {
+  .stroller-fitness {
+    padding: 0.5rem 14rem 8rem;
+  }
+}
+.stroller-fitness__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .stroller-fitness__header {
+    margin-bottom: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .stroller-fitness__header {
+    margin-bottom: 2rem;
+  }
+}
+.stroller-fitness__title {
+  color: #000;
+  font-weight: 700;
+  margin: 0 auto;
+  text-align: center;
+  padding-right: 1.25rem;
+  font-size: 1.75rem;
+}
+@media (min-width: 768px) {
+  .stroller-fitness__title {
+    padding-right: 3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .stroller-fitness__title {
+    padding-right: 5rem;
+  }
+}
+.stroller-fitness__container {
+  display: flex;
+  flex-direction: column; /* mobile */
+  align-items: center;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .stroller-fitness__container {
+    flex-direction: row; /* 720 px and up: video left, text right */
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .stroller-fitness__container {
+    gap: 3rem;
+  }
+}
+.stroller-fitness__video {
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 768px) {
+  .stroller-fitness__video {
+    max-width: 300px;
+  }
+}
+@media (min-width: 1280px) {
+  .stroller-fitness__video {
+    max-width: 400px;
+  }
+}
+.stroller-fitness__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* mobile */
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .stroller-fitness__wrapper {
+    align-items: flex-start; /* align left next to video */
+    max-width: 60%;
+  }
+}
+@media (min-width: 1280px) {
+  .stroller-fitness__wrapper {
+    max-width: 65%;
+  }
+}
+.stroller-fitness__subtitle {
+  margin: 0 auto;
+  font-size: 1.25rem;
+}
+.stroller-fitness__subtitle ul {
+  margin-top: 0.75rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+.stroller-fitness__subtitle ul li {
+  margin-bottom: 0.4rem;
+}
+.stroller-fitness__subtitle p {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+.stroller-fitness__button {
+  align-self: center;
+  background-color: #a865c1;
+  color: #fff;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.stroller-fitness__button:hover {
+  background-color: #333;
+}/*# sourceMappingURL=StrollerFitness.css.map */
