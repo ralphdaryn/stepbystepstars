@@ -16,11 +16,9 @@
     align-items: center;
     padding: 1.5rem;
     position: fixed;
-    top: 0;
+    top: 40px;
     z-index: 9998;
-    @include tablet {
-      padding: 2rem;
-    }
+
     @include desktop {
       justify-content: center;
       gap: 1rem;
@@ -684,7 +682,7 @@
     height: 100%;
     background-color: #f9f6fb;
     position: fixed;
-    top: 110px;
+    top: 140px;
     z-index: 100;
 
     @include tablet {

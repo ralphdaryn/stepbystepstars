@@ -17,14 +17,14 @@ import WaiverFormKids from "./components/WaiverFormKids/WaiverFormKids";
 import "./Background.css";
 import Success from "./components/StatusPage/Success";
 import Cancel from "./components/StatusPage/Cancel";
-// import Alert from "./components/Alert/Alert";
+import Alert from "./components/Alert/Alert";
 import StrollerFitness from "./components/StrollerFitness/StrollerFitness";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        {/* <Alert /> */}
+        <Alert />
         <Header />
         <div className="background">
           {Array.from({ length: 50 }, (_, i) => (
