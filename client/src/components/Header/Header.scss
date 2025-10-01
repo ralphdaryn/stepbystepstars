@@ -19,6 +19,10 @@
     top: 40px;
     z-index: 9998;
 
+    @include tablet {
+      padding: 2.5rem;
+    }
+
     @include desktop {
       justify-content: center;
       gap: 1rem;
