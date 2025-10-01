@@ -10,24 +10,21 @@
   font-size: 1rem;
   background-color: #fff;
   border-radius: 0.5rem;
-  margin-top: 8rem;
+  margin-top: 7rem;
 
   @include tablet {
     max-width: 600px;
     margin: 0 auto;
+    margin-top: 7rem;
   }
 
   @include desktop {
     max-width: 800px;
     margin: 0 auto;
     padding: 4rem;
+    margin-top: 7rem;
   }
 
-  &__button {
-    width: 6rem;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-  }
 
   h2 {
     font-size: 1.85rem;
