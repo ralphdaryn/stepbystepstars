@@ -5,6 +5,8 @@ import specialEvents from "../../assets/images/mommy-fitness.jpeg";
 import specialEvents1 from "../../assets/images/smallGroup.jpeg";
 import specialEvents3 from "../../assets/images/halloween.jpeg";
 import specialEvents4 from "../../assets/images/music-class.jpeg";
+import specialEvents5 from "../../assets/images/soca-glow.jpeg";
+import specialEvents6 from "../../assets/images/stown-anniv.jpeg";
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -36,6 +38,20 @@ const SpecialEvents = () => {
   const linkToBuyTickets5 = () => {
     window.open(
       "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=860045",
+      "_blank"
+    );
+  };
+
+  const linkToBuyTickets6 = () => {
+    window.open(
+      " https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=831803&k_class_tab=66373",
+      "_blank"
+    );
+  };
+
+  const linkToBuyTickets7 = () => {
+    window.open(
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=863795&k_class_tab=66373",
       "_blank"
     );
   };
@@ -79,6 +95,34 @@ const SpecialEvents = () => {
           <button
             className="special-events__button"
             onClick={linkToBuyTickets4}
+          >
+            Click Here to Register!
+          </button>
+        </div>
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents5}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents5)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets6}
+          >
+            Click Here to Register!
+          </button>
+        </div>
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents6}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents6)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets7}
           >
             Click Here to Register!
           </button>
