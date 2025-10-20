@@ -122,7 +122,6 @@ const MommyandMe = () => {
           <article className="mommyandme__panel card">
             <h3 className="mommyandme__panel-title">2025 Remaining Sessions</h3>
             <ul className="mommyandme__list">
-              <li className="mommyandme__list-item u-nowrap">Aug 1 – Sep 12</li>
               <li className="mommyandme__list-item u-nowrap">
                 Sep 15 – Oct 31
               </li>
