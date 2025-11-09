@@ -3,8 +3,12 @@ import { useState } from "react";
 import BackButton from "../BackButton/BackButton";
 import specialEvents from "../../assets/images/mommy-fitness.jpeg";
 import specialEvents1 from "../../assets/images/smallGroup.jpeg";
-import specialEvents6 from "../../assets/images/stown-anniv.jpeg";
-import specialEvents7 from "../../assets/images/pure-fitness.jpeg";
+import specialEvents2 from "../../assets/images/stown-anniv.jpeg";
+import specialEvents3 from "../../assets/images/pure-fitness.jpeg";
+import specialEvents4 from "../../assets/images/pajama.jpeg";
+import specialEvents5 from "../../assets/images/teaparty.jpeg";
+import specialEvents6 from "../../assets/images/santaclaus.jpeg";
+import specialEvents7 from "../../assets/images/newyear.jpeg";
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -19,9 +23,37 @@ const SpecialEvents = () => {
     );
   };
 
+  const linkToBuyTickets2 = () => {
+    window.open(
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=877471&k_class_tab=66373",
+      "_blank"
+    );
+  };
+
   const linkToBuyTickets3 = () => {
     window.open(
       "https://www.wellnessliving.com/schedule/step_by_step_club?id_class_tab=1&k_class=844005#dt_date=2025-10-11&f_distance=50&f_latitude=&f_longitude=&filter=1&&id_screen=3&is_appointment_cancel_recurring=&is_appointment_cancel_single=&is_class_cancel=0&&&is_remove=0&is_week=1&&id_screen=3&k_business=651877&&&k_class_tab=0&&is_location=1&k_promotion=0&k_skin=0&&&s_period=calendar-month&&sort=&a_day[]=7%2C1%2C2%2C3%2C4%2C5%2C6&a_class[]=844005&a_staff[]=656393%2C660586%2C660587%2C660588&a_time[]=1%2C2%2C3&a_virtual[]=2%2C1&a_location[]=426598",
+      "_blank"
+    );
+  };
+
+  const linkToBuyTickets4 = () => {
+    window.open(
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=875165&k_class_tab=66373",
+      "_blank"
+    );
+  };
+
+  const linkToBuyTickets5 = () => {
+    window.open(
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=875815&k_class_tab=66373",
+      "_blank"
+    );
+  };
+
+  const linkToBuyTickets6 = () => {
+    window.open(
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=751129&k_class_tab=66373",
       "_blank"
     );
   };
@@ -56,10 +88,10 @@ const SpecialEvents = () => {
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
-            src={specialEvents6}
+            src={specialEvents2}
             alt="Special Event"
             className="special-events__image"
-            onClick={() => openMedia(specialEvents6)}
+            onClick={() => openMedia(specialEvents2)}
           />
           <button
             className="special-events__button"
@@ -70,10 +102,10 @@ const SpecialEvents = () => {
         </div>
         <div className="special-events__image-container">
           <img
-            src={specialEvents7}
+            src={specialEvents3}
             alt="Special Event"
             className="special-events__image"
-            onClick={() => openMedia(specialEvents7)}
+            onClick={() => openMedia(specialEvents3)}
           />
           <button
             className="special-events__button"
@@ -103,6 +135,62 @@ const SpecialEvents = () => {
           <button
             className="special-events__button"
             onClick={linkToBuyTickets3}
+          >
+            Click Here to Register!
+          </button>
+        </div>
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents4}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents4)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets2}
+          >
+            Click Here to Register!
+          </button>
+        </div>
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents5}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents5)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets4}
+          >
+            Click Here to Register!
+          </button>
+        </div>
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents6}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents6)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets5}
+          >
+            Click Here to Register!
+          </button>
+        </div>
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents7}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents7)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets6}
           >
             Click Here to Register!
           </button>
