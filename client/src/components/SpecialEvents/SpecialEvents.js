@@ -2,13 +2,14 @@ import "./SpecialEvents.scss";
 import { useState } from "react";
 import BackButton from "../BackButton/BackButton";
 import specialEvents from "../../assets/images/mommy-fitness.jpeg";
-import specialEvents1 from "../../assets/images/smallGroup.jpeg";
+import specialEvents1 from "../../assets/images/smallgroup.PNG";
 import specialEvents3 from "../../assets/images/pure-fitness.jpeg";
 import specialEvents4 from "../../assets/images/pajama.jpeg";
 import specialEvents5 from "../../assets/images/teaparty.jpeg";
 import specialEvents6 from "../../assets/images/santaclaus.jpeg";
 import specialEvents7 from "../../assets/images/newyear.jpeg";
 import specialEvents8 from "../../assets/images/dropinplay.PNG";
+
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
