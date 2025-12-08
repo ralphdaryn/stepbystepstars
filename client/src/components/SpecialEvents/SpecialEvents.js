@@ -54,7 +54,7 @@ const SpecialEvents = () => {
 
   const linkToBuyTickets6 = () => {
     window.open(
-      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=751129&k_class_tab=66373",
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=893309&k_class_tab=66373",
       "_blank"
     );
   };
