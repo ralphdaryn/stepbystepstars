@@ -30,6 +30,21 @@ const MommyandMe = () => {
     []
   );
 
+  // ✅ Sessions carousel settings (left/right buttons)
+  const sessionsSliderSettings = useMemo(
+    () => ({
+      dots: false,
+      infinite: true,
+      speed: 400,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: false,
+      arrows: true,
+      adaptiveHeight: true,
+    }),
+    []
+  );
+
   const handleEnroll = () => {
     window.location =
       "https://www.wellnessliving.com/rs/catalog-list.html?a_shop_category%5B%5D=1102551&is_filter=1&k_business=651877";
@@ -48,6 +63,18 @@ const MommyandMe = () => {
 
   const images = [mommyandme1, mommyandme2, mommyandme3, mommyandme4];
 
+  // ✅ Updated: 2026 remaining sessions list (your dates)
+  const remainingSessions2026 = [
+    "Feb 16 - March 27",
+    "March 30 - May 15",
+    "May 18 - June 26",
+    "June 29 - July 31",
+    "August 3 - Sept 4",
+    "Sept 7 - October 16",
+    "October 19 - November 20",
+    "Nov 23 - December 18",
+  ];
+
   return (
     <div className="mommyandme" data-page="mommyandme">
       <div>
@@ -56,10 +83,7 @@ const MommyandMe = () => {
             <BackButton />
           </div>
 
-          {/* Fancy nowrap on desktop without changing your style */}
-          <h1 className="mommyandme__title">
-            Mommy &amp; Me Fitness
-          </h1>
+          <h1 className="mommyandme__title">Mommy &amp; Me Fitness</h1>
         </header>
       </div>
 
@@ -100,9 +124,9 @@ const MommyandMe = () => {
       <section className="mommyandme__content" aria-label="Program details">
         <div className="mommyandme__intro card card--soft">
           <p className="mommyandme__kicker">Next Session</p>
-          {/* Fancy nowrap on desktop for date range */}
+
           <h2 className="mommyandme__heading u-nowrap u-nowrap--glow">
-            Jan - Feb 2026
+            Jan 5 - Feb 12
           </h2>
 
           <div className="mommyandme__cta-wrap">
@@ -117,32 +141,52 @@ const MommyandMe = () => {
           </div>
         </div>
 
-        {/* Use __layout (flexbox) */}
+        {/* ✅ Mobile-first stacked layout for ALL sizes */}
         <div className="mommyandme__layout" id="mommyandme-details">
+          {/* ✅ Remaining sessions now carousel */}
           <article className="mommyandme__panel card">
             <h3 className="mommyandme__panel-title">2026 Remaining Sessions</h3>
-            <ul className="mommyandme__list">
-              <li className="mommyandme__list-item u-nowrap">
-                Jan – Feb 2026
-              </li>
-            </ul>
+
+            <div
+              className="mommyandme__session-slider"
+              aria-label="Remaining sessions carousel"
+            >
+              <Slider {...sessionsSliderSettings}>
+                {remainingSessions2026.map((dateRange) => (
+                  <div key={dateRange} className="mommyandme__session-slide">
+                    <div
+                      className="mommyandme__session-pill"
+                      aria-label={dateRange}
+                    >
+                      {dateRange}
+                    </div>
+                  </div>
+                ))}
+              </Slider>
+            </div>
+
+            <p className="mommyandme__note mommyandme__note--muted">
+              Use the arrows to view all session dates.
+            </p>
           </article>
 
+          {/* ✅ Commented out Membership for now (client still working on it) */}
+          {/*
           <article className="mommyandme__panel card">
             <h3 className="mommyandme__panel-title">
-              Membership:{" "}
-              <span className="mommyandme__brand u-nowrap">MOMEMTUM</span>
+              Membership: <span className="mommyandme__brand u-nowrap">MOMEMTUM</span>
             </h3>
             <p className="mommyandme__text">
-              Choose how many classes you want per week and mix between Mommy &
-              Me and Stroller Fitness. Miss a class? Hop into a different one
-              that week—flexibility built for new moms.
+              Choose how many classes you want per week and mix between Mommy
+              &amp; Me and Stroller Fitness. Miss a class? Hop into a different
+              one that week—flexibility built for new moms.
             </p>
             <p className="mommyandme__note">
               Example: Attend Mon &amp; Wed at 1:00pm. If you can’t make one,
               join another class that week.
             </p>
           </article>
+          */}
 
           <article className="mommyandme__panel card">
             <h3 className="mommyandme__panel-title">Little Ones Welcome</h3>
@@ -170,6 +214,55 @@ const MommyandMe = () => {
                 You want to feel strong and confident
               </li>
             </ul>
+          </article>
+
+          {/* ✅ Other programs section (title centered) */}
+          <article className="mommyandme__panel card">
+            <h3 className="mommyandme__panel-title mommyandme__panel-title--center">
+              Other fitness programs to join
+            </h3>
+
+            <p className="mommyandme__text">
+              Want more options? Here are other programs you can jump into
+              anytime.
+            </p>
+
+            <div className="mommyandme__programs">
+              {/* Group Fitness (internal) */}
+              <a className="mommyandme__program" href="/groupfitness">
+                <span className="mommyandme__program-title">
+                  Small Group Training
+                </span>
+                <span className="mommyandme__program-sub">
+                  Train with a coach + stay motivated with a small crew.
+                </span>
+              </a>
+
+              {/* Monthly Memberships (external) */}
+              <a
+                className="mommyandme__program"
+                href="https://www.wellnessliving.com/rs/catalog-list.html?a_shop_category%5B%5D=1102664&is_filter=1&k_business=651877"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className="mommyandme__program-title">
+                  Monthly Memberships
+                </span>
+                <span className="mommyandme__program-sub">
+                  Flexible monthly options that fit your schedule.
+                </span>
+              </a>
+
+              {/* Personal Training (internal) */}
+              <a className="mommyandme__program" href="/personaltraining">
+                <span className="mommyandme__program-title">
+                  Personal Training
+                </span>
+                <span className="mommyandme__program-sub">
+                  1:1 coaching personalized to your goals.
+                </span>
+              </a>
+            </div>
           </article>
         </div>
       </section>
