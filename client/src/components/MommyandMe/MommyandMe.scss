@@ -48,7 +48,7 @@
   flex-direction: column;
   gap: 0.75rem;
   flex-wrap: wrap;
-  align-items: stretch; /* ✅ even cards */
+  align-items: stretch;
 }
 
 /* ---------------------------- */
@@ -202,7 +202,6 @@
     font-weight: 800;
   }
 
-  /* ✅ Mobile-first stacked layout for ALL sizes */
   &__layout {
     @extend %layout-base;
   }
@@ -275,26 +274,27 @@
     }
   }
 
-  /* ✅ Remaining Sessions carousel (CENTERED tablet/desktop) */
+  /* ✅ Remaining Sessions carousel (CENTERED) */
   &__session-slider {
     margin-top: 0.5rem;
     position: relative;
 
-    /* Keep slick layout stable */
     .slick-list {
       overflow: hidden;
     }
+
     .slick-track {
       display: flex;
       align-items: stretch;
     }
+
     .slick-slide {
       height: auto;
       display: flex !important;
       align-items: stretch;
     }
 
-    /* Mobile default: left aligned (same as before) */
+    /* the wrapper react-slick adds */
     .slick-slide > div {
       width: 100%;
       display: flex;
@@ -320,14 +320,13 @@
     }
 
     .slick-prev {
-      left: -6px;
+      left: -3px;
     }
     .slick-next {
-      right: -6px;
+      right: -3px;
     }
   }
 
-  /* 🔥 Force the slide wrapper to center content (tablet/desktop fix) */
   &__session-slide {
     width: 100%;
     display: flex;
@@ -350,7 +349,7 @@
     width: 100%;
   }
 
-  /* ✅ Programs section */
+  /* ✅ Option A: clickable cards (more “tap me” feel) */
   &__programs {
     display: flex;
     flex-direction: column;
@@ -359,22 +358,28 @@
   }
 
   &__program {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-    padding: 0.85rem 0.9rem;
-    border-radius: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    background: rgba(255, 255, 255, 0.75);
+    display: block;
     text-decoration: none;
     color: inherit;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: rgba(255, 255, 255, 0.78);
     transition: transform 160ms ease, box-shadow 160ms ease,
       border-color 160ms ease;
+    overflow: hidden;
+
+    /* makes the whole card feel clickable */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 
     &:hover {
       transform: translateY(-1px);
-      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
       border-color: rgba(168, 100, 193, 0.25);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
     }
 
     &:focus-visible {
@@ -383,14 +388,51 @@
     }
   }
 
+  &__program-row {
+    display: grid;
+    grid-template-columns: 42px 1fr 18px;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 0.95rem;
+  }
+
+  &__program-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: rgba(168, 100, 193, 0.12);
+    border: 1px solid rgba(168, 100, 193, 0.18);
+    font-size: 1.1rem;
+  }
+
+  &__program-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
   &__program-title {
-    font-weight: 800;
+    font-weight: 900;
   }
 
   &__program-sub {
     font-size: 0.95rem;
     opacity: 0.9;
     line-height: 1.45;
+  }
+
+  &__program-chevron {
+    font-size: 1.4rem;
+    opacity: 0.55;
+    transform: translateX(0);
+    transition: transform 160ms ease, opacity 160ms ease;
+  }
+
+  &__program:hover &__program-chevron {
+    transform: translateX(2px);
+    opacity: 0.85;
   }
 
   &__cta-wrap {
@@ -453,14 +495,13 @@
     box-shadow: 0 10px 26px rgba(168, 100, 193, 0.12);
   }
 
-  /* ✅ Tablet: set a width + center the whole slider area */
+  /* ✅ Tablet: give slider a centered lane + center slide content */
   @include tablet {
     &__title {
       font-size: 2rem;
     }
 
     &__session-slider {
-      /* this is the key: give the slider a centered “lane” */
       max-width: 520px;
       margin-left: auto;
       margin-right: auto;
@@ -475,7 +516,7 @@
     }
   }
 
-  /* ✅ Desktop: keep it centered (slightly wider lane) */
+  /* ✅ Desktop: keep centered, slightly wider lane */
   @include desktop {
     &__heading {
       font-size: 1.75rem;
@@ -500,7 +541,8 @@
     &__cta,
     .card,
     &__intro,
-    &__program {
+    &__program,
+    &__program-chevron {
       transition: none;
     }
   }
