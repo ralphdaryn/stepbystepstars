@@ -102,7 +102,7 @@ const MommyandMe = () => {
           <p className="mommyandme__kicker">Next Session</p>
           {/* Fancy nowrap on desktop for date range */}
           <h2 className="mommyandme__heading u-nowrap u-nowrap--glow">
-            September 15 - October 31
+            Jan - Feb 2026
           </h2>
 
           <div className="mommyandme__cta-wrap">
@@ -120,12 +120,11 @@ const MommyandMe = () => {
         {/* Use __layout (flexbox) */}
         <div className="mommyandme__layout" id="mommyandme-details">
           <article className="mommyandme__panel card">
-            <h3 className="mommyandme__panel-title">2025 Remaining Sessions</h3>
+            <h3 className="mommyandme__panel-title">2026 Remaining Sessions</h3>
             <ul className="mommyandme__list">
               <li className="mommyandme__list-item u-nowrap">
-                Sep 15 – Oct 31
+                Jan – Feb 2026
               </li>
-              <li className="mommyandme__list-item u-nowrap">Nov 1 – Dec 12</li>
             </ul>
           </article>
 
