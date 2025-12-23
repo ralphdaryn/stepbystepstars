@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
+import { Helmet } from "react-helmet";
 import "./PersonalTraining.scss";
-import BackButton from "../BackButton/BackButton";
+
 import img1 from "../../assets/images/personal-training.JPEG";
 import img2 from "../../assets/images/personal-training2.JPEG";
 import img3 from "../../assets/images/personal-training3.JPEG";
@@ -9,20 +10,21 @@ import img5 from "../../assets/images/personal-training5.JPEG";
 import img6 from "../../assets/images/personal-training6.JPEG";
 
 const PersonalTraining = () => {
+  const images = useMemo(() => [img1, img2, img3, img4, img5, img6], []);
   const [index, setIndex] = useState(0);
-  const images = [img1, img2, img3, img4, img5, img6];
 
-  // Autoplay carousel every 3 seconds
+  // Autoplay carousel
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setIndex((prev) => (prev + 1) % images.length);
     }, 3000);
+
     return () => clearInterval(interval);
   }, [images.length]);
 
-  const handleNext = () => setIndex((index + 1) % images.length);
+  const handleNext = () => setIndex((prev) => (prev + 1) % images.length);
   const handlePrev = () =>
-    setIndex((index - 1 + images.length) % images.length);
+    setIndex((prev) => (prev - 1 + images.length) % images.length);
 
   const handleButtonClick = () => {
     window.location.href =
@@ -30,57 +32,107 @@ const PersonalTraining = () => {
   };
 
   return (
-    <div className="personal-training">
-      <div className="personal-training__header">
-        <BackButton />
-        <h2 className="personal-training__title">Personal Training</h2>
-      </div>
+    <div className="personaltraining" data-page="personaltraining">
+      <Helmet>
+        <title>Personal Training in Durham | Step By Step Club</title>
+        <meta
+          name="description"
+          content="Personal training in Durham with coaching tailored to your goals. Build strength, confidence, and consistency with 1:1 support."
+        />
+        <meta
+          name="keywords"
+          content="personal training Durham, 1:1 coaching, strength training, fitness coaching, stepbystepclub"
+        />
+        <link
+          rel="canonical"
+          href="https://www.stepbystepclub.ca/personaltraining"
+        />
+      </Helmet>
 
-      <div className="personal-training__media">
-        <div className="personal-training__carousel">
+      {/* Header */}
+      <header className="personaltraining__header">
+        <h1 className="personaltraining__title">Personal Training</h1>
+      </header>
+
+      {/* Hero Carousel */}
+      <section
+        className="personaltraining__hero"
+        aria-label="Personal training gallery"
+      >
+        <div className="personaltraining__carousel card card--soft">
           <button
+            type="button"
             onClick={handlePrev}
-            className="personal-training__carousel-button"
+            className="personaltraining__nav personaltraining__nav--left"
+            aria-label="Previous slide"
           >
             ‹
           </button>
+
           <img
             src={images[index]}
-            alt={`Slide ${index + 1}`}
-            className="personal-training__carousel-image"
+            alt={`Personal training session ${index + 1}`}
+            className="personaltraining__image"
+            loading="eager"
           />
+
           <button
+            type="button"
             onClick={handleNext}
-            className="personal-training__carousel-button"
+            className="personaltraining__nav personaltraining__nav--right"
+            aria-label="Next slide"
           >
             ›
           </button>
         </div>
-      </div>
+      </section>
 
-      <div className="personal-training__content">
-        <p className="personal-training__text">
-          Take your fitness journey to the next level with personalized training
-          and coaching designed to fit your unique needs, goals, and lifestyle.
+      {/* Content */}
+      <section
+        className="personaltraining__content card"
+        aria-label="Personal training details"
+      >
+        <p className="personaltraining__kicker">1:1 Coaching • All levels</p>
+
+        <h2 className="personaltraining__heading">
+          Training built around you.
+        </h2>
+
+        <p className="personaltraining__text">
+          Personal training designed around <strong>you</strong> — your goals,
+          your schedule, and your lifestyle.
         </p>
-        <ul className="personal-training__list">
-          <li>Customized workouts tailored to your goals</li>
-          <li>Proper form and injury prevention guidance</li>
-          <li>Expert coaching and motivational support</li>
-          <li>Holistic fitness, nutrition, and lifestyle focus</li>
+
+        <ul className="personaltraining__list">
+          <li>
+            <strong>Custom workouts</strong> built specifically for your goals
+          </li>
+          <li>
+            <strong>Safe, effective movement</strong> with proper form and injury
+            prevention
+          </li>
+          <li>
+            <strong>Expert coaching</strong> plus accountability and motivation
+          </li>
+          <li>
+            <strong>Whole-body approach</strong> covering fitness, lifestyle, and
+            long-term results
+          </li>
         </ul>
-        <p className="personal-training__text">
-          Start today and take the first step toward becoming your best self!
+
+        <p className="personaltraining__text">
+          Ready to feel stronger, more confident, and consistent?
         </p>
-      </div>
-      <div className="personal-training__button-container">
-        <button
-          className="personal-training__button"
-          onClick={handleButtonClick}
-        >
-          Sign Up Today!
-        </button>
-      </div>
+
+        <div className="personaltraining__cta-wrap">
+          <button
+            className="personaltraining__cta"
+            onClick={handleButtonClick}
+          >
+            Sign Up Today
+          </button>
+        </div>
+      </section>
     </div>
   );
 };

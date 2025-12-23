@@ -8,7 +8,6 @@ import mommyandme1 from "../../assets/images/mommyandme1.jpeg";
 import mommyandme2 from "../../assets/images/mommyandme2.jpeg";
 import mommyandme3 from "../../assets/images/mommyandme3.jpeg";
 import mommyandme4 from "../../assets/images/mommyandme4.jpeg";
-import BackButton from "../BackButton/BackButton";
 
 const MommyandMe = () => {
   const sliderSettings = useMemo(
@@ -75,15 +74,10 @@ const MommyandMe = () => {
 
   return (
     <div className="mommyandme" data-page="mommyandme">
-      <div>
-        <header className="mommyandme__header">
-          <div className="mommyandme__header-left">
-            <BackButton />
-          </div>
-
-          <h1 className="mommyandme__title">Mommy &amp; Me Fitness</h1>
-        </header>
-      </div>
+      {/* Header */}
+      <header className="mommyandme__header">
+        <h1 className="mommyandme__title">Mommy &amp; Me Fitness</h1>
+      </header>
 
       <Helmet>
         <title>Mommy and Me Fitness Classes in Durham | Step By Step Club</title>
@@ -183,7 +177,6 @@ const MommyandMe = () => {
             </ul>
           </article>
 
-          {/* ✅ Option A: clickable “cards” with icon + chevron */}
           <article className="mommyandme__panel card">
             <h3 className="mommyandme__panel-title mommyandme__panel-title--center">
               Other fitness programs to join
@@ -208,7 +201,10 @@ const MommyandMe = () => {
                       Train with a coach + stay motivated with a small crew.
                     </span>
                   </span>
-                  <span className="mommyandme__program-chevron" aria-hidden="true">
+                  <span
+                    className="mommyandme__program-chevron"
+                    aria-hidden="true"
+                  >
                     ›
                   </span>
                 </span>
@@ -232,7 +228,10 @@ const MommyandMe = () => {
                       Flexible monthly options that fit your schedule.
                     </span>
                   </span>
-                  <span className="mommyandme__program-chevron" aria-hidden="true">
+                  <span
+                    className="mommyandme__program-chevron"
+                    aria-hidden="true"
+                  >
                     ›
                   </span>
                 </span>
@@ -251,7 +250,10 @@ const MommyandMe = () => {
                       1:1 coaching personalized to your goals.
                     </span>
                   </span>
-                  <span className="mommyandme__program-chevron" aria-hidden="true">
+                  <span
+                    className="mommyandme__program-chevron"
+                    aria-hidden="true"
+                  >
                     ›
                   </span>
                 </span>

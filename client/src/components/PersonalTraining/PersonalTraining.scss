@@ -1,161 +1,180 @@
-@use "../../styles/partials/colors" as *;
 @use "../../styles/partials/mixins" as *;
 
-.personal-training {
-  padding: 1rem 1.5rem;
-  margin-top: 6rem;
-  background-color: rgba(255, 255, 255, 0.4);
+.personaltraining {
+  margin-top: 7rem;
+  padding: 1rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 
-  @include tablet {
-    padding: 2rem 3rem;
-  }
+  background: radial-gradient(
+      1200px 600px at 10% -10%,
+      rgba(168, 100, 193, 0.06),
+      transparent 60%
+    ),
+    #f0ebee;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 
-  @include desktop {
-    padding: 3rem 10rem;
-  }
-
+  /* Header */
   &__header {
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 1.5rem;
-    @include tablet {
-      margin-bottom: 2rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -0.55rem;
+      width: 86%;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 0, 0, 0.08),
+        transparent
+      );
     }
   }
 
   &__title {
+    margin: 0;
     text-align: center;
-    color: #000;
-    font-weight: 700;
-    margin: 0 auto;
-    padding-right: 1rem;
-    font-size: 2rem;
-  }
-
-  &__media {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 900;
 
     @include tablet {
-      max-width: 900px;
-      margin: 0 auto;
+      font-size: 2rem;
     }
   }
 
-  &__video {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* Cards */
+  .card {
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(0, 0, 0, 0.035);
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.05);
+  }
 
-    @include tablet {
-      max-width: 300px;
-    }
+  .card--soft {
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(180deg, #ffffff 0%, #fbf8fe 100%);
+  }
 
-    @include desktop {
-      max-width: 300px;
-    }
+  /* Hero */
+  &__hero {
+    margin-top: 1rem;
   }
 
   &__carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+  }
+
+  &__image {
     width: 100%;
+    display: block;
+    object-fit: cover;
+    height: 18rem;
 
-    &-image {
-      width: 100%;
-      max-width: 800px;
-      max-height: 500px;
-      border-radius: 12px;
-      object-fit: cover;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-    }
-
-    &-button {
-      display: none;
+    @include tablet {
+      height: auto;
+      aspect-ratio: 16 / 9;
     }
   }
 
-  &__content {
-    max-width: 800px;
-    margin: 2rem auto;
-    text-align: left;
-    padding: 0 1rem;
+  &__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    border: none;
+    background: rgba(0, 0, 0, 0.35);
+    color: #fff;
+    font-size: 1.8rem;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
 
-    @include tablet {
-      margin-top: 3rem;
+    &--left {
+      left: 10px;
     }
 
-    @include desktop {
-      margin-top: 4rem;
+    &--right {
+      right: 10px;
+    }
+  }
+
+  /* Content */
+  &__content {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  &__kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    color: #6a4f7b;
+    font-weight: 800;
+  }
+
+  &__heading {
+    margin: 0.5rem 0 0.75rem;
+    font-size: 1.35rem;
+    font-weight: 900;
+
+    @include tablet {
+      font-size: 1.6rem;
     }
   }
 
   &__text {
-    font-size: 1rem;
-    color: #333;
+    margin: 0 auto 0.75rem;
+    max-width: 58ch;
     line-height: 1.5;
-    margin-bottom: 1rem;
-
-    @include tablet {
-      font-size: 1.1rem;
-    }
-
-    @include desktop {
-      font-size: 1.15rem;
-    }
+    color: #222;
   }
 
   &__list {
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
-    color: #444;
+    margin: 0.75rem auto 1rem;
+    padding-left: 1.25rem;
+    max-width: 58ch;
+    text-align: left;
+    color: #333;
 
     li {
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
-
-      @include tablet {
-        font-size: 1.05rem;
-      }
-
-      @include desktop {
-        font-size: 1.1rem;
-      }
+      margin-bottom: 0.6rem;
+      line-height: 1.5;
     }
   }
 
-  &__button {
-    background-color: #a864c1;
+  &__cta-wrap {
+    margin-top: 0.9rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__cta {
+    background: #a864c1;
     color: #fff;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    padding: 0.75rem 2rem;
+    font-weight: 900;
     font-size: 1rem;
+    border: none;
+    border-radius: 999px;
+    padding: 0.85rem 1.25rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: inline-block;
+    box-shadow: 0 8px 20px rgba(168, 100, 193, 0.28);
 
     &:hover {
-      background-color: #86509a;
-    }
-
-    @include tablet {
-      font-size: 1.1rem;
-    }
-
-    @include desktop {
-      font-size: 1.15rem;
-    }
-    &-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      background: #8e57aa;
     }
   }
 }

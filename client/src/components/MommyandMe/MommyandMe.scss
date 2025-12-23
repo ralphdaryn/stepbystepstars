@@ -72,13 +72,11 @@
   /* Header */
   &__header {
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    gap: 0.75rem;
     align-items: center;
     margin-bottom: 0.75rem;
-
     position: relative;
+
     &::after {
       content: "";
       position: absolute;
@@ -94,19 +92,6 @@
         transparent
       );
     }
-
-    @include tablet {
-      gap: 8rem;
-      justify-content: flex-start;
-    }
-    @include desktop {
-      gap: 10rem;
-    }
-  }
-
-  &__header-left {
-    display: flex;
-    align-items: center;
   }
 
   &__title {
@@ -115,6 +100,10 @@
     font-size: 1.5rem;
     font-weight: 800;
     letter-spacing: 0.2px;
+
+    @include tablet {
+      font-size: 2rem;
+    }
   }
 
   /* HERO */
@@ -228,6 +217,10 @@
     padding-bottom: 0.15rem;
   }
 
+  &__panel-title--center {
+    text-align: center;
+  }
+
   &__text {
     margin: 0 0 0.5rem;
     line-height: 1.55;
@@ -262,7 +255,7 @@
     }
   }
 
-  /* ✅ Remaining Sessions carousel (CENTERED) */
+  /* Remaining Sessions carousel (CENTERED) */
   &__session-slider {
     margin-top: 0.5rem;
     position: relative;
@@ -282,7 +275,6 @@
       align-items: stretch;
     }
 
-    /* the wrapper react-slick adds */
     .slick-slide > div {
       width: 100%;
       display: flex;
@@ -290,7 +282,6 @@
       justify-content: flex-start;
     }
 
-    /* Arrow buttons */
     .slick-prev,
     .slick-next {
       width: 34px;
@@ -319,7 +310,7 @@
     width: 100%;
     display: flex;
     padding: 0.25rem 0;
-    justify-content: flex-start; /* mobile default */
+    justify-content: flex-start;
   }
 
   &__session-pill {
@@ -337,7 +328,7 @@
     width: 100%;
   }
 
-  /* ✅ Option A: clickable cards (more “tap me” feel) */
+  /* Programs */
   &__programs {
     display: flex;
     flex-direction: column;
@@ -355,8 +346,6 @@
     transition: transform 160ms ease, box-shadow 160ms ease,
       border-color 160ms ease;
     overflow: hidden;
-
-    /* makes the whole card feel clickable */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 
     &:hover {
@@ -483,7 +472,7 @@
     box-shadow: 0 10px 26px rgba(168, 100, 193, 0.12);
   }
 
-  /* ✅ Tablet: give slider a centered lane + center slide content */
+  /* Tablet / Desktop: centered session slider */
   @include tablet {
     &__title {
       font-size: 2rem;
@@ -504,7 +493,6 @@
     }
   }
 
-  /* ✅ Desktop: keep centered, slightly wider lane */
   @include desktop {
     &__heading {
       font-size: 1.75rem;
