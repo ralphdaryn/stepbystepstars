@@ -1,7 +1,6 @@
 import "./StrollerFitness.scss";
 import { Helmet } from "react-helmet";
 import strollerfitness from "../../assets/images/strollerfitness.mp4";
-import BackButton from "../BackButton/BackButton";
 
 const StrollerFitness = () => {
   const handleButtonClick = () => {
@@ -10,10 +9,7 @@ const StrollerFitness = () => {
   };
 
   return (
-    <section
-      className="stroller-fitness"
-      aria-labelledby="stroller-fitness-heading"
-    >
+    <div className="strollerfitness" data-page="strollerfitness">
       <Helmet>
         <title>Stroller Fitness Durham | Postnatal Mom & Baby Workouts</title>
         <meta
@@ -26,6 +22,7 @@ const StrollerFitness = () => {
         />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Step by Step Club" />
+
         <meta
           property="og:title"
           content="Stroller Fitness Durham | Mom & Baby Exercise Classes"
@@ -37,79 +34,78 @@ const StrollerFitness = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content="https://yourdomain.com/stroller-fitness-durham"
+          content="https://www.stepbystepclub.ca/strollerfitness"
         />
-        <meta
-          property="og:image"
-          content="https://yourdomain.com/path-to-image/strollerfitness-thumbnail.jpg"
-        />
+        {/* Optional: swap to a real image when you have one */}
+        {/* <meta property="og:image" content="https://www.stepbystepclub.ca/path-to-image/strollerfitness-thumbnail.jpg" /> */}
       </Helmet>
 
-      <div className="stroller-fitness__header">
-        <BackButton />
-        <h1 id="stroller-fitness-heading" className="stroller-fitness__title">
-          Stroller Fitness Durham
-        </h1>
-      </div>
+      {/* Header */}
+      <header className="strollerfitness__header">
+        <h1 className="strollerfitness__title">Stroller Fitness</h1>
+      </header>
 
-      <div className="stroller-fitness__container">
-        <video
-          className="stroller-fitness__video"
-          controls
-          autoPlay
-          muted
-          title="Stroller Fitness Class Preview in Durham"
-        >
-          <source src={strollerfitness} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-
-        <article className="stroller-fitness__wrapper">
-          <p className="stroller-fitness__subtitle">
-            Join our stroller fitness classes in Durham Region and reclaim your
-            strength with other local moms. It’s a 45-minute full-body sweat
-            session designed for moms—no judgment, no excuses.
-          </p>
-          <p className="stroller-fitness__subtitle">
-            Our workouts include squats, lunges, core work, and cardio—all while
-            your baby relaxes in the stroller. Diaper changes? Crying? Totally
-            welcome.
-          </p>
-          <p className="stroller-fitness__subtitle">
-            You’ll feel stronger, more energized, and connected to a real mom
-            community in Durham.
-          </p>
-
-          <div className="stroller-fitness__subtitle">
-            <h2>What to Expect</h2>
-            <ul>
-              <li>
-                Fun, safe workouts for postpartum moms of all fitness levels
-              </li>
-              <li>
-                Outdoor and indoor options in Oshawa, Whitby, Ajax, and
-                Pickering
-              </li>
-              <li>Meet like-minded moms and build your support network</li>
-              <li>Led by certified instructors with baby-friendly pacing</li>
-            </ul>
-            <p>
-              <strong>
-                It’s more than a workout. It’s your support system, mama.
-              </strong>
-            </p>
-          </div>
-
-          <button
-            className="stroller-fitness__button"
-            onClick={handleButtonClick}
-            aria-label="Book your Stroller Fitness class in Durham"
+      {/* Hero: stacked (like your other pages) */}
+      <section className="strollerfitness__hero" aria-label="Stroller fitness hero">
+        {/* Video card */}
+        <div className="strollerfitness__video-card card card--soft">
+          <video
+            className="strollerfitness__video"
+            controls
+            autoPlay
+            muted
+            loop
+            playsInline
+            title="Stroller Fitness class preview"
           >
-            Book Your Spot!
-          </button>
+            <source src={strollerfitness} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        {/* Info card */}
+        <article className="strollerfitness__info card" aria-label="Stroller fitness details">
+          <p className="strollerfitness__kicker">Moms • Babies welcome • 45 minutes</p>
+          <h2 className="strollerfitness__heading">A workout + a mom community.</h2>
+
+          <p className="strollerfitness__text">
+            A 45-minute full-body sweat session designed for moms — supportive,
+            baby-friendly, and judgment-free.
+          </p>
+
+          <ul className="strollerfitness__list">
+            <li>
+              <strong>Full-body training</strong> (squats, lunges, core, cardio)
+            </li>
+            <li>
+              <strong>Baby-friendly pace</strong> — crying and diaper changes are
+              totally okay
+            </li>
+            <li>
+              <strong>Outdoor + indoor options</strong> across Durham Region
+            </li>
+            <li>
+              <strong>Meet other moms</strong> and build your support system
+            </li>
+          </ul>
+
+          <p className="strollerfitness__note">
+            <strong>It’s more than a workout.</strong> It’s your support system,
+            mama.
+          </p>
+
+          <div className="strollerfitness__cta-wrap">
+            <button
+              className="strollerfitness__cta"
+              onClick={handleButtonClick}
+              aria-label="Book your Stroller Fitness class"
+            >
+              Book Your Spot
+            </button>
+          </div>
         </article>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 

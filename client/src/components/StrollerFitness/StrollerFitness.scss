@@ -1,133 +1,206 @@
 @use "../../styles/partials/mixins" as *;
 
-.stroller-fitness {
-  padding: 0.25rem 2rem 0.5rem;
+.strollerfitness {
   margin-top: 7rem;
-  background-color: rgba(255, 255, 255, 0.4);
+  padding: 1rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 
-  @include tablet {
-    padding: 0.5rem 4rem 7rem;
-  }
+  background: radial-gradient(
+      1200px 600px at 10% -10%,
+      rgba(168, 100, 193, 0.06),
+      transparent 60%
+    ),
+    #f0ebee;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 
-  @include desktop {
-    padding: 0.5rem 14rem 8rem;
-  }
-
-  /* ---------- header ---------- */
+  /* Header */
   &__header {
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    position: relative;
 
-    @include tablet {
-      margin-bottom: 1.5rem;
-    }
-    @include desktop {
-      margin-bottom: 2rem;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -0.55rem;
+      width: 86%;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 0, 0, 0.08),
+        transparent
+      );
     }
   }
 
   &__title {
-    color: #000;
-    font-weight: 700;
-    margin: 0 auto;
+    margin: 0;
     text-align: center;
-    padding-right: 1.25rem;
-    font-size: 1.75rem;
+    font-size: 1.6rem;
+    font-weight: 900;
+    letter-spacing: 0.2px;
 
     @include tablet {
-      padding-right: 3rem;
-    }
-    @include desktop {
-      padding-right: 5rem;
+      font-size: 2rem;
     }
   }
 
-  /* ---------- main flex row/column ---------- */
-  &__container {
-    display: flex;
-    flex-direction: column; /* mobile */
-    align-items: center;
-    gap: 1rem;
-
-    @include tablet {
-      flex-direction: row; /* 720 px and up: video left, text right */
-      justify-content: center;
-      align-items: flex-start;
-      gap: 2rem;
-    }
-
-    @include desktop {
-      gap: 3rem;
-    }
-  }
-
-  /* video sizing */
-  &__video {
-    width: 100%;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-
-    @include tablet {
-      max-width: 300px;
-    }
-    @include desktop {
-      max-width: 400px;
-    }
-  }
-
-  /* ---------- text column ---------- */
-  &__wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* mobile */
-    gap: 1rem;
-
-    @include tablet {
-      align-items: flex-start; /* align left next to video */
-      max-width: 60%;
-    }
-
-    @include desktop {
-      max-width: 65%;
-    }
-  }
-
-  &__subtitle {
-    margin: 0 auto;
-    font-size: 1.25rem;
-
-    ul {
-      margin-top: 0.75rem;
-      padding-left: 1.5rem;
-      list-style-type: disc;
-
-      li {
-        margin-bottom: 0.4rem;
-      }
-    }
-
-    p {
-      margin-top: 1rem;
-      font-weight: 600;
-    }
-  }
-
-  /* CTA button */
-  &__button {
-    align-self: center;
-    background-color: #a865c1;
-    color: #fff;
-    padding: 0.75rem 2rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  /* Cards (same vibe as your other pages) */
+  .card {
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(0, 0, 0, 0.035);
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.05);
+    transition: transform 160ms ease, box-shadow 160ms ease;
 
     &:hover {
-      background-color: #333;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 26px rgba(0, 0, 0, 0.07);
+    }
+  }
+
+  .card--soft {
+    background: linear-gradient(180deg, #ffffff 0%, #fbf8fe 100%);
+    padding: 0;
+    overflow: hidden;
+  }
+
+  /* Hero (stacked like your pages) */
+  &__hero {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  /* Video */
+  &__video-card {
+    padding: 0; /* so the video fills card nicely */
+  }
+
+  &__video {
+    width: 100%;
+    display: block;
+    border-radius: 14px; /* matches cards */
+    object-fit: cover;
+
+    /* Mobile feel */
+    height: 18rem;
+
+    /* Tablet/Desktop: prevent huge stretched look */
+    @include tablet {
+      height: auto;
+      aspect-ratio: 16 / 9;
+    }
+
+    @include desktop {
+      height: auto;
+      aspect-ratio: 16 / 9;
+    }
+  }
+
+  /* Info */
+  &__info {
+    text-align: center;
+  }
+
+  &__kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    margin: 0 0 0.35rem;
+    color: #6a4f7b;
+    font-weight: 800;
+  }
+
+  &__heading {
+    margin: 0 0 0.75rem;
+    font-size: 1.35rem;
+    font-weight: 900;
+
+    @include tablet {
+      font-size: 1.55rem;
+    }
+
+    @include desktop {
+      font-size: 1.75rem;
+    }
+  }
+
+  &__text {
+    margin: 0 auto 0.75rem;
+    max-width: 58ch;
+    line-height: 1.55;
+    color: #222;
+  }
+
+  &__list {
+    margin: 0.75rem auto 0.75rem;
+    padding-left: 1.25rem;
+    text-align: left;
+    max-width: 58ch;
+    color: #333;
+
+    li {
+      margin-bottom: 0.55rem;
+      line-height: 1.5;
+    }
+  }
+
+  &__note {
+    margin: 0.5rem auto 0;
+    max-width: 58ch;
+    color: #222;
+    line-height: 1.5;
+  }
+
+  &__cta-wrap {
+    margin-top: 0.9rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__cta {
+    appearance: none;
+    border: none;
+    background: #a864c1;
+    color: #fff;
+    font-weight: 900;
+    font-size: 1rem;
+    border-radius: 999px;
+    padding: 0.85rem 1.25rem;
+    cursor: pointer;
+    transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
+    box-shadow: 0 8px 20px rgba(168, 100, 193, 0.28);
+
+    &:hover {
+      background: #8e57aa;
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    &:focus-visible {
+      outline: 3px solid rgba(168, 100, 193, 0.35);
+      outline-offset: 3px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card,
+    &__cta {
+      transition: none;
     }
   }
 }
