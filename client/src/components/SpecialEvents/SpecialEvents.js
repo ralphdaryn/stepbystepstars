@@ -1,7 +1,6 @@
 import "./SpecialEvents.scss";
 import { useState } from "react";
-import BackButton from "../BackButton/BackButton";
-import specialEvents7 from "../../assets/images/newyear.jpeg";
+import specialEvents from "../../assets/images/newyear.jpeg";
 
 
 const SpecialEvents = () => {
@@ -10,11 +9,7 @@ const SpecialEvents = () => {
   const openMedia = (mediaSrc) => setSelectedMedia(mediaSrc);
   const closeMedia = () => setSelectedMedia(null);
 
-
-
-
-
-  const linkToBuyTickets6 = () => {
+  const linkToBuyTickets = () => {
     window.open(
       "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=893309&k_class_tab=66373",
       "_blank"
@@ -25,7 +20,6 @@ const SpecialEvents = () => {
   return (
     <div className="special-events">
       <div className="special-events__header">
-        <BackButton />
         <h2 className="special-events__title">Special Events</h2>
       </div>
 
@@ -39,14 +33,14 @@ const SpecialEvents = () => {
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
-            src={specialEvents7}
+            src={specialEvents}
             alt="Special Event"
             className="special-events__image"
-            onClick={() => openMedia(specialEvents7)}
+            onClick={() => openMedia(specialEvents)}
           />
           <button
             className="special-events__button"
-            onClick={linkToBuyTickets6}
+            onClick={linkToBuyTickets}
           >
             Click Here to Register!
           </button>
