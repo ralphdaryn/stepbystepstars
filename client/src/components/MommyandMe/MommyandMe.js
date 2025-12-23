@@ -153,10 +153,6 @@ const MommyandMe = () => {
                 ))}
               </Slider>
             </div>
-
-            <p className="mommyandme__note mommyandme__note--muted">
-              Use the arrows to view all session dates.
-            </p>
           </article>
 
           <article className="mommyandme__panel card">
