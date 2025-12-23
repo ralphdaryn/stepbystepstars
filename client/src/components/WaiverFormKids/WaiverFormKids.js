@@ -1,7 +1,6 @@
 import "./WaiverFormKids.scss";
 import { useState, useRef } from "react";
 import SignatureCanvas from "react-signature-canvas";
-import BackButton from "../BackButton/BackButton";
 
 const WaiverFormKids = () => {
   const [formData, setFormData] = useState({
@@ -87,7 +86,6 @@ const WaiverFormKids = () => {
   return (
     <div>
       <div className="waiver-form-kids__button">
-        <BackButton />
       </div>
       <form className="waiver-form-kids" onSubmit={handleSubmit}>
         <h2>Kids Play Area Waiver and Release of Liability</h2>

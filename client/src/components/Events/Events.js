@@ -1,6 +1,5 @@
 import "./Events.scss";
 import { useState, useEffect } from "react";
-import BackButton from "../BackButton/BackButton";
 
 const Events = () => {
   const [formData, setFormData] = useState({
@@ -61,7 +60,6 @@ const Events = () => {
   return (
     <div className="events">
       <div className="events__header">
-        <BackButton />
         <h2 className="events__title">Book an event</h2>
       </div>
       <form className="events-form" onSubmit={handleSubmit}>
