@@ -83,9 +83,6 @@ const Header = () => {
             <li className={`header__navigation-link ${activeLink === "Home" ? "active" : ""}`}>
               <Link to="/" onClick={() => handleLinkClick("Home")}>Home</Link>
             </li>
-            <li className={`header__navigation-link ${activeLink === "About" ? "active" : ""}`}>
-              <Link to="/ourstory" onClick={() => handleLinkClick("About")}>Our Story</Link>
-            </li>
 
             {/* -------- S-Town Dropdown -------- */}
             <li
@@ -186,10 +183,6 @@ const Header = () => {
             <li className="header__sidebar-link" onClick={() => handleLinkClick("Home")}>
               <Link to="/">Home <FaArrowRight /></Link>
             </li>
-            <li className="header__sidebar-link" onClick={() => handleLinkClick("About")}>
-              <Link to="/ourstory">Our Story <FaArrowRight /></Link>
-            </li>
-
             {/* S-Town dropdown */}
             <li className="header__sidebar-link">
               <span onClick={() => handleDropdownClick(setShowBirthdayPartiesDropdown)}>
