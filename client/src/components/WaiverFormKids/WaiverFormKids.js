@@ -85,8 +85,7 @@ const WaiverFormKids = () => {
 
   return (
     <div>
-      <div className="waiver-form-kids__button">
-      </div>
+      <div className="waiver-form-kids__button"></div>
       <form className="waiver-form-kids" onSubmit={handleSubmit}>
         <h2>Kids Play Area Waiver and Release of Liability</h2>
         <div className="waiver-form-kids__content">
@@ -164,12 +163,16 @@ const WaiverFormKids = () => {
               medical expenses incurred.
             </li>
             <li>
-              <strong>Rules and Conduct:</strong> I, for myself, my child or
-              ward agree to abide by and ensure my child(ren) follow the rules
-              and guidelines set forth by Step By Step Club Inc. for the safety
-              and well-being of all participants. I understand that failure to
-              follow the rules may result in my child(ren) being asked to leave
-              the play area.
+              <strong>Rules and Conduct:</strong> I agree to follow and ensure
+              that my child(ren) follow all rules, guidelines, and safety
+              instructions established by Step By Step Club Inc. for the safety
+              and well-being of all participants. I understand and acknowledge
+              that socks are required at all times while using the play area.
+              Shoes are strictly not permitted in the play area for safety and
+              hygiene reasons. I acknowledge that failure to comply with this
+              requirement, including wearing shoes or not wearing socks, may
+              result in my child(ren) being denied access to the play area or
+              being asked to leave the facility without refund.
             </li>
             <li>
               <strong>Photograph and Video Release:</strong> I grant Step By
