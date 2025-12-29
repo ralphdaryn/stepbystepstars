@@ -187,6 +187,15 @@ const BirthdayParties = () => {
             best to accommodate.
           </p>
         </FAQItem>
+
+               {/* ✅ ADDED: Socks Required */}
+        <FAQItem title="Are socks required?">
+          <p className="birthday-party__faq-text">
+            Yes — for safety and hygiene, <strong>socks are required</strong> for
+            all children and adults in the play area.{" "}
+            <strong>Shoes are not permitted</strong>.
+          </p>
+        </FAQItem>
       </section>
 
       {/* Modal */}
