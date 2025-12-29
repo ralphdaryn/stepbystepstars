@@ -17,7 +17,6 @@
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 
-  /* Header */
   &__header {
     display: flex;
     justify-content: center;
@@ -43,132 +42,66 @@
   }
 
   &__title {
-    margin: 0;
-    text-align: center;
     font-size: 1.6rem;
     font-weight: 900;
-    letter-spacing: 0.2px;
+    text-align: center;
 
     @include tablet {
       font-size: 2rem;
     }
   }
 
-  /* Shared card vibe (soft, not border-heavy) */
   .card {
     background: rgba(255, 255, 255, 0.88);
-    border: 1px solid rgba(0, 0, 0, 0.03);
     border-radius: 14px;
     padding: 1rem;
     box-shadow: 0 10px 22px rgba(0, 0, 0, 0.05);
-    transition: transform 160ms ease, box-shadow 160ms ease;
-
-    &:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 26px rgba(0, 0, 0, 0.07);
-    }
   }
 
   .card--soft {
     background: linear-gradient(180deg, #ffffff 0%, #fbf8fe 100%);
   }
 
-  /* Layout: mobile-first stacked */
   &__content {
-    margin-top: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 0.9rem;
-  }
-
-  /* Tablet/desktop: still “stacked vibe” but side-by-side lanes */
-  @include tablet {
-    &__content {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      align-items: start;
-      gap: 1rem;
-    }
-  }
-
-  @include desktop {
-    &__content {
-      gap: 1.25rem;
-    }
-  }
-
-  /* Copy card */
-  &__card {
-    text-align: center;
+    gap: 1rem;
 
     @include tablet {
-      text-align: left;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.25rem;
     }
   }
 
   &__kicker {
     text-transform: uppercase;
-    letter-spacing: 0.12em;
     font-size: 0.75rem;
-    margin: 0 0 0.35rem;
-    color: #6a4f7b;
     font-weight: 800;
-
-    @include tablet {
-      text-align: left;
-    }
+    color: #6a4f7b;
   }
 
   &__heading {
-    margin: 0 0 0.75rem;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 900;
-    color: #1f1a22;
-
-    @include tablet {
-      font-size: 1.55rem;
-    }
-
-    @include desktop {
-      font-size: 1.75rem;
-    }
+    margin-bottom: 0.75rem;
   }
 
   &__text {
-    margin: 0 0 0.65rem;
+    margin-bottom: 0.65rem;
     line-height: 1.55;
-    color: #222;
+  }
 
-    @include tablet {
-      max-width: 62ch;
+  &__bullets {
+    padding-left: 1.2rem;
+
+    li {
+      margin-bottom: 0.35rem;
     }
   }
 
   &__price {
-    margin-top: 0.25rem;
-  }
-
-  &__link {
-    color: #a864c1;
-    font-weight: 800;
-    text-decoration: none;
-
-    &:hover,
-    &:focus {
-      color: #86509a;
-      text-decoration: underline;
-    }
-  }
-
-  &__bullets {
-    margin: 0.5rem 0 0.75rem;
-    padding-left: 1.1rem;
-    color: #222;
-
-    li {
-      margin-bottom: 0.35rem;
-      line-height: 1.45;
-    }
+    margin-top: 0.5rem;
   }
 
   &__section {
@@ -176,35 +109,27 @@
   }
 
   &__subheading {
-    margin: 0 0 0.5rem;
-    font-size: 1.1rem;
     font-weight: 900;
-    color: #222;
-
-    @include tablet {
-      font-size: 1.15rem;
-    }
+    margin-bottom: 0.4rem;
   }
 
   &__steps {
-    margin: 0;
     padding-left: 1.25rem;
-
-    li {
-      margin-bottom: 0.5rem;
-      line-height: 1.5;
-      color: #222;
-    }
   }
 
-  &__hours {
-    .privateplaygroup__text {
+  &__notice {
+    border: 1px dashed rgba(168, 100, 193, 0.35);
+    background: rgba(168, 100, 193, 0.06);
+    border-radius: 12px;
+    padding: 0.75rem;
+  }
+
+  &__availability {
+    .privateplaygroup__bullets {
       margin-bottom: 0;
-      opacity: 0.92;
     }
   }
 
-  /* CTA */
   &__cta {
     margin-top: 1rem;
     display: flex;
@@ -216,80 +141,24 @@
   }
 
   &__button {
-    appearance: none;
     border: none;
     background: #a864c1;
     color: #fff;
     font-weight: 900;
-    font-size: 1rem;
     border-radius: 999px;
     padding: 0.85rem 1.25rem;
     cursor: pointer;
-    transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
-    box-shadow: 0 8px 20px rgba(168, 100, 193, 0.28);
-
-    &:hover {
-      background: #8e57aa;
-      transform: translateY(-1px);
-    }
-
-    &:active {
-      transform: translateY(0);
-    }
-
-    &:focus-visible {
-      outline: 3px solid rgba(168, 100, 193, 0.35);
-      outline-offset: 3px;
-    }
   }
 
-  /* Media lane */
   &__media {
     display: flex;
     flex-direction: column;
     gap: 0.85rem;
-
-    @include tablet {
-      position: sticky;
-      top: 7.75rem; /* stays visible nicely on taller pages */
-    }
-  }
-
-  &__media-card {
-    padding: 0;
-    overflow: hidden;
   }
 
   &__image {
     width: 100%;
-    height: 15.5rem; /* mobile */
-    object-fit: cover;
-    display: block;
     border-radius: 14px;
-
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
-    transition: transform 160ms ease, box-shadow 160ms ease;
-
-    &:hover {
-      transform: scale(1.01);
-      box-shadow: 0 14px 26px rgba(0, 0, 0, 0.08);
-    }
-  }
-
-  /* Tablet/Desktop: keep images “fit”, not stretched huge */
-  @include tablet {
-    &__image {
-      height: auto;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .card,
-    &__image,
-    &__button {
-      transition: none;
-    }
+    object-fit: cover;
   }
 }

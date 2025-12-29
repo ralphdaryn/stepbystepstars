@@ -27,14 +27,17 @@ const PrivatePlayGroup = () => {
         />
       </Helmet>
 
-      {/* Header (BackButton removed) */}
+      {/* Header */}
       <header className="privateplaygroup__header">
         <h1 className="privateplaygroup__title">Private Play Group</h1>
       </header>
 
-      {/* Hero / Content (mobile-first stacked) */}
-      <section className="privateplaygroup__content" aria-label="Private play group">
-        {/* Info card */}
+      {/* Content */}
+      <section
+        className="privateplaygroup__content"
+        aria-label="Private play group"
+      >
+        {/* Info Card */}
         <article className="privateplaygroup__card card card--soft">
           <p className="privateplaygroup__kicker">Private sessions • Calm play</p>
 
@@ -60,10 +63,46 @@ const PrivatePlayGroup = () => {
             <li>🧸 Calm, meaningful play for them — and a breather for you</li>
           </ul>
 
+          {/* Pricing */}
           <p className="privateplaygroup__text privateplaygroup__price">
-            <strong>Additional children:</strong> $15 per hour
+            <strong>Pricing:</strong> $35 per child for two hours (each child
+            includes <strong>one adult</strong>).{" "}
+            <strong>Additional adults:</strong> $20 each.
           </p>
 
+          {/* Socks Required */}
+          <div className="privateplaygroup__section privateplaygroup__notice">
+            <h3 className="privateplaygroup__subheading">🧦 Socks Required</h3>
+            <p className="privateplaygroup__text">
+              For safety and hygiene, <strong>socks are required</strong> for all
+              children and adults in the play area.{" "}
+              <strong>Shoes are not permitted</strong>.
+            </p>
+          </div>
+
+          {/* No Drop-in */}
+          <div className="privateplaygroup__section privateplaygroup__notice">
+            <h3 className="privateplaygroup__subheading">Important</h3>
+            <p className="privateplaygroup__text">
+              <strong>Please note:</strong> We do not offer drop-in play. All
+              private play groups must be booked in advance.
+            </p>
+          </div>
+
+          {/* Availability */}
+          <div className="privateplaygroup__section privateplaygroup__availability">
+            <h3 className="privateplaygroup__subheading">🕒 Availability</h3>
+            <ul className="privateplaygroup__bullets">
+              <li>
+                <strong>Weekdays:</strong> Available all day
+              </li>
+              <li>
+                <strong>Weekends:</strong> 8:30am–10:30am or 6:30pm–8:30pm
+              </li>
+            </ul>
+          </div>
+
+          {/* Booking */}
           <div className="privateplaygroup__section">
             <h3 className="privateplaygroup__subheading">📅 How to Book</h3>
             <ol className="privateplaygroup__steps">
@@ -84,34 +123,19 @@ const PrivatePlayGroup = () => {
             </ol>
           </div>
 
-          <div className="privateplaygroup__section privateplaygroup__hours">
-            <h3 className="privateplaygroup__subheading">
-              Private Play Group Hours
-            </h3>
-            <p className="privateplaygroup__text">
-              Group play hours vary due to private bookings. For the latest
-              updates, please check our{" "}
-              <a
-                className="privateplaygroup__link"
-                href="https://www.instagram.com/stownclub/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Instagram
-              </a>
-              .
-            </p>
-          </div>
-
+          {/* CTA */}
           <div className="privateplaygroup__cta">
-            <button className="privateplaygroup__button" onClick={handlePlanner}>
+            <button
+              className="privateplaygroup__button"
+              onClick={handlePlanner}
+            >
               Connect With Your Event Planner
             </button>
           </div>
         </article>
 
         {/* Images */}
-        <div className="privateplaygroup__media" aria-label="Private play photos">
+        <div className="privateplaygroup__media">
           <div className="privateplaygroup__media-card card">
             <img
               src={privatePlayGroupImg2}
