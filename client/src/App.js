@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
-import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import BirthdayParties from "./components/BirthdayParties/BirthdayParties";
 import PrivatePlayGroup from "./components/PrivatePlayGroup/PrivatePlayGroup";
@@ -33,7 +32,6 @@ function App() {
         </div>
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/ourstory" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/birthdayparties" element={<BirthdayParties />} />
           <Route path="/PrivatePlayGroup" element={<PrivatePlayGroup />} />
