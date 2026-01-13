@@ -1,6 +1,5 @@
 import "./SpecialEvents.scss";
 import { useState } from "react";
-import specialEvents from "../../assets/images/newyear.jpeg";
 import specialEvents2 from '../../assets/images/soca.jpeg'
 
 
@@ -10,12 +9,6 @@ const SpecialEvents = () => {
   const openMedia = (mediaSrc) => setSelectedMedia(mediaSrc);
   const closeMedia = () => setSelectedMedia(null);
 
-  const linkToBuyTickets = () => {
-    window.open(
-      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=893309&k_class_tab=66373",
-      "_blank"
-    );
-  };
     const linkToBuyTickets2 = () => {
     window.open(
       "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=905938",
@@ -38,20 +31,6 @@ const SpecialEvents = () => {
       </div>
 
       <div className="special-events__card-wrapper">
-        <div className="special-events__image-container">
-          <img
-            src={specialEvents}
-            alt="Special Event"
-            className="special-events__image"
-            onClick={() => openMedia(specialEvents)}
-          />
-          <button
-            className="special-events__button"
-            onClick={linkToBuyTickets}
-          >
-            Click Here to Register!
-          </button>
-        </div>
            <div className="special-events__image-container">
           <img
             src={specialEvents2}
