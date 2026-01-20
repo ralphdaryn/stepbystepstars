@@ -2,6 +2,7 @@ import "./SpecialEvents.scss";
 import { useState } from "react";
 import specialEvents2 from '../../assets/images/soca.jpeg'
 import specialEvents3 from '../../assets/images/valentine.jpeg'
+import specialEvents4 from '../../assets/images/babydance.jpeg'
 
 
 const SpecialEvents = () => {
@@ -20,6 +21,13 @@ const SpecialEvents = () => {
     const linkToBuyTickets3 = () => {
     window.open(
       "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=911145",
+      "_blank"
+    );
+  };
+
+      const linkToBuyTickets4 = () => {
+    window.open(
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=911163&k_class_tab=66299",
       "_blank"
     );
   };
@@ -66,6 +74,22 @@ const SpecialEvents = () => {
           <button
             className="special-events__button"
             onClick={linkToBuyTickets3}
+          >
+            Click Here to Register!
+          </button>
+        </div>
+      </div>
+            <div className="special-events__card-wrapper">
+           <div className="special-events__image-container">
+          <img
+            src={specialEvents4}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents4)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets4}
           >
             Click Here to Register!
           </button>
