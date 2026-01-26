@@ -61,6 +61,38 @@ const SpecialEvents = () => {
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
+            src={specialEvents6}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents6)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets5}
+          >
+            Click Here to Register!
+          </button>
+        </div>
+      </div>
+      <div className="special-events__card-wrapper">
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents5}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents5)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets5}
+          >
+            Click Here to Register!
+          </button>
+        </div>
+      </div>
+      <div className="special-events__card-wrapper">
+        <div className="special-events__image-container">
+          <img
             src={specialEvents3}
             alt="Special Event"
             className="special-events__image"
@@ -90,7 +122,7 @@ const SpecialEvents = () => {
           </button>
         </div>
       </div>
-            <div className="special-events__card-wrapper">
+      <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
             src={specialEvents7}
@@ -117,38 +149,6 @@ const SpecialEvents = () => {
           <button
             className="special-events__button"
             onClick={linkToBuyTickets2}
-          >
-            Click Here to Register!
-          </button>
-        </div>
-      </div>
-      <div className="special-events__card-wrapper">
-        <div className="special-events__image-container">
-          <img
-            src={specialEvents5}
-            alt="Special Event"
-            className="special-events__image"
-            onClick={() => openMedia(specialEvents5)}
-          />
-          <button
-            className="special-events__button"
-            onClick={linkToBuyTickets5}
-          >
-            Click Here to Register!
-          </button>
-        </div>
-      </div>
-      <div className="special-events__card-wrapper">
-        <div className="special-events__image-container">
-          <img
-            src={specialEvents6}
-            alt="Special Event"
-            className="special-events__image"
-            onClick={() => openMedia(specialEvents6)}
-          />
-          <button
-            className="special-events__button"
-            onClick={linkToBuyTickets5}
           >
             Click Here to Register!
           </button>
