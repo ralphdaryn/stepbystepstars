@@ -328,88 +328,28 @@
     width: 100%;
   }
 
-  /* Programs */
-  &__programs {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-top: 0.75rem;
-  }
-
-  &__program {
-    display: block;
-    text-decoration: none;
-    color: inherit;
+  /* ✅ FIXED: no cropping on tablet/desktop */
+  &__media-img {
+    width: 100%;
+    height: 22rem;
+    object-fit: cover;
     border-radius: 14px;
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    background: rgba(255, 255, 255, 0.78);
-    transition: transform 160ms ease, box-shadow 160ms ease,
-      border-color 160ms ease;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    display: block;
 
-    &:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
-      border-color: rgba(168, 100, 193, 0.25);
+    @include tablet {
+      height: 26rem;
+      object-fit: contain; /* ✅ stop cropping */
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px;
     }
 
-    &:active {
-      transform: translateY(0);
-      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+    @include desktop {
+      height: 480px;
+      object-fit: contain; /* ✅ stop cropping */
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 14px;
     }
-
-    &:focus-visible {
-      outline: 3px solid rgba(168, 100, 193, 0.35);
-      outline-offset: 3px;
-    }
-  }
-
-  &__program-row {
-    display: grid;
-    grid-template-columns: 42px 1fr 18px;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.9rem 0.95rem;
-  }
-
-  &__program-icon {
-    width: 42px;
-    height: 42px;
-    border-radius: 12px;
-    display: grid;
-    place-items: center;
-    background: rgba(168, 100, 193, 0.12);
-    border: 1px solid rgba(168, 100, 193, 0.18);
-    font-size: 1.1rem;
-  }
-
-  &__program-text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-  }
-
-  &__program-title {
-    font-weight: 900;
-  }
-
-  &__program-sub {
-    font-size: 0.95rem;
-    opacity: 0.9;
-    line-height: 1.45;
-  }
-
-  &__program-chevron {
-    font-size: 1.4rem;
-    opacity: 0.55;
-    transform: translateX(0);
-    transition: transform 160ms ease, opacity 160ms ease;
-  }
-
-  &__program:hover &__program-chevron {
-    transform: translateX(2px);
-    opacity: 0.85;
   }
 
   &__cta-wrap {
