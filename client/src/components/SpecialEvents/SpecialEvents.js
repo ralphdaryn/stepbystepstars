@@ -1,9 +1,8 @@
 import "./SpecialEvents.scss";
 import { useState } from "react";
-import specialEvents2 from '../../assets/images/soca.jpeg'
-import specialEvents3 from '../../assets/images/valentine.jpeg'
-import specialEvents4 from '../../assets/images/babydance.jpeg'
-
+import specialEvents2 from "../../assets/images/soca.jpeg";
+import specialEvents3 from "../../assets/images/valentine.jpeg";
+import specialEvents4 from "../../assets/images/babydance.jpeg";
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -11,27 +10,26 @@ const SpecialEvents = () => {
   const openMedia = (mediaSrc) => setSelectedMedia(mediaSrc);
   const closeMedia = () => setSelectedMedia(null);
 
-    const linkToBuyTickets2 = () => {
+  const linkToBuyTickets2 = () => {
     window.open(
-      "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=905938",
-      "_blank"
+      "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=915599",
+      "_blank",
     );
   };
 
-    const linkToBuyTickets3 = () => {
+  const linkToBuyTickets3 = () => {
     window.open(
       "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=911145",
-      "_blank"
+      "_blank",
     );
   };
 
-      const linkToBuyTickets4 = () => {
+  const linkToBuyTickets4 = () => {
     window.open(
       "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=911163&k_class_tab=66299",
-      "_blank"
+      "_blank",
     );
   };
-
 
   return (
     <div className="special-events">
@@ -45,26 +43,8 @@ const SpecialEvents = () => {
           Check out the exclusive events below to grab your tickets today!
         </p>
       </div>
-
       <div className="special-events__card-wrapper">
-           <div className="special-events__image-container">
-          <img
-            src={specialEvents2}
-            alt="Special Event"
-            className="special-events__image"
-            onClick={() => openMedia(specialEvents2)}
-          />
-          <button
-            className="special-events__button"
-            onClick={linkToBuyTickets2}
-          >
-            Click Here to Register!
-          </button>
-        </div>
-      </div>
-
-        <div className="special-events__card-wrapper">
-           <div className="special-events__image-container">
+        <div className="special-events__image-container">
           <img
             src={specialEvents3}
             alt="Special Event"
@@ -79,8 +59,8 @@ const SpecialEvents = () => {
           </button>
         </div>
       </div>
-            <div className="special-events__card-wrapper">
-           <div className="special-events__image-container">
+      <div className="special-events__card-wrapper">
+        <div className="special-events__image-container">
           <img
             src={specialEvents4}
             alt="Special Event"
@@ -90,6 +70,22 @@ const SpecialEvents = () => {
           <button
             className="special-events__button"
             onClick={linkToBuyTickets4}
+          >
+            Click Here to Register!
+          </button>
+        </div>
+      </div>
+      <div className="special-events__card-wrapper">
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents2}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents2)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets2}
           >
             Click Here to Register!
           </button>
