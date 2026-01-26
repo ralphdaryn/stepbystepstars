@@ -5,7 +5,7 @@ import "./GroupFitness.scss";
 import groupFitnessImage from "../../assets/images/groupfitness1.jpeg";
 import groupFitnessImage2 from "../../assets/images/groupfitness-member.jpeg";
 
-import specialEvents1 from "../../assets/images/smallgroup.PNG";
+import specialEvents1 from "../../assets/images/smallgrouptrain.jpeg";
 import specialEvents2 from "../../assets/images/training.jpeg";
 
 const GroupFitness = () => {
