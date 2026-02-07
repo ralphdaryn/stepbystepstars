@@ -48,6 +48,13 @@ const Contact = () => {
       const data = await response.json();
       alert(data.message || "Your message has been successfully submitted!");
 
+      // ✅ GA4 event (fires only after successful submit)
+      if (window.gtag) {
+        window.gtag("event", "contact_submit", {
+          subject: formData.subject || "unknown",
+        });
+      }
+
       setFormData({
         name: "",
         email: "",
@@ -81,6 +88,7 @@ const Contact = () => {
                 required
               />
             </div>
+
             <div className="contact__form-group contact__form-group--row">
               <div className="contact__form-group contact__form-group--half">
                 <label htmlFor="email" className="contact__label">
@@ -96,6 +104,7 @@ const Contact = () => {
                   required
                 />
               </div>
+
               <div className="contact__form-group contact__form-group--half">
                 <label htmlFor="phoneNumber" className="contact__label">
                   Phone Number
@@ -111,6 +120,7 @@ const Contact = () => {
                 />
               </div>
             </div>
+
             <div className="contact__form-group">
               <label htmlFor="subject" className="contact__label">
                 Subject
@@ -130,6 +140,7 @@ const Contact = () => {
                 <option value="feedback">Feedback</option>
               </select>
             </div>
+
             <div className="contact__form-group">
               <label htmlFor="message" className="contact__label">
                 Message
@@ -143,11 +154,13 @@ const Contact = () => {
                 required
               ></textarea>
             </div>
+
             <button className="contact__button" type="submit">
               Submit
             </button>
           </form>
         </div>
+
         <div className="contact__map">
           <iframe
             src="https://storage.googleapis.com/maps-solutions-9o93soxjot/locator-plus/j8uo/locator-plus.html"
