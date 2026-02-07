@@ -1,5 +1,6 @@
 import "./App.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
@@ -13,11 +14,12 @@ import PersonalTraining from "./components/PersonalTraining/PersonalTraining";
 import Events from "./components/Events/Events";
 import WaiverForm from "./components/WaiverForm/WaiverForm";
 import WaiverFormKids from "./components/WaiverFormKids/WaiverFormKids";
-import "./Background.css";
 import Success from "./components/StatusPage/Success";
 import Cancel from "./components/StatusPage/Cancel";
-// import Alert from "./components/Alert/Alert";
 import StrollerFitness from "./components/StrollerFitness/StrollerFitness";
+import Results from "./pages/Results/Results"; // ✅ ADDED
+import "./Background.css";
+// import Alert from "./components/Alert/Alert";
 
 function App() {
   return (
@@ -25,11 +27,13 @@ function App() {
       <div className="App">
         {/* <Alert /> */}
         <Header />
+
         <div className="background">
           {Array.from({ length: 50 }, (_, i) => (
             <span key={i} />
           ))}
         </div>
+
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/contact" element={<Contact />} />
@@ -45,7 +49,11 @@ function App() {
           <Route path="/waiverkids" element={<WaiverFormKids />} />
           <Route path="/success" element={<Success />} />
           <Route path="/cancel" element={<Cancel />} />
+
+          {/* ✅ Results Dashboard */}
+          <Route path="/results" element={<Results />} />
         </Routes>
+
         <Footer />
       </div>
     </Router>
