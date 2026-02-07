@@ -49,11 +49,11 @@ const Contact = () => {
       alert(data.message || "Your message has been successfully submitted!");
 
       // ✅ GA4 event (fires only after successful submit)
-      if (window.gtag) {
-        window.gtag("event", "contact_submit", {
-          subject: formData.subject || "unknown",
-        });
-      }
+      // CHANGE: use optional chaining + include form_name param
+      window.gtag?.("event", "contact_submit", {
+        subject: formData.subject || "unknown",
+        form_name: "contact",
+      });
 
       setFormData({
         name: "",

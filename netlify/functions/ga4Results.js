@@ -92,7 +92,7 @@ exports.handler = async () => {
       })) || [];
 
     // 4) Conversions (events)
-    // You will track these events from the site:
+    // Events tracked from the site:
     // - contact_submit
     // - booking_click
     const eventsRes = await analyticsData.properties.runReport({
