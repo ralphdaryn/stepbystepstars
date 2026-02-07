@@ -49,7 +49,6 @@ const Contact = () => {
       alert(data.message || "Your message has been successfully submitted!");
 
       // ✅ GA4 event (fires only after successful submit)
-      // CHANGE: use optional chaining + include form_name param
       window.gtag?.("event", "contact_submit", {
         subject: formData.subject || "unknown",
         form_name: "contact",
@@ -71,6 +70,7 @@ const Contact = () => {
   return (
     <div className="contact" id="contact-section">
       <h2 className="contact__title">Contact Us</h2>
+
       <div className="contact__wrapper">
         <div className="contact__container">
           <form onSubmit={handleSubmit}>
@@ -162,12 +162,14 @@ const Contact = () => {
         </div>
 
         <div className="contact__map">
+          {/* ✅ FIXED MAP: Standard Google Maps embed (no Cloud project required) */}
           <iframe
-            src="https://storage.googleapis.com/maps-solutions-9o93soxjot/locator-plus/j8uo/locator-plus.html"
             className="contact__iframe"
-            allowFullScreen
-            loading="lazy"
             title="Google Map"
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=1400%20Bayly%20St%20Unit%2013B%2C%20Pickering%2C%20ON%20L1W%203R2&z=16&output=embed"
           ></iframe>
         </div>
       </div>
