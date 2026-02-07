@@ -1,28 +1,69 @@
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 export default function Results() {
-  // ✅ Mock data for now (we’ll replace with GA4 Data API later)
-  const data = {
-    users30d: 1240,
-    newUsers30d: 860,
-    avgEngagementTime: "2m 34s",
-    contactSubmits: 42,
-    bookingClicks: 19,
-    topTrafficSource: "Organic Search",
-    topPages: [
-      { path: "/", views: 980 },
-      { path: "/birthdayparties", views: 520 },
-      { path: "/specialevents", views: 310 },
-      { path: "/mommyandme", views: 260 },
-      { path: "/contact", views: 190 },
-    ],
-  };
+  const [data, setData] = useState(null);
+  const [status, setStatus] = useState({ loading: true, error: "" });
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const load = async () => {
+      try {
+        setStatus({ loading: true, error: "" });
+
+        const res = await fetch("/.netlify/functions/ga4Results", {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        });
+
+        if (!res.ok) {
+          const msg = await res.text();
+          throw new Error(msg || "Failed to load results.");
+        }
+
+        const json = await res.json();
+        if (isMounted) {
+          setData(json);
+          setStatus({ loading: false, error: "" });
+        }
+      } catch (err) {
+        if (isMounted) {
+          setStatus({
+            loading: false,
+            error: err?.message || "Something went wrong fetching results.",
+          });
+        }
+      }
+    };
+
+    load();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  // ✅ Fallback (so page never crashes even if API returns missing fields)
+  const safe = useMemo(() => {
+    const fallback = {
+      users30d: 0,
+      newUsers30d: 0,
+      avgEngagementTime: "—",
+      contactSubmits: 0,
+      bookingClicks: 0,
+      topTrafficSource: "—",
+      topPages: [],
+      rangeLabel: "Last 30 days",
+    };
+
+    return { ...fallback, ...(data || {}) };
+  }, [data]);
 
   // ✅ Health metric
-  const totalConversions = data.contactSubmits + data.bookingClicks;
+  const totalConversions = safe.contactSubmits + safe.bookingClicks;
   const conversionRate =
-    data.users30d > 0
-      ? ((totalConversions / data.users30d) * 100).toFixed(1)
+    safe.users30d > 0
+      ? ((totalConversions / safe.users30d) * 100).toFixed(1)
       : "0.0";
 
   return (
@@ -30,14 +71,23 @@ export default function Results() {
       <header style={styles.header}>
         <p style={styles.eyebrow}>RESULTS</p>
         <h1 style={styles.title}>StepByStep Club Dashboard</h1>
-        <p style={styles.sub}>Last 30 days (mock data for now)</p>
+
+        {status.loading ? (
+          <p style={styles.sub}>Loading results…</p>
+        ) : status.error ? (
+          <p style={{ ...styles.sub, ...styles.error }}>
+            Couldn’t load results: {status.error}
+          </p>
+        ) : (
+          <p style={styles.sub}>{safe.rangeLabel || "Last 30 days"}</p>
+        )}
       </header>
 
       {/* KPI Cards */}
       <div style={styles.kpiGrid}>
-        <KpiCard label="Users (30 days)" value={data.users30d} />
-        <KpiCard label="New users" value={data.newUsers30d} />
-        <KpiCard label="Avg engagement time" value={data.avgEngagementTime} />
+        <KpiCard label="Users (30 days)" value={safe.users30d} />
+        <KpiCard label="New users" value={safe.newUsers30d} />
+        <KpiCard label="Avg engagement time" value={safe.avgEngagementTime} />
         <KpiCard label="Conversion rate" value={`${conversionRate}%`} />
       </div>
 
@@ -46,7 +96,7 @@ export default function Results() {
         <h2 style={styles.h2}>Acquisition</h2>
         <div style={styles.panel}>
           <p style={styles.panelLabel}>Top traffic source</p>
-          <p style={styles.panelValue}>{data.topTrafficSource}</p>
+          <p style={styles.panelValue}>{safe.topTrafficSource}</p>
         </div>
       </section>
 
@@ -56,14 +106,20 @@ export default function Results() {
         <div style={styles.panel}>
           <p style={styles.panelLabel}>Top pages (views)</p>
 
-          <ul style={styles.list}>
-            {data.topPages.map((p) => (
-              <li key={p.path} style={styles.listItem}>
-                <span style={styles.mono}>{p.path}</span>
-                <span style={styles.badge}>{p.views}</span>
-              </li>
-            ))}
-          </ul>
+          {safe.topPages?.length ? (
+            <ul style={styles.list}>
+              {safe.topPages.map((p) => (
+                <li key={p.path} style={styles.listItem}>
+                  <span style={styles.mono}>{p.path}</span>
+                  <span style={styles.badge}>{p.views}</span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p style={{ ...styles.sub, marginTop: 10, opacity: 0.75 }}>
+              No page data yet.
+            </p>
+          )}
         </div>
       </section>
 
@@ -74,12 +130,12 @@ export default function Results() {
         <div style={styles.convGrid}>
           <div style={styles.panel}>
             <p style={styles.panelLabel}>Contact form submits</p>
-            <p style={styles.panelValue}>{data.contactSubmits}</p>
+            <p style={styles.panelValue}>{safe.contactSubmits}</p>
           </div>
 
           <div style={styles.panel}>
             <p style={styles.panelLabel}>Booking / registration clicks</p>
-            <p style={styles.panelValue}>{data.bookingClicks}</p>
+            <p style={styles.panelValue}>{safe.bookingClicks}</p>
           </div>
         </div>
       </section>
@@ -122,6 +178,11 @@ const styles = {
     margin: 0,
     opacity: 0.8,
     lineHeight: 1.6,
+  },
+  error: {
+    color: "#b42318",
+    opacity: 0.95,
+    fontWeight: 700,
   },
   kpiGrid: {
     display: "grid",
