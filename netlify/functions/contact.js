@@ -3,7 +3,9 @@ const nodemailer = require("nodemailer");
 
 exports.handler = async (event) => {
   try {
-    const { name, email, phoneNumber, subject, message } = JSON.parse(event.body);
+    const { name, email, phoneNumber, subject, message } = JSON.parse(
+      event.body,
+    );
 
     const transporter = nodemailer.createTransport({
       service: "Gmail",

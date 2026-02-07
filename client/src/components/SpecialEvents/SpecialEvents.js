@@ -6,7 +6,7 @@ import specialEvents4 from "../../assets/images/babydance.jpeg";
 import specialEvents5 from "../../assets/images/smallgrouptrain.jpeg";
 import specialEvents6 from "../../assets/images/mommyme.jpeg";
 import specialEvents7 from "../../assets/images/music.jpeg";
-import specialEvents8 from '../../assets/images/valentinework.jpeg'
+import specialEvents8 from "../../assets/images/valentinework.jpeg";
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -14,42 +14,59 @@ const SpecialEvents = () => {
   const openMedia = (mediaSrc) => setSelectedMedia(mediaSrc);
   const closeMedia = () => setSelectedMedia(null);
 
+  // ✅ GA4: track booking / registration click
+  const trackBookingClick = (label) => {
+    window.gtag?.("event", "booking_click", {
+      page: window.location.pathname,
+      label,
+    });
+  };
+
+  // ✅ track first, then open external registration link
+  const openRegistrationLink = (url, label) => {
+    trackBookingClick(label);
+    window.open(url, "_blank");
+  };
+
   const linkToBuyTickets2 = () => {
-    window.open(
+    openRegistrationLink(
       "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=915599",
-      "_blank",
+      "soca",
     );
   };
 
   const linkToBuyTickets3 = () => {
-    window.open(
+    openRegistrationLink(
       "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=911145",
-      "_blank",
+      "valentine",
     );
   };
 
   const linkToBuyTickets4 = () => {
-    window.open(
+    openRegistrationLink(
       "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=911163&k_class_tab=66299",
-      "_blank",
+      "baby_dance",
     );
   };
+
   const linkToBuyTickets5 = () => {
-    window.open(
+    openRegistrationLink(
       "https://www.wellnessliving.com/rs/catalog-list.html?a_shop_category%5B%5D=1102551&a_shop_category%5B%5D=1102664&is_filter=1&k_business=651877",
-      "_blank",
+      "catalog_list",
     );
   };
+
   const linkToBuyTickets6 = () => {
-    window.open(
-      "  https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=916112",
-      "_blank",
+    openRegistrationLink(
+      "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=916112",
+      "music",
     );
   };
-    const linkToBuyTickets7 = () => {
-    window.open(
+
+  const linkToBuyTickets7 = () => {
+    openRegistrationLink(
       "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=911159&k_class_tab=66373",
-      "_blank",
+      "valentine_work",
     );
   };
 
@@ -65,6 +82,7 @@ const SpecialEvents = () => {
           Check out the exclusive events below to grab your tickets today!
         </p>
       </div>
+
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
@@ -81,6 +99,7 @@ const SpecialEvents = () => {
           </button>
         </div>
       </div>
+
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
@@ -97,6 +116,7 @@ const SpecialEvents = () => {
           </button>
         </div>
       </div>
+
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
@@ -113,6 +133,7 @@ const SpecialEvents = () => {
           </button>
         </div>
       </div>
+
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
@@ -129,7 +150,8 @@ const SpecialEvents = () => {
           </button>
         </div>
       </div>
-            <div className="special-events__card-wrapper">
+
+      <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
             src={specialEvents8}
@@ -145,6 +167,7 @@ const SpecialEvents = () => {
           </button>
         </div>
       </div>
+
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
@@ -161,6 +184,7 @@ const SpecialEvents = () => {
           </button>
         </div>
       </div>
+
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
@@ -183,6 +207,7 @@ const SpecialEvents = () => {
           <span className="image-modal__close" onClick={closeMedia}>
             &times;
           </span>
+
           {selectedMedia.includes(".mp4") ? (
             <video className="image-modal__content" controls autoPlay>
               <source src={selectedMedia} type="video/mp4" />
