@@ -44,6 +44,7 @@ export default function Results() {
     };
   }, []);
 
+  // ✅ Safe fallback so UI never breaks
   const safe = useMemo(() => {
     const fallback = {
       users30d: 0,
@@ -59,11 +60,18 @@ export default function Results() {
     return { ...fallback, ...(data || {}) };
   }, [data]);
 
+  // ✅ Conversion rate
   const totalConversions = safe.contactSubmits + safe.bookingClicks;
   const conversionRate =
     safe.users30d > 0
       ? ((totalConversions / safe.users30d) * 100).toFixed(1)
       : "0.0";
+
+  // ✅ Format page path for client-friendly display
+  const formatPath = (path) => {
+    if (path === "/") return "/homepage";
+    return path;
+  };
 
   return (
     <section className="results">
@@ -78,7 +86,7 @@ export default function Results() {
             Couldn’t load results: {status.error}
           </p>
         ) : (
-          <p className="results__sub">{safe.rangeLabel || "Last 30 days"}</p>
+          <p className="results__sub">{safe.rangeLabel}</p>
         )}
       </header>
 
@@ -109,7 +117,9 @@ export default function Results() {
             <ul className="results__list">
               {safe.topPages.map((p) => (
                 <li key={p.path} className="results__list-item">
-                  <span className="results__mono">{p.path}</span>
+                  <span className="results__mono">
+                    {formatPath(p.path)}
+                  </span>
                   <span className="results__badge">{p.views}</span>
                 </li>
               ))}
@@ -129,9 +139,10 @@ export default function Results() {
             <p className="results__panel-label">Contact form submits</p>
             <p className="results__panel-value">{safe.contactSubmits}</p>
           </div>
-
           <div className="results__panel">
-            <p className="results__panel-label">Booking / registration clicks</p>
+            <p className="results__panel-label">
+              Booking / Registration clicks
+            </p>
             <p className="results__panel-value">{safe.bookingClicks}</p>
           </div>
         </div>
