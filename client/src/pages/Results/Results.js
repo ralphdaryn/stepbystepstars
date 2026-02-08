@@ -1,6 +1,21 @@
 import React, { useEffect, useMemo, useState } from "react";
 import "./Results.scss";
 
+// ✅ Your exact list (outside component = no ESLint warning)
+const EVENT_PAGES = [
+  "/specialevents",
+  "/birthdayparties",
+  "/privateplaygroup",
+  "/waiver",
+];
+
+const FITNESS_PAGES = [
+  "/mommyandme",
+  "/groupfitness",
+  "/personaltraining",
+  "/strollerfitness",
+];
+
 export default function Results() {
   const [data, setData] = useState(null);
   const [status, setStatus] = useState({ loading: true, error: "" });
@@ -44,7 +59,6 @@ export default function Results() {
     };
   }, []);
 
-  // ✅ Safe fallback so UI never breaks
   const safe = useMemo(() => {
     const fallback = {
       users30d: 0,
@@ -52,7 +66,8 @@ export default function Results() {
       avgEngagementTime: "—",
       contactSubmits: 0,
       bookingClicks: 0,
-      topTrafficSource: "—",
+      topTrafficSource: "(not set)",
+      topSources: [],
       topPages: [],
       rangeLabel: "Last 30 days",
     };
@@ -60,18 +75,37 @@ export default function Results() {
     return { ...fallback, ...(data || {}) };
   }, [data]);
 
-  // ✅ Conversion rate
   const totalConversions = safe.contactSubmits + safe.bookingClicks;
   const conversionRate =
     safe.users30d > 0
       ? ((totalConversions / safe.users30d) * 100).toFixed(1)
       : "0.0";
 
-  // ✅ Format page path for client-friendly display
   const formatPath = (path) => {
     if (path === "/") return "/homepage";
     return path;
   };
+
+  // ✅ FIX B: show ALL your pages every time (0 if not in GA4 yet)
+  const { eventsPages, fitnessPages, otherPages } = useMemo(() => {
+    const pages = Array.isArray(safe.topPages) ? safe.topPages : [];
+    const byPath = new Map(pages.map((p) => [p.path, Number(p.views) || 0]));
+
+    const events = EVENT_PAGES.map((path) => ({
+      path,
+      views: byPath.get(path) ?? 0,
+    }));
+
+    const fitness = FITNESS_PAGES.map((path) => ({
+      path,
+      views: byPath.get(path) ?? 0,
+    }));
+
+    const groupedSet = new Set([...EVENT_PAGES, ...FITNESS_PAGES]);
+    const other = pages.filter((p) => !groupedSet.has(p.path));
+
+    return { eventsPages: events, fitnessPages: fitness, otherPages: other };
+  }, [safe.topPages]);
 
   return (
     <section className="results">
@@ -90,7 +124,6 @@ export default function Results() {
         )}
       </header>
 
-      {/* KPI Cards */}
       <div className="results__kpi-grid">
         <KpiCard label="Users (30 days)" value={safe.users30d} />
         <KpiCard label="New users" value={safe.newUsers30d} />
@@ -98,39 +131,76 @@ export default function Results() {
         <KpiCard label="Conversion rate" value={`${conversionRate}%`} />
       </div>
 
-      {/* Acquisition */}
       <section className="results__section">
         <h2 className="results__h2">Acquisition</h2>
+
         <div className="results__panel">
           <p className="results__panel-label">Top traffic source</p>
           <p className="results__panel-value">{safe.topTrafficSource}</p>
+
+          {Array.isArray(safe.topSources) && safe.topSources.length ? (
+            <div className="results__sources">
+              <p className="results__group-title">Top sources (sessions)</p>
+
+              <ul className="results__list">
+                {safe.topSources.map((s) => (
+                  <li key={s.source} className="results__list-item">
+                    <span className="results__mono">{s.source}</span>
+                    <span className="results__badge">{s.sessions}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </div>
       </section>
 
-      {/* Engagement */}
       <section className="results__section">
         <h2 className="results__h2">Engagement</h2>
+
         <div className="results__panel">
           <p className="results__panel-label">Top pages (views)</p>
 
-          {safe.topPages?.length ? (
+          <div className="results__group">
+            <p className="results__group-title">Events</p>
             <ul className="results__list">
-              {safe.topPages.map((p) => (
+              {eventsPages.map((p) => (
                 <li key={p.path} className="results__list-item">
-                  <span className="results__mono">
-                    {formatPath(p.path)}
-                  </span>
+                  <span className="results__mono">{formatPath(p.path)}</span>
                   <span className="results__badge">{p.views}</span>
                 </li>
               ))}
             </ul>
-          ) : (
-            <p className="results__empty">No page data yet.</p>
-          )}
+          </div>
+
+          <div className="results__group">
+            <p className="results__group-title">Fitness</p>
+            <ul className="results__list">
+              {fitnessPages.map((p) => (
+                <li key={p.path} className="results__list-item">
+                  <span className="results__mono">{formatPath(p.path)}</span>
+                  <span className="results__badge">{p.views}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {otherPages.length ? (
+            <div className="results__group">
+              <p className="results__group-title">Other</p>
+              <ul className="results__list">
+                {otherPages.map((p) => (
+                  <li key={p.path} className="results__list-item">
+                    <span className="results__mono">{formatPath(p.path)}</span>
+                    <span className="results__badge">{p.views}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </div>
       </section>
 
-      {/* Conversion */}
       <section className="results__section">
         <h2 className="results__h2">Conversion</h2>
 
@@ -139,10 +209,9 @@ export default function Results() {
             <p className="results__panel-label">Contact form submits</p>
             <p className="results__panel-value">{safe.contactSubmits}</p>
           </div>
+
           <div className="results__panel">
-            <p className="results__panel-label">
-              Booking / Registration clicks
-            </p>
+            <p className="results__panel-label">Booking / Registration clicks</p>
             <p className="results__panel-value">{safe.bookingClicks}</p>
           </div>
         </div>

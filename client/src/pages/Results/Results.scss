@@ -1,5 +1,8 @@
 .results {
-  padding: 32px 18px 60px;
+  min-height: 100vh;
+  overflow-y: auto;
+
+  padding: 120px 18px 60px;
   max-width: 1100px;
   margin: 0 auto;
   color: #0e2034;
@@ -35,7 +38,6 @@
     }
   }
 
-  /* KPI grid */
   &__kpi-grid {
     display: grid;
     gap: 12px;
@@ -65,7 +67,6 @@
     letter-spacing: -0.02em;
   }
 
-  /* Sections */
   &__section {
     margin-top: 28px;
   }
@@ -102,11 +103,23 @@
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   }
 
-  /* List */
+  &__group {
+    margin-top: 14px;
+  }
+
+  &__group-title {
+    margin: 14px 0 8px;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.75;
+  }
+
   &__list {
     list-style: none;
     padding: 0;
-    margin: 12px 0 0;
+    margin: 0;
     display: grid;
     gap: 10px;
   }
@@ -140,7 +153,11 @@
   }
 
   &__empty {
-    margin-top: 10px;
+    margin: 10px 0 0;
     opacity: 0.75;
+  }
+
+  &__sources {
+    margin-top: 14px;
   }
 }

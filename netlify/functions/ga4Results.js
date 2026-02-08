@@ -10,7 +10,7 @@ function formatSecondsToMinSec(seconds) {
 
 exports.handler = async () => {
   try {
-    const propertyId = process.env.GA4_PROPERTY_ID; // e.g. 523669671
+    const propertyId = process.env.GA4_PROPERTY_ID;
     const clientEmail = process.env.GA4_CLIENT_EMAIL;
     const privateKeyRaw = process.env.GA4_PRIVATE_KEY;
 
@@ -24,7 +24,6 @@ exports.handler = async () => {
       };
     }
 
-    // Important: Netlify env var keeps \n as two chars unless you convert it back
     const privateKey = privateKeyRaw.replace(/\\n/g, "\n");
 
     const auth = new google.auth.JWT({
@@ -46,9 +45,9 @@ exports.handler = async () => {
       requestBody: {
         dateRanges: [{ startDate: "30daysAgo", endDate: "today" }],
         metrics: [
-          { name: "activeUsers" }, // users
+          { name: "activeUsers" },
           { name: "newUsers" },
-          { name: "averageSessionDuration" }, // seconds
+          { name: "averageSessionDuration" },
         ],
       },
     });
@@ -58,20 +57,27 @@ exports.handler = async () => {
     const newUsers30d = Number(kpiRow?.[1]?.value || 0);
     const avgEngagementTime = formatSecondsToMinSec(kpiRow?.[2]?.value);
 
-    // 2) Top traffic source (sessionDefaultChannelGroup)
-    const sourceRes = await analyticsData.properties.runReport({
+    // 2) Top sources list (Source / Medium) — shows IG + Google when available
+    const sourcesRes = await analyticsData.properties.runReport({
       property,
       requestBody: {
         dateRanges: [{ startDate: "30daysAgo", endDate: "today" }],
-        dimensions: [{ name: "sessionDefaultChannelGroup" }],
+        dimensions: [{ name: "sessionSourceMedium" }],
         metrics: [{ name: "sessions" }],
         orderBys: [{ metric: { metricName: "sessions" }, desc: true }],
-        limit: 1,
+        limit: 8,
       },
     });
 
+    const topSources =
+      sourcesRes.data.rows?.map((r) => ({
+        source: r.dimensionValues?.[0]?.value || "(not set)",
+        sessions: Number(r.metricValues?.[0]?.value || 0),
+      })) || [];
+
     const topTrafficSource =
-      sourceRes.data.rows?.[0]?.dimensionValues?.[0]?.value || "—";
+      topSources.find((s) => s.source && s.source !== "(not set)")?.source ||
+      "(not set)";
 
     // 3) Top pages (pagePath)
     const pagesRes = await analyticsData.properties.runReport({
@@ -81,7 +87,7 @@ exports.handler = async () => {
         dimensions: [{ name: "pagePath" }],
         metrics: [{ name: "screenPageViews" }],
         orderBys: [{ metric: { metricName: "screenPageViews" }, desc: true }],
-        limit: 5,
+        limit: 50,
       },
     });
 
@@ -92,9 +98,6 @@ exports.handler = async () => {
       })) || [];
 
     // 4) Conversions (events)
-    // Events tracked from the site:
-    // - contact_submit
-    // - booking_click
     const eventsRes = await analyticsData.properties.runReport({
       property,
       requestBody: {
@@ -130,6 +133,7 @@ exports.handler = async () => {
         newUsers30d,
         avgEngagementTime,
         topTrafficSource,
+        topSources,
         topPages,
         contactSubmits,
         bookingClicks,
