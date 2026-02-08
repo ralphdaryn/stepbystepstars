@@ -17,7 +17,7 @@ import WaiverFormKids from "./components/WaiverFormKids/WaiverFormKids";
 import Success from "./components/StatusPage/Success";
 import Cancel from "./components/StatusPage/Cancel";
 import StrollerFitness from "./components/StrollerFitness/StrollerFitness";
-import Results from "./pages/Results/Results"; // ✅ ADDED
+import Dashboard from "./pages/Dashboard/Dashboard";
 import "./Background.css";
 // import Alert from "./components/Alert/Alert";
 
@@ -51,7 +51,7 @@ function App() {
           <Route path="/cancel" element={<Cancel />} />
 
           {/* ✅ Results Dashboard */}
-          <Route path="/results" element={<Results />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
 
         <Footer />

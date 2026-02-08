@@ -1,6 +1,6 @@
-// src/pages/Results/Results.js
+// src/pages/Dashboard/Dashboard.js
 import React, { useEffect, useMemo, useState } from "react";
-import "./Results.scss";
+import "./Dashboard.scss";
 
 // ✅ Your exact list (outside component = no ESLint warning)
 const EVENT_PAGES = [
@@ -58,7 +58,7 @@ function formatSourceHint(sourceMedium = "") {
   return "";
 }
 
-export default function Results() {
+export default function Dashboard() {
   const [data, setData] = useState(null);
   const [status, setStatus] = useState({ loading: true, error: "" });
 
@@ -150,61 +150,58 @@ export default function Results() {
   }, [safe.topPages]);
 
   return (
-    <section className="results">
-      <header className="results__header">
-        <p className="results__eyebrow">RESULTS</p>
-        <h1 className="results__title">StepByStep Club Dashboard</h1>
+    <section className="dashboard">
+      <header className="dashboard__header">
+        <p className="dashboard__eyebrow">DASHBOARD</p>
+        <h1 className="dashboard__title">KSnap Studio Analytics</h1>
 
         {status.loading ? (
-          <p className="results__sub">Loading results…</p>
+          <p className="dashboard__sub">Loading results…</p>
         ) : status.error ? (
-          <p className="results__sub results__sub--error">
+          <p className="dashboard__sub dashboard__sub--error">
             Couldn’t load results: {status.error}
           </p>
         ) : (
-          <p className="results__sub">{safe.rangeLabel}</p>
+          <p className="dashboard__sub">{safe.rangeLabel}</p>
         )}
       </header>
 
-      <div className="results__kpi-grid">
+      <div className="dashboard__kpis">
         <KpiCard label="Users (30 days)" value={safe.users30d} />
         <KpiCard label="New users" value={safe.newUsers30d} />
         <KpiCard label="Avg engagement time" value={safe.avgEngagementTime} />
         <KpiCard label="Conversion rate" value={`${conversionRate}%`} />
       </div>
 
-      <section className="results__section">
-        <h2 className="results__h2">Acquisition</h2>
+      <section className="dashboard__section">
+        <h2 className="dashboard__h2">Acquisition</h2>
 
-        <div className="results__panel">
-          <p className="results__panel-label">Top traffic source</p>
+        <div className="dashboard__panel">
+          <p className="dashboard__label">Top traffic source</p>
 
-          {/* ✅ Friendly label instead of GA4 raw value */}
-          <p className="results__panel-value">
+          <p className="dashboard__value">
             {formatSourceLabel(safe.topTrafficSource)}
           </p>
 
           {Array.isArray(safe.topSources) && safe.topSources.length ? (
-            <div className="results__sources">
-              <p className="results__group-title">Top sources (sessions)</p>
+            <div className="dashboard__sources">
+              <p className="dashboard__groupTitle">Top sources (sessions)</p>
 
-              <ul className="results__list">
+              <ul className="dashboard__list">
                 {safe.topSources.map((s) => {
                   const label = formatSourceLabel(s.source);
                   const hint = formatSourceHint(s.source);
 
                   return (
-                    <li key={s.source} className="results__list-item">
-                      <span className="results__mono">
+                    <li key={s.source} className="dashboard__listItem">
+                      <span className="dashboard__mono">
                         {label}
                         {hint ? (
-                          <span style={{ display: "block", opacity: 0.7, fontSize: 12 }}>
-                            {hint}
-                          </span>
+                          <span className="dashboard__hint">{hint}</span>
                         ) : null}
                       </span>
 
-                      <span className="results__badge">{s.sessions}</span>
+                      <span className="dashboard__badge">{s.sessions}</span>
                     </li>
                   );
                 })}
@@ -214,44 +211,44 @@ export default function Results() {
         </div>
       </section>
 
-      <section className="results__section">
-        <h2 className="results__h2">Engagement</h2>
+      <section className="dashboard__section">
+        <h2 className="dashboard__h2">Engagement</h2>
 
-        <div className="results__panel">
-          <p className="results__panel-label">Top pages (views)</p>
+        <div className="dashboard__panel">
+          <p className="dashboard__label">Top pages (views)</p>
 
-          <div className="results__group">
-            <p className="results__group-title">Events</p>
-            <ul className="results__list">
+          <div className="dashboard__group">
+            <p className="dashboard__groupTitle">Events</p>
+            <ul className="dashboard__list">
               {eventsPages.map((p) => (
-                <li key={p.path} className="results__list-item">
-                  <span className="results__mono">{formatPath(p.path)}</span>
-                  <span className="results__badge">{p.views}</span>
+                <li key={p.path} className="dashboard__listItem">
+                  <span className="dashboard__mono">{formatPath(p.path)}</span>
+                  <span className="dashboard__badge">{p.views}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="results__group">
-            <p className="results__group-title">Fitness</p>
-            <ul className="results__list">
+          <div className="dashboard__group">
+            <p className="dashboard__groupTitle">Fitness</p>
+            <ul className="dashboard__list">
               {fitnessPages.map((p) => (
-                <li key={p.path} className="results__list-item">
-                  <span className="results__mono">{formatPath(p.path)}</span>
-                  <span className="results__badge">{p.views}</span>
+                <li key={p.path} className="dashboard__listItem">
+                  <span className="dashboard__mono">{formatPath(p.path)}</span>
+                  <span className="dashboard__badge">{p.views}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           {otherPages.length ? (
-            <div className="results__group">
-              <p className="results__group-title">Other</p>
-              <ul className="results__list">
+            <div className="dashboard__group">
+              <p className="dashboard__groupTitle">Other</p>
+              <ul className="dashboard__list">
                 {otherPages.map((p) => (
-                  <li key={p.path} className="results__list-item">
-                    <span className="results__mono">{formatPath(p.path)}</span>
-                    <span className="results__badge">{p.views}</span>
+                  <li key={p.path} className="dashboard__listItem">
+                    <span className="dashboard__mono">{formatPath(p.path)}</span>
+                    <span className="dashboard__badge">{p.views}</span>
                   </li>
                 ))}
               </ul>
@@ -260,18 +257,18 @@ export default function Results() {
         </div>
       </section>
 
-      <section className="results__section">
-        <h2 className="results__h2">Conversion</h2>
+      <section className="dashboard__section">
+        <h2 className="dashboard__h2">Conversion</h2>
 
-        <div className="results__conv-grid">
-          <div className="results__panel">
-            <p className="results__panel-label">Contact form submits</p>
-            <p className="results__panel-value">{safe.contactSubmits}</p>
+        <div className="dashboard__conversions">
+          <div className="dashboard__panel">
+            <p className="dashboard__label">Contact form submits</p>
+            <p className="dashboard__value">{safe.contactSubmits}</p>
           </div>
 
-          <div className="results__panel">
-            <p className="results__panel-label">Booking / Registration clicks</p>
-            <p className="results__panel-value">{safe.bookingClicks}</p>
+          <div className="dashboard__panel">
+            <p className="dashboard__label">Booking / Registration clicks</p>
+            <p className="dashboard__value">{safe.bookingClicks}</p>
           </div>
         </div>
       </section>
@@ -281,9 +278,9 @@ export default function Results() {
 
 function KpiCard({ label, value }) {
   return (
-    <div className="results__card">
-      <p className="results__card-label">{label}</p>
-      <p className="results__card-value">{value}</p>
+    <div className="dashboard__kpi">
+      <p className="dashboard__kpiLabel">{label}</p>
+      <p className="dashboard__kpiValue">{value}</p>
     </div>
   );
 }
