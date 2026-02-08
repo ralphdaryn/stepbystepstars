@@ -153,7 +153,7 @@ export default function Dashboard() {
     <section className="dashboard">
       <header className="dashboard__header">
         <p className="dashboard__eyebrow">DASHBOARD</p>
-        <h1 className="dashboard__title">KSnap Studio Analytics</h1>
+        <h1 className="dashboard__title">StepbyStep Club Analytics</h1>
 
         {status.loading ? (
           <p className="dashboard__sub">Loading results…</p>
