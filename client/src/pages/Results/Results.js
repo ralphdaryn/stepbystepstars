@@ -1,3 +1,4 @@
+// src/pages/Results/Results.js
 import React, { useEffect, useMemo, useState } from "react";
 import "./Results.scss";
 
@@ -15,6 +16,47 @@ const FITNESS_PAGES = [
   "/personaltraining",
   "/strollerfitness",
 ];
+
+// ✅ Convert GA4 "source / medium" into client-friendly labels
+function formatSourceLabel(sourceMedium = "") {
+  const s = String(sourceMedium).toLowerCase().trim();
+
+  // GA4 may return "(not set)" when it can't attribute the session source
+  if (s === "(not set)" || s === "") return "Direct / Untracked visits";
+
+  if (s.includes("google / organic")) return "Google Search";
+  if (s.includes("(direct) / (none)")) return "Direct visits";
+
+  // Instagram often shows up as l.instagram.com / referral
+  if (s.includes("instagram")) return "Instagram";
+
+  // Optional: other common ones
+  if (s.includes("facebook")) return "Facebook";
+  if (s.includes("t.co") || s.includes("twitter")) return "X (Twitter)";
+
+  // fallback: show raw if it’s something else (keeps it honest)
+  return sourceMedium;
+}
+
+// ✅ Small explanation under each label (optional)
+function formatSourceHint(sourceMedium = "") {
+  const s = String(sourceMedium).toLowerCase().trim();
+
+  if (s === "(not set)" || s === "") {
+    return "Typed the website, bookmark, or apps that don’t pass tracking info";
+  }
+  if (s.includes("google / organic")) {
+    return "Found the site through Google search";
+  }
+  if (s.includes("(direct) / (none)")) {
+    return "Typed the website directly or used a saved link";
+  }
+  if (s.includes("instagram")) {
+    return "Clicked from Instagram bio, story, or message link";
+  }
+
+  return "";
+}
 
 export default function Results() {
   const [data, setData] = useState(null);
@@ -136,19 +178,36 @@ export default function Results() {
 
         <div className="results__panel">
           <p className="results__panel-label">Top traffic source</p>
-          <p className="results__panel-value">{safe.topTrafficSource}</p>
+
+          {/* ✅ Friendly label instead of GA4 raw value */}
+          <p className="results__panel-value">
+            {formatSourceLabel(safe.topTrafficSource)}
+          </p>
 
           {Array.isArray(safe.topSources) && safe.topSources.length ? (
             <div className="results__sources">
               <p className="results__group-title">Top sources (sessions)</p>
 
               <ul className="results__list">
-                {safe.topSources.map((s) => (
-                  <li key={s.source} className="results__list-item">
-                    <span className="results__mono">{s.source}</span>
-                    <span className="results__badge">{s.sessions}</span>
-                  </li>
-                ))}
+                {safe.topSources.map((s) => {
+                  const label = formatSourceLabel(s.source);
+                  const hint = formatSourceHint(s.source);
+
+                  return (
+                    <li key={s.source} className="results__list-item">
+                      <span className="results__mono">
+                        {label}
+                        {hint ? (
+                          <span style={{ display: "block", opacity: 0.7, fontSize: 12 }}>
+                            {hint}
+                          </span>
+                        ) : null}
+                      </span>
+
+                      <span className="results__badge">{s.sessions}</span>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ) : null}
