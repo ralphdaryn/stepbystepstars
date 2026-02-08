@@ -62,6 +62,10 @@ export default function Dashboard() {
   const [data, setData] = useState(null);
   const [status, setStatus] = useState({ loading: true, error: "" });
 
+  // ✅ NEW (Spring Boot health status)
+  const [apiStatus, setApiStatus] = useState("Checking API...");
+
+  // ✅ Your GA4 useEffect (UNCHANGED)
   useEffect(() => {
     let isMounted = true;
 
@@ -98,6 +102,26 @@ export default function Dashboard() {
 
     return () => {
       isMounted = false;
+    };
+  }, []);
+
+  // ✅ NEW: Spring Boot ping (does NOT affect GA4)
+  useEffect(() => {
+    let alive = true;
+
+    fetch("http://localhost:8080/api/health")
+      .then((res) => res.json())
+      .then((json) => {
+        if (!alive) return;
+        setApiStatus(json?.status === "ok" ? "API Connected ✅" : "API not ok ❌");
+      })
+      .catch(() => {
+        if (!alive) return;
+        setApiStatus("API blocked (CORS) or not running ❌");
+      });
+
+    return () => {
+      alive = false;
     };
   }, []);
 
@@ -154,6 +178,9 @@ export default function Dashboard() {
       <header className="dashboard__header">
         <p className="dashboard__eyebrow">DASHBOARD</p>
         <h1 className="dashboard__title">StepbyStep Club Analytics</h1>
+
+        {/* ✅ NEW: Spring Boot status line (tiny + harmless) */}
+        <p className="dashboard__sub">{apiStatus}</p>
 
         {status.loading ? (
           <p className="dashboard__sub">Loading results…</p>
