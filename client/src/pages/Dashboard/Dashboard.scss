@@ -225,3 +225,59 @@
 .dashboard__sources {
   margin-top: 14px;
 }
+
+/* ---------- Auth gated layout (ADD ONLY) ---------- */
+
+.dashboard__locked {
+  display: grid;
+  place-items: center;
+}
+
+/* optional: make the login view look like your existing cards */
+.dashboard__locked .dashboard__header {
+  width: min(560px, 92vw);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  padding: 18px;
+
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.06),
+    0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+/* layout for header + logout button */
+.dashboard__topRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* buttons that match your badge theme */
+.dashboard__btn {
+  margin-top: 14px;
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 900;
+  cursor: pointer;
+
+  background: rgba(168, 100, 193, 0.14);
+  border: 1px solid rgba(168, 100, 193, 0.28);
+  color: rgba(0, 0, 0, 0.9);
+
+  transition: all 160ms ease;
+}
+
+.dashboard__btn:hover {
+  background: #ffffff;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+.dashboard__btn--ghost {
+  margin-top: 0;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
