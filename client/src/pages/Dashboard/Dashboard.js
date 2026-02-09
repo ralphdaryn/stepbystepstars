@@ -65,6 +65,10 @@ export default function Dashboard() {
   // ✅ NEW (Spring Boot health status)
   const [apiStatus, setApiStatus] = useState("Checking API...");
 
+  // ✅ NEW: API base URL (Render in prod via env var, localhost in dev)
+  const API_BASE_URL =
+    import.meta.env.VITE_API_BASE_URL || "http://localhost:8080";
+
   // ✅ Your GA4 useEffect (UNCHANGED)
   useEffect(() => {
     let isMounted = true;
@@ -109,7 +113,7 @@ export default function Dashboard() {
   useEffect(() => {
     let alive = true;
 
-    fetch("http://localhost:8080/api/health")
+    fetch(`${API_BASE_URL}/api/health`)
       .then((res) => res.json())
       .then((json) => {
         if (!alive) return;
@@ -123,7 +127,7 @@ export default function Dashboard() {
     return () => {
       alive = false;
     };
-  }, []);
+  }, [API_BASE_URL]);
 
   const safe = useMemo(() => {
     const fallback = {
