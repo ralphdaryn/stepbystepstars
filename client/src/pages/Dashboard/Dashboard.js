@@ -67,7 +67,7 @@ export default function Dashboard() {
 
   // ✅ NEW: API base URL (Render in prod via env var, localhost in dev)
   const API_BASE_URL =
-    import.meta.env.VITE_API_BASE_URL || "http://localhost:8080";
+    process.env.REACT_APP_API_BASE_URL || "http://localhost:8080";
 
   // ✅ Your GA4 useEffect (UNCHANGED)
   useEffect(() => {
@@ -117,7 +117,9 @@ export default function Dashboard() {
       .then((res) => res.json())
       .then((json) => {
         if (!alive) return;
-        setApiStatus(json?.status === "ok" ? "API Connected ✅" : "API not ok ❌");
+        setApiStatus(
+          json?.status === "ok" ? "API Connected ✅" : "API not ok ❌",
+        );
       })
       .catch(() => {
         if (!alive) return;
@@ -278,7 +280,9 @@ export default function Dashboard() {
               <ul className="dashboard__list">
                 {otherPages.map((p) => (
                   <li key={p.path} className="dashboard__listItem">
-                    <span className="dashboard__mono">{formatPath(p.path)}</span>
+                    <span className="dashboard__mono">
+                      {formatPath(p.path)}
+                    </span>
                     <span className="dashboard__badge">{p.views}</span>
                   </li>
                 ))}
