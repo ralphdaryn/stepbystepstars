@@ -3,9 +3,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import "./Dashboard.scss";
 
-/* =========================
-   STATIC PAGE GROUPS
-========================= */
+// ✅ Your exact list (outside component = no ESLint warning)
 const EVENT_PAGES = [
   "/specialevents",
   "/birthdayparties",
@@ -20,94 +18,116 @@ const FITNESS_PAGES = [
   "/strollerfitness",
 ];
 
-/* =========================
-   SOURCE FORMATTERS
-========================= */
+// ✅ Convert GA4 "source / medium" into client-friendly labels
 function formatSourceLabel(sourceMedium = "") {
   const s = String(sourceMedium).toLowerCase().trim();
 
-  if (!s || s === "(not set)") return "Direct / Untracked visits";
+  // GA4 may return "(not set)" when it can't attribute the session source
+  if (s === "(not set)" || s === "") return "Direct / Untracked visits";
+
   if (s.includes("google / organic")) return "Google Search";
   if (s.includes("(direct) / (none)")) return "Direct visits";
-  if (s.includes("instagram")) return "Instagram";
-  if (s.includes("facebook")) return "Facebook";
-  if (s.includes("twitter") || s.includes("t.co")) return "X (Twitter)";
 
+  // Instagram often shows up as l.instagram.com / referral
+  if (s.includes("instagram")) return "Instagram";
+
+  // Optional: other common
+  if (s.includes("facebook")) return "Facebook";
+  if (s.includes("t.co") || s.includes("twitter")) return "X (Twitter)";
+
+  // fallback: show raw if it’s something else (keeps it honest)
   return sourceMedium;
 }
 
-/* =========================
-   KPI CARD
-========================= */
+// ✅ Small explanation under each label (optional)
+function formatSourceHint(sourceMedium = "") {
+  const s = String(sourceMedium).toLowerCase().trim();
+
+  if (s === "(not set)" || s === "") {
+    return "Typed the website, bookmark, or apps that don’t pass tracking info";
+  }
+  if (s.includes("google / organic")) {
+    return "Found the site through Google search";
+  }
+  if (s.includes("(direct) / (none)")) {
+    return "Typed the website directly or used a saved link";
+  }
+  if (s.includes("instagram")) {
+    return "Clicked from Instagram bio, story, or message link";
+  }
+
+  return "";
+}
+
+// ✅ KPI Card — MUST match your SCSS classnames
 function KpiCard({ label, value }) {
   return (
     <div className="dashboard__kpi">
-      <p className="dashboard__label">{label}</p>
+      <p className="dashboard__kpiLabel">{label}</p>
       <p className="dashboard__kpiValue">{value}</p>
     </div>
   );
 }
 
-/* =========================
-   MAIN DASHBOARD
-========================= */
 export default function Dashboard() {
-  const {
-    isAuthenticated,
-    loginWithRedirect,
-    logout,
-    getAccessTokenSilently,
-  } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, logout, getAccessTokenSilently } =
+    useAuth0();
 
   const [data, setData] = useState(null);
   const [status, setStatus] = useState({ loading: false, error: "" });
+
+  // ✅ Spring Boot health status
   const [apiStatus, setApiStatus] = useState("");
 
+  // ✅ API base URL (Render in prod via env var, localhost in dev)
   const API_BASE_URL =
     process.env.REACT_APP_API_BASE_URL || "http://localhost:8080";
 
-  /* =========================
-     FETCH GA4 DATA (SECURED)
-  ========================= */
+  // ✅ GA4 results — gated by login
   useEffect(() => {
-    let mounted = true;
+    let isMounted = true;
 
     const load = async () => {
       try {
         setStatus({ loading: true, error: "" });
 
+        // ✅ UPDATED: get Auth0 JWT and call Spring Boot protected endpoint
         const token = await getAccessTokenSilently({
           authorizationParams: {
             audience:
-              process.env.REACT_APP_AUTH0_AUDIENCE ||
-              "https://rd-dashboard-api",
+              process.env.REACT_APP_AUTH0_AUDIENCE || "https://rd-dashboard-api",
           },
         });
 
-        const res = await fetch(
-          `${API_BASE_URL}/api/dashboard/ga4Results`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const res = await fetch(`${API_BASE_URL}/api/dashboard/ga4Results`, {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        if (res.status === 403) {
+          throw new Error("Access denied (403). This account is not authorized.");
+        }
 
         if (!res.ok) {
-          throw new Error(await res.text());
+          const msg = await res.text();
+          throw new Error(msg || "Failed to load results.");
         }
 
         const json = await res.json();
-        if (mounted) setData(json);
+        if (isMounted) {
+          setData(json);
+          setStatus({ loading: false, error: "" });
+        }
       } catch (err) {
-        if (mounted)
+        if (isMounted) {
+          setData(null);
           setStatus({
             loading: false,
-            error: err.message || "Failed to load dashboard data",
+            error: err?.message || "Something went wrong fetching results.",
           });
-      } finally {
-        if (mounted)
-          setStatus((s) => ({ ...s, loading: false }));
+        }
       }
     };
 
@@ -115,47 +135,46 @@ export default function Dashboard() {
       load();
     } else {
       setData(null);
+      setStatus({ loading: false, error: "" });
     }
 
     return () => {
-      mounted = false;
+      isMounted = false;
     };
   }, [isAuthenticated, API_BASE_URL, getAccessTokenSilently]);
 
-  /* =========================
-     API HEALTH CHECK
-  ========================= */
+  // ✅ Spring Boot ping (public) — gated by login
   useEffect(() => {
     let alive = true;
 
     const ping = async () => {
       try {
+        setApiStatus("Checking API...");
         const res = await fetch(`${API_BASE_URL}/api/health`);
         const json = await res.json();
-        if (alive)
-          setApiStatus(
-            json?.status === "ok"
-              ? "API Connected ✅"
-              : "API Error ❌"
-          );
+
+        if (!alive) return;
+
+        setApiStatus(json?.status === "ok" ? "API Connected ✅" : "API not ok ❌");
       } catch {
-        if (alive) setApiStatus("API not reachable ❌");
+        if (!alive) return;
+        setApiStatus("API blocked (CORS) or not running ❌");
       }
     };
 
-    if (isAuthenticated) ping();
-    else setApiStatus("");
+    if (isAuthenticated) {
+      ping();
+    } else {
+      setApiStatus("");
+    }
 
     return () => {
       alive = false;
     };
   }, [isAuthenticated, API_BASE_URL]);
 
-  /* =========================
-     SAFE DATA + CALCS
-  ========================= */
-  const safe = useMemo(
-    () => ({
+  const safe = useMemo(() => {
+    const fallback = {
       users30d: 0,
       newUsers30d: 0,
       avgEngagementTime: "—",
@@ -165,122 +184,207 @@ export default function Dashboard() {
       topSources: [],
       topPages: [],
       rangeLabel: "Last 30 days",
-      ...(data || {}),
-    }),
-    [data]
-  );
+    };
 
-  const totalConversions =
-    safe.contactSubmits + safe.bookingClicks;
+    return { ...fallback, ...(data || {}) };
+  }, [data]);
 
+  const totalConversions = safe.contactSubmits + safe.bookingClicks;
   const conversionRate =
     safe.users30d > 0
       ? ((totalConversions / safe.users30d) * 100).toFixed(1)
       : "0.0";
 
-  const formatPath = (p) => (p === "/" ? "/homepage" : p);
+  const formatPath = (path) => {
+    if (path === "/") return "/homepage";
+    return path;
+  };
 
-  const { eventsPages, fitnessPages } = useMemo(() => {
-    const map = new Map(
-      (safe.topPages || []).map((p) => [p.path, p.views])
-    );
+  // ✅ show ALL your pages every time (0 if not in GA4 yet)
+  const { eventsPages, fitnessPages, otherPages } = useMemo(() => {
+    const pages = Array.isArray(safe.topPages) ? safe.topPages : [];
+    const byPath = new Map(pages.map((p) => [p.path, Number(p.views) || 0]));
 
-    return {
-      eventsPages: EVENT_PAGES.map((p) => ({
-        path: p,
-        views: map.get(p) ?? 0,
-      })),
-      fitnessPages: FITNESS_PAGES.map((p) => ({
-        path: p,
-        views: map.get(p) ?? 0,
-      })),
-    };
+    const events = EVENT_PAGES.map((path) => ({
+      path,
+      views: byPath.get(path) ?? 0,
+    }));
+
+    const fitness = FITNESS_PAGES.map((path) => ({
+      path,
+      views: byPath.get(path) ?? 0,
+    }));
+
+    const groupedSet = new Set([...EVENT_PAGES, ...FITNESS_PAGES]);
+    const other = pages.filter((p) => !groupedSet.has(p.path));
+
+    return { eventsPages: events, fitnessPages: fitness, otherPages: other };
   }, [safe.topPages]);
 
-  /* =========================
-     LOCKED VIEW
-  ========================= */
+  // ✅ Locked view until login
   if (!isAuthenticated) {
     return (
       <section className="dashboard dashboard__locked">
-        <h1>StepbyStep Club Analytics</h1>
-        <button onClick={() => loginWithRedirect()}>
-          Log in to view dashboard
-        </button>
+        <header className="dashboard__header">
+          <p className="dashboard__eyebrow">DASHBOARD</p>
+          <h1 className="dashboard__title">StepbyStep Club Analytics</h1>
+          <p className="dashboard__sub">Log in to view metrics.</p>
+
+          <button
+            className="dashboard__btn"
+            onClick={() => loginWithRedirect()}
+            type="button"
+          >
+            Log in to view metrics
+          </button>
+        </header>
       </section>
     );
   }
 
-  /* =========================
-     RENDER
-  ========================= */
   return (
     <section className="dashboard">
       <header className="dashboard__header">
-        <h1>StepbyStep Club Analytics</h1>
+        <div className="dashboard__topRow">
+          <div>
+            <p className="dashboard__eyebrow">DASHBOARD</p>
+            <h1 className="dashboard__title">StepbyStep Club Analytics</h1>
 
-        <p className="dashboard__sub">{apiStatus}</p>
+            {apiStatus ? <p className="dashboard__sub">{apiStatus}</p> : null}
 
-        {status.loading && (
-          <p className="dashboard__sub">Loading dashboard…</p>
-        )}
+            {status.loading ? (
+              <p className="dashboard__sub">Loading dashboard…</p>
+            ) : status.error ? (
+              <p className="dashboard__sub dashboard__sub--error">
+                Couldn’t load results: {status.error}
+              </p>
+            ) : (
+              <p className="dashboard__sub">{safe.rangeLabel}</p>
+            )}
+          </div>
 
-        {status.error && (
-          <p className="dashboard__sub dashboard__sub--error">
-            {status.error}
-          </p>
-        )}
-
-        <button
-          onClick={() =>
-            logout({ logoutParams: { returnTo: window.location.origin } })
-          }
-        >
-          Log out
-        </button>
+          <button
+            className="dashboard__btn dashboard__btn--ghost"
+            onClick={() =>
+              logout({ logoutParams: { returnTo: window.location.origin } })
+            }
+            type="button"
+          >
+            Log out
+          </button>
+        </div>
       </header>
 
       <div className="dashboard__kpis">
         <KpiCard label="Users (30 days)" value={safe.users30d} />
         <KpiCard label="New users" value={safe.newUsers30d} />
-        <KpiCard
-          label="Avg engagement time"
-          value={safe.avgEngagementTime}
-        />
-        <KpiCard
-          label="Conversion rate"
-          value={`${conversionRate}%`}
-        />
+        <KpiCard label="Avg engagement time" value={safe.avgEngagementTime} />
+        <KpiCard label="Conversion rate" value={`${conversionRate}%`} />
       </div>
 
-      <section>
-        <h2>Acquisition</h2>
-        <p>{formatSourceLabel(safe.topTrafficSource)}</p>
+      <section className="dashboard__section">
+        <h2 className="dashboard__h2">Acquisition</h2>
+
+        <div className="dashboard__panel">
+          <p className="dashboard__label">Top traffic source</p>
+
+          <p className="dashboard__value">
+            {formatSourceLabel(safe.topTrafficSource)}
+          </p>
+
+          {Array.isArray(safe.topSources) && safe.topSources.length ? (
+            <div className="dashboard__sources">
+              <p className="dashboard__groupTitle">Top sources (sessions)</p>
+
+              <ul className="dashboard__list">
+                {safe.topSources.map((s) => {
+                  const label = formatSourceLabel(s.source);
+                  const hint = formatSourceHint(s.source);
+
+                  return (
+                    <li key={s.source} className="dashboard__listItem">
+                      <span className="dashboard__mono">
+                        {label}
+                        {hint ? <span className="dashboard__hint">{hint}</span> : null}
+                      </span>
+
+                      <span className="dashboard__badge">{s.sessions}</span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ) : (
+            <p className="dashboard__empty">No source data yet.</p>
+          )}
+        </div>
       </section>
 
-      <section>
-        <h2>Engagement</h2>
+      <section className="dashboard__section">
+        <h2 className="dashboard__h2">Engagement</h2>
 
-        <h3>Events</h3>
-        {eventsPages.map((p) => (
-          <div key={p.path}>
-            {formatPath(p.path)} — {p.views}
-          </div>
-        ))}
+        <div className="dashboard__panel">
+          <p className="dashboard__label">Top pages (views)</p>
 
-        <h3>Fitness</h3>
-        {fitnessPages.map((p) => (
-          <div key={p.path}>
-            {formatPath(p.path)} — {p.views}
+          <div className="dashboard__group">
+            <p className="dashboard__groupTitle">Events</p>
+            <ul className="dashboard__list">
+              {eventsPages.map((p) => (
+                <li key={p.path} className="dashboard__listItem">
+                  <span className="dashboard__mono">{formatPath(p.path)}</span>
+                  <span className="dashboard__badge">{p.views}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-        ))}
+
+          <div className="dashboard__group">
+            <p className="dashboard__groupTitle">Fitness</p>
+            <ul className="dashboard__list">
+              {fitnessPages.map((p) => (
+                <li key={p.path} className="dashboard__listItem">
+                  <span className="dashboard__mono">{formatPath(p.path)}</span>
+                  <span className="dashboard__badge">{p.views}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {otherPages.length ? (
+            <div className="dashboard__group">
+              <p className="dashboard__groupTitle">Other</p>
+              <ul className="dashboard__list">
+                {otherPages.map((p) => (
+                  <li key={p.path} className="dashboard__listItem">
+                    <span className="dashboard__mono">{formatPath(p.path)}</span>
+                    <span className="dashboard__badge">{p.views}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+        </div>
       </section>
 
-      <section>
-        <h2>Conversion</h2>
-        <p>Contact submits: {safe.contactSubmits}</p>
-        <p>Booking clicks: {safe.bookingClicks}</p>
-        <p>Total conversions: {totalConversions}</p>
+      <section className="dashboard__section">
+        <h2 className="dashboard__h2">Conversion</h2>
+
+        <div className="dashboard__panel">
+          <div className="dashboard__conversions">
+            <KpiCard label="Contact submits" value={safe.contactSubmits} />
+            <KpiCard label="Booking clicks" value={safe.bookingClicks} />
+            <KpiCard label="Total conversions" value={totalConversions} />
+          </div>
+
+          <div className="dashboard__row" style={{ marginTop: 14 }}>
+            <p className="dashboard__label">Conversion rate</p>
+            <p className="dashboard__value">{conversionRate}%</p>
+          </div>
+
+          <p className="dashboard__sub" style={{ marginTop: 8 }}>
+            Conversion rate = (Contact submits + Booking clicks) ÷ Users
+          </p>
+        </div>
       </section>
     </section>
   );
