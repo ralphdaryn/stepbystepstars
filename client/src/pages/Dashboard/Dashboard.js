@@ -36,21 +36,6 @@ function formatSourceLabel(sourceMedium = "") {
   return sourceMedium;
 }
 
-function formatSourceHint(sourceMedium = "") {
-  const s = String(sourceMedium).toLowerCase().trim();
-
-  if (!s || s === "(not set)")
-    return "Typed the website, bookmark, or apps without tracking";
-  if (s.includes("google / organic"))
-    return "Found the site via Google search";
-  if (s.includes("(direct) / (none)"))
-    return "Typed the site directly or used a saved link";
-  if (s.includes("instagram"))
-    return "Clicked from Instagram bio, story, or message";
-
-  return "";
-}
-
 /* =========================
    KPI CARD
 ========================= */
@@ -116,16 +101,25 @@ export default function Dashboard() {
         if (mounted) setData(json);
       } catch (err) {
         if (mounted)
-          setStatus({ loading: false, error: err.message });
+          setStatus({
+            loading: false,
+            error: err.message || "Failed to load dashboard data",
+          });
       } finally {
-        if (mounted) setStatus((s) => ({ ...s, loading: false }));
+        if (mounted)
+          setStatus((s) => ({ ...s, loading: false }));
       }
     };
 
-    if (isAuthenticated) load();
-    else setData(null);
+    if (isAuthenticated) {
+      load();
+    } else {
+      setData(null);
+    }
 
-    return () => (mounted = false);
+    return () => {
+      mounted = false;
+    };
   }, [isAuthenticated, API_BASE_URL, getAccessTokenSilently]);
 
   /* =========================
@@ -152,7 +146,9 @@ export default function Dashboard() {
     if (isAuthenticated) ping();
     else setApiStatus("");
 
-    return () => (alive = false);
+    return () => {
+      alive = false;
+    };
   }, [isAuthenticated, API_BASE_URL]);
 
   /* =========================
@@ -184,27 +180,21 @@ export default function Dashboard() {
 
   const formatPath = (p) => (p === "/" ? "/homepage" : p);
 
-  const { eventsPages, fitnessPages, otherPages } = useMemo(() => {
+  const { eventsPages, fitnessPages } = useMemo(() => {
     const map = new Map(
       (safe.topPages || []).map((p) => [p.path, p.views])
     );
 
-    const events = EVENT_PAGES.map((p) => ({
-      path: p,
-      views: map.get(p) ?? 0,
-    }));
-
-    const fitness = FITNESS_PAGES.map((p) => ({
-      path: p,
-      views: map.get(p) ?? 0,
-    }));
-
-    const known = new Set([...EVENT_PAGES, ...FITNESS_PAGES]);
-    const other = (safe.topPages || []).filter(
-      (p) => !known.has(p.path)
-    );
-
-    return { eventsPages: events, fitnessPages: fitness, otherPages: other };
+    return {
+      eventsPages: EVENT_PAGES.map((p) => ({
+        path: p,
+        views: map.get(p) ?? 0,
+      })),
+      fitnessPages: FITNESS_PAGES.map((p) => ({
+        path: p,
+        views: map.get(p) ?? 0,
+      })),
+    };
   }, [safe.topPages]);
 
   /* =========================
@@ -228,7 +218,19 @@ export default function Dashboard() {
     <section className="dashboard">
       <header className="dashboard__header">
         <h1>StepbyStep Club Analytics</h1>
-        <p>{apiStatus}</p>
+
+        <p className="dashboard__sub">{apiStatus}</p>
+
+        {status.loading && (
+          <p className="dashboard__sub">Loading dashboard…</p>
+        )}
+
+        {status.error && (
+          <p className="dashboard__sub dashboard__sub--error">
+            {status.error}
+          </p>
+        )}
+
         <button
           onClick={() =>
             logout({ logoutParams: { returnTo: window.location.origin } })
