@@ -69,9 +69,26 @@ function KpiCard({ label, value }) {
   );
 }
 
+// ✅ Full-page overlay loader (simple + clean)
+function DashboardLoader({ label = "Loading dashboard…" }) {
+  return (
+    <div className="dashboard__overlay" role="status" aria-live="polite">
+      <div className="dashboard__overlayCard">
+        <div className="dashboard__spinner" aria-hidden="true" />
+        <p className="dashboard__overlayText">{label}</p>
+      </div>
+    </div>
+  );
+}
+
 export default function Dashboard() {
-  const { isAuthenticated, loginWithRedirect, logout, getAccessTokenSilently } =
-    useAuth0();
+  const {
+    isLoading: authLoading,
+    isAuthenticated,
+    loginWithRedirect,
+    logout,
+    getAccessTokenSilently,
+  } = useAuth0();
 
   const [data, setData] = useState(null);
   const [status, setStatus] = useState({ loading: false, error: "" });
@@ -91,7 +108,7 @@ export default function Dashboard() {
       try {
         setStatus({ loading: true, error: "" });
 
-        // ✅ UPDATED: get Auth0 JWT and call Spring Boot protected endpoint
+        // ✅ get Auth0 JWT and call Spring Boot protected endpoint
         const token = await getAccessTokenSilently({
           authorizationParams: {
             audience:
@@ -221,6 +238,17 @@ export default function Dashboard() {
     return { eventsPages: events, fitnessPages: fitness, otherPages: other };
   }, [safe.topPages]);
 
+  const showOverlay = authLoading || status.loading;
+
+  // ✅ Auth0 still deciding? show loader (prevents awkward flashes)
+  if (authLoading) {
+    return (
+      <section className="dashboard">
+        <DashboardLoader label="Securing dashboard…" />
+      </section>
+    );
+  }
+
   // ✅ Locked view until login
   if (!isAuthenticated) {
     return (
@@ -244,6 +272,10 @@ export default function Dashboard() {
 
   return (
     <section className="dashboard">
+      {showOverlay ? (
+        <DashboardLoader label="Loading analytics…" />
+      ) : null}
+
       <header className="dashboard__header">
         <div className="dashboard__topRow">
           <div>
@@ -252,9 +284,7 @@ export default function Dashboard() {
 
             {apiStatus ? <p className="dashboard__sub">{apiStatus}</p> : null}
 
-            {status.loading ? (
-              <p className="dashboard__sub">Loading dashboard…</p>
-            ) : status.error ? (
+            {status.error ? (
               <p className="dashboard__sub dashboard__sub--error">
                 Couldn’t load results: {status.error}
               </p>
@@ -305,7 +335,9 @@ export default function Dashboard() {
                     <li key={s.source} className="dashboard__listItem">
                       <span className="dashboard__mono">
                         {label}
-                        {hint ? <span className="dashboard__hint">{hint}</span> : null}
+                        {hint ? (
+                          <span className="dashboard__hint">{hint}</span>
+                        ) : null}
                       </span>
 
                       <span className="dashboard__badge">{s.sessions}</span>

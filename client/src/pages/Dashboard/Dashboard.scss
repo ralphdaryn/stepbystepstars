@@ -1,12 +1,30 @@
 .dashboard {
-  min-height: 100vh;
+  position: relative;
+  min-height: 100svh; /* better on mobile than 100vh */
+  overflow-x: hidden;
   overflow-y: auto;
-  padding: 120px 18px 60px;
 
-  width: min(1100px, 92vw);
+  /* Keep content centered, but allow full-width background */
+  width: 100%;
+  max-width: 1100px;
   margin: 0 auto;
 
-  /* 🌸 Soft StepByStep background */
+  /* Responsive padding so it doesn't feel "cut off" */
+  padding:
+    calc(clamp(84px, 10vh, 120px) + env(safe-area-inset-top))
+    16px
+    calc(56px + env(safe-area-inset-bottom));
+
+  color: #000;
+}
+
+/* Full-viewport background (so it covers the entire window, not just the centered container) */
+.dashboard::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
   background:
     radial-gradient(
       1200px 600px at 10% -10%,
@@ -14,8 +32,6 @@
       transparent 60%
     ),
     #f0ebee;
-
-  color: #000;
 }
 
 /* Header */
@@ -226,14 +242,12 @@
   margin-top: 14px;
 }
 
-/* ---------- Auth gated layout (ADD ONLY) ---------- */
-
+/* ---------- Auth gated layout ---------- */
 .dashboard__locked {
   display: grid;
   place-items: center;
 }
 
-/* optional: make the login view look like your existing cards */
 .dashboard__locked .dashboard__header {
   width: min(560px, 92vw);
   background: #ffffff;
@@ -254,7 +268,6 @@
   gap: 12px;
 }
 
-/* buttons that match your badge theme */
 .dashboard__btn {
   margin-top: 14px;
   border: 0;
@@ -280,4 +293,85 @@
   margin-top: 0;
   background: transparent;
   border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- Overlay Loader ---------- */
+.dashboard__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+
+  background: rgba(240, 235, 238, 0.75);
+  backdrop-filter: blur(10px);
+}
+
+.dashboard__overlayCard {
+  width: min(420px, 92vw);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  padding: 18px;
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.10),
+    0 1px 0 rgba(0, 0, 0, 0.04);
+
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+}
+
+.dashboard__overlayText {
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+/* Spinner */
+.dashboard__spinner {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 4px solid rgba(168, 100, 193, 0.20);
+  border-top-color: rgba(168, 100, 193, 0.85);
+  animation: dashboardSpin 0.9s linear infinite;
+}
+
+@keyframes dashboardSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 560px) {
+  .dashboard__topRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dashboard__btn--ghost {
+    width: 100%;
+  }
+
+  .dashboard__kpis {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard__conversions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .dashboard {
+    padding:
+      calc(clamp(96px, 10vh, 120px) + env(safe-area-inset-top))
+      18px
+      calc(64px + env(safe-area-inset-bottom));
+  }
 }
