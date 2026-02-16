@@ -8,7 +8,7 @@
 }
 
 .footer {
-  position: relative; 
+  position: relative;
   overflow: hidden;
 
   &__container {
@@ -517,4 +517,26 @@
   &__text {
     font-weight: 400;
   }
+}
+
+.footer__client-link {
+  font-size: 0.85rem;
+  font-weight: 400;
+  opacity: 0.55;
+  text-decoration: none;
+  margin-bottom: 0.35rem;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+}
+.footer__address {
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.4;
+  opacity: 0.75;
+  margin-bottom: 0.5rem;
 }
