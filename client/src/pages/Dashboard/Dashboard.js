@@ -100,6 +100,9 @@ export default function Dashboard() {
   const API_BASE_URL =
     process.env.REACT_APP_API_BASE_URL || "http://localhost:8080";
 
+  // ✅ NEW: client-specific endpoint (matches your Spring Boot controller)
+  const GA4_ENDPOINT = `${API_BASE_URL}/api/dashboard/stepbystep/ga4Results`;
+
   // ✅ GA4 results — gated by login
   useEffect(() => {
     let isMounted = true;
@@ -116,7 +119,8 @@ export default function Dashboard() {
           },
         });
 
-        const res = await fetch(`${API_BASE_URL}/api/dashboard/ga4Results`, {
+        // ✅ FIXED: call the StepByStep-specific endpoint
+        const res = await fetch(GA4_ENDPOINT, {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`,
@@ -124,7 +128,9 @@ export default function Dashboard() {
         });
 
         if (res.status === 403) {
-          throw new Error("Access denied (403). This account is not authorized.");
+          throw new Error(
+            "Access denied (403). This account is not authorized."
+          );
         }
 
         if (!res.ok) {
@@ -158,7 +164,7 @@ export default function Dashboard() {
     return () => {
       isMounted = false;
     };
-  }, [isAuthenticated, API_BASE_URL, getAccessTokenSilently]);
+  }, [isAuthenticated, GA4_ENDPOINT, getAccessTokenSilently]);
 
   // ✅ Spring Boot ping (public) — gated by login
   useEffect(() => {
@@ -272,9 +278,7 @@ export default function Dashboard() {
 
   return (
     <section className="dashboard">
-      {showOverlay ? (
-        <DashboardLoader label="Loading analytics…" />
-      ) : null}
+      {showOverlay ? <DashboardLoader label="Loading analytics…" /> : null}
 
       <header className="dashboard__header">
         <div className="dashboard__topRow">
