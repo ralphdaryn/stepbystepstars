@@ -11,7 +11,7 @@
 
   /* Responsive padding so it doesn't feel "cut off" */
   padding:
-    calc(clamp(84px, 10vh, 120px) + env(safe-area-inset-top))
+    calc(clamp(130px, 10vh, 120px) + env(safe-area-inset-top))
     16px
     calc(56px + env(safe-area-inset-bottom));
 
