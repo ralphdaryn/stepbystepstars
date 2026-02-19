@@ -8,7 +8,6 @@ const EVENT_PAGES = [
   "/specialevents",
   "/birthdayparties",
   "/privateplaygroup",
-  "/waiverkids",
 ];
 
 const FITNESS_PAGES = [
