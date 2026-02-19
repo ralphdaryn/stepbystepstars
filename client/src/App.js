@@ -13,8 +13,6 @@ import PersonalTraining from "./pages/PersonalTraining/PersonalTraining";
 import Events from "./components/Events/Events";
 import WaiverForm from "./components/WaiverForm/WaiverForm";
 import WaiverFormKids from "./components/WaiverFormKids/WaiverFormKids";
-import Success from "./components/StatusPage/Success";
-import Cancel from "./components/StatusPage/Cancel";
 import StrollerFitness from "./components/StrollerFitness/StrollerFitness";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import "./Background.css";
@@ -46,8 +44,6 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/waiver" element={<WaiverForm />} />
           <Route path="/waiverkids" element={<WaiverFormKids />} />
-          <Route path="/success" element={<Success />} />
-          <Route path="/cancel" element={<Cancel />} />
 
           {/* ✅ Results Dashboard */}
           <Route path="/dashboard" element={<Dashboard />} />
