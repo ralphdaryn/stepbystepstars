@@ -263,14 +263,14 @@ export default function Dashboard() {
         <header className="dashboard__header">
           <p className="dashboard__eyebrow">DASHBOARD</p>
           <h1 className="dashboard__title">StepbyStep Club Analytics</h1>
-          <p className="dashboard__sub">Log in to view metrics.</p>
+          <p className="dashboard__sub">Log in to View Metrics.</p>
 
           <button
             className="dashboard__btn"
             onClick={() => loginWithRedirect()}
             type="button"
           >
-            Log in to view metrics
+            Log in to View Metrics
           </button>
         </header>
       </section>
