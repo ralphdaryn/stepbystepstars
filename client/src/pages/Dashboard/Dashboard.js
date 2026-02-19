@@ -96,12 +96,18 @@ export default function Dashboard() {
   // ✅ Spring Boot health status
   const [apiStatus, setApiStatus] = useState("");
 
+  // ✅ NEW: range selector (matches your backend support)
+  const [days, setDays] = useState(30);
+
   // ✅ API base URL (Render in prod via env var, localhost in dev)
   const API_BASE_URL =
     process.env.REACT_APP_API_BASE_URL || "http://localhost:8080";
 
-  // ✅ NEW: client-specific endpoint (matches your Spring Boot controller)
-  const GA4_ENDPOINT = `${API_BASE_URL}/api/dashboard/stepbystep/ga4Results`;
+  // ✅ client-specific endpoint (matches your Spring Boot controller)
+  // ✅ add ?days= for range support
+  const GA4_ENDPOINT = `${API_BASE_URL}/api/dashboard/stepbystep/ga4Results?days=${encodeURIComponent(
+    days
+  )}`;
 
   // ✅ GA4 results — gated by login
   useEffect(() => {
@@ -119,18 +125,13 @@ export default function Dashboard() {
           },
         });
 
-        // ✅ FIXED: call the StepByStep-specific endpoint
         const res = await fetch(GA4_ENDPOINT, {
           method: "GET",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+          headers: { Authorization: `Bearer ${token}` },
         });
 
         if (res.status === 403) {
-          throw new Error(
-            "Access denied (403). This account is not authorized."
-          );
+          throw new Error("Access denied (403). This account is not authorized.");
         }
 
         if (!res.ok) {
@@ -139,6 +140,7 @@ export default function Dashboard() {
         }
 
         const json = await res.json();
+
         if (isMounted) {
           setData(json);
           setStatus({ loading: false, error: "" });
@@ -206,15 +208,15 @@ export default function Dashboard() {
       topTrafficSource: "(not set)",
       topSources: [],
       topPages: [],
-      rangeLabel: "Last 30 days",
+      rangeLabel: `Last ${days} days`,
     };
 
     return { ...fallback, ...(data || {}) };
-  }, [data]);
+  }, [data, days]);
 
-  const totalConversions = safe.contactSubmits + safe.bookingClicks;
+  const totalConversions = (safe.contactSubmits || 0) + (safe.bookingClicks || 0);
   const conversionRate =
-    safe.users30d > 0
+    (safe.users30d || 0) > 0
       ? ((totalConversions / safe.users30d) * 100).toFixed(1)
       : "0.0";
 
@@ -297,20 +299,44 @@ export default function Dashboard() {
             )}
           </div>
 
-          <button
-            className="dashboard__btn dashboard__btn--ghost"
-            onClick={() =>
-              logout({ logoutParams: { returnTo: window.location.origin } })
-            }
-            type="button"
-          >
-            Log out
-          </button>
+          {/* ✅ RIGHT SIDE CONTROLS */}
+          <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+            <label style={{ display: "grid", gap: 6 }}>
+              <span className="dashboard__sub" style={{ margin: 0 }}>
+                Range
+              </span>
+              <select
+                value={days}
+                onChange={(e) => setDays(Number(e.target.value))}
+                style={{
+                  height: 40,
+                  borderRadius: 10,
+                  padding: "0 12px",
+                  border: "1px solid rgba(0,0,0,0.12)",
+                }}
+              >
+                <option value={7}>Last 7 days</option>
+                <option value={14}>Last 14 days</option>
+                <option value={30}>Last 30 days</option>
+                <option value={90}>Last 90 days</option>
+              </select>
+            </label>
+
+            <button
+              className="dashboard__btn dashboard__btn--ghost"
+              onClick={() =>
+                logout({ logoutParams: { returnTo: window.location.origin } })
+              }
+              type="button"
+            >
+              Log out
+            </button>
+          </div>
         </div>
       </header>
 
       <div className="dashboard__kpis">
-        <KpiCard label="Users (30 days)" value={safe.users30d} />
+        <KpiCard label={`Users (${days} days)`} value={safe.users30d} />
         <KpiCard label="New users" value={safe.newUsers30d} />
         <KpiCard label="Avg engagement time" value={safe.avgEngagementTime} />
         <KpiCard label="Conversion rate" value={`${conversionRate}%`} />
@@ -339,9 +365,7 @@ export default function Dashboard() {
                     <li key={s.source} className="dashboard__listItem">
                       <span className="dashboard__mono">
                         {label}
-                        {hint ? (
-                          <span className="dashboard__hint">{hint}</span>
-                        ) : null}
+                        {hint ? <span className="dashboard__hint">{hint}</span> : null}
                       </span>
 
                       <span className="dashboard__badge">{s.sessions}</span>
