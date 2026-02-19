@@ -1,16 +1,15 @@
 import "./App.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import Header from "./components/Header/Header";
-import Main from "./components/Main/Main";
+import Main from "./pages/Main/Main";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact/Contact";
-import BirthdayParties from "./components/BirthdayParties/BirthdayParties";
-import PrivatePlayGroup from "./components/PrivatePlayGroup/PrivatePlayGroup";
-import SpecialEvents from "./components/SpecialEvents/SpecialEvents";
-import MommyandMe from "./components/MommyandMe/MommyandMe";
-import GroupFitness from "./components/GroupFitness/GroupFitness";
-import PersonalTraining from "./components/PersonalTraining/PersonalTraining";
+import BirthdayParties from "./pages/BirthdayParties/BirthdayParties";
+import PrivatePlayGroup from "./pages/PrivatePlayGroup/PrivatePlayGroup";
+import SpecialEvents from "./pages/SpecialEvents/SpecialEvents";
+import MommyandMe from "./pages/MommyandMe/MommyandMe";
+import GroupFitness from "./pages/GroupFitness/GroupFitness";
+import PersonalTraining from "./pages/PersonalTraining/PersonalTraining";
 import Events from "./components/Events/Events";
 import WaiverForm from "./components/WaiverForm/WaiverForm";
 import WaiverFormKids from "./components/WaiverFormKids/WaiverFormKids";

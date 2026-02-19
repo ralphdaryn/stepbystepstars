@@ -114,7 +114,7 @@ const Reviews = () => {
         {[...Array(5)].map((_, index) => (
           <FaStar key={index} className="reviews__icon" />
         ))}{" "}
-        (over 50+ reviews)
+        (over 150+ reviews)
       </p>
       {reviews.length > 0 && (
         <div className="reviews__wrapper">

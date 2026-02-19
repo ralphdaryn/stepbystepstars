@@ -1,11 +1,11 @@
 import "./Main.scss";
-import Carousel from "../ImageCarousel/ImageCarousel";
-import Services from "../Services/Services";
-import EventPlan from "../EventPlan/EventPlan";
-import Reviews from "../Reviews/Reviews";
-import Contact from "../Contact/Contact";
-import Waiver from "../Waiver/Waiver";
-import MailingList from "../MailingList/MailingList";
+import Carousel from "../../components/ImageCarousel/ImageCarousel";
+import Services from "../../components/Services/Services";
+import EventPlan from "../../components/EventPlan/EventPlan";
+import Reviews from "../../components/Reviews/Reviews";
+import Contact from "../../components/Contact/Contact";
+import Waiver from "../../components/Waiver/Waiver";
+import MailingList from "../../components/MailingList/MailingList";
 
 const Main = () => {
   return (
