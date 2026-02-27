@@ -4,6 +4,7 @@ import specialEvents2 from "../../assets/images/soca.jpeg";
 import specialEvents3 from "../../assets/images/smallgrouptrain.jpeg";
 import specialEvents4 from "../../assets/images/mommyme.jpeg";
 import specialEvents5 from "../../assets/images/stepclass.PNG";
+import specialEvents6 from "../../assets/images/stem.JPG";
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -43,6 +44,13 @@ const SpecialEvents = () => {
     openRegistrationLink(
       "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=925770&k_class_tab=66373",
       "stepfitness",
+    );
+  };
+
+  const linkToBuyTickets5 = () => {
+    openRegistrationLink(
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=931466&k_class_tab=66373",
+      "stem",
     );
   };
 
@@ -121,6 +129,22 @@ const SpecialEvents = () => {
           <button
             className="special-events__button"
             onClick={linkToBuyTickets3}
+          >
+            Click Here to Register!
+          </button>
+        </div>
+      </div>
+      <div className="special-events__card-wrapper">
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents6}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents6)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets5}
           >
             Click Here to Register!
           </button>
