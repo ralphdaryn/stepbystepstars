@@ -6,6 +6,7 @@ import specialEvents4 from "../../assets/images/mommyme.jpeg";
 import specialEvents5 from "../../assets/images/stepclass.PNG";
 import specialEvents6 from "../../assets/images/stem.JPG";
 import specialEvents7 from "../../assets/images/littlechefs.JPG";
+import specialEvents8 from "../../assets/images/kpop.jpeg";
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -59,6 +60,12 @@ const SpecialEvents = () => {
     openRegistrationLink(
       "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=932980&k_class_tab=66373",
       "littlechefs",
+    );
+  };
+  const linkToBuyTickets7 = () => {
+    openRegistrationLink(
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=934285&k_class_tab=66373",
+      "kpop",
     );
   };
 
@@ -125,18 +132,17 @@ const SpecialEvents = () => {
           </button>
         </div>
       </div>
-
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
-            src={specialEvents2}
+            src={specialEvents8}
             alt="Special Event"
             className="special-events__image"
-            onClick={() => openMedia(specialEvents2)}
+            onClick={() => openMedia(specialEvents8)}
           />
           <button
             className="special-events__button"
-            onClick={linkToBuyTickets3}
+            onClick={linkToBuyTickets7}
           >
             Click Here to Register!
           </button>
@@ -169,6 +175,22 @@ const SpecialEvents = () => {
           <button
             className="special-events__button"
             onClick={linkToBuyTickets6}
+          >
+            Click Here to Register!
+          </button>
+        </div>
+      </div>
+      <div className="special-events__card-wrapper">
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents2}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents2)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets3}
           >
             Click Here to Register!
           </button>
