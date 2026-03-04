@@ -3,7 +3,6 @@ import { useState } from "react";
 import specialEvents2 from "../../assets/images/soca.jpeg";
 import specialEvents3 from "../../assets/images/smallgrouptrain.jpeg";
 import specialEvents4 from "../../assets/images/mommyme.jpeg";
-import specialEvents5 from "../../assets/images/stepclass.PNG";
 import specialEvents6 from "../../assets/images/stem.JPG";
 import specialEvents7 from "../../assets/images/littlechefs.JPG";
 import specialEvents8 from "../../assets/images/kpop.jpeg";
@@ -39,13 +38,6 @@ const SpecialEvents = () => {
     openRegistrationLink(
       "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=929286",
       "soca",
-    );
-  };
-
-  const linkToBuyTickets4 = () => {
-    openRegistrationLink(
-      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=925770&k_class_tab=66373",
-      "stepfitness",
     );
   };
 
@@ -116,22 +108,7 @@ const SpecialEvents = () => {
         </div>
       </div>
 
-      <div className="special-events__card-wrapper">
-        <div className="special-events__image-container">
-          <img
-            src={specialEvents5}
-            alt="Special Event"
-            className="special-events__image"
-            onClick={() => openMedia(specialEvents5)}
-          />
-          <button
-            className="special-events__button"
-            onClick={linkToBuyTickets4}
-          >
-            Click Here to Register!
-          </button>
-        </div>
-      </div>
+  
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
