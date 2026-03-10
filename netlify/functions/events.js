@@ -48,17 +48,17 @@ exports.handler = async (event) => {
     const userMailOptions = {
       from: `"Step By Step Club" <${process.env.EMAIL_USER}>`, // Custom display name
       to: email,
-      subject: `Thank You for Booking with Step By Step Club!`,
+      subject: `Thank You for your Inquiry with Step By Step Club!`,
       html: `
-        <h1>Thank You for Booking with Step By Step Club!</h1>
+        <h1>Thank You for your Inquiry with Step By Step Club!</h1>
         <p>Dear ${firstName} ${lastName},</p>
-        <p>We’re excited to host your event! Here are the details of your booking:</p>
+        <p>We are excited to host your event! Here are the details of your booking:</p>
         <ul>
           <li><strong>Date of Event:</strong> ${dateOfEvent}</li>
           <li><strong>Time of Event:</strong> ${timeOfEvent}</li>
           <li><strong>Number of Children:</strong> ${numberOfChildren}</li>
         </ul>
-        <p>If you have any questions or need to make changes to your booking, feel free to contact us at ${process.env.RECIPIENT_EMAIL}.</p>
+        <p>A staff member will be in touch with you in the next 24 hours to assist with questions and booking your next event.</p>
         <p>Looking forward to making your event memorable!</p>
         <p>Best regards,</p>
         <p><strong>Step By Step Club</strong></p>
