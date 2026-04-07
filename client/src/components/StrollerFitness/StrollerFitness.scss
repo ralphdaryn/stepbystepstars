@@ -53,7 +53,7 @@
     }
   }
 
-  /* Cards (same vibe as your other pages) */
+  /* Cards */
   .card {
     background: rgba(255, 255, 255, 0.88);
     border: 1px solid rgba(0, 0, 0, 0.035);
@@ -74,7 +74,7 @@
     overflow: hidden;
   }
 
-  /* Hero (stacked like your pages) */
+  /* Hero */
   &__hero {
     margin-top: 1rem;
     display: flex;
@@ -84,19 +84,16 @@
 
   /* Video */
   &__video-card {
-    padding: 0; /* so the video fills card nicely */
+    padding: 0;
   }
 
   &__video {
     width: 100%;
     display: block;
-    border-radius: 14px; /* matches cards */
+    border-radius: 14px;
     object-fit: cover;
-
-    /* Mobile feel */
     height: 18rem;
 
-    /* Tablet/Desktop: prevent huge stretched look */
     @include tablet {
       height: auto;
       aspect-ratio: 16 / 9;
@@ -105,6 +102,117 @@
     @include desktop {
       height: auto;
       aspect-ratio: 16 / 9;
+    }
+  }
+
+  /* Image */
+  &__image-card {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  &__image-button {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &__image {
+    width: 100%;
+    display: block;
+    border-radius: 14px;
+    object-fit: cover;
+    height: 18rem;
+
+    @include tablet {
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+    }
+
+    @include desktop {
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+    }
+  }
+
+  /* Modal */
+  &__modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(20, 12, 24, 0.88);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  &__modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include tablet {
+      max-width: 90vw;
+    }
+
+    @include desktop {
+      max-width: 88vw;
+    }
+  }
+
+  &__modal-image {
+    width: 100%;
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #fff;
+    padding: 0.5rem;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+
+    @include tablet {
+      max-height: 85vh;
+      padding: 0.75rem;
+    }
+
+    @include desktop {
+      max-height: 88vh;
+      padding: 1rem;
+    }
+  }
+
+  &__modal-close {
+    position: absolute;
+    top: -2.75rem;
+    right: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 999px;
+    background: #ffffff;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+
+    @include tablet {
+      top: -3rem;
     }
   }
 
@@ -179,7 +287,8 @@
     border-radius: 999px;
     padding: 0.85rem 1.25rem;
     cursor: pointer;
-    transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
+    transition: transform 140ms ease, box-shadow 140ms ease,
+      background 140ms ease;
     box-shadow: 0 8px 20px rgba(168, 100, 193, 0.28);
 
     &:hover {
