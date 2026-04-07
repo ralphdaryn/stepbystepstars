@@ -3,6 +3,8 @@ import { useState } from "react";
 import specialEvents2 from "../../assets/images/soca.png";
 import specialEvents3 from "../../assets/images/smallgrouptrain.jpeg";
 import specialEvents4 from "../../assets/images/mommyme.jpeg";
+import specialEvents5 from "../../assets/images/superhero.jpeg";
+import specialEvents6 from "../../assets/images/princess.jpeg";
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -37,7 +39,19 @@ const SpecialEvents = () => {
       "soca",
     );
   };
- 
+
+  const linkToBuyTickets4 = () => {
+    openRegistrationLink(
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=950717&k_class_tab=66373",
+      "superhero",
+    );
+  };
+  const linkToBuyTickets5 = () => {
+    openRegistrationLink(
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=950763&k_class_tab=66373",
+      "princess",
+    );
+  };
 
   return (
     <div className="special-events">
@@ -85,7 +99,6 @@ const SpecialEvents = () => {
           </button>
         </div>
       </div>
-  
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
@@ -97,6 +110,38 @@ const SpecialEvents = () => {
           <button
             className="special-events__button"
             onClick={linkToBuyTickets3}
+          >
+            Click Here to Register!
+          </button>
+        </div>
+      </div>
+      <div className="special-events__card-wrapper">
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents5}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents5)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets4}
+          >
+            Click Here to Register!
+          </button>
+        </div>
+      </div>
+      <div className="special-events__card-wrapper">
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents6}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents6)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets5}
           >
             Click Here to Register!
           </button>
