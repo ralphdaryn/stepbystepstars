@@ -141,22 +141,6 @@ const SpecialEvents = () => {
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
-            src={specialEvents6}
-            alt="Special Event"
-            className="special-events__image"
-            onClick={() => openMedia(specialEvents6)}
-          />
-          <button
-            className="special-events__button"
-            onClick={linkToBuyTickets5}
-          >
-            Click Here to Register!
-          </button>
-        </div>
-      </div>
-      <div className="special-events__card-wrapper">
-        <div className="special-events__image-container">
-          <img
             src={specialEvents7}
             alt="Special Event"
             className="special-events__image"
@@ -165,6 +149,22 @@ const SpecialEvents = () => {
           <button
             className="special-events__button"
             onClick={linkToBuyTickets6}
+          >
+            Click Here to Register!
+          </button>
+        </div>
+      </div>
+      <div className="special-events__card-wrapper">
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents6}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents6)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets5}
           >
             Click Here to Register!
           </button>
