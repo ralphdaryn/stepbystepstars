@@ -46,8 +46,8 @@ const SpecialEvents = () => {
   };
   const linkToBuyTickets9 = () => {
     openRegistrationLink(
-      "    https://www.wellnessliving.com/rs/catalog-payment.html?k_id=956837&sid_purchase_item=enrollment&id_sale=3&k_business=651877",
-      "strollerfitness",
+      "    https://www.wellnessliving.com/rs/event/step_by_step_club?k_business=651877&k_class_tab=66373&uid=0&id_class_tab=2",
+      "soca",
     );
   };
 
