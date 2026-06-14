@@ -1,10 +1,12 @@
 import "./SpecialEvents.scss";
 import { useState } from "react";
+
 import specialEvents3 from "../../assets/images/smallgrouptrain.jpeg";
 import specialEvents4 from "../../assets/images/mom-fitness.jpeg";
 import specialEvents8 from "../../assets/images/strollerfit.jpeg";
 import specialEvents9 from "../../assets/images/stroller-fitness.jpeg";
 import specialEvents10 from "../../assets/images/soca.jpeg";
+import specialEvents11 from "../../assets/images/bustrip.jpeg";
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -26,28 +28,43 @@ const SpecialEvents = () => {
     window.open(url, "_blank");
   };
 
+  // ✅ NEW: open email instead of link
+  const openEmail = () => {
+    trackBookingClick("bus_trip_email");
+
+    const subject = encodeURIComponent("Bus Trip Registration");
+    const body = encodeURIComponent(
+      "Hi, I’m interested in registering for the bus trip. Please send details!"
+    );
+
+    window.location.href = `mailto:stepxstepclub@gmail.com?subject=${subject}&body=${body}`;
+  };
+
   const linkToBuyTickets2 = () => {
     openRegistrationLink(
       "https://www.wellnessliving.com/rs/catalog-list.html?a_shop_category%5B%5D=1102551&a_shop_category%5B%5D=1102664&is_filter=1&k_business=651877",
-      "catalog_list",
+      "catalog_list"
     );
   };
+
   const linkToBuyTickets7 = () => {
     openRegistrationLink(
-      "   https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=954144&k_class_tab=66299",
-      "strollerfit",
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=954144&k_class_tab=66299",
+      "strollerfit"
     );
   };
+
   const linkToBuyTickets8 = () => {
     openRegistrationLink(
-      "   https://www.wellnessliving.com/rs/catalog-list.html?a_shop_category%5B%5D=1102551&a_shop_category%5B%5D=1102664&is_filter=1&k_business=651877",
-      "strollerfitness",
+      "https://www.wellnessliving.com/rs/catalog-list.html?a_shop_category%5B%5D=1102551&a_shop_category%5B%5D=1102664&is_filter=1&k_business=651877",
+      "strollerfitness"
     );
   };
+
   const linkToBuyTickets9 = () => {
     openRegistrationLink(
-      "    https://www.wellnessliving.com/rs/event/step_by_step_club?k_business=651877&k_class_tab=66373&uid=0&id_class_tab=2",
-      "soca",
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_business=651877&k_class_tab=66373&uid=0&id_class_tab=2",
+      "soca"
     );
   };
 
@@ -64,6 +81,7 @@ const SpecialEvents = () => {
         </p>
       </div>
 
+      {/* Event 1 */}
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
@@ -81,6 +99,7 @@ const SpecialEvents = () => {
         </div>
       </div>
 
+      {/* Event 2 */}
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
@@ -97,6 +116,8 @@ const SpecialEvents = () => {
           </button>
         </div>
       </div>
+
+      {/* Event 3 */}
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
@@ -113,6 +134,8 @@ const SpecialEvents = () => {
           </button>
         </div>
       </div>
+
+      {/* Event 4 */}
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
@@ -129,6 +152,8 @@ const SpecialEvents = () => {
           </button>
         </div>
       </div>
+
+      {/* Event 5 */}
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
@@ -146,6 +171,25 @@ const SpecialEvents = () => {
         </div>
       </div>
 
+      {/* Event 6 (EMAIL INSTEAD OF LINK) */}
+      <div className="special-events__card-wrapper">
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents11}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents11)}
+          />
+          <button
+            className="special-events__button"
+            onClick={openEmail}
+          >
+            Email to Register
+          </button>
+        </div>
+      </div>
+
+      {/* Modal */}
       {selectedMedia && (
         <div className="image-modal" onClick={closeMedia}>
           <span className="image-modal__close" onClick={closeMedia}>
