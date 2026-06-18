@@ -8,6 +8,7 @@ import specialEvents9 from "../../assets/images/stroller-fitness.jpeg";
 import specialEvents10 from "../../assets/images/soca.jpeg";
 import specialEvents11 from "../../assets/images/bustrip.jpeg";
 import specialEvents12 from "../../assets/images/bubbleshow.jpeg";
+import specialEvents13 from "../../assets/images/kidsoca.PNG";
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -35,7 +36,7 @@ const SpecialEvents = () => {
 
     const subject = encodeURIComponent("Bus Trip Registration");
     const body = encodeURIComponent(
-      "Hi, I’m interested in registering for the bus trip. Please send details!"
+      "Hi, I’m interested in registering for the bus trip. Please send details!",
     );
 
     window.location.href = `mailto:stepxstepclub@gmail.com?subject=${subject}&body=${body}`;
@@ -44,39 +45,44 @@ const SpecialEvents = () => {
   const linkToBuyTickets2 = () => {
     openRegistrationLink(
       "https://www.wellnessliving.com/rs/catalog-list.html?a_shop_category%5B%5D=1102551&a_shop_category%5B%5D=1102664&is_filter=1&k_business=651877",
-      "catalog_list"
+      "catalog_list",
     );
   };
 
   const linkToBuyTickets7 = () => {
     openRegistrationLink(
       "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=954144&k_class_tab=66299",
-      "strollerfit"
+      "strollerfit",
     );
   };
 
   const linkToBuyTickets8 = () => {
     openRegistrationLink(
       "https://www.wellnessliving.com/rs/catalog-list.html?a_shop_category%5B%5D=1102551&a_shop_category%5B%5D=1102664&is_filter=1&k_business=651877",
-      "strollerfitness"
+      "strollerfitness",
     );
   };
 
   const linkToBuyTickets9 = () => {
     openRegistrationLink(
       "https://www.wellnessliving.com/rs/event/step_by_step_club?k_business=651877&k_class_tab=66373&uid=0&id_class_tab=2",
-      "soca"
+      "soca",
     );
   };
 
-    const linkToBuyTickets10 = () => {
+  const linkToBuyTickets10 = () => {
     openRegistrationLink(
       " https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=982233&k_class_tab=66373",
-      "bubble"
+      "bubble",
     );
   };
 
- 
+  const linkToBuyTickets11 = () => {
+    openRegistrationLink(
+      "   https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=982744&k_class_tab=66373",
+      "kidsoca",
+    );
+  };
 
   return (
     <div className="special-events">
@@ -198,7 +204,22 @@ const SpecialEvents = () => {
         </div>
       </div>
 
-      
+      <div className="special-events__card-wrapper">
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents13}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents13)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets11}
+          >
+            Click Here to Register!
+          </button>
+        </div>
+      </div>
 
       {/* Event 6 (EMAIL INSTEAD OF LINK) */}
       <div className="special-events__card-wrapper">
@@ -209,10 +230,7 @@ const SpecialEvents = () => {
             className="special-events__image"
             onClick={() => openMedia(specialEvents11)}
           />
-          <button
-            className="special-events__button"
-            onClick={openEmail}
-          >
+          <button className="special-events__button" onClick={openEmail}>
             Email to Register
           </button>
         </div>
