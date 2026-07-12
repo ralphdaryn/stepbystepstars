@@ -62,7 +62,7 @@ const SpecialEvents = () => {
   };
   const linkToBuyTickets10 = () => {
     openRegistrationLink(
-      "https://www.wellnessliving.com/rs/catalog-list.html?a_shop_category%5B%5D=1102551&a_shop_category%5B%5D=1102664&is_filter=1&k_business=651877",
+      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=960505&k_class_tab=66373",
       "princesstea",
     );
   };
