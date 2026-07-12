@@ -42,8 +42,7 @@ const SpecialEvents = () => {
 
   const linkToBuyTickets2 = () => {
     openRegistrationLink(
-      "https://www.wellnessliving.com/rs/catalog-list.html?a_shop_category%5B%5D=1102551&a_shop_category%5B%5D=1102664&is_filter=1&k_business=651877",
-      "catalog_list",
+      "https://www.wellnessliving.com/rs/catalog-payment.html?k_id=4215893&sid_purchase_item=promotion&id_sale=1&k_business=651877",
     );
   };
 
