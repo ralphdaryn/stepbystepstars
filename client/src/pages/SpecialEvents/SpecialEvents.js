@@ -1,12 +1,10 @@
 import "./SpecialEvents.scss";
 import { useState } from "react";
-
 import specialEvents3 from "../../assets/images/smallgrouptrain.jpeg";
 import specialEvents4 from "../../assets/images/mom-fitness.jpeg";
 import specialEvents8 from "../../assets/images/strollerfit.jpeg";
 import specialEvents11 from "../../assets/images/bustrip.jpeg";
 import specialEvents12 from "../../assets/images/soca.jpeg";
-import specialEvents13 from "../../assets/images/princesstea.jpeg";
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -50,14 +48,6 @@ const SpecialEvents = () => {
     openRegistrationLink(
       "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=954144&k_class_tab=66299",
       "strollerfit",
-    );
-  };
-
-
-  const linkToBuyTickets9 = () => {
-    openRegistrationLink(
-      "  https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=983986",
-      "soca",
     );
   };
   const linkToBuyTickets10 = () => {
@@ -136,29 +126,13 @@ const SpecialEvents = () => {
           </button>
         </div>
       </div>
-      <div className="special-events__card-wrapper">
+        <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
             src={specialEvents12}
             alt="Special Event"
             className="special-events__image"
             onClick={() => openMedia(specialEvents12)}
-          />
-          <button
-            className="special-events__button"
-            onClick={linkToBuyTickets9}
-          >
-            Click Here to Register!
-          </button>
-        </div>
-      </div>
-        <div className="special-events__card-wrapper">
-        <div className="special-events__image-container">
-          <img
-            src={specialEvents13}
-            alt="Special Event"
-            className="special-events__image"
-            onClick={() => openMedia(specialEvents13)}
           />
           <button
             className="special-events__button"
