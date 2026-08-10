@@ -6,13 +6,9 @@ import groupFitnessImage from "../../assets/images/groupfitness1.jpeg";
 import groupFitnessImage2 from "../../assets/images/groupfitness-member.jpeg";
 
 import specialEvents1 from "../../assets/images/smallgrouptrain.jpeg";
-import specialEvents2 from "../../assets/images/training.jpeg";
 
 const WL_CATALOG =
   "https://www.wellnessliving.com/rs/catalog-list.html?a_shop_category%5B%5D=1102551&a_shop_category%5B%5D=1102664&is_filter=1&k_business=651877";
-
-const WL_PERSONAL_TRAINING =
-  "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=1&k_id=3904840";
 
 const WL_SMALL_GROUP =
   "https://www.wellnessliving.com/schedule/step_by_step_club?id_class_tab=1&k_class=844005#dt_date=2025-10-11";
@@ -31,12 +27,6 @@ const GroupFitness = () => {
       desc: "Train with a coach + stay motivated with a small crew.",
       img: specialEvents1,
       onClick: () => openNewTab(WL_SMALL_GROUP),
-    },
-    {
-      title: "Personal Training",
-      desc: "1:1 coaching personalized to your goals.",
-      img: specialEvents2,
-      onClick: () => openNewTab(WL_PERSONAL_TRAINING),
     },
   ];
 
