@@ -3,7 +3,6 @@ import { useState } from "react";
 import specialEvents3 from "../../assets/images/smallgrouptrain.jpeg";
 import specialEvents4 from "../../assets/images/mom-fitness.jpeg";
 import specialEvents8 from "../../assets/images/strollerfit.jpeg";
-import specialEvents11 from "../../assets/images/bustrip.jpeg";
 import specialEvents12 from "../../assets/images/soca.jpeg";
 
 const SpecialEvents = () => {
@@ -27,16 +26,6 @@ const SpecialEvents = () => {
   };
 
   // ✅ NEW: open email instead of link
-  const openEmail = () => {
-    trackBookingClick("bus_trip_email");
-
-    const subject = encodeURIComponent("Bus Trip Registration");
-    const body = encodeURIComponent(
-      "Hi, I’m interested in registering for the bus trip. Please send details!",
-    );
-
-    window.location.href = `mailto:stepxstepclub@gmail.com?subject=${subject}&body=${body}`;
-  };
 
   const linkToBuyTickets2 = () => {
     openRegistrationLink(
@@ -106,27 +95,7 @@ const SpecialEvents = () => {
         </div>
       </div>
 
-      {/* Event 3 */}
-  
-
-      {/* Event 4 */}
       <div className="special-events__card-wrapper">
-        <div className="special-events__image-container">
-          <img
-            src={specialEvents8}
-            alt="Special Event"
-            className="special-events__image"
-            onClick={() => openMedia(specialEvents8)}
-          />
-          <button
-            className="special-events__button"
-            onClick={linkToBuyTickets7}
-          >
-            Click Here to Register!
-          </button>
-        </div>
-      </div>
-        <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
             src={specialEvents12}
@@ -143,17 +112,20 @@ const SpecialEvents = () => {
         </div>
       </div>
 
-      {/* Event 6 (EMAIL INSTEAD OF LINK) */}
+      {/* Event 4 */}
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
-            src={specialEvents11}
+            src={specialEvents8}
             alt="Special Event"
             className="special-events__image"
-            onClick={() => openMedia(specialEvents11)}
+            onClick={() => openMedia(specialEvents8)}
           />
-          <button className="special-events__button" onClick={openEmail}>
-            Email to Register
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets7}
+          >
+            Click Here to Register!
           </button>
         </div>
       </div>
