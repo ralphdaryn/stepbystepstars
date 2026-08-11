@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet";
+
 import "./GroupFitness.scss";
 
 import groupFitnessImage from "../../assets/images/groupfitness1.jpeg";
 import groupFitnessImage2 from "../../assets/images/groupfitness-member.jpeg";
-
 import specialEvents1 from "../../assets/images/smallgrouptrain.jpeg";
 
 const WL_CATALOG =
@@ -34,11 +34,16 @@ const GroupFitness = () => {
     <div className="groupfitness" data-page="groupfitness">
       <Helmet>
         <title>Group Fitness for Moms in Durham | Step By Step Club</title>
+
         <meta
           name="description"
           content="Get stronger together! Join our energizing group fitness classes designed for moms in Durham."
         />
-        <link rel="canonical" href="https://www.stepbystepclub.ca/groupfitness" />
+
+        <link
+          rel="canonical"
+          href="https://www.stepbystepclub.ca/groupfitness"
+        />
       </Helmet>
 
       <header className="groupfitness__header">
@@ -48,16 +53,18 @@ const GroupFitness = () => {
       <section className="groupfitness__hero" aria-label="Group fitness hero">
         <article className="groupfitness__hero-card card card--soft">
           <p className="groupfitness__kicker">For moms • All levels</p>
+
           <h2 className="groupfitness__heading">Get stronger together.</h2>
 
           <p className="groupfitness__text">
-            Boost your fitness with an energizing group workout that combines strength,
-            cardio, and flexibility.
+            Boost your fitness with an energizing group workout that combines
+            strength, cardio, and flexibility.
           </p>
 
           <p className="groupfitness__text">
-            Expect high-energy intervals, functional movements, and core-focused work —
-            with modifications so beginners and experienced members feel supported.
+            Expect high-energy intervals, functional movements, and core-focused
+            work — with modifications so beginners and experienced members feel
+            supported.
           </p>
 
           <div className="groupfitness__cta-wrap">
@@ -104,7 +111,10 @@ const GroupFitness = () => {
       <section className="groupfitness__programs" aria-label="Programs">
         <div className="groupfitness__section-head">
           <h3 className="groupfitness__section-title">Register for programs</h3>
-          <p className="groupfitness__section-sub">Tap a program to register.</p>
+
+          <p className="groupfitness__section-sub">
+            Tap a program to register.
+          </p>
         </div>
 
         <div className="groupfitness__program-grid">
@@ -131,6 +141,7 @@ const GroupFitness = () => {
 
               <div className="groupfitness__program-body">
                 <div className="groupfitness__program-title">{p.title}</div>
+
                 <div className="groupfitness__program-desc">{p.desc}</div>
 
                 <div className="groupfitness__program-foot">
@@ -147,6 +158,7 @@ const GroupFitness = () => {
           <span className="image-modal__close" onClick={closeMedia}>
             &times;
           </span>
+
           <img
             className="image-modal__content"
             src={selectedMedia}
