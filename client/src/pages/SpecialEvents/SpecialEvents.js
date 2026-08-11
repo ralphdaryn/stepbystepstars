@@ -4,6 +4,8 @@ import specialEvents3 from "../../assets/images/smallgrouptrain.jpeg";
 import specialEvents4 from "../../assets/images/mom-fitness.jpeg";
 import specialEvents8 from "../../assets/images/strollerfit.jpeg";
 import specialEvents12 from "../../assets/images/soca.jpeg";
+import specialEvents13 from "../../assets/images/paintparty.jpeg";
+import specialEvents14 from "../../assets/images/backtoschool.jpeg";
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -29,20 +31,32 @@ const SpecialEvents = () => {
 
   const linkToBuyTickets2 = () => {
     openRegistrationLink(
-      "https://www.wellnessliving.com/rs/catalog-list.html?a_shop_category%5B%5D=1102551&is_filter=1&k_business=651877",
+      "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=1&k_id=4250003",
     );
   };
 
   const linkToBuyTickets7 = () => {
     openRegistrationLink(
-      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=954144&k_class_tab=66299",
+      "https://www.wellnessliving.com/rs/catalog-list.html?a_shop_category%5B%5D=1102551&a_shop_category%5B%5D=1102664&is_filter=1&k_business=651877",
       "strollerfit",
     );
   };
   const linkToBuyTickets10 = () => {
     openRegistrationLink(
-      "https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=960505&k_class_tab=66373",
-      "princesstea",
+      "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=994471",
+      "soca",
+    );
+  };
+  const linkToBuyTickets11 = () => {
+    openRegistrationLink(
+      "  https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=776846&k_class_tab=66373",
+      "paintparty",
+    );
+  };
+  const linkToBuyTickets12 = () => {
+    openRegistrationLink(
+      "    https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=1004658&k_class_tab=66373",
+      "backtoschool",
     );
   };
 
@@ -57,6 +71,23 @@ const SpecialEvents = () => {
           Welcome to our Special Events! <br />
           Check out the exclusive events below to grab your tickets today!
         </p>
+      </div>
+
+      <div className="special-events__card-wrapper">
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents13}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents13)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets11}
+          >
+            Click Here to Register!
+          </button>
+        </div>
       </div>
 
       {/* Event 1 */}
@@ -88,7 +119,7 @@ const SpecialEvents = () => {
           />
           <button
             className="special-events__button"
-            onClick={linkToBuyTickets2}
+            onClick={linkToBuyTickets7}
           >
             Click Here to Register!
           </button>
@@ -106,6 +137,23 @@ const SpecialEvents = () => {
           <button
             className="special-events__button"
             onClick={linkToBuyTickets10}
+          >
+            Click Here to Register!
+          </button>
+        </div>
+      </div>
+
+      <div className="special-events__card-wrapper">
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents14}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents14)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets12}
           >
             Click Here to Register!
           </button>
