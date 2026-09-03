@@ -3,6 +3,8 @@ import { useState } from "react";
 import specialEvents3 from "../../assets/images/smallgrouptrain.jpeg";
 import specialEvents4 from "../../assets/images/mom-fitness.jpeg";
 import specialEvents8 from "../../assets/images/strollerfit.jpeg";
+import specialEvents9 from "../../assets/images/soca.jpeg";
+
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -38,6 +40,15 @@ const SpecialEvents = () => {
       "strollerfit",
     );
   };
+
+   const linkToBuyTickets8 = () => {
+    openRegistrationLink(
+      "https://www.wellnessliving.com/rs/catalog-view.html?k_business=651877&id_sale=3&k_id=1011401",
+      "soca",
+    );
+  };
+
+  
 
   return (
     <div className="special-events">
@@ -100,6 +111,23 @@ const SpecialEvents = () => {
           <button
             className="special-events__button"
             onClick={linkToBuyTickets7}
+          >
+            Click Here to Register!
+          </button>
+        </div>
+      </div>
+
+        <div className="special-events__card-wrapper">
+        <div className="special-events__image-container">
+          <img
+            src={specialEvents9}
+            alt="Special Event"
+            className="special-events__image"
+            onClick={() => openMedia(specialEvents9)}
+          />
+          <button
+            className="special-events__button"
+            onClick={linkToBuyTickets8}
           >
             Click Here to Register!
           </button>
