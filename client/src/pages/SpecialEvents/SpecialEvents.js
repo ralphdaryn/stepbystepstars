@@ -6,7 +6,7 @@ import specialEvents8 from "../../assets/images/strollerfit.jpeg";
 import specialEvents10 from "../../assets/images/cinderella.jpeg";
 import specialEvents11 from "../../assets/images/halloweenparty.jpeg";
 import specialEvents12 from "../../assets/images/trickortreat.jpeg";
-import specialEvents13 from "../../assets/images/soca.JPEG";
+import specialEvents13 from "../../assets/images/soca.jpeg";
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
