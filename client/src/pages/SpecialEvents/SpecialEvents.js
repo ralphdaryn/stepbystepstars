@@ -2,7 +2,6 @@ import "./SpecialEvents.scss";
 import { useState } from "react";
 import specialEvents3 from "../../assets/images/smallgrouptrain.jpeg";
 import specialEvents4 from "../../assets/images/mom-fitness.jpeg";
-import specialEvents8 from "../../assets/images/strollerfit.jpeg";
 import specialEvents13 from "../../assets/images/soca.jpeg";
 import specialEvents14 from "../../assets/images/bellprincess.jpeg";
 import specialEvents15 from "../../assets/images/santatown.jpeg";
@@ -120,23 +119,6 @@ const SpecialEvents = () => {
         </div>
       </div>
 
-      {/* Event 4 */}
-      <div className="special-events__card-wrapper">
-        <div className="special-events__image-container">
-          <img
-            src={specialEvents8}
-            alt="Special Event"
-            className="special-events__image"
-            onClick={() => openMedia(specialEvents8)}
-          />
-          <button
-            className="special-events__button"
-            onClick={linkToBuyTickets7}
-          >
-            Click Here to Register!
-          </button>
-        </div>
-      </div>
 
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
