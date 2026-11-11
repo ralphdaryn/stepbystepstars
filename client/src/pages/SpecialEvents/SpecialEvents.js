@@ -5,7 +5,7 @@ import specialEvents4 from "../../assets/images/mom-fitness.jpeg";
 import specialEvents13 from "../../assets/images/soca.jpeg";
 import specialEvents14 from "../../assets/images/bellprincess.jpeg";
 import specialEvents15 from "../../assets/images/santatown.jpeg";
-import specialEvents16 from "../../assets/images/workshop.jpeg";
+// import specialEvents16 from "../../assets/images/workshop.jpeg";
 
 const SpecialEvents = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -63,12 +63,12 @@ const SpecialEvents = () => {
     );
   };
 
-  const linkToBuyTickets14 = () => {
-    openRegistrationLink(
-      "  https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=1045491&k_class_tab=66373",
-      "soca",
-    );
-  };
+  // const linkToBuyTickets14 = () => {
+  //   openRegistrationLink(
+  //     "  https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=1045491&k_class_tab=66373",
+  //     "soca",
+  //   );
+  // };
 
   return (
     <div className="special-events">
@@ -119,7 +119,6 @@ const SpecialEvents = () => {
         </div>
       </div>
 
-
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
@@ -136,7 +135,7 @@ const SpecialEvents = () => {
           </button>
         </div>
       </div>
-      <div className="special-events__card-wrapper">
+      {/* <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
             src={specialEvents16}
@@ -151,7 +150,7 @@ const SpecialEvents = () => {
             Click Here to Register!
           </button>
         </div>
-      </div>
+      </div> */}
       <div className="special-events__card-wrapper">
         <div className="special-events__image-container">
           <img
