@@ -58,8 +58,8 @@ const SpecialEvents = () => {
 
   const linkToBuyTickets13 = () => {
     openRegistrationLink(
-      "  https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=1045491&k_class_tab=66373",
-      "soca",
+      "  https://www.wellnessliving.com/rs/event/step_by_step_club?k_class=1045488&k_class_tab=66373",
+      "santa",
     );
   };
 
